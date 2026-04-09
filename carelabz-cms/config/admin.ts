@@ -13,7 +13,7 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Admin => 
     },
   },
   secrets: {
-    encryptionKey: env('ENCRYPTION_KEY'),
+    encryptionKey: env('ENCRYPTION_KEY') as string | undefined,
   },
   flags: {
     nps: env.bool('FLAG_NPS', true),

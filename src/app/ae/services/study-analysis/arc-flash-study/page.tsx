@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 import { getServicePageBySlug } from "@/lib/strapi";
 import { notFound } from "next/navigation";
+import { JsonLd } from "@/components/JsonLd";
+
+const PAGE_URL = "https://carelabz.com/ae/services/study-analysis/arc-flash-study";
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getServicePageBySlug("arc-flash-study");
@@ -12,6 +15,16 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: page.metaTitle,
     description: page.metaDescription,
+    alternates: {
+      canonical: PAGE_URL,
+    },
+    openGraph: {
+      title: page.metaTitle,
+      description: page.metaDescription,
+      url: PAGE_URL,
+      siteName: "CareLAbz",
+      type: "website",
+    },
   };
 }
 
@@ -52,8 +65,41 @@ export default async function ArcFlashStudyPage() {
     notFound();
   }
 
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: page.title,
+    description: page.metaDescription,
+    url: PAGE_URL,
+    provider: {
+      "@type": "Organization",
+      name: "CareLAbz",
+      url: "https://carelabz.com",
+    },
+    areaServed: {
+      "@type": "Place",
+      name: "Dubai, UAE",
+    },
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: page.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <main className="mx-auto max-w-3xl px-4 py-12">
+      <JsonLd data={serviceJsonLd} />
+      <JsonLd data={faqJsonLd} />
+
       <h1 className="text-4xl font-bold text-gray-900 mb-8">
         {page.title}
       </h1>

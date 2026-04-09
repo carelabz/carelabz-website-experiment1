@@ -1,0 +1,38 @@
+databases:
+  - name: carelabz-strapi-db
+    plan: free
+    databaseName: carelabz_strapi
+    user: strapi
+
+services:
+  - type: web
+    plan: free
+    name: carelabz-cms
+    runtime: node
+    buildCommand: npm install && NODE_OPTIONS=--max-old-space-size=1024 npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_VERSION
+        value: "20.11.0"
+      - key: NODE_ENV
+        value: production
+      - key: NODE_OPTIONS
+        value: "--max-old-space-size=1024"
+      - key: DATABASE_CLIENT
+        value: postgres
+      - key: DATABASE_URL
+        fromDatabase:
+          name: carelabz-strapi-db
+          property: connectionString
+      - key: DATABASE_SSL
+        value: "true"
+      - key: APP_KEYS
+        value: "1v+nwdfmQ3RUDsta96PVXg==,mvL/ETNd3s+2XYgGsAzsWA==,geXSGUM+V0IlBRqrEaDrow==,VS+EVd9VWyFlMDwKezxgUA=="
+      - key: API_TOKEN_SALT
+        value: "8dLhRBZ+CDiH+wUjEfLFMA=="
+      - key: ADMIN_JWT_SECRET
+        value: "P0suFuslqlX/5qMhkqHDPA=="
+      - key: TRANSFER_TOKEN_SALT
+        value: "pslf2AY18Y/wKX7UFpIJ0w=="
+      - key: JWT_SECRET
+        value: "B2agyJm2B5SB7rC08SDecw=="
