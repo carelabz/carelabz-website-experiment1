@@ -57,7 +57,7 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Database 
       ...connections[client],
       acquireConnectionTimeout: env.int('DATABASE_CONNECTION_TIMEOUT', 60000),
     },
-  };
+  } as Core.Config.Database;
 };
 
 export default config;
