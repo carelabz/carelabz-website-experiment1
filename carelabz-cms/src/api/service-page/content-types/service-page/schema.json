@@ -22,8 +22,7 @@
       "required": true
     },
     "body": {
-      "type": "richtext",
-      "required": true
+      "type": "richtext"
     },
     "metaTitle": {
       "type": "string",
@@ -160,6 +159,18 @@
     },
     "navLinks": {
       "type": "json"
+    },
+    "definitionalLede": {
+      "type": "text"
+    },
+    "lastUpdated": {
+      "type": "date"
+    },
+    "seoKeywords": {
+      "type": "json"
+    },
+    "faqSectionHeading": {
+      "type": "string"
     }
   }
 }

@@ -442,11 +442,35 @@ export interface ApiServicePageServicePage extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    body: Schema.Attribute.RichText & Schema.Attribute.Required;
+    body: Schema.Attribute.RichText;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    ctaBannerBody: Schema.Attribute.String;
+    ctaBannerHeading: Schema.Attribute.String;
+    ctaBannerPrimaryHref: Schema.Attribute.String;
+    ctaBannerPrimaryText: Schema.Attribute.String;
+    ctaBannerSecondaryHref: Schema.Attribute.String;
+    ctaBannerSecondaryText: Schema.Attribute.String;
+    ctaPrimaryHref: Schema.Attribute.String;
+    ctaPrimaryText: Schema.Attribute.String;
+    ctaSecondaryHref: Schema.Attribute.String;
+    ctaSecondaryText: Schema.Attribute.String;
+    eyebrow: Schema.Attribute.String;
     faqs: Schema.Attribute.Component<'shared.faq-item', true>;
+    features: Schema.Attribute.JSON;
+    featuresHeading: Schema.Attribute.String;
+    featuresSubtext: Schema.Attribute.String;
+    footerAddress: Schema.Attribute.String;
+    footerDescription: Schema.Attribute.String;
+    footerEmail: Schema.Attribute.String;
+    footerPhone: Schema.Attribute.String;
+    heroImageAlt: Schema.Attribute.String;
+    heroImagePath: Schema.Attribute.String;
+    industries: Schema.Attribute.JSON;
+    industriesHeading: Schema.Attribute.String;
+    insights: Schema.Attribute.JSON;
+    insightsHeading: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -455,9 +479,26 @@ export interface ApiServicePageServicePage extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    navLinks: Schema.Attribute.JSON;
+    processHeading: Schema.Attribute.String;
+    processSteps: Schema.Attribute.JSON;
     publishedAt: Schema.Attribute.DateTime;
+    region: Schema.Attribute.String;
+    reportsBody: Schema.Attribute.String;
+    reportsBullets: Schema.Attribute.JSON;
+    reportsEyebrow: Schema.Attribute.String;
+    reportsHeading: Schema.Attribute.String;
+    reportsImage: Schema.Attribute.String;
+    reportsImageAlt: Schema.Attribute.String;
+    safetyBody: Schema.Attribute.String;
+    safetyBullets: Schema.Attribute.JSON;
+    safetyEyebrow: Schema.Attribute.String;
+    safetyHeading: Schema.Attribute.String;
+    safetyImage: Schema.Attribute.String;
+    safetyImageAlt: Schema.Attribute.String;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    trustBadges: Schema.Attribute.JSON;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

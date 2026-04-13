@@ -87,8 +87,12 @@ interface PageData {
     eyebrow: string;
     headline: string;
     subtext: string;
+    definitionalLede: string;
+    lastUpdated: string;
     primaryCta: string;
+    primaryHref: string;
     secondaryCta: string;
+    secondaryHref: string;
     image: string;
     imageAlt: string;
   };
@@ -113,6 +117,7 @@ interface PageData {
     cards: InsightCard[];
   };
   faqs: FAQItem[];
+  faqSectionHeading: string;
   cta: {
     heading: string;
     subtext: string;
@@ -141,8 +146,12 @@ function buildPageDataFromStrapi(strapi: ServicePage): PageData {
       eyebrow: strapi.eyebrow ?? "",
       headline: strapi.title,
       subtext: strapi.metaDescription,
+      definitionalLede: strapi.definitionalLede ?? "",
+      lastUpdated: strapi.lastUpdated ?? "2026-04-10",
       primaryCta: strapi.ctaPrimaryText ?? "",
+      primaryHref: strapi.ctaPrimaryHref ?? "#contact",
       secondaryCta: strapi.ctaSecondaryText ?? "",
+      secondaryHref: strapi.ctaSecondaryHref ?? "/brochure/",
       image: strapi.heroImagePath ?? "",
       imageAlt: strapi.heroImageAlt ?? "",
     },
@@ -206,6 +215,7 @@ function buildPageDataFromStrapi(strapi: ServicePage): PageData {
       question: f.question,
       answer: f.answer,
     })),
+    faqSectionHeading: strapi.faqSectionHeading ?? "Frequently Asked Questions",
     cta: {
       heading: strapi.ctaBannerHeading ?? "",
       subtext: strapi.ctaBannerBody ?? "",
@@ -269,14 +279,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: metaTitle,
     description: metaDescription,
-    keywords: [
-      "arc flash study Dubai",
-      "arc flash analysis UAE",
-      "ETAP arc flash",
-      "IEEE 1584 UAE",
-      "arc flash hazard analysis",
-      "NFPA 70E Dubai",
-    ],
+    keywords: strapi.seoKeywords ?? ["arc flash study Dubai", "arc flash analysis UAE", "ETAP arc flash", "IEEE 1584 UAE", "arc flash hazard analysis", "NFPA 70E Dubai"],
     authors: [{ name: "Carelabs Engineering Team" }],
     creator: "Carelabs",
     publisher: "Carelabs",
@@ -470,12 +473,7 @@ function HeroSection({
               {data.headline}
             </h1>
             <p className="hero-subtext text-lg md:text-xl text-slate-300 max-w-3xl mx-auto lg:mx-0 mt-6 mb-4 leading-relaxed">
-              <strong>
-                An arc flash study is an engineering analysis that calculates
-                the incident energy released during an electrical arc fault,
-                so workers can be protected with the correct PPE and equipment
-                boundaries.
-              </strong>{" "}
+              <strong>{data.definitionalLede}</strong>{" "}
               Carelabs combines{" "}
               <a
                 href="https://etap.com/"
@@ -515,21 +513,18 @@ function HeroSection({
               </a>{" "}
               for industrial and commercial facilities across the UAE.
             </p>
-            <time
-              dateTime="2026-04-10"
-              className="block text-sm text-slate-400 mb-8"
-            >
-              Last updated April 2026
+            <time dateTime={data.lastUpdated} className="block text-sm text-slate-400 mb-8">
+              Last updated {new Date(data.lastUpdated + "T00:00:00").toLocaleDateString("en-US", { month: "long", year: "numeric" })}
             </time>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link
-                href="#contact"
+                href={data.primaryHref}
                 className="inline-flex items-center justify-center rounded-lg bg-orange-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-orange-600 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
               >
                 {data.primaryCta}
               </Link>
               <Link
-                href="/brochure"
+                href={data.secondaryHref}
                 className="inline-flex items-center justify-center rounded-lg border-2 border-white/30 px-8 py-3.5 text-base font-semibold text-white transition-all hover:bg-white/10 hover:border-white/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
               >
                 {data.secondaryCta}
@@ -834,13 +829,13 @@ function InsightsSection({ data }: { data: PageData["insights"] }) {
   );
 }
 
-function FAQSection({ faqs }: { faqs: FAQItem[] }) {
+function FAQSection({ faqs, heading }: { faqs: FAQItem[]; heading: string }) {
   return (
     <section className="bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-navy mb-4 text-balance">
-            Frequently Asked Questions
+            {heading}
           </h2>
         </div>
         <FaqAccordion faqs={faqs} />
@@ -1211,7 +1206,7 @@ export default async function ArcFlashStudyPage() {
         <RiskAssessmentSection data={data.riskAssessment} />
         <IndustriesSection data={data.industries} />
         <InsightsSection data={data.insights} />
-        <FAQSection faqs={data.faqs} />
+        <FAQSection faqs={data.faqs} heading={data.faqSectionHeading} />
         <CTABanner data={data.cta} />
       </main>
 

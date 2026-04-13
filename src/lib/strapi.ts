@@ -97,6 +97,10 @@ export interface ServicePage {
   footerAddress: string | null;
   region: string | null;
   navLinks: NavLink[] | null;
+  definitionalLede: string | null;
+  lastUpdated: string | null;
+  seoKeywords: string[] | null;
+  faqSectionHeading: string | null;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
