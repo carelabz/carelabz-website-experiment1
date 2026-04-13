@@ -9,7 +9,7 @@ services:
     plan: free
     name: carelabz-cms
     runtime: node
-    buildCommand: npm install && NODE_OPTIONS=--max-old-space-size=1024 npm run build
+    buildCommand: npm install && NODE_OPTIONS=--max-old-space-size=4096 npm run build
     startCommand: npm run start
     envVars:
       - key: NODE_VERSION
@@ -17,7 +17,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: NODE_OPTIONS
-        value: "--max-old-space-size=1024"
+        value: "--max-old-space-size=4096"
       - key: DATABASE_CLIENT
         value: postgres
       - key: DATABASE_URL
