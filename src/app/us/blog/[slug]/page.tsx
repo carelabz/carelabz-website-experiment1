@@ -232,7 +232,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         )}
 
         {/* CTA Banner */}
-        <section className="bg-navy py-20 px-4">
+        <section className="bg-[#0050B3] py-20 px-4">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Need Expert Electrical Safety Support?

@@ -180,7 +180,7 @@ export default async function ContactPage() {
         </section>
 
         {/* CTA Banner */}
-        <section className="bg-navy py-20 px-4">
+        <section className="bg-[#0050B3] py-20 px-4">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Need urgent assistance?

@@ -134,7 +134,7 @@ export default async function CaseStudyPage({ params }: Props) {
         )}
 
         {/* CTA Section */}
-        <section className="bg-navy py-20 px-4">
+        <section className="bg-[#0050B3] py-20 px-4">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               {study.ctaText ?? "Ready to achieve similar results?"}

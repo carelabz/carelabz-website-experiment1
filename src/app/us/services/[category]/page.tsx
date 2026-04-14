@@ -62,24 +62,24 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       <StickyNavbar />
 
       {/* Hero */}
-      <section className="bg-navy pt-24 pb-16">
+      <section className="bg-[#EEF4FF] pt-24 pb-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex items-center gap-2 text-sm text-slate-400">
+            <ol className="flex items-center gap-2 text-sm text-[#374151]">
               <li>
-                <Link href="/us/services/" className="hover:text-orange-400 transition-colors">
+                <Link href="/us/services/" className="hover:text-[#1A2538] transition-colors">
                   Services
                 </Link>
               </li>
-              <li aria-hidden="true" className="text-slate-600">/</li>
-              <li className="text-white font-medium">{categoryLabel}</li>
+              <li aria-hidden="true" className="text-[#374151]">/</li>
+              <li className="text-[#1A2538] font-medium">{categoryLabel}</li>
             </ol>
           </nav>
           <div className="mx-auto max-w-3xl">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl mb-6">
+            <h1 className="text-4xl font-bold tracking-tight text-[#1A2538] sm:text-5xl mb-6">
               {categoryLabel} Services
             </h1>
-            <p className="text-lg text-slate-300 leading-relaxed">
+            <p className="text-lg text-[#374151] leading-relaxed">
               {category === "study-analysis"
                 ? "Engineering analysis services to assess risk, ensure NEC/NFPA 70E/IEEE 1584 compliance, and optimise your power system."
                 : "On-site electrical safety inspection services ensuring your facilities meet OSHA and NFPA 70E requirements."}

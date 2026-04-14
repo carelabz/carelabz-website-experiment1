@@ -85,7 +85,7 @@ export default async function USHomePage() {
 
   if (!page) {
     return (
-      <main className="flex min-h-screen items-center justify-center bg-navy text-white">
+      <main className="flex min-h-screen items-center justify-center bg-[#EEF4FF] text-[#1A2538]">
         <p className="text-lg">Page content unavailable</p>
       </main>
     );
@@ -314,11 +314,11 @@ export default async function USHomePage() {
 
       {/* ── Industries ───────────────────────────────────────────────────── */}
       {page.industries && page.industries.length > 0 && (
-        <section className="bg-navy py-20">
+        <section className="bg-[#EEF4FF] py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
               {page.industriesHeading && (
-                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                <h2 className="text-3xl sm:text-4xl font-bold text-[#1A2538] mb-4">
                   {page.industriesHeading}
                 </h2>
               )}
@@ -328,21 +328,11 @@ export default async function USHomePage() {
               {page.industries.map((industry, i) => (
                 <div
                   key={i}
-                  className="group relative aspect-[4/3] rounded-xl overflow-hidden"
+                  className="bg-white border-l-4 border-[#0050B3] rounded-r-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all"
                 >
-                  <Image
-                    src={industry.image}
-                    alt={industry.alt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/40 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <p className="text-white font-semibold text-sm">
-                      {industry.name}
-                    </p>
-                  </div>
+                  <p className="text-[#1A2538] font-semibold text-sm">
+                    {industry.name}
+                  </p>
                 </div>
               ))}
             </div>

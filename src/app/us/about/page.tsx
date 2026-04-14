@@ -138,7 +138,7 @@ export default async function AboutPage() {
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {page.team.map((member, idx) => (
                   <div key={idx} className="rounded-xl bg-offWhite p-8">
-                    <div className="w-12 h-12 rounded-full bg-navy flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 rounded-full bg-[#0050B3] flex items-center justify-center mb-4">
                       <span className="text-white font-bold text-lg">
                         {member.name.charAt(0)}
                       </span>
@@ -161,7 +161,7 @@ export default async function AboutPage() {
 
         {/* Stats Section */}
         {page?.stats && page.stats.length > 0 && (
-          <section className="bg-navy py-20 px-4">
+          <section className="bg-[#0050B3] py-20 px-4">
             <div className="mx-auto max-w-7xl">
               {page?.statsHeading && (
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
@@ -207,7 +207,7 @@ export default async function AboutPage() {
         )}
 
         {/* CTA Banner */}
-        <section className="bg-navy py-20 px-4">
+        <section className="bg-[#0050B3] py-20 px-4">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               {page?.ctaBannerHeading ?? "Partner with CareLabs"}
