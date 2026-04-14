@@ -41,3 +41,5 @@ carelabz logo.webp
 dev-server.log
 prod-server.log
 page.html
+carelabs-vault/
+*.zip
