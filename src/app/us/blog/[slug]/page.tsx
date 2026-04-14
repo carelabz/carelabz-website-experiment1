@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { StickyNavbar } from "@/components/sticky-navbar";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { JsonLd } from "@/components/JsonLd";
+import { marked } from "marked";
 import { getBlogPost } from "@/lib/strapi-blog";
 
 export const dynamic = "force-dynamic";
@@ -159,8 +160,8 @@ export default async function BlogPostPage({ params }: PageProps) {
         <section className="bg-offWhite py-16 px-4">
           <div className="mx-auto max-w-3xl">
             <div
-              className="prose prose-lg prose-headings:text-navy prose-a:text-orange-500 prose-a:no-underline hover:prose-a:underline prose-strong:text-navy max-w-none"
-              dangerouslySetInnerHTML={{ __html: post.body }}
+              className="prose prose-lg max-w-none prose-headings:text-[#1A2538] prose-headings:font-bold prose-p:text-[#374151] prose-li:text-[#374151] prose-strong:text-[#1A2538] prose-a:text-[#FF6633] prose-a:no-underline hover:prose-a:underline"
+              dangerouslySetInnerHTML={{ __html: marked(post.body || "") as string }}
             />
 
             {/* Tags */}

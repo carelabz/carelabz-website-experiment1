@@ -44,6 +44,8 @@
     "metaTitle": { "type": "string" },
     "metaDescription": { "type": "text" },
     "seoKeywords": { "type": "json" },
-    "ogImage": { "type": "string" }
+    "ogImage": { "type": "string" },
+    "faqsHeading": { "type": "string" },
+    "faqs": { "type": "json" }
   }
 }

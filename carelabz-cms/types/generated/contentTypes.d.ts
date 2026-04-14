@@ -629,6 +629,8 @@ export interface ApiHomePageHomePage extends Struct.CollectionTypeSchema {
     ctaBannerSecondaryHref: Schema.Attribute.String;
     ctaBannerSecondaryText: Schema.Attribute.String;
     ctaBannerSubtext: Schema.Attribute.String;
+    faqs: Schema.Attribute.JSON;
+    faqsHeading: Schema.Attribute.String;
     footerAddress: Schema.Attribute.String;
     footerDescription: Schema.Attribute.String;
     footerEmail: Schema.Attribute.String;
