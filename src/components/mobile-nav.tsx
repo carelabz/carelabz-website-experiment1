@@ -14,7 +14,7 @@ export function MobileNav({ links }: MobileNavProps) {
     <div className="md:hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="text-[#1A2538] p-2"
+        className="text-[#111827] p-2"
         aria-label="Toggle menu"
       >
         {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -27,7 +27,7 @@ export function MobileNav({ links }: MobileNavProps) {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-sm font-medium text-[#1A2538] hover:text-[#FF6633] transition-colors py-2 border-b border-slate-100"
+                className="text-[15px] font-medium text-[#111827] hover:text-[#2474B5] transition-colors py-2 border-b border-slate-100"
               >
                 {link.label}
               </Link>

@@ -46,7 +46,7 @@ export function StickyNavbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-[#1A2538] hover:text-[#FF6633] transition-colors"
+                className="text-[15px] font-medium text-[#111827] hover:text-[#2474B5] transition-colors"
               >
                 {link.label}
               </Link>

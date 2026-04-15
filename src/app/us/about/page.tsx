@@ -126,70 +126,12 @@ export default async function AboutPage() {
           </section>
         )}
 
-        {/* Team Section */}
-        {page?.team && page.team.length > 0 && (
-          <section className="bg-white py-20 px-4">
-            <div className="mx-auto max-w-7xl">
-              {page?.teamHeading && (
-                <h2 className="text-3xl md:text-4xl font-bold text-navy mb-12 text-center">
-                  {page.teamHeading}
-                </h2>
-              )}
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {page.team.map((member, idx) => (
-                  <div key={idx} className="rounded-xl bg-offWhite p-8">
-                    <div className="w-12 h-12 rounded-full bg-[#0050B3] flex items-center justify-center mb-4">
-                      <span className="text-white font-bold text-lg">
-                        {member.name.charAt(0)}
-                      </span>
-                    </div>
-                    <h3 className="text-lg font-bold text-navy mb-1">
-                      {member.name}
-                    </h3>
-                    <p className="text-sm font-medium text-orange-500 mb-3">
-                      {member.role}
-                    </p>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {member.bio}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Stats Section */}
-        {page?.stats && page.stats.length > 0 && (
-          <section className="bg-[#0050B3] py-20 px-4">
-            <div className="mx-auto max-w-7xl">
-              {page?.statsHeading && (
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
-                  {page.statsHeading}
-                </h2>
-              )}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                {page.stats.map((stat, idx) => (
-                  <div key={idx} className="text-center">
-                    <p className="text-4xl md:text-5xl font-extrabold text-white mb-2">
-                      {stat.value}
-                    </p>
-                    <p className="text-white/60 text-sm uppercase tracking-wide">
-                      {stat.metric}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-
         {/* Certifications Section */}
         {page?.certifications && page.certifications.length > 0 && (
           <section className="bg-offWhite py-16 px-4">
             <div className="mx-auto max-w-5xl">
               <h2 className="text-2xl font-bold text-navy mb-8 text-center">
-                Certifications &amp; Accreditations
+                Standards We Follow
               </h2>
               <div className="flex flex-wrap justify-center gap-4">
                 {page.certifications.map((cert, idx) => (

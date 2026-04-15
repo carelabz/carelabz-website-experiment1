@@ -116,12 +116,12 @@ export function ContactForm({
         <label htmlFor="phone" className={labelClass}>
           Phone Number
         </label>
-        <div className="flex">
+        <div className="flex items-center w-full overflow-hidden rounded-xl border border-slate-200 focus-within:border-[#0050B3] focus-within:ring-2 focus-within:ring-[#0050B3]/20">
           <select
             aria-label="Country dial code"
             value={selectedDialCode}
             onChange={(e) => setSelectedDialCode(e.target.value)}
-            className="min-w-[130px] bg-white border border-slate-200 border-r-0 rounded-l-xl h-[50px] px-3 text-[#1A2538] focus:outline-none focus:border-[#0050B3] cursor-pointer text-sm"
+            className="bg-white px-3 h-[50px] text-[#1A2538] text-sm focus:outline-none min-w-[110px] border-r border-slate-200 flex-shrink-0 cursor-pointer"
           >
             {ALL_COUNTRIES.map((c) => (
               <option key={c.iso2} value={c.dialCode}>
@@ -134,7 +134,7 @@ export function ContactForm({
             name="phone"
             type="tel"
             placeholder="(555) 000-0000"
-            className="bg-white border border-slate-200 rounded-r-xl px-4 h-[50px] flex-1 focus:border-[#0050B3] focus:ring-2 focus:ring-[#0050B3]/20 outline-none text-[#1A2538] placeholder-slate-400 text-sm transition-all"
+            className="bg-white px-4 h-[50px] text-[#1A2538] text-sm focus:outline-none flex-1 min-w-0 placeholder-slate-400"
           />
         </div>
       </div>

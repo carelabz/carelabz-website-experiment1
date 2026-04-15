@@ -19,7 +19,6 @@ import {
   Factory,
   Building2,
   Server,
-  Wrench,
   Flame,
   GraduationCap,
   Landmark,
@@ -392,15 +391,16 @@ export default async function ServiceDetailPage({
               {data.processHeading}
             </h2>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {data.processSteps.map((step, i) => {
-                const Icon = STEP_ICONS[i % STEP_ICONS.length];
+              {data.processSteps.map((step, index) => {
+                const Icon = STEP_ICONS[index % STEP_ICONS.length];
+                const stepNum = step.number ?? index + 1;
                 return (
                   <div
-                    key={step.number}
+                    key={stepNum}
                     className="relative bg-white rounded-[30px] shadow-sm p-8"
                   >
                     <span className="absolute top-4 right-6 text-6xl font-bold text-[#0050B3]/10">
-                      {String(step.number).padStart(2, "0")}
+                      {String(stepNum).padStart(2, "0")}
                     </span>
                     <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50">
                       <Icon className="h-6 w-6 text-[#0050B3]" />
@@ -410,36 +410,6 @@ export default async function ServiceDetailPage({
                     </h3>
                     <p className="text-[#374151] text-sm leading-relaxed">
                       {step.description}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* ============================================================ */}
-      {/*  EQUIPMENT / INDUSTRIES FROM STRAPI                          */}
-      {/* ============================================================ */}
-      {data.industries.length > 0 && (
-        <section className="bg-white py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-[#1A2538] text-center mb-16">
-              {data.industriesHeading}
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-              {data.industries.map((industry, i) => {
-                const Icon =
-                  INDUSTRY_ICONS[industry.name] || Wrench;
-                return (
-                  <div
-                    key={i}
-                    className="bg-white rounded-2xl border border-slate-200 p-6 text-center hover:border-[#0050B3] hover:shadow-md transition-all cursor-pointer"
-                  >
-                    <Icon className="h-8 w-8 text-[#0050B3] mx-auto mb-3" />
-                    <p className="text-sm font-medium text-[#1A2538]">
-                      {industry.name}
                     </p>
                   </div>
                 );
