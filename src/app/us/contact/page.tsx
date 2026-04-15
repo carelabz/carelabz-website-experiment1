@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { headers } from "next/headers";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { StickyNavbar } from "@/components/sticky-navbar";
 import { ContactForm } from "@/components/contact-form";
 import { getContactPage } from "@/lib/strapi-pages";
+import { getServicesByRegion } from "@/lib/strapi";
+import {
+  getCountryFromHeaders,
+  getCountryName,
+} from "@/lib/detect-country";
 
 export const dynamic = "force-dynamic";
 
@@ -18,7 +24,19 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function ContactPage() {
-  const page = await getContactPage("us");
+  const headersList = headers();
+  const iso2 = getCountryFromHeaders(headersList);
+  const countryName = getCountryName(iso2);
+
+  const [page, services] = await Promise.all([
+    getContactPage("us"),
+    getServicesByRegion("us"),
+  ]);
+
+  const serviceOptions = services.map((s) => ({
+    title: s.title,
+    slug: s.slug,
+  }));
 
   const headline = page?.heroHeadline ?? "Get in Touch";
   const subtext =
@@ -30,29 +48,38 @@ export default async function ContactPage() {
       <StickyNavbar />
       <main id="main-content">
         {/* Hero Section */}
-        <section className="bg-[#EEF4FF] pt-32 pb-20 px-4">
+        <section className="bg-[#0050B3] pt-32 pb-20 px-4">
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1A2538] mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               {headline}
             </h1>
-            <p className="text-lg md:text-xl text-[#374151] max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
               {subtext}
             </p>
+            <span className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm text-white mt-6 border border-white/30">
+              <MapPin className="w-4 h-4" />
+              Showing services available in {countryName}
+            </span>
           </div>
         </section>
 
         {/* Two-column Contact Layout */}
-        <section className="bg-offWhite py-20 px-4">
+        <section className="bg-[#EEF4FF] py-20 px-4">
           <div className="mx-auto max-w-7xl">
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               {/* Left: Contact Form */}
-              <div className="bg-white rounded-xl shadow-sm p-8 lg:p-10">
+              <div className="bg-white rounded-2xl shadow-sm p-8 lg:p-10">
+                <h2 className="text-2xl font-bold text-[#1A2538] mb-2">
+                  {page?.formHeading ?? "Send Us a Message"}
+                </h2>
+                <p className="text-[#374151] mb-6">
+                  {page?.formSubtext ??
+                    "Fill in the form below and we will get back to you within one business day."}
+                </p>
                 <ContactForm
-                  heading={page?.formHeading ?? "Send Us a Message"}
-                  subtext={
-                    page?.formSubtext ??
-                    "Fill in the form below and we will get back to you within one business day."
-                  }
+                  services={serviceOptions}
+                  defaultIso2={iso2}
+                  countryName={countryName}
                 />
               </div>
 
