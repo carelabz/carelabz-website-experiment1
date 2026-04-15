@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { BookOpen, ChevronRight } from "lucide-react";
 import { StickyNavbar } from "@/components/sticky-navbar";
 import USFooter from "@/components/us-footer";
-import { getBlogPosts } from "@/lib/strapi-blog";
+import { getBlogPosts, type BlogPost } from "@/lib/strapi-blog";
 
 export const dynamic = "force-dynamic";
 
@@ -14,21 +14,33 @@ export const metadata: Metadata = {
     "Expert insights on electrical safety, arc flash studies, power system analysis, and compliance for US facilities. Stay informed with CareLabs.",
 };
 
-function formatDate(dateString: string | null): string {
+function postDate(post: BlogPost): string {
+  return post.publishedDate ?? post.publishedAt;
+}
+
+function formatDateShort(dateString: string | null): string {
   if (!dateString) return "";
   try {
-    return new Date(dateString).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
+    return new Date(dateString).toLocaleDateString("en-GB", {
       day: "numeric",
+      month: "short",
+      year: "numeric",
     });
   } catch {
-    return dateString;
+    return "";
   }
 }
 
 export default async function BlogIndexPage() {
-  const posts = await getBlogPosts("us");
+  const allPosts = await getBlogPosts("us");
+
+  const sorted = [...allPosts].sort(
+    (a, b) =>
+      new Date(postDate(b)).getTime() - new Date(postDate(a)).getTime()
+  );
+
+  const featured = sorted.slice(0, 3);
+  const older = sorted.slice(3);
 
   return (
     <>
@@ -52,86 +64,132 @@ export default async function BlogIndexPage() {
           </div>
         </section>
 
-        {/* Blog Grid */}
+        {/* Posts Section */}
         <section className="bg-offWhite py-20 px-4">
           <div className="mx-auto max-w-7xl">
-            {posts.length === 0 ? (
+            {sorted.length === 0 && (
               <p className="text-center text-slate-500 py-20">
-                No articles found. Check back soon.
+                No articles yet. Check back soon.
               </p>
-            ) : (
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {posts.map((post) => (
-                  <article
-                    key={post.id}
-                    className="rounded-xl bg-white shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col"
-                  >
-                    {/* Image */}
-                    <Link
-                      href={`/us/blog/${post.slug}/`}
-                      className="block relative aspect-[16/9] overflow-hidden bg-slate-100"
-                      tabIndex={-1}
-                      aria-hidden="true"
-                    >
-                      {post.heroImage && post.heroImage.startsWith("http") ? (
-                        <Image
-                          src={post.heroImage}
-                          alt={post.heroImageAlt ?? post.title}
-                          fill
-                          className="object-cover transition-transform duration-500 hover:scale-105"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        />
-                      ) : (
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#0050B3] to-[#1A2538] flex items-center justify-center">
-                          <span className="text-white/20 text-6xl font-bold">
-                            CL
+            )}
+
+            {/* Featured: top 3 cards (with date) */}
+            {featured.length > 0 && (
+              <>
+                <h2 className="text-3xl font-bold text-[#1A2538] mb-8">
+                  Latest Articles
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {featured.map((post) => {
+                    const date = postDate(post);
+                    return (
+                      <article
+                        key={post.id}
+                        className="rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-slate-100 bg-white flex flex-col"
+                      >
+                        {/* Image */}
+                        <Link
+                          href={`/us/blog/${post.slug}/`}
+                          aria-hidden="true"
+                          tabIndex={-1}
+                          className="block relative aspect-[16/9] overflow-hidden"
+                        >
+                          {post.heroImage &&
+                          post.heroImage.startsWith("http") ? (
+                            <Image
+                              src={post.heroImage}
+                              alt={post.heroImageAlt ?? post.title}
+                              fill
+                              className="object-cover transition-transform duration-500 hover:scale-105"
+                              sizes="(max-width: 768px) 100vw, 33vw"
+                            />
+                          ) : (
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#EEF4FF] to-[#0050B3]/20 flex items-center justify-center">
+                              <BookOpen className="w-12 h-12 text-[#0050B3]/40" />
+                            </div>
+                          )}
+                        </Link>
+
+                        {/* Content */}
+                        <div className="p-6 flex flex-col flex-1">
+                          {post.category && (
+                            <span className="text-xs font-bold text-[#FF6633] uppercase tracking-wider mb-2">
+                              {post.category}
+                            </span>
+                          )}
+                          <h3 className="text-lg font-bold text-[#1A2538] mb-2 line-clamp-2">
+                            <Link
+                              href={`/us/blog/${post.slug}/`}
+                              className="hover:text-[#0050B3] transition-colors"
+                            >
+                              {post.title}
+                            </Link>
+                          </h3>
+                          {post.excerpt && (
+                            <p className="text-sm text-[#374151] line-clamp-3 mb-4">
+                              {post.excerpt}
+                            </p>
+                          )}
+                          <div className="flex items-center justify-between mt-auto pt-2">
+                            {date && (
+                              <time
+                                dateTime={date}
+                                className="text-xs text-[#64748B]"
+                              >
+                                {formatDateShort(date)}
+                              </time>
+                            )}
+                            <Link
+                              href={`/us/blog/${post.slug}/`}
+                              className="text-sm font-semibold text-[#FF6633] hover:text-[#0050B3] transition-colors ml-auto"
+                              aria-label={`Read more about ${post.title}`}
+                            >
+                              Read More →
+                            </Link>
+                          </div>
+                        </div>
+                      </article>
+                    );
+                  })}
+                </div>
+              </>
+            )}
+
+            {/* Older posts list (no date) — only if more than 3 total */}
+            {older.length > 0 && (
+              <>
+                <h2 className="text-2xl font-bold text-[#1A2538] mb-6 mt-16">
+                  More Articles
+                </h2>
+                <div className="border-t border-slate-200 mb-8" />
+                <ul>
+                  {older.map((post) => (
+                    <li key={post.id}>
+                      <Link
+                        href={`/us/blog/${post.slug}/`}
+                        className="border-b border-slate-100 py-4 flex items-center justify-between gap-4 hover:bg-[#EEF4FF]/50 transition-colors px-2 rounded-lg group"
+                      >
+                        <div className="flex flex-col gap-1 min-w-0">
+                          {post.category && (
+                            <span className="text-xs font-semibold text-[#FF6633] uppercase">
+                              {post.category}
+                            </span>
+                          )}
+                          <span className="text-base font-semibold text-[#1A2538] group-hover:text-[#0050B3] transition-colors line-clamp-1">
+                            {post.title}
                           </span>
                         </div>
-                      )}
-                    </Link>
-
-                    {/* Content */}
-                    <div className="p-6 flex flex-col flex-1">
-                      {post.category && (
-                        <span className="text-xs font-bold text-orange-500 uppercase tracking-wider mb-2">
-                          {post.category}
-                        </span>
-                      )}
-                      <h3 className="text-lg font-bold text-navy mb-3 leading-snug">
-                        <Link
-                          href={`/us/blog/${post.slug}/`}
-                          className="hover:text-orange-500 transition-colors"
-                        >
-                          {post.title}
-                        </Link>
-                      </h3>
-                      {post.excerpt && (
-                        <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-1">
-                          {post.excerpt}
-                        </p>
-                      )}
-                      <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
-                        {post.publishedDate && (
-                          <time
-                            dateTime={post.publishedDate}
-                            className="text-xs text-slate-400"
-                          >
-                            {formatDate(post.publishedDate)}
-                          </time>
-                        )}
-                        <Link
-                          href={`/us/blog/${post.slug}/`}
-                          className="inline-flex items-center gap-1 text-sm font-semibold text-orange-500 hover:text-orange-600 transition-colors ml-auto"
-                          aria-label={`Read more about ${post.title}`}
-                        >
-                          Read more
-                          <ArrowRight className="w-4 h-4" />
-                        </Link>
-                      </div>
-                    </div>
-                  </article>
-                ))}
-              </div>
+                        <div className="flex items-center gap-4 flex-shrink-0">
+                          <span className="text-sm font-medium text-[#0050B3] group-hover:text-[#FF6633] transition-colors inline-flex items-center gap-1">
+                            Read
+                            <ChevronRight className="w-4 h-4" />
+                          </span>
+                        </div>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </>
             )}
           </div>
         </section>
@@ -148,7 +206,7 @@ export default async function BlogIndexPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="#contact"
+                href="/us/contact/"
                 className="inline-flex items-center justify-center rounded-lg bg-orange-500 px-8 py-3 text-base font-semibold text-white hover:bg-orange-600 transition-colors"
               >
                 Get a Free Quote
