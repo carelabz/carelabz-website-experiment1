@@ -486,23 +486,46 @@ export default async function USHomePage() {
               </div>
             )}
 
-            {/* Column 3 — Industries */}
-            {page.industries && page.industries.length > 0 && (
-              <div>
-                <h4 className="text-sm font-semibold uppercase tracking-widest text-white/40 mb-4">
-                  Industries
-                </h4>
-                <ul className="space-y-2">
-                  {page.industries.map((industry, i) => (
-                    <li key={i}>
-                      <span className="text-sm text-white/70">
-                        {industry.name}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+            {/* Column 3 — Company */}
+            <div>
+              <h4 className="text-sm font-semibold uppercase tracking-widest text-white/40 mb-4">
+                Company
+              </h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    href="/us/about/"
+                    className="text-sm text-white/70 transition-colors hover:text-orange-400"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/us/case-studies/"
+                    className="text-sm text-white/70 transition-colors hover:text-orange-400"
+                  >
+                    Case Studies
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/us/blog/"
+                    className="text-sm text-white/70 transition-colors hover:text-orange-400"
+                  >
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/us/contact/"
+                    className="text-sm text-white/70 transition-colors hover:text-orange-400"
+                  >
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
             {/* Column 4 — Contact */}
             <div>
