@@ -10,16 +10,6 @@ interface ContactFormProps {
   countryName: string;
 }
 
-const HEAR_ABOUT_OPTIONS = [
-  "Google Search",
-  "LinkedIn",
-  "Referral",
-  "Industry Event",
-  "Trade Publication",
-  "Word of Mouth",
-  "Other",
-];
-
 export function ContactForm({
   services,
   defaultIso2,
@@ -174,28 +164,6 @@ export function ContactForm({
           placeholder="Tell us about your project or requirements..."
           className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 min-h-[140px] focus:border-[#0050B3] focus:ring-2 focus:ring-[#0050B3]/20 outline-none transition-all text-[#1A2538] placeholder-slate-400 text-sm resize-y"
         />
-      </div>
-
-      {/* How did you hear */}
-      <div className="md:col-span-2">
-        <label htmlFor="referral" className={labelClass}>
-          How did you hear about us?
-        </label>
-        <select
-          id="referral"
-          name="referral"
-          defaultValue=""
-          className={`${inputClass} cursor-pointer`}
-        >
-          <option value="" disabled>
-            Please select...
-          </option>
-          {HEAR_ABOUT_OPTIONS.map((opt) => (
-            <option key={opt} value={opt}>
-              {opt}
-            </option>
-          ))}
-        </select>
       </div>
 
       {/* Submit */}
