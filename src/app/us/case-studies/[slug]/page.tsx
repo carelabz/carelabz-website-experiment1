@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { redirect } from "next/navigation";
 import { StickyNavbar } from "@/components/sticky-navbar";
 import USFooter from "@/components/us-footer";
 import { getCaseStudy } from "@/lib/strapi-pages";
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function CaseStudyPage({ params }: Props) {
   const study = await getCaseStudy("us", params.slug);
 
-  if (!study) notFound();
+  if (!study) redirect("/us/case-studies/");
 
   return (
     <>
