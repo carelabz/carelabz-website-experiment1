@@ -135,7 +135,7 @@ export default function USFooter() {
             </Link>
             <div className="flex items-center gap-3">
               <a
-                href="https://www.linkedin.com/company/carelabz"
+                href="https://ae.linkedin.com/company/carelabs"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"

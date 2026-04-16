@@ -28,7 +28,7 @@ const organizationJsonLd = {
   url: "https://carelabz.com",
   logo: "https://carelabz.com/icon.svg",
   sameAs: [
-    "https://www.linkedin.com/company/carelabz",
+    "https://ae.linkedin.com/company/carelabs",
     "https://www.facebook.com/carelabz",
     "https://twitter.com/carelabz",
     "https://en.wikipedia.org/wiki/Arc_flash",
