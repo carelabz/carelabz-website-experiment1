@@ -4,6 +4,7 @@ import { StickyNavbar } from "@/components/sticky-navbar";
 import USFooter from "@/components/us-footer";
 import { getServicesByRegion } from "@/lib/strapi";
 import { ServicePage } from "@/lib/strapi";
+import { buildJsonLd, getOrganizationSchema, getWebPageSchema, getBreadcrumbSchema } from "@/lib/jsonld";
 
 export const dynamic = "force-dynamic";
 
@@ -13,6 +14,25 @@ export const metadata: Metadata = {
     "Comprehensive electrical safety services in the USA including arc flash studies, power system analysis, relay coordination, harmonic studies, and electrical safety inspections.",
   alternates: {
     canonical: "https://carelabz.com/us/services/",
+    languages: {
+      "en-US": "https://carelabz.com/us/services/",
+      "x-default": "https://carelabz.com/us/services/",
+    },
+  },
+  openGraph: {
+    title: "Power System Engineering Services in the USA | CareLabs",
+    description:
+      "Professional electrical safety services including arc flash studies, short circuit analysis, and power system engineering across the USA.",
+    url: "https://carelabz.com/us/services/",
+    siteName: "CareLabs",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Power System Engineering Services in the USA | CareLabs",
+    description:
+      "Professional electrical safety services including arc flash studies, short circuit analysis, and power system engineering across the USA.",
   },
 };
 
@@ -31,9 +51,26 @@ function getServiceHref(service: ServicePage): string {
 export default async function ServicesIndexPage() {
   const services = await getServicesByRegion("us");
 
+  const jsonLd = buildJsonLd([
+    getOrganizationSchema(),
+    getWebPageSchema(
+      "https://carelabz.com/us/services/",
+      "Power System Engineering Services in the USA | CareLabs",
+      "Professional electrical safety services including arc flash studies, short circuit analysis, and power system engineering across the USA."
+    ),
+    getBreadcrumbSchema([
+      { name: "Home", url: "https://carelabz.com/us/" },
+      { name: "Services", url: "https://carelabz.com/us/services/" },
+    ]),
+  ]);
+
   return (
     <>
       <StickyNavbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       {/* Hero Section */}
       <section className="bg-[#EEF4FF] pt-24 pb-16">

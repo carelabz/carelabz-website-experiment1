@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { StickyNavbar } from "@/components/sticky-navbar";
 import USFooter from "@/components/us-footer";
 import { getServicesByRegion, ServicePage } from "@/lib/strapi";
+import { buildJsonLd, getOrganizationSchema, getWebPageSchema, getBreadcrumbSchema } from "@/lib/jsonld";
 
 export const dynamic = "force-dynamic";
 
@@ -44,6 +45,22 @@ export async function generateMetadata({
     description: `Browse CareLabs USA ${label.toLowerCase()} electrical safety services for US facilities.`,
     alternates: {
       canonical: `https://carelabz.com/us/services/${params.category}/`,
+      languages: {
+        "en-US": `https://carelabz.com/us/services/${params.category}/`,
+        "x-default": `https://carelabz.com/us/services/${params.category}/`,
+      },
+    },
+    openGraph: {
+      title: `${label} Services | CareLabs USA`,
+      description: `Browse CareLabs USA ${label.toLowerCase()} electrical safety services.`,
+      url: `https://carelabz.com/us/services/${params.category}/`,
+      siteName: "CareLabs",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${label} Services | CareLabs USA`,
+      description: `Browse CareLabs USA ${label.toLowerCase()} electrical safety services.`,
     },
   };
 }
@@ -61,9 +78,27 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
   const categoryLabel = getCategoryLabel(category);
 
+  const jsonLd = buildJsonLd([
+    getOrganizationSchema(),
+    getWebPageSchema(
+      `https://carelabz.com/us/services/${params.category}/`,
+      `${categoryLabel} Services | CareLabs USA`,
+      `Browse CareLabs USA ${categoryLabel.toLowerCase()} electrical safety services.`
+    ),
+    getBreadcrumbSchema([
+      { name: "Home", url: "https://carelabz.com/us/" },
+      { name: "Services", url: "https://carelabz.com/us/services/" },
+      { name: categoryLabel, url: `https://carelabz.com/us/services/${params.category}/` },
+    ]),
+  ]);
+
   return (
     <>
       <StickyNavbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       {/* Hero */}
       <section className="bg-[#EEF4FF] pt-24 pb-16">

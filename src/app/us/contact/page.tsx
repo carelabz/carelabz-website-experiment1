@@ -11,6 +11,7 @@ import {
   getCountryFromHeaders,
   getCountryName,
 } from "@/lib/detect-country";
+import { buildJsonLd, getOrganizationSchema, getWebPageSchema, getBreadcrumbSchema } from "@/lib/jsonld";
 
 export const dynamic = "force-dynamic";
 
@@ -23,6 +24,24 @@ export async function generateMetadata(): Promise<Metadata> {
       "Contact the CareLabs team for electrical safety testing, calibration, and compliance services across the United States.",
     alternates: {
       canonical: "https://carelabz.com/us/contact/",
+      languages: {
+        "en-US": "https://carelabz.com/us/contact/",
+        "x-default": "https://carelabz.com/us/contact/",
+      },
+    },
+    openGraph: {
+      title: page?.metaTitle ?? "Contact CareLabs — Get a Free Consultation USA",
+      description:
+        page?.metaDescription ?? "Get in touch for a free consultation on electrical safety services.",
+      url: "https://carelabz.com/us/contact/",
+      siteName: "CareLabs",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page?.metaTitle ?? "Contact CareLabs — Get a Free Consultation USA",
+      description:
+        page?.metaDescription ?? "Get in touch for a free consultation on electrical safety services.",
     },
   };
 }
@@ -47,9 +66,26 @@ export default async function ContactPage() {
     page?.heroSubtext ??
     "Have a question or ready to start a project? Our team is here to help.";
 
+  const jsonLd = buildJsonLd([
+    getOrganizationSchema(),
+    getWebPageSchema(
+      "https://carelabz.com/us/contact/",
+      page?.metaTitle ?? "Contact CareLabs — Get a Free Consultation USA",
+      page?.metaDescription ?? "Get in touch for a free consultation on electrical safety services."
+    ),
+    getBreadcrumbSchema([
+      { name: "Home", url: "https://carelabz.com/us/" },
+      { name: "Contact", url: "https://carelabz.com/us/contact/" },
+    ]),
+  ]);
+
   return (
     <>
       <StickyNavbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main id="main-content">
         {/* Hero Section */}
         <section className="bg-[#0050B3] pt-32 pb-20 px-4">

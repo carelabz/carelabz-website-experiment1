@@ -17,6 +17,7 @@ import {
 import { StickyNavbar } from "@/components/sticky-navbar";
 import USFooter from "@/components/us-footer";
 import { getAboutPage } from "@/lib/strapi-pages";
+import { buildJsonLd, getOrganizationSchema, getWebPageSchema, getBreadcrumbSchema } from "@/lib/jsonld";
 
 export const dynamic = "force-dynamic";
 
@@ -29,6 +30,24 @@ export async function generateMetadata(): Promise<Metadata> {
       "Learn about CareLabs — our mission, values, and the team dedicated to electrical safety testing and compliance across the US.",
     alternates: {
       canonical: "https://carelabz.com/us/about/",
+      languages: {
+        "en-US": "https://carelabz.com/us/about/",
+        "x-default": "https://carelabz.com/us/about/",
+      },
+    },
+    openGraph: {
+      title: page?.metaTitle ?? "About CareLabs — Power System Consultants USA",
+      description:
+        page?.metaDescription ?? "CareLabs is a leading electrical safety engineering firm.",
+      url: "https://carelabz.com/us/about/",
+      siteName: "CareLabs",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page?.metaTitle ?? "About CareLabs — Power System Consultants USA",
+      description:
+        page?.metaDescription ?? "CareLabs is a leading electrical safety engineering firm.",
     },
   };
 }
@@ -62,9 +81,26 @@ export default async function AboutPage() {
     page?.heroSubtext ??
     "CareLabs is a trusted partner for electrical safety testing, calibration, inspection, and certification services across the United States.";
 
+  const jsonLd = buildJsonLd([
+    getOrganizationSchema(),
+    getWebPageSchema(
+      "https://carelabz.com/us/about/",
+      page?.metaTitle ?? "About CareLabs — Power System Consultants USA",
+      page?.metaDescription ?? "CareLabs is a leading electrical safety engineering firm."
+    ),
+    getBreadcrumbSchema([
+      { name: "Home", url: "https://carelabz.com/us/" },
+      { name: "About", url: "https://carelabz.com/us/about/" },
+    ]),
+  ]);
+
   return (
     <>
       <StickyNavbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main id="main-content">
         {/* Hero Section */}
         <section className="bg-[#EEF4FF] pt-32 pb-20 px-4">

@@ -5,6 +5,7 @@ import { BookOpen, ChevronRight } from "lucide-react";
 import { StickyNavbar } from "@/components/sticky-navbar";
 import USFooter from "@/components/us-footer";
 import { getBlogPosts, type BlogPost } from "@/lib/strapi-blog";
+import { buildJsonLd, getOrganizationSchema, getWebPageSchema, getBreadcrumbSchema } from "@/lib/jsonld";
 
 export const dynamic = "force-dynamic";
 
@@ -14,6 +15,24 @@ export const metadata: Metadata = {
     "Expert insights on electrical safety, arc flash studies, power system analysis, and compliance for US facilities. Stay informed with CareLabs.",
   alternates: {
     canonical: "https://carelabz.com/us/blog/",
+    languages: {
+      "en-US": "https://carelabz.com/us/blog/",
+      "x-default": "https://carelabz.com/us/blog/",
+    },
+  },
+  openGraph: {
+    title: "Electrical Safety Blog & Industry Insights | CareLabs USA",
+    description:
+      "Expert insights on arc flash analysis, power system engineering, and electrical safety compliance in the USA.",
+    url: "https://carelabz.com/us/blog/",
+    siteName: "CareLabs",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Electrical Safety Blog & Industry Insights | CareLabs USA",
+    description:
+      "Expert insights on arc flash analysis, power system engineering, and electrical safety compliance in the USA.",
   },
 };
 
@@ -45,9 +64,26 @@ export default async function BlogIndexPage() {
   const featured = sorted.slice(0, 3);
   const older = sorted.slice(3);
 
+  const jsonLd = buildJsonLd([
+    getOrganizationSchema(),
+    getWebPageSchema(
+      "https://carelabz.com/us/blog/",
+      "Electrical Safety Blog & Industry Insights | CareLabs USA",
+      "Expert insights on arc flash analysis, power system engineering, and electrical safety compliance in the USA."
+    ),
+    getBreadcrumbSchema([
+      { name: "Home", url: "https://carelabz.com/us/" },
+      { name: "Blog", url: "https://carelabz.com/us/blog/" },
+    ]),
+  ]);
+
   return (
     <>
       <StickyNavbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <main id="main-content">
         {/* Hero */}

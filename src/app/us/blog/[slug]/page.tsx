@@ -36,6 +36,22 @@ export async function generateMetadata({
     keywords: post.seoKeywords ?? undefined,
     alternates: {
       canonical: `https://carelabz.com/us/blog/${params.slug}/`,
+      languages: {
+        "en-US": `https://carelabz.com/us/blog/${params.slug}/`,
+        "x-default": `https://carelabz.com/us/blog/${params.slug}/`,
+      },
+    },
+    openGraph: {
+      title: post.metaTitle ?? `${post.title} | CareLabs USA`,
+      description: post.metaDescription ?? post.excerpt ?? undefined,
+      url: `https://carelabz.com/us/blog/${params.slug}/`,
+      siteName: "CareLabs",
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.metaTitle ?? `${post.title} | CareLabs USA`,
+      description: post.metaDescription ?? post.excerpt ?? undefined,
     },
   };
 }

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FolderOpen } from "lucide-react";
 import { StickyNavbar } from "@/components/sticky-navbar";
 import USFooter from "@/components/us-footer";
+import { buildJsonLd, getOrganizationSchema, getWebPageSchema, getBreadcrumbSchema } from "@/lib/jsonld";
 
 export const dynamic = "force-dynamic";
 
@@ -13,14 +14,49 @@ export async function generateMetadata(): Promise<Metadata> {
       "Explore how CareLabs helps clients across the US achieve electrical safety compliance and operational excellence.",
     alternates: {
       canonical: "https://carelabz.com/us/case-studies/",
+      languages: {
+        "en-US": "https://carelabz.com/us/case-studies/",
+        "x-default": "https://carelabz.com/us/case-studies/",
+      },
+    },
+    openGraph: {
+      title: "Electrical Safety Case Studies | CareLabs USA",
+      description:
+        "Real-world electrical safety project case studies from CareLabs engineers across the United States.",
+      url: "https://carelabz.com/us/case-studies/",
+      siteName: "CareLabs",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Electrical Safety Case Studies | CareLabs USA",
+      description:
+        "Real-world electrical safety project case studies from CareLabs engineers across the United States.",
     },
   };
 }
 
 export default function CaseStudiesPage() {
+  const jsonLd = buildJsonLd([
+    getOrganizationSchema(),
+    getWebPageSchema(
+      "https://carelabz.com/us/case-studies/",
+      "Electrical Safety Case Studies | CareLabs USA",
+      "Real-world electrical safety project case studies from CareLabs engineers across the United States."
+    ),
+    getBreadcrumbSchema([
+      { name: "Home", url: "https://carelabz.com/us/" },
+      { name: "Case Studies", url: "https://carelabz.com/us/case-studies/" },
+    ]),
+  ]);
+
   return (
     <>
       <StickyNavbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main id="main-content">
         {/* Hero */}
         <section className="bg-[#EEF4FF] pt-32 pb-20 px-4">
