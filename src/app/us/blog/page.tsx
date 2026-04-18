@@ -10,9 +10,9 @@ import { buildJsonLd, getOrganizationSchema, getWebPageSchema, getBreadcrumbSche
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Electrical Safety Blog | CareLabs USA",
+  title: "Electrical Safety Blog: Power System Studies & Analysis | CareLabs USA",
   description:
-    "Expert insights on electrical safety, arc flash studies, power system analysis, and compliance for US facilities. Stay informed with CareLabs.",
+    "Expert insights on electrical safety, power system study and analysis, arc flash studies, and compliance for US facilities. Stay informed with CareLabs.",
   alternates: {
     canonical: "https://carelabz.com/us/blog/",
     languages: {

@@ -202,16 +202,30 @@ export default async function ServiceDetailPage({
       {
         "@type": "Service",
         name: service.title,
-        description: service.metaDescription || undefined,
+        serviceType: "Electrical Safety Engineering",
+        description: data.definitionalLede || service.metaDescription || undefined,
         url: pageUrl,
         provider: {
-          "@type": "Organization",
+          "@type": "LocalBusiness",
           name: "CareLabs",
           url: "https://carelabz.com",
+          telephone: data.footerPhone,
+          email: data.footerEmail,
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Houston",
+            addressRegion: "TX",
+            postalCode: "77001",
+            addressCountry: "US",
+          },
         },
         areaServed: {
           "@type": "Country",
           name: "United States",
+        },
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".hero-subtext", ".faq-answer"],
         },
       },
       ...(data.faqs.length > 0
@@ -261,6 +275,22 @@ export default async function ServiceDetailPage({
           },
         ],
       },
+      ...(data.processSteps.length > 0
+        ? [
+            {
+              "@type": "HowTo",
+              name: `How CareLabs Performs ${service.title}`,
+              description: data.processHeading,
+              totalTime: "P2W",
+              step: data.processSteps.map((s, i) => ({
+                "@type": "HowToStep",
+                position: i + 1,
+                name: s.title,
+                text: s.description,
+              })),
+            },
+          ]
+        : []),
     ],
   };
 

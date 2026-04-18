@@ -1,7 +1,9 @@
 import { MetadataRoute } from "next";
+import { getBlogPosts } from "@/lib/strapi-blog";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://carelabz.com";
+
   const serviceSlugs = [
     "study-analysis/arc-flash-study",
     "study-analysis/short-circuit-analysis",
@@ -31,5 +33,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly",
   }));
 
-  return [...staticPages, ...servicePages];
+  let blogPages: MetadataRoute.Sitemap = [];
+  try {
+    const posts = await getBlogPosts("us");
+    blogPages = posts.map((post) => ({
+      url: `${baseUrl}/us/blog/${post.slug}/`,
+      lastModified: new Date(post.updatedAt || post.publishedAt),
+      priority: 0.6,
+      changeFrequency: "monthly" as const,
+    }));
+  } catch {
+    // Strapi unavailable — skip blog posts in sitemap
+  }
+
+  return [...staticPages, ...servicePages, ...blogPages];
 }
