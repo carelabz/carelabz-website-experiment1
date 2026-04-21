@@ -1,0 +1,95 @@
+{
+  "url": "https://carelabz.com/id/power-quality-analysis/",
+  "slug": "power-quality-analysis",
+  "pageType": "service",
+  "metaTitle": "Power Quality Analysis - Carelabs Indonesia",
+  "metaDescription": "",
+  "canonicalSource": "https://carelabz.com/id/power-quality-analysis/",
+  "h1": "",
+  "h2": [
+    "Power Quality Analysis",
+    "Related Services"
+  ],
+  "h3": [
+    "Curious about Our Services?"
+  ],
+  "paragraphs": [
+    "Carelabs rates the quality of electricity for Indonesian companies. Our goal is to stop power supply fluctuations from causing problems with your electrical equipment, appliances, and installations.",
+    "Nowadays, many businesses and more consumers are overly sensitive to power supply variations in data collection, monitoring, and measuring devices. Just a small number of electrical devices are built to endure the wide range of voltage swings that come with distributed electricity. Power quality specialists from Carelabs are available to help with equipment installation, control, protection, and power conditioning.",
+    "Power outages affect all electrical networks, and they happen more frequently when bad weather, natural disasters, or accidents damage power wires. Variations in the power supply are common. Three categories may be used to classify changes, disturbances, and distortions in the distribution of electricity from an electrical network:",
+    "1. The departure of a frequency from its typical frequency range is known as a frequency deviation.",
+    "2. Voltage disruptions happen when the voltage’s amplitude exceeds the normal range, but its shape is unaltered.",
+    "2.1 Voltage spikes and dips that last up to a minute are instances of transient changes.",
+    "2.2 Variations lasting more than a minute include under voltages and over voltages.",
+    "2.3 Unbalanced voltage happens when the load is not distributed equally across the phases, which leads to overheating of the apparatus.",
+    "2.4 The difference in voltage between neutral and ground",
+    "3.1 Electronics overheat, waste more energy, utilize power inefficiently, and have resonance problems because of harmonics and inter-harmonics.",
+    "3.2 Short-lived transients of less than a tenth of a second have the potential to harm switch contact surfaces, lower system performance, and precipitate the failure of motor drives and control.",
+    "Several approaches must be used to identify different power quality concerns. These strategies include:",
+    "Carelabs offers its customers the best services possible to improve the reliability and quality of electrical systems. We provide power quality analysis services in all major cities, including Jakarta, Surabaya, Bandung, Medan, and Semarang. To schedule a power quality study or to get a quote, get in touch with us right away."
+  ],
+  "bulletLists": [
+    [
+      "About Us",
+      "Services ARC Flash Study Relay Coordination Study Short Circuit Analysis Load Flow Analysis",
+      "Contact Us"
+    ],
+    [
+      "ARC Flash Study",
+      "Relay Coordination Study",
+      "Short Circuit Analysis",
+      "Load Flow Analysis"
+    ],
+    [
+      "About Us",
+      "Services ARC Flash Study Relay Coordination Study Short Circuit Analysis Load Flow Analysis",
+      "Contact Us"
+    ],
+    [
+      "ARC Flash Study",
+      "Relay Coordination Study",
+      "Short Circuit Analysis",
+      "Load Flow Analysis"
+    ],
+    [
+      "Figuring out what is wrong with the load and the electrical system.",
+      "Assessing the workplace to enhance simulation techniques for identifying solutions to power quality problems.",
+      "Figuring out the functionality and effectiveness of heavy equipment.",
+      "Increase the power factor and effectiveness of the machine.",
+      "Limit your consumption of energy.",
+      "To avoid failure and halt.",
+      "Removing components that affect power quality, such as harmonics, spikes, and transients."
+    ],
+    [
+      "Assist in reducing plc jams and voltage/frequency spikes.",
+      "To avoid unpleasant tripping, capacitor explosions, and overheating of transformers.",
+      "Your utility expenditure can be significantly reduced.",
+      "Prolong the lifespan of the electrical network’s parts.",
+      "Check to see if electrical equipment is flexible."
+    ],
+    [
+      "Computer algorithms and reduction techniques are used in harmonic analysis to spot and foresee future harmonic issues."
+    ],
+    [
+      "Surges and transients will be found during this research and analyzed.",
+      "The short-term peaks and dips in the voltage, as well as its value and trajectory, will all be monitored in this study.",
+      "Reactive power has the following purpose: This study will establish the ideal reactive power at the distribution and load ends.",
+      "In this concept, captive power would be quantified and coordinated to meet demand while lowering energy surcharges and fuel use.",
+      "Load Flow Analysis: Depending on the operating conditions, this research predicts the amounts of power flow, power factor, voltage levels, and losses in system branches."
+    ],
+    [
+      "Services",
+      "Contact Us",
+      "Who Are We"
+    ],
+    [
+      "Email Us",
+      "Chat with Us",
+      "Enquire Now"
+    ]
+  ],
+  "wordCount": 980,
+  "phones": [],
+  "emails": [],
+  "scrapedAt": "2026-04-21T18:00:10Z"
+}

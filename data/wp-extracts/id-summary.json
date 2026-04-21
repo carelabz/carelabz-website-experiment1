@@ -1,0 +1,261 @@
+{
+  "cc": "id",
+  "wpUrl": "https://carelabz.com/id/",
+  "totalPages": 35,
+  "byKind": {
+    "home": 1,
+    "about": 1,
+    "contact": 1,
+    "service": 5,
+    "blog": 27
+  },
+  "pages": [
+    {
+      "kind": "home",
+      "slug": "id",
+      "file": "data/wp-extracts\\id-id.json",
+      "wordCount": 1050,
+      "h2Count": 15
+    },
+    {
+      "kind": "about",
+      "slug": "about-us",
+      "file": "data/wp-extracts\\id-about-us.json",
+      "wordCount": 659,
+      "h2Count": 5
+    },
+    {
+      "kind": "contact",
+      "slug": "contact-us",
+      "file": "data/wp-extracts\\id-contact-us.json",
+      "wordCount": 405,
+      "h2Count": 1
+    },
+    {
+      "kind": "service",
+      "slug": "arc-flash-study",
+      "file": "data/wp-extracts\\id-arc-flash-study.json",
+      "wordCount": 996,
+      "h2Count": 5
+    },
+    {
+      "kind": "service",
+      "slug": "harmonic-study-and-analysis",
+      "file": "data/wp-extracts\\id-harmonic-study-and-analysis.json",
+      "wordCount": 718,
+      "h2Count": 2
+    },
+    {
+      "kind": "service",
+      "slug": "motor-start-analysis",
+      "file": "data/wp-extracts\\id-motor-start-analysis.json",
+      "wordCount": 668,
+      "h2Count": 2
+    },
+    {
+      "kind": "service",
+      "slug": "power-system-study-and-analysis",
+      "file": "data/wp-extracts\\id-power-system-study-and-analysis.json",
+      "wordCount": 827,
+      "h2Count": 2
+    },
+    {
+      "kind": "service",
+      "slug": "power-quality-analysis",
+      "file": "data/wp-extracts\\id-power-quality-analysis.json",
+      "wordCount": 980,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "arc-flash-studies-a-key-to-ensuring-uptime-in-indonesian-data-centers",
+      "file": "data/wp-extracts\\id-arc-flash-studies-a-key-to-ensuring-uptime-in-indonesian-data-centers.json",
+      "wordCount": 1396,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "analyze-and-assess-electric-motor-performance-in-compliance-with-indonesian-legislation",
+      "file": "data/wp-extracts\\id-analyze-and-assess-electric-motor-performance-in-compliance-with-indonesian-legislation.json",
+      "wordCount": 1105,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "how-can-the-performance-and-dependability-of-commercial-motors-be-assessed",
+      "file": "data/wp-extracts\\id-how-can-the-performance-and-dependability-of-commercial-motors-be-assessed.json",
+      "wordCount": 1204,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "the-importance-of-load-flow-and-short-circuit-analysis-for-indonesian-companies",
+      "file": "data/wp-extracts\\id-the-importance-of-load-flow-and-short-circuit-analysis-for-indonesian-companies.json",
+      "wordCount": 1130,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "how-to-perform-a-study-of-power-quality-in-indonesia",
+      "file": "data/wp-extracts\\id-how-to-perform-a-study-of-power-quality-in-indonesia.json",
+      "wordCount": 1187,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "power-quality-working-principles-in-indonesia",
+      "file": "data/wp-extracts\\id-power-quality-working-principles-in-indonesia.json",
+      "wordCount": 1644,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "indonesian-power-system-harmonic-analysis",
+      "file": "data/wp-extracts\\id-indonesian-power-system-harmonic-analysis.json",
+      "wordCount": 1194,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "the-study-of-the-power-system-looks-at-relay-coordination-short-circuits-and-load-flow",
+      "file": "data/wp-extracts\\id-the-study-of-the-power-system-looks-at-relay-coordination-short-circuits-and-load-flow.json",
+      "wordCount": 1564,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "significance-of-arc-flash-risk-evaluation-and-mitigation-techniques",
+      "file": "data/wp-extracts\\id-significance-of-arc-flash-risk-evaluation-and-mitigation-techniques.json",
+      "wordCount": 1163,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "arc-flash-analysis-step-by-step-instructions-for-indonesia",
+      "file": "data/wp-extracts\\id-arc-flash-analysis-step-by-step-instructions-for-indonesia.json",
+      "wordCount": 1222,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "why-is-harmonic-analysis-and-study-so-important-for-indonesian-businesses",
+      "file": "data/wp-extracts\\id-why-is-harmonic-analysis-and-study-so-important-for-indonesian-businesses.json",
+      "wordCount": 1164,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "short-circuit-analysis",
+      "file": "data/wp-extracts\\id-short-circuit-analysis.json",
+      "wordCount": 769,
+      "h2Count": 5
+    },
+    {
+      "kind": "blog",
+      "slug": "relay-coordination-study",
+      "file": "data/wp-extracts\\id-relay-coordination-study.json",
+      "wordCount": 800,
+      "h2Count": 5
+    },
+    {
+      "kind": "blog",
+      "slug": "load-flow-analysis",
+      "file": "data/wp-extracts\\id-load-flow-analysis.json",
+      "wordCount": 922,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "help-center",
+      "file": "data/wp-extracts\\id-help-center.json",
+      "wordCount": 2,
+      "h2Count": 0
+    },
+    {
+      "kind": "blog",
+      "slug": "our-services",
+      "file": "data/wp-extracts\\id-our-services.json",
+      "wordCount": 529,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "our-blogs",
+      "file": "data/wp-extracts\\id-our-blogs.json",
+      "wordCount": 444,
+      "h2Count": 6
+    },
+    {
+      "kind": "blog",
+      "slug": "arc-flash-study-in-indonesia",
+      "file": "data/wp-extracts\\id-arc-flash-study-in-indonesia.json",
+      "wordCount": 984,
+      "h2Count": 9
+    },
+    {
+      "kind": "blog",
+      "slug": "relay-coordination-study-in-indonesia",
+      "file": "data/wp-extracts\\id-relay-coordination-study-in-indonesia.json",
+      "wordCount": 852,
+      "h2Count": 9
+    },
+    {
+      "kind": "blog",
+      "slug": "short-circuit-analysis-in-indonesia",
+      "file": "data/wp-extracts\\id-short-circuit-analysis-in-indonesia.json",
+      "wordCount": 749,
+      "h2Count": 8
+    },
+    {
+      "kind": "blog",
+      "slug": "load-flow-analysis-in-indonesia",
+      "file": "data/wp-extracts\\id-load-flow-analysis-in-indonesia.json",
+      "wordCount": 818,
+      "h2Count": 9
+    },
+    {
+      "kind": "blog",
+      "slug": "arc-flash",
+      "file": "data/wp-extracts\\id-arc-flash.json",
+      "wordCount": 202,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "blog-post",
+      "file": "data/wp-extracts\\id-blog-post.json",
+      "wordCount": 244,
+      "h2Count": 4
+    },
+    {
+      "kind": "blog",
+      "slug": "harmonic-study-analysis",
+      "file": "data/wp-extracts\\id-harmonic-study-analysis.json",
+      "wordCount": 132,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "power-system-study-analysis",
+      "file": "data/wp-extracts\\id-power-system-study-analysis.json",
+      "wordCount": 130,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "arc-flash-protection",
+      "file": "data/wp-extracts\\id-arc-flash-protection.json",
+      "wordCount": 1396,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "indonesia-data-center-market",
+      "file": "data/wp-extracts\\id-indonesia-data-center-market.json",
+      "wordCount": 1396,
+      "h2Count": 1
+    }
+  ],
+  "skipped": {},
+  "discovered": 52
+}

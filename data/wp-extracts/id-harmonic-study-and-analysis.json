@@ -1,0 +1,72 @@
+{
+  "url": "https://carelabz.com/id/harmonic-study-and-analysis/",
+  "slug": "harmonic-study-and-analysis",
+  "pageType": "service",
+  "metaTitle": "Harmonic Study and Analysis - Carelabs Indonesia",
+  "metaDescription": "",
+  "canonicalSource": "https://carelabz.com/id/harmonic-study-and-analysis/",
+  "h1": "Harmonic Study and Analysis",
+  "h2": [
+    "Harmonic Study & Analysis",
+    "Related Services"
+  ],
+  "h3": [
+    "Curious about Our Services?"
+  ],
+  "paragraphs": [
+    "Harmonic voltage analysis is a mathematical technique that analyses data to predict likely resonances and harmonic distortion levels. Examples of equipment that introduce harmonic frequencies into the electrical system include AC variable frequency drives, DC drives, fluorescent light ballasts, and computers. Equipment failure is likely due to extremely high harmonic voltage and current levels. Thus, studying and assessing harmonics at the proper time is crucial.",
+    "Carelabs provides electrical installation safety inspection, testing, calibration, certification, and harmonic analysis. Qualified professionals will review the harmonic risks, training programs, paperwork, and your electrical safety program’s personal protective equipment (PPE) to verify that it is up-to-date, compliant, and exhaustive.",
+    "Carelabs is able to identify harmonic distortions early on and minimize their consequences to ensure the safe operation of equipment. Harmonics are electric voltages and currents that can affect an electrical system’s performance. They are inefficient at heating and can compromise power quality. Harmonic voltage analysis is a mathematical method for predicting possible resonances and degrees of harmonic distortion. The current harmonic limit for 415-volt systems is 5%, with 4% of harmonics being odd and 2% even.",
+    "Harmonic difficulties are infrequent, but when they do arise, they tend to diminish the dependability, quality, and efficiency of the power system. Thus, the study and evaluation of harmony is crucial.",
+    "The research and analysis of harmonics will aid in discovering what may be causing power quality concerns. This will assist in avoiding design challenges associated with harmonics and decrease the chance of unwanted effects.",
+    "If harmonics in the background have already been measured, the second stage consists of higher ratings.",
+    "Carelabs employs crew members in many locations to guarantee that our specialists are readily available for normal activities and emergency situations. Carelabs obtained ISO 9001:2008 accreditation quickly and created a clientele with a favorable reputation and positive evaluations.",
+    "We provide research and analysis services in Jakarta, Surabaya, Bandung, Medan, and Semarang, among other major locations in Indonesia.",
+    "Call us now to book your harmonic analysis and study in Indonesia or obtain a quote."
+  ],
+  "bulletLists": [
+    [
+      "High voltage and alternating current on a global scale.",
+      "Failure and destruction of equipment due to significant voltage distortion.",
+      "An increase in the amount of internal energy in components causes an increase in their fragility and a decrease in their longevity.",
+      "Failures can cause branch circuit breakers to trip.",
+      "Mistake in measuring"
+    ],
+    [
+      "Explosions and fires in distribution and wiring systems.",
+      "A failure of the generators",
+      "The decrease in the system’s power factor.",
+      "The installation and utility costs are costly.",
+      "Decreased efficiency.",
+      "There is no need for idle time or unnecessary driving.",
+      "Usage of bigger engines."
+    ],
+    [
+      "Safeguarding against voltage and current harmonics",
+      "Frequency variations are restricted.",
+      "Voltage and current are out of sync.",
+      "Enhance power factor analysis and keep the value close to one.",
+      "Regulates voltage fluctuations."
+    ],
+    [
+      "Emphasize the nonlinear loads, capacitor banks, and long medium-voltage cables on the electrical circuit’s single-line design.",
+      "Locate the connecting point (PCC)",
+      "Identify which system buses are prone to harmonic distortions inside the facility. Obtain information on harmonics for all nonlinear loads.",
+      "Get crucial information on the voltage and current harmonics at the specified PCC, including the maximum and lowest short circuit fault levels and harmonic levels authorized in Singapore.",
+      "ETAP (Electrical Transient Analysis Program) is used to analyze the electrical network’s harmonics.",
+      "Calculate the aggregate and individual voltage and current wave distortion values at the buses and PCC.",
+      "Draw the frequency spectrum for the harmonics.",
+      "If the levels of harmonic distortion surpass the acceptable threshold, a solution is proposed and applied.",
+      "Rerun the analysis once the countermeasure has been implemented."
+    ],
+    [
+      "Stage 2 permits the converter size to vary depending on the fault level and kind of converter if the backdrop is less than 25%.",
+      "If the background is between 25 and 75%, the converter ratings may be decreased by 50%.",
+      "For the top background, a thorough harmonic analysis is performed."
+    ]
+  ],
+  "wordCount": 718,
+  "phones": [],
+  "emails": [],
+  "scrapedAt": "2026-04-21T18:00:04Z"
+}
