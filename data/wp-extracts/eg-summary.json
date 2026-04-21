@@ -1,0 +1,158 @@
+{
+  "cc": "eg",
+  "wpUrl": "https://carelabz.com/eg/",
+  "totalPages": 20,
+  "byKind": {
+    "home": 1,
+    "about": 1,
+    "contact": 1,
+    "service": 3,
+    "blog": 14
+  },
+  "pages": [
+    {
+      "kind": "home",
+      "slug": "eg",
+      "file": "data/wp-extracts\\eg-eg.json",
+      "wordCount": 916,
+      "h2Count": 6
+    },
+    {
+      "kind": "about",
+      "slug": "about-us",
+      "file": "data/wp-extracts\\eg-about-us.json",
+      "wordCount": 986,
+      "h2Count": 6
+    },
+    {
+      "kind": "contact",
+      "slug": "contact-us",
+      "file": "data/wp-extracts\\eg-contact-us.json",
+      "wordCount": 319,
+      "h2Count": 4
+    },
+    {
+      "kind": "service",
+      "slug": "arc-flash-study",
+      "file": "data/wp-extracts\\eg-arc-flash-study.json",
+      "wordCount": 1364,
+      "h2Count": 5
+    },
+    {
+      "kind": "service",
+      "slug": "power-quality-analysis",
+      "file": "data/wp-extracts\\eg-power-quality-analysis.json",
+      "wordCount": 1272,
+      "h2Count": 4
+    },
+    {
+      "kind": "service",
+      "slug": "motor-start-analysis",
+      "file": "data/wp-extracts\\eg-motor-start-analysis.json",
+      "wordCount": 1349,
+      "h2Count": 4
+    },
+    {
+      "kind": "blog",
+      "slug": "verify-egyptian-electrical-motor-performance-regulations-compliance",
+      "file": "data/wp-extracts\\eg-verify-egyptian-electrical-motor-performance-regulations-compliance.json",
+      "wordCount": 1169,
+      "h2Count": 6
+    },
+    {
+      "kind": "blog",
+      "slug": "how-can-the-performance-and-dependability-of-commercial-motors-be-evaluated",
+      "file": "data/wp-extracts\\eg-how-can-the-performance-and-dependability-of-commercial-motors-be-evaluated.json",
+      "wordCount": 1301,
+      "h2Count": 4
+    },
+    {
+      "kind": "blog",
+      "slug": "analysis-of-the-power-systems-coordination-of-relays-short-circuits-and-load-flow",
+      "file": "data/wp-extracts\\eg-analysis-of-the-power-systems-coordination-of-relays-short-circuits-and-load-flow.json",
+      "wordCount": 1611,
+      "h2Count": 4
+    },
+    {
+      "kind": "blog",
+      "slug": "how-to-analyze-egyptian-power-quality",
+      "file": "data/wp-extracts\\eg-how-to-analyze-egyptian-power-quality.json",
+      "wordCount": 1273,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "https-carelabz-com-eg-principles-of-work-on-egypt-power-quality",
+      "file": "data/wp-extracts\\eg-https-carelabz-com-eg-principles-of-work-on-egypt-power-quality.json",
+      "wordCount": 1727,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "harmonics-analysis-of-the-egypt-electric-power-system",
+      "file": "data/wp-extracts\\eg-harmonics-analysis-of-the-egypt-electric-power-system.json",
+      "wordCount": 1292,
+      "h2Count": 5
+    },
+    {
+      "kind": "blog",
+      "slug": "how-significant-is-harmonic-analysis-in-egyptian-firm",
+      "file": "data/wp-extracts\\eg-how-significant-is-harmonic-analysis-in-egyptian-firm.json",
+      "wordCount": 1232,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "arc-flash-risk-must-be-evaluated-and-reduced-immediately",
+      "file": "data/wp-extracts\\eg-arc-flash-risk-must-be-evaluated-and-reduced-immediately.json",
+      "wordCount": 1255,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "power-system-study-analysis",
+      "file": "data/wp-extracts\\eg-power-system-study-analysis.json",
+      "wordCount": 1382,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "harmonic-study-analysis",
+      "file": "data/wp-extracts\\eg-harmonic-study-analysis.json",
+      "wordCount": 1357,
+      "h2Count": 4
+    },
+    {
+      "kind": "blog",
+      "slug": "404-2",
+      "file": "data/wp-extracts\\eg-404-2.json",
+      "wordCount": 258,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "footer",
+      "file": "data/wp-extracts\\eg-footer.json",
+      "wordCount": 916,
+      "h2Count": 6
+    },
+    {
+      "kind": "blog",
+      "slug": "uncategorized",
+      "file": "data/wp-extracts\\eg-uncategorized.json",
+      "wordCount": 300,
+      "h2Count": 0
+    },
+    {
+      "kind": "blog",
+      "slug": "admin_eg",
+      "file": "data/wp-extracts\\eg-admin_eg.json",
+      "wordCount": 300,
+      "h2Count": 0
+    }
+  ],
+  "skipped": {
+    "service-legacy": 3
+  },
+  "discovered": 26
+}
