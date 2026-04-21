@@ -1,0 +1,180 @@
+{
+  "cc": "fr",
+  "wpUrl": "https://carelabz.com/fr/",
+  "totalPages": 23,
+  "byKind": {
+    "home": 1,
+    "about": 1,
+    "contact": 1,
+    "service": 5,
+    "case-study": 1,
+    "blog": 14
+  },
+  "pages": [
+    {
+      "kind": "home",
+      "slug": "fr",
+      "file": "data/wp-extracts\\fr-fr.json",
+      "wordCount": 794,
+      "h2Count": 0
+    },
+    {
+      "kind": "about",
+      "slug": "about-us",
+      "file": "data/wp-extracts\\fr-about-us.json",
+      "wordCount": 888,
+      "h2Count": 0
+    },
+    {
+      "kind": "contact",
+      "slug": "contact-us",
+      "file": "data/wp-extracts\\fr-contact-us.json",
+      "wordCount": 607,
+      "h2Count": 3
+    },
+    {
+      "kind": "service",
+      "slug": "arc-flash-study",
+      "file": "data/wp-extracts\\fr-arc-flash-study.json",
+      "wordCount": 1233,
+      "h2Count": 6
+    },
+    {
+      "kind": "service",
+      "slug": "harmonic-study-and-analysis",
+      "file": "data/wp-extracts\\fr-harmonic-study-and-analysis.json",
+      "wordCount": 1209,
+      "h2Count": 5
+    },
+    {
+      "kind": "service",
+      "slug": "motor-start-analysis",
+      "file": "data/wp-extracts\\fr-motor-start-analysis.json",
+      "wordCount": 1185,
+      "h2Count": 5
+    },
+    {
+      "kind": "service",
+      "slug": "power-quality-analysis",
+      "file": "data/wp-extracts\\fr-power-quality-analysis.json",
+      "wordCount": 1164,
+      "h2Count": 5
+    },
+    {
+      "kind": "service",
+      "slug": "power-system-study-and-analysis",
+      "file": "data/wp-extracts\\fr-power-system-study-and-analysis.json",
+      "wordCount": 1238,
+      "h2Count": 6
+    },
+    {
+      "kind": "case-study",
+      "slug": "case-study",
+      "file": "data/wp-extracts\\fr-case-study.json",
+      "wordCount": 513,
+      "h2Count": 0
+    },
+    {
+      "kind": "blog",
+      "slug": "load-flow-short-circuit-and-relay-coordination-in-power-system-analysis",
+      "file": "data/wp-extracts\\fr-load-flow-short-circuit-and-relay-coordination-in-power-system-analysis.json",
+      "wordCount": 1553,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "verify-that-electrical-motor-performance-complies-with-french-regulations-by-inspecting-and-confirming",
+      "file": "data/wp-extracts\\fr-verify-that-electrical-motor-performance-complies-with-french-regulations-by-inspecting-and-confirming.json",
+      "wordCount": 1080,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "how-are-the-effectiveness-and-dependability-of-commercial-motors-assessed",
+      "file": "data/wp-extracts\\fr-how-are-the-effectiveness-and-dependability-of-commercial-motors-assessed.json",
+      "wordCount": 1219,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "how-to-conduct-an-analysis-of-power-quality-in-france",
+      "file": "data/wp-extracts\\fr-how-to-conduct-an-analysis-of-power-quality-in-france.json",
+      "wordCount": 1202,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "working-principles-for-power-quality-in-france",
+      "file": "data/wp-extracts\\fr-working-principles-for-power-quality-in-france.json",
+      "wordCount": 1638,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "frances-power-system-harmonic-analysis",
+      "file": "data/wp-extracts\\fr-frances-power-system-harmonic-analysis.json",
+      "wordCount": 1245,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "why-harmonic-analysis-and-study-crucial-for-french-businesses",
+      "file": "data/wp-extracts\\fr-why-harmonic-analysis-and-study-crucial-for-french-businesses.json",
+      "wordCount": 1154,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "the-importance-of-arc-flash-hazard-analysis-and-mitigation-techniques",
+      "file": "data/wp-extracts\\fr-the-importance-of-arc-flash-hazard-analysis-and-mitigation-techniques.json",
+      "wordCount": 1180,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "blog",
+      "file": "data/wp-extracts\\fr-blog.json",
+      "wordCount": 597,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "harmonic-study",
+      "file": "data/wp-extracts\\fr-harmonic-study.json",
+      "wordCount": 1245,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "motor-start-study",
+      "file": "data/wp-extracts\\fr-motor-start-study.json",
+      "wordCount": 1080,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "power-quality-study",
+      "file": "data/wp-extracts\\fr-power-quality-study.json",
+      "wordCount": 133,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "power-system-study",
+      "file": "data/wp-extracts\\fr-power-system-study.json",
+      "wordCount": 1104,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "admin_fr",
+      "file": "data/wp-extracts\\fr-admin_fr.json",
+      "wordCount": 656,
+      "h2Count": 10
+    }
+  ],
+  "skipped": {
+    "service-legacy": 2
+  },
+  "discovered": 27
+}
