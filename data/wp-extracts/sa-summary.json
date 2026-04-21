@@ -1,0 +1,151 @@
+{
+  "cc": "sa",
+  "wpUrl": "https://carelabz.com/sa/",
+  "totalPages": 19,
+  "byKind": {
+    "home": 1,
+    "about": 1,
+    "contact": 1,
+    "service": 3,
+    "blog": 13
+  },
+  "pages": [
+    {
+      "kind": "home",
+      "slug": "sa",
+      "file": "data/wp-extracts\\sa-sa.json",
+      "wordCount": 455,
+      "h2Count": 15
+    },
+    {
+      "kind": "about",
+      "slug": "about-us",
+      "file": "data/wp-extracts\\sa-about-us.json",
+      "wordCount": 531,
+      "h2Count": 1
+    },
+    {
+      "kind": "contact",
+      "slug": "contact-us",
+      "file": "data/wp-extracts\\sa-contact-us.json",
+      "wordCount": 238,
+      "h2Count": 3
+    },
+    {
+      "kind": "service",
+      "slug": "arc-flash-study",
+      "file": "data/wp-extracts\\sa-arc-flash-study.json",
+      "wordCount": 900,
+      "h2Count": 11
+    },
+    {
+      "kind": "service",
+      "slug": "power-quality-analysis",
+      "file": "data/wp-extracts\\sa-power-quality-analysis.json",
+      "wordCount": 810,
+      "h2Count": 10
+    },
+    {
+      "kind": "service",
+      "slug": "motor-start-analysis",
+      "file": "data/wp-extracts\\sa-motor-start-analysis.json",
+      "wordCount": 911,
+      "h2Count": 10
+    },
+    {
+      "kind": "blog",
+      "slug": "verify-saudi-arabian-electrical-motor-performance-regulations-compliance",
+      "file": "data/wp-extracts\\sa-verify-saudi-arabian-electrical-motor-performance-regulations-compliance.json",
+      "wordCount": 842,
+      "h2Count": 6
+    },
+    {
+      "kind": "blog",
+      "slug": "how-can-the-performance-and-dependability-of-commercial-motors-be-evaluated",
+      "file": "data/wp-extracts\\sa-how-can-the-performance-and-dependability-of-commercial-motors-be-evaluated.json",
+      "wordCount": 972,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "analysis-of-the-power-systems-coordination-of-relays-short-circuits-and-load-flow",
+      "file": "data/wp-extracts\\sa-analysis-of-the-power-systems-coordination-of-relays-short-circuits-and-load-flow.json",
+      "wordCount": 1277,
+      "h2Count": 8
+    },
+    {
+      "kind": "blog",
+      "slug": "how-to-analyze-saudi-arabian-power-quality",
+      "file": "data/wp-extracts\\sa-how-to-analyze-saudi-arabian-power-quality.json",
+      "wordCount": 741,
+      "h2Count": 6
+    },
+    {
+      "kind": "blog",
+      "slug": "principles-of-work-on-saudi-arabia-power-quality",
+      "file": "data/wp-extracts\\sa-principles-of-work-on-saudi-arabia-power-quality.json",
+      "wordCount": 1397,
+      "h2Count": 10
+    },
+    {
+      "kind": "blog",
+      "slug": "harmonics-analysis-of-the-saudi-arabian-electric-power-system",
+      "file": "data/wp-extracts\\sa-harmonics-analysis-of-the-saudi-arabian-electric-power-system.json",
+      "wordCount": 814,
+      "h2Count": 8
+    },
+    {
+      "kind": "blog",
+      "slug": "how-significant-is-harmonic-analysis-in-saudi-arabian-businesses",
+      "file": "data/wp-extracts\\sa-how-significant-is-harmonic-analysis-in-saudi-arabian-businesses.json",
+      "wordCount": 903,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "arc-flash-risk-must-be-assessed-and-decreased-right-away",
+      "file": "data/wp-extracts\\sa-arc-flash-risk-must-be-assessed-and-decreased-right-away.json",
+      "wordCount": 918,
+      "h2Count": 11
+    },
+    {
+      "kind": "blog",
+      "slug": "404-2",
+      "file": "data/wp-extracts\\sa-404-2.json",
+      "wordCount": 186,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "harmonic-study-analysis",
+      "file": "data/wp-extracts\\sa-harmonic-study-analysis.json",
+      "wordCount": 892,
+      "h2Count": 10
+    },
+    {
+      "kind": "blog",
+      "slug": "power-system-study-analysis",
+      "file": "data/wp-extracts\\sa-power-system-study-analysis.json",
+      "wordCount": 907,
+      "h2Count": 13
+    },
+    {
+      "kind": "blog",
+      "slug": "uncategorized",
+      "file": "data/wp-extracts\\sa-uncategorized.json",
+      "wordCount": 300,
+      "h2Count": 0
+    },
+    {
+      "kind": "blog",
+      "slug": "admin_sa",
+      "file": "data/wp-extracts\\sa-admin_sa.json",
+      "wordCount": 300,
+      "h2Count": 0
+    }
+  ],
+  "skipped": {
+    "service-legacy": 3
+  },
+  "discovered": 25
+}
