@@ -1,0 +1,277 @@
+{
+  "cc": "th",
+  "wpUrl": "https://carelabz.com/th/",
+  "totalPages": 37,
+  "byKind": {
+    "home": 1,
+    "about": 1,
+    "contact": 1,
+    "service": 1,
+    "blog": 33
+  },
+  "pages": [
+    {
+      "kind": "home",
+      "slug": "th",
+      "file": "data/wp-extracts\\th-th.json",
+      "wordCount": 1243,
+      "h2Count": 16
+    },
+    {
+      "kind": "about",
+      "slug": "about-us",
+      "file": "data/wp-extracts\\th-about-us.json",
+      "wordCount": 770,
+      "h2Count": 6
+    },
+    {
+      "kind": "contact",
+      "slug": "contact-us",
+      "file": "data/wp-extracts\\th-contact-us.json",
+      "wordCount": 501,
+      "h2Count": 2
+    },
+    {
+      "kind": "service",
+      "slug": "arc-flash-study",
+      "file": "data/wp-extracts\\th-arc-flash-study.json",
+      "wordCount": 1114,
+      "h2Count": 9
+    },
+    {
+      "kind": "blog",
+      "slug": "short-circuit-analysis",
+      "file": "data/wp-extracts\\th-short-circuit-analysis.json",
+      "wordCount": 1111,
+      "h2Count": 9
+    },
+    {
+      "kind": "blog",
+      "slug": "load-flow-analysis",
+      "file": "data/wp-extracts\\th-load-flow-analysis.json",
+      "wordCount": 1139,
+      "h2Count": 8
+    },
+    {
+      "kind": "blog",
+      "slug": "relay-coordination-study",
+      "file": "data/wp-extracts\\th-relay-coordination-study.json",
+      "wordCount": 1148,
+      "h2Count": 9
+    },
+    {
+      "kind": "blog",
+      "slug": "analyze-and-assess-electric-motor-performance-in-compliance-with-thailand-legislation",
+      "file": "data/wp-extracts\\th-analyze-and-assess-electric-motor-performance-in-compliance-with-thailand-legislation.json",
+      "wordCount": 1187,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "how-can-the-performance-and-dependability-of-commercial-motors-be-assessed",
+      "file": "data/wp-extracts\\th-how-can-the-performance-and-dependability-of-commercial-motors-be-assessed.json",
+      "wordCount": 1286,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "how-to-perform-a-study-of-power-quality-in-thailand",
+      "file": "data/wp-extracts\\th-how-to-perform-a-study-of-power-quality-in-thailand.json",
+      "wordCount": 1264,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "power-quality-working-principles-in-thailand",
+      "file": "data/wp-extracts\\th-power-quality-working-principles-in-thailand.json",
+      "wordCount": 1721,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "thailand-power-system-harmonic-analysis",
+      "file": "data/wp-extracts\\th-thailand-power-system-harmonic-analysis.json",
+      "wordCount": 1266,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "why-is-harmonic-analysis-and-study-so-important-for-thai-businesses",
+      "file": "data/wp-extracts\\th-why-is-harmonic-analysis-and-study-so-important-for-thai-businesses.json",
+      "wordCount": 1217,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "significance-of-arc-flash-risk-evaluation-and-mitigation-techniques",
+      "file": "data/wp-extracts\\th-significance-of-arc-flash-risk-evaluation-and-mitigation-techniques.json",
+      "wordCount": 1191,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "our-services",
+      "file": "data/wp-extracts\\th-our-services.json",
+      "wordCount": 678,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "our-blogs",
+      "file": "data/wp-extracts\\th-our-blogs.json",
+      "wordCount": 574,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "arc-flash",
+      "file": "data/wp-extracts\\th-arc-flash.json",
+      "wordCount": 1092,
+      "h2Count": 10
+    },
+    {
+      "kind": "blog",
+      "slug": "blog-post",
+      "file": "data/wp-extracts\\th-blog-post.json",
+      "wordCount": 574,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "harmonic-study-analysis",
+      "file": "data/wp-extracts\\th-harmonic-study-analysis.json",
+      "wordCount": 574,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "motor-start-analysis",
+      "file": "data/wp-extracts\\th-motor-start-analysis.json",
+      "wordCount": 1187,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "power-quality-analysis",
+      "file": "data/wp-extracts\\th-power-quality-analysis.json",
+      "wordCount": 1264,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "power-system-study-analysis",
+      "file": "data/wp-extracts\\th-power-system-study-analysis.json",
+      "wordCount": 1243,
+      "h2Count": 16
+    },
+    {
+      "kind": "blog",
+      "slug": "arc-flash-safety",
+      "file": "data/wp-extracts\\th-arc-flash-safety.json",
+      "wordCount": 1092,
+      "h2Count": 10
+    },
+    {
+      "kind": "blog",
+      "slug": "care-labs",
+      "file": "data/wp-extracts\\th-care-labs.json",
+      "wordCount": 1786,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "compliance-standards",
+      "file": "data/wp-extracts\\th-compliance-standards.json",
+      "wordCount": 1786,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "data-center-operations",
+      "file": "data/wp-extracts\\th-data-center-operations.json",
+      "wordCount": 1786,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "data-center-risk-mitigation",
+      "file": "data/wp-extracts\\th-data-center-risk-mitigation.json",
+      "wordCount": 1786,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "data-centers-in-thailand",
+      "file": "data/wp-extracts\\th-data-centers-in-thailand.json",
+      "wordCount": 1786,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "electrical-hazards",
+      "file": "data/wp-extracts\\th-electrical-hazards.json",
+      "wordCount": 1786,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "electrical-safety",
+      "file": "data/wp-extracts\\th-electrical-safety.json",
+      "wordCount": 1786,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "ieee-1584",
+      "file": "data/wp-extracts\\th-ieee-1584.json",
+      "wordCount": 1243,
+      "h2Count": 16
+    },
+    {
+      "kind": "blog",
+      "slug": "nfpa-70e",
+      "file": "data/wp-extracts\\th-nfpa-70e.json",
+      "wordCount": 1786,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "power-system-safety",
+      "file": "data/wp-extracts\\th-power-system-safety.json",
+      "wordCount": 1786,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "ppe-for-arc-flash",
+      "file": "data/wp-extracts\\th-ppe-for-arc-flash.json",
+      "wordCount": 1092,
+      "h2Count": 10
+    },
+    {
+      "kind": "blog",
+      "slug": "thailand-digital-transformation",
+      "file": "data/wp-extracts\\th-thailand-digital-transformation.json",
+      "wordCount": 1786,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "admin_sg",
+      "file": "data/wp-extracts\\th-admin_sg.json",
+      "wordCount": 574,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "sajini_th",
+      "file": "data/wp-extracts\\th-sajini_th.json",
+      "wordCount": 1786,
+      "h2Count": 2
+    }
+  ],
+  "skipped": {
+    "service-legacy": 8
+  },
+  "discovered": 48
+}
