@@ -1,0 +1,102 @@
+{
+  "cc": "no",
+  "wpUrl": "https://carelabz.com/no/",
+  "totalPages": 12,
+  "byKind": {
+    "home": 1,
+    "about": 1,
+    "contact": 1,
+    "service": 5,
+    "blog": 4
+  },
+  "pages": [
+    {
+      "kind": "home",
+      "slug": "no",
+      "file": "data/wp-extracts\\no-no.json",
+      "wordCount": 537,
+      "h2Count": 13
+    },
+    {
+      "kind": "about",
+      "slug": "about-us",
+      "file": "data/wp-extracts\\no-about-us.json",
+      "wordCount": 410,
+      "h2Count": 20
+    },
+    {
+      "kind": "contact",
+      "slug": "contact-us",
+      "file": "data/wp-extracts\\no-contact-us.json",
+      "wordCount": 365,
+      "h2Count": 16
+    },
+    {
+      "kind": "service",
+      "slug": "arc-flash-study",
+      "file": "data/wp-extracts\\no-arc-flash-study.json",
+      "wordCount": 893,
+      "h2Count": 14
+    },
+    {
+      "kind": "service",
+      "slug": "harmonic-study-and-analysis",
+      "file": "data/wp-extracts\\no-harmonic-study-and-analysis.json",
+      "wordCount": 910,
+      "h2Count": 14
+    },
+    {
+      "kind": "service",
+      "slug": "power-quality-analysis",
+      "file": "data/wp-extracts\\no-power-quality-analysis.json",
+      "wordCount": 866,
+      "h2Count": 14
+    },
+    {
+      "kind": "service",
+      "slug": "power-system-study-and-analysis",
+      "file": "data/wp-extracts\\no-power-system-study-and-analysis.json",
+      "wordCount": 948,
+      "h2Count": 14
+    },
+    {
+      "kind": "service",
+      "slug": "motor-start-analysis",
+      "file": "data/wp-extracts\\no-motor-start-analysis.json",
+      "wordCount": 989,
+      "h2Count": 14
+    },
+    {
+      "kind": "blog",
+      "slug": "home-demo",
+      "file": "data/wp-extracts\\no-home-demo.json",
+      "wordCount": 258,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "our-services",
+      "file": "data/wp-extracts\\no-our-services.json",
+      "wordCount": 259,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "blog-post",
+      "file": "data/wp-extracts\\no-blog-post.json",
+      "wordCount": 677,
+      "h2Count": 22
+    },
+    {
+      "kind": "blog",
+      "slug": "admin_ie",
+      "file": "data/wp-extracts\\no-admin_ie.json",
+      "wordCount": 677,
+      "h2Count": 22
+    }
+  ],
+  "skipped": {
+    "service-legacy": 3
+  },
+  "discovered": 24
+}
