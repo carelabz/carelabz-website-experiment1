@@ -1,0 +1,151 @@
+{
+  "cc": "pe",
+  "wpUrl": "https://carelabz.com/pe/",
+  "totalPages": 19,
+  "byKind": {
+    "home": 1,
+    "about": 1,
+    "contact": 1,
+    "service": 5,
+    "blog": 11
+  },
+  "pages": [
+    {
+      "kind": "home",
+      "slug": "pe",
+      "file": "data/wp-extracts\\pe-pe.json",
+      "wordCount": 836,
+      "h2Count": 13
+    },
+    {
+      "kind": "about",
+      "slug": "about-us",
+      "file": "data/wp-extracts\\pe-about-us.json",
+      "wordCount": 699,
+      "h2Count": 1
+    },
+    {
+      "kind": "contact",
+      "slug": "contact-us",
+      "file": "data/wp-extracts\\pe-contact-us.json",
+      "wordCount": 439,
+      "h2Count": 2
+    },
+    {
+      "kind": "service",
+      "slug": "arc-flash-study",
+      "file": "data/wp-extracts\\pe-arc-flash-study.json",
+      "wordCount": 1340,
+      "h2Count": 2
+    },
+    {
+      "kind": "service",
+      "slug": "harmonic-study-and-analysis",
+      "file": "data/wp-extracts\\pe-harmonic-study-and-analysis.json",
+      "wordCount": 1400,
+      "h2Count": 2
+    },
+    {
+      "kind": "service",
+      "slug": "motor-start-analysis",
+      "file": "data/wp-extracts\\pe-motor-start-analysis.json",
+      "wordCount": 1398,
+      "h2Count": 2
+    },
+    {
+      "kind": "service",
+      "slug": "power-quality-analysis",
+      "file": "data/wp-extracts\\pe-power-quality-analysis.json",
+      "wordCount": 1452,
+      "h2Count": 2
+    },
+    {
+      "kind": "service",
+      "slug": "power-system-study-and-analysis",
+      "file": "data/wp-extracts\\pe-power-system-study-and-analysis.json",
+      "wordCount": 1543,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "how-can-efficiency-and-reliability-of-commercial-motors-be-evaluated",
+      "file": "data/wp-extracts\\pe-how-can-efficiency-and-reliability-of-commercial-motors-be-evaluated.json",
+      "wordCount": 955,
+      "h2Count": 12
+    },
+    {
+      "kind": "blog",
+      "slug": "examine-and-confirm-electrical-motor-performance-in-compliance-with-peruvian-regulations",
+      "file": "data/wp-extracts\\pe-examine-and-confirm-electrical-motor-performance-in-compliance-with-peruvian-regulations.json",
+      "wordCount": 824,
+      "h2Count": 11
+    },
+    {
+      "kind": "blog",
+      "slug": "load-flow-short-circuit-and-relay-coordination-in-power-system-analysis",
+      "file": "data/wp-extracts\\pe-load-flow-short-circuit-and-relay-coordination-in-power-system-analysis.json",
+      "wordCount": 1262,
+      "h2Count": 12
+    },
+    {
+      "kind": "blog",
+      "slug": "how-to-perform-a-power-quality-analysis-in-peru",
+      "file": "data/wp-extracts\\pe-how-to-perform-a-power-quality-analysis-in-peru.json",
+      "wordCount": 928,
+      "h2Count": 14
+    },
+    {
+      "kind": "blog",
+      "slug": "principles-of-power-quality-work-in-peru",
+      "file": "data/wp-extracts\\pe-principles-of-power-quality-work-in-peru.json",
+      "wordCount": 1372,
+      "h2Count": 19
+    },
+    {
+      "kind": "blog",
+      "slug": "harmonic-analysis-of-the-peru-power-system",
+      "file": "data/wp-extracts\\pe-harmonic-analysis-of-the-peru-power-system.json",
+      "wordCount": 981,
+      "h2Count": 13
+    },
+    {
+      "kind": "blog",
+      "slug": "why-are-harmonic-analysis-and-study-important-for-businesses-in-peru",
+      "file": "data/wp-extracts\\pe-why-are-harmonic-analysis-and-study-important-for-businesses-in-peru.json",
+      "wordCount": 897,
+      "h2Count": 11
+    },
+    {
+      "kind": "blog",
+      "slug": "assessing-and-lowering-the-danger-of-an-arc-flash-is-crucial",
+      "file": "data/wp-extracts\\pe-assessing-and-lowering-the-danger-of-an-arc-flash-is-crucial.json",
+      "wordCount": 915,
+      "h2Count": 15
+    },
+    {
+      "kind": "blog",
+      "slug": "404-page",
+      "file": "data/wp-extracts\\pe-404-page.json",
+      "wordCount": 264,
+      "h2Count": 0
+    },
+    {
+      "kind": "blog",
+      "slug": "uncategorized",
+      "file": "data/wp-extracts\\pe-uncategorized.json",
+      "wordCount": 300,
+      "h2Count": 0
+    },
+    {
+      "kind": "blog",
+      "slug": "admin_pe",
+      "file": "data/wp-extracts\\pe-admin_pe.json",
+      "wordCount": 300,
+      "h2Count": 0
+    }
+  ],
+  "skipped": {
+    "service-legacy": 2
+  },
+  "discovered": 23
+}
