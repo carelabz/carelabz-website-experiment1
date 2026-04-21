@@ -1,0 +1,144 @@
+{
+  "cc": "cz",
+  "wpUrl": "https://carelabz.com/cz/",
+  "totalPages": 18,
+  "byKind": {
+    "home": 1,
+    "about": 1,
+    "contact": 1,
+    "service": 3,
+    "blog": 12
+  },
+  "pages": [
+    {
+      "kind": "home",
+      "slug": "cz",
+      "file": "data/wp-extracts\\cz-cz.json",
+      "wordCount": 1032,
+      "h2Count": 6
+    },
+    {
+      "kind": "about",
+      "slug": "about-us",
+      "file": "data/wp-extracts\\cz-about-us.json",
+      "wordCount": 787,
+      "h2Count": 4
+    },
+    {
+      "kind": "contact",
+      "slug": "contact-us",
+      "file": "data/wp-extracts\\cz-contact-us.json",
+      "wordCount": 567,
+      "h2Count": 5
+    },
+    {
+      "kind": "service",
+      "slug": "arc-flash-study",
+      "file": "data/wp-extracts\\cz-arc-flash-study.json",
+      "wordCount": 1179,
+      "h2Count": 9
+    },
+    {
+      "kind": "service",
+      "slug": "motor-start-analysis",
+      "file": "data/wp-extracts\\cz-motor-start-analysis.json",
+      "wordCount": 1166,
+      "h2Count": 8
+    },
+    {
+      "kind": "service",
+      "slug": "power-quality-analysis",
+      "file": "data/wp-extracts\\cz-power-quality-analysis.json",
+      "wordCount": 1114,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "how-are-the-dependability-and-performance-of-commercial-motors-assessed",
+      "file": "data/wp-extracts\\cz-how-are-the-dependability-and-performance-of-commercial-motors-assessed.json",
+      "wordCount": 1485,
+      "h2Count": 18
+    },
+    {
+      "kind": "blog",
+      "slug": "czech-guidelines-for-testing-and-verifying-electrical-motor-efficiency",
+      "file": "data/wp-extracts\\cz-czech-guidelines-for-testing-and-verifying-electrical-motor-efficiency.json",
+      "wordCount": 1332,
+      "h2Count": 16
+    },
+    {
+      "kind": "blog",
+      "slug": "why-analysis-of-the-power-system-considers-relay-coordination-short-circuits-and-load-flow",
+      "file": "data/wp-extracts\\cz-why-analysis-of-the-power-system-considers-relay-coordination-short-circuits-and-load-flow.json",
+      "wordCount": 1778,
+      "h2Count": 18
+    },
+    {
+      "kind": "blog",
+      "slug": "principles-of-operation-for-the-power-quality-in-czech-republic",
+      "file": "data/wp-extracts\\cz-principles-of-operation-for-the-power-quality-in-czech-republic.json",
+      "wordCount": 1867,
+      "h2Count": 17
+    },
+    {
+      "kind": "blog",
+      "slug": "how-to-analyze-the-power-quality-in-czech-republic",
+      "file": "data/wp-extracts\\cz-how-to-analyze-the-power-quality-in-czech-republic.json",
+      "wordCount": 1407,
+      "h2Count": 16
+    },
+    {
+      "kind": "blog",
+      "slug": "why-are-harmonic-research-and-analysis-so-crucial-to-czech-businesses",
+      "file": "data/wp-extracts\\cz-why-are-harmonic-research-and-analysis-so-crucial-to-czech-businesses.json",
+      "wordCount": 1416,
+      "h2Count": 17
+    },
+    {
+      "kind": "blog",
+      "slug": "analysis-of-the-czech-power-systems-harmony",
+      "file": "data/wp-extracts\\cz-analysis-of-the-czech-power-systems-harmony.json",
+      "wordCount": 1483,
+      "h2Count": 16
+    },
+    {
+      "kind": "blog",
+      "slug": "analysis-of-arc-flash-hazards-and-mitigation-techniques",
+      "file": "data/wp-extracts\\cz-analysis-of-arc-flash-hazards-and-mitigation-techniques.json",
+      "wordCount": 1449,
+      "h2Count": 16
+    },
+    {
+      "kind": "blog",
+      "slug": "404-2",
+      "file": "data/wp-extracts\\cz-404-2.json",
+      "wordCount": 376,
+      "h2Count": 5
+    },
+    {
+      "kind": "blog",
+      "slug": "harmonic-study-analysis",
+      "file": "data/wp-extracts\\cz-harmonic-study-analysis.json",
+      "wordCount": 1196,
+      "h2Count": 8
+    },
+    {
+      "kind": "blog",
+      "slug": "power-system-study-analysis",
+      "file": "data/wp-extracts\\cz-power-system-study-analysis.json",
+      "wordCount": 1207,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "admin_cz",
+      "file": "data/wp-extracts\\cz-admin_cz.json",
+      "wordCount": 326,
+      "h2Count": 0
+    }
+  ],
+  "skipped": {
+    "service-legacy": 2
+  },
+  "discovered": 27
+}
