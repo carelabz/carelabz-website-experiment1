@@ -230,25 +230,6 @@ export default async function CAHomePage() {
         </div>
       </section>
 
-      <section className="bg-[#0050B3] py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <p className="text-5xl font-bold text-white mb-2">25%</p>
-              <p className="text-blue-100">Reduction in Project Timelines</p>
-            </div>
-            <div>
-              <p className="text-5xl font-bold text-white mb-2">99%</p>
-              <p className="text-blue-100">System Reliability</p>
-            </div>
-            <div>
-              <p className="text-5xl font-bold text-white mb-2">100%</p>
-              <p className="text-blue-100">Compliance with CSA Z462, IEEE, and CEC</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="bg-[#EEF4FF] py-16 px-4">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold text-[#1A2538] mb-6">Proactive Risk Assessment Solutions Tailored to Your Needs</h2>
@@ -463,19 +444,6 @@ export default async function CAHomePage() {
                 {page.ctaBannerSecondaryText}
               </Link>
             )}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-12 px-4">
-        <div className="mx-auto max-w-5xl">
-          <div className="flex flex-wrap justify-center gap-4">
-            {["CSA Z462", "IEEE 1584", "Canadian Electrical Code", "P.Eng Certified", "ETAP Certified"].map((cert) => (
-              <span key={cert} className="border border-slate-200 rounded-full px-6 py-3 text-sm font-semibold text-[#0050B3] inline-flex items-center gap-2">
-                <Award className="w-4 h-4" />
-                {cert}
-              </span>
-            ))}
           </div>
         </div>
       </section>
