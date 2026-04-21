@@ -1,0 +1,192 @@
+{
+  "cc": "nl",
+  "wpUrl": "https://carelabz.com/nl/",
+  "totalPages": 25,
+  "byKind": {
+    "home": 1,
+    "about": 1,
+    "contact": 1,
+    "service": 5,
+    "case-study": 1,
+    "blog": 16
+  },
+  "pages": [
+    {
+      "kind": "home",
+      "slug": "nl",
+      "file": "data/wp-extracts\\nl-nl.json",
+      "wordCount": 788,
+      "h2Count": 0
+    },
+    {
+      "kind": "about",
+      "slug": "about-us",
+      "file": "data/wp-extracts\\nl-about-us.json",
+      "wordCount": 923,
+      "h2Count": 0
+    },
+    {
+      "kind": "contact",
+      "slug": "contact-us",
+      "file": "data/wp-extracts\\nl-contact-us.json",
+      "wordCount": 607,
+      "h2Count": 3
+    },
+    {
+      "kind": "service",
+      "slug": "arc-flash-study",
+      "file": "data/wp-extracts\\nl-arc-flash-study.json",
+      "wordCount": 1208,
+      "h2Count": 6
+    },
+    {
+      "kind": "service",
+      "slug": "harmonic-study-and-analysis",
+      "file": "data/wp-extracts\\nl-harmonic-study-and-analysis.json",
+      "wordCount": 1177,
+      "h2Count": 5
+    },
+    {
+      "kind": "service",
+      "slug": "motor-start-analysis",
+      "file": "data/wp-extracts\\nl-motor-start-analysis.json",
+      "wordCount": 1178,
+      "h2Count": 5
+    },
+    {
+      "kind": "service",
+      "slug": "power-quality-analysis",
+      "file": "data/wp-extracts\\nl-power-quality-analysis.json",
+      "wordCount": 1153,
+      "h2Count": 5
+    },
+    {
+      "kind": "service",
+      "slug": "power-system-study-and-analysis",
+      "file": "data/wp-extracts\\nl-power-system-study-and-analysis.json",
+      "wordCount": 1227,
+      "h2Count": 6
+    },
+    {
+      "kind": "case-study",
+      "slug": "case-study",
+      "file": "data/wp-extracts\\nl-case-study.json",
+      "wordCount": 509,
+      "h2Count": 0
+    },
+    {
+      "kind": "blog",
+      "slug": "the-importance-of-load-flow-and-short-circuit-analysis-for-dutch-businesses",
+      "file": "data/wp-extracts\\nl-the-importance-of-load-flow-and-short-circuit-analysis-for-dutch-businesses.json",
+      "wordCount": 1047,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "load-flow-short-circuit-and-relay-coordination-in-power-system-analysis",
+      "file": "data/wp-extracts\\nl-load-flow-short-circuit-and-relay-coordination-in-power-system-analysis.json",
+      "wordCount": 1500,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "examine-and-confirm-electrical-motor-performance-complies-with-dutch-regulations",
+      "file": "data/wp-extracts\\nl-examine-and-confirm-electrical-motor-performance-complies-with-dutch-regulations.json",
+      "wordCount": 1065,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "how-can-the-reliability-and-performance-of-commercial-motors-be-evaluated",
+      "file": "data/wp-extracts\\nl-how-can-the-reliability-and-performance-of-commercial-motors-be-evaluated.json",
+      "wordCount": 1200,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "working-principles-for-power-quality-in-netherlands",
+      "file": "data/wp-extracts\\nl-working-principles-for-power-quality-in-netherlands.json",
+      "wordCount": 1600,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "how-to-conduct-an-analysis-of-power-quality-in-netherlands",
+      "file": "data/wp-extracts\\nl-how-to-conduct-an-analysis-of-power-quality-in-netherlands.json",
+      "wordCount": 1171,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "netherlands-power-system-harmonic-analysis",
+      "file": "data/wp-extracts\\nl-netherlands-power-system-harmonic-analysis.json",
+      "wordCount": 1202,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "why-harmonic-analysis-and-study-crucial-for-dutch-businesses",
+      "file": "data/wp-extracts\\nl-why-harmonic-analysis-and-study-crucial-for-dutch-businesses.json",
+      "wordCount": 1135,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "netherlands-arc-flash-analysis-a-comprehensive-guide",
+      "file": "data/wp-extracts\\nl-netherlands-arc-flash-analysis-a-comprehensive-guide.json",
+      "wordCount": 1172,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "importance-of-arc-flash-risk-evaluation-and-mitigation-techniques",
+      "file": "data/wp-extracts\\nl-importance-of-arc-flash-risk-evaluation-and-mitigation-techniques.json",
+      "wordCount": 1166,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "blog",
+      "file": "data/wp-extracts\\nl-blog.json",
+      "wordCount": 591,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "harmonic-study",
+      "file": "data/wp-extracts\\nl-harmonic-study.json",
+      "wordCount": 1202,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "motor-start-study",
+      "file": "data/wp-extracts\\nl-motor-start-study.json",
+      "wordCount": 1065,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "power-quality-study",
+      "file": "data/wp-extracts\\nl-power-quality-study.json",
+      "wordCount": 133,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "power-system-study",
+      "file": "data/wp-extracts\\nl-power-system-study.json",
+      "wordCount": 139,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "admin_fr",
+      "file": "data/wp-extracts\\nl-admin_fr.json",
+      "wordCount": 653,
+      "h2Count": 10
+    }
+  ],
+  "skipped": {},
+  "discovered": 27
+}
