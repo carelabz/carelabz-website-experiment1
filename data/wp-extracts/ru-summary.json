@@ -1,0 +1,144 @@
+{
+  "cc": "ru",
+  "wpUrl": "https://carelabz.com/ru/",
+  "totalPages": 18,
+  "byKind": {
+    "home": 1,
+    "about": 1,
+    "contact": 1,
+    "service": 3,
+    "blog": 12
+  },
+  "pages": [
+    {
+      "kind": "home",
+      "slug": "ru",
+      "file": "data/wp-extracts\\ru-ru.json",
+      "wordCount": 1031,
+      "h2Count": 6
+    },
+    {
+      "kind": "about",
+      "slug": "about-us",
+      "file": "data/wp-extracts\\ru-about-us.json",
+      "wordCount": 787,
+      "h2Count": 4
+    },
+    {
+      "kind": "contact",
+      "slug": "contact-us",
+      "file": "data/wp-extracts\\ru-contact-us.json",
+      "wordCount": 566,
+      "h2Count": 5
+    },
+    {
+      "kind": "service",
+      "slug": "arc-flash-study",
+      "file": "data/wp-extracts\\ru-arc-flash-study.json",
+      "wordCount": 1177,
+      "h2Count": 9
+    },
+    {
+      "kind": "service",
+      "slug": "motor-start-analysis",
+      "file": "data/wp-extracts\\ru-motor-start-analysis.json",
+      "wordCount": 1226,
+      "h2Count": 8
+    },
+    {
+      "kind": "service",
+      "slug": "power-quality-analysis",
+      "file": "data/wp-extracts\\ru-power-quality-analysis.json",
+      "wordCount": 1108,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "how-are-the-dependability-and-performance-of-commercial-motors-assessed",
+      "file": "data/wp-extracts\\ru-how-are-the-dependability-and-performance-of-commercial-motors-assessed.json",
+      "wordCount": 1482,
+      "h2Count": 18
+    },
+    {
+      "kind": "blog",
+      "slug": "russian-guidelines-for-testing-and-verifying-electrical-motor-efficiency",
+      "file": "data/wp-extracts\\ru-russian-guidelines-for-testing-and-verifying-electrical-motor-efficiency.json",
+      "wordCount": 1328,
+      "h2Count": 16
+    },
+    {
+      "kind": "blog",
+      "slug": "why-analysis-of-the-power-system-considers-relay-coordination-short-circuits-and-load-flow",
+      "file": "data/wp-extracts\\ru-why-analysis-of-the-power-system-considers-relay-coordination-short-circuits-and-load-flow.json",
+      "wordCount": 1773,
+      "h2Count": 18
+    },
+    {
+      "kind": "blog",
+      "slug": "principles-of-operation-for-the-power-quality-in-russia",
+      "file": "data/wp-extracts\\ru-principles-of-operation-for-the-power-quality-in-russia.json",
+      "wordCount": 1862,
+      "h2Count": 17
+    },
+    {
+      "kind": "blog",
+      "slug": "how-to-analyze-the-power-quality-in-russia",
+      "file": "data/wp-extracts\\ru-how-to-analyze-the-power-quality-in-russia.json",
+      "wordCount": 1402,
+      "h2Count": 16
+    },
+    {
+      "kind": "blog",
+      "slug": "why-are-harmonic-research-and-analysis-so-crucial-to-russian-businesses",
+      "file": "data/wp-extracts\\ru-why-are-harmonic-research-and-analysis-so-crucial-to-russian-businesses.json",
+      "wordCount": 1412,
+      "h2Count": 17
+    },
+    {
+      "kind": "blog",
+      "slug": "analysis-of-the-russian-power-systems-harmony",
+      "file": "data/wp-extracts\\ru-analysis-of-the-russian-power-systems-harmony.json",
+      "wordCount": 1478,
+      "h2Count": 16
+    },
+    {
+      "kind": "blog",
+      "slug": "analysis-of-arc-flash-hazards-and-mitigation-techniques",
+      "file": "data/wp-extracts\\ru-analysis-of-arc-flash-hazards-and-mitigation-techniques.json",
+      "wordCount": 1445,
+      "h2Count": 16
+    },
+    {
+      "kind": "blog",
+      "slug": "404-2",
+      "file": "data/wp-extracts\\ru-404-2.json",
+      "wordCount": 375,
+      "h2Count": 5
+    },
+    {
+      "kind": "blog",
+      "slug": "harmonic-study-analysis",
+      "file": "data/wp-extracts\\ru-harmonic-study-analysis.json",
+      "wordCount": 1181,
+      "h2Count": 8
+    },
+    {
+      "kind": "blog",
+      "slug": "power-system-study-analysis",
+      "file": "data/wp-extracts\\ru-power-system-study-analysis.json",
+      "wordCount": 1212,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "admin_ru",
+      "file": "data/wp-extracts\\ru-admin_ru.json",
+      "wordCount": 326,
+      "h2Count": 0
+    }
+  ],
+  "skipped": {
+    "service-legacy": 2
+  },
+  "discovered": 27
+}
