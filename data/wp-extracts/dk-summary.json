@@ -1,0 +1,100 @@
+{
+  "cc": "dk",
+  "wpUrl": "https://carelabz.com/dk/",
+  "totalPages": 12,
+  "byKind": {
+    "home": 1,
+    "about": 1,
+    "contact": 1,
+    "service": 5,
+    "blog": 4
+  },
+  "pages": [
+    {
+      "kind": "home",
+      "slug": "dk",
+      "file": "data/wp-extracts\\dk-dk.json",
+      "wordCount": 537,
+      "h2Count": 13
+    },
+    {
+      "kind": "about",
+      "slug": "about-us",
+      "file": "data/wp-extracts\\dk-about-us.json",
+      "wordCount": 410,
+      "h2Count": 20
+    },
+    {
+      "kind": "contact",
+      "slug": "contact-us",
+      "file": "data/wp-extracts\\dk-contact-us.json",
+      "wordCount": 365,
+      "h2Count": 16
+    },
+    {
+      "kind": "service",
+      "slug": "motor-start-analysis",
+      "file": "data/wp-extracts\\dk-motor-start-analysis.json",
+      "wordCount": 937,
+      "h2Count": 14
+    },
+    {
+      "kind": "service",
+      "slug": "harmonic-study-and-analysis",
+      "file": "data/wp-extracts\\dk-harmonic-study-and-analysis.json",
+      "wordCount": 916,
+      "h2Count": 14
+    },
+    {
+      "kind": "service",
+      "slug": "power-quality-analysis",
+      "file": "data/wp-extracts\\dk-power-quality-analysis.json",
+      "wordCount": 866,
+      "h2Count": 14
+    },
+    {
+      "kind": "service",
+      "slug": "power-system-study-and-analysis",
+      "file": "data/wp-extracts\\dk-power-system-study-and-analysis.json",
+      "wordCount": 952,
+      "h2Count": 14
+    },
+    {
+      "kind": "service",
+      "slug": "arc-flash-study",
+      "file": "data/wp-extracts\\dk-arc-flash-study.json",
+      "wordCount": 895,
+      "h2Count": 14
+    },
+    {
+      "kind": "blog",
+      "slug": "home-demo",
+      "file": "data/wp-extracts\\dk-home-demo.json",
+      "wordCount": 259,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "our-services",
+      "file": "data/wp-extracts\\dk-our-services.json",
+      "wordCount": 259,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "blog-post",
+      "file": "data/wp-extracts\\dk-blog-post.json",
+      "wordCount": 677,
+      "h2Count": 22
+    },
+    {
+      "kind": "blog",
+      "slug": "admin_ie",
+      "file": "data/wp-extracts\\dk-admin_ie.json",
+      "wordCount": 677,
+      "h2Count": 22
+    }
+  ],
+  "skipped": {},
+  "discovered": 24
+}
