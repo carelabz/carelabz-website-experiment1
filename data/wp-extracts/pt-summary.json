@@ -1,0 +1,176 @@
+{
+  "cc": "pt",
+  "wpUrl": "https://carelabz.com/pt/",
+  "totalPages": 23,
+  "byKind": {
+    "home": 1,
+    "about": 1,
+    "contact": 1,
+    "blog": 20
+  },
+  "pages": [
+    {
+      "kind": "home",
+      "slug": "pt",
+      "file": "data/wp-extracts\\pt-pt.json",
+      "wordCount": 170,
+      "h2Count": 8
+    },
+    {
+      "kind": "about",
+      "slug": "about-us",
+      "file": "data/wp-extracts\\pt-about-us.json",
+      "wordCount": 504,
+      "h2Count": 11
+    },
+    {
+      "kind": "contact",
+      "slug": "contact-us",
+      "file": "data/wp-extracts\\pt-contact-us.json",
+      "wordCount": 218,
+      "h2Count": 5
+    },
+    {
+      "kind": "blog",
+      "slug": "how-to-conduct-a-power-quality-analysis-in-portugal",
+      "file": "data/wp-extracts\\pt-how-to-conduct-a-power-quality-analysis-in-portugal.json",
+      "wordCount": 749,
+      "h2Count": 11
+    },
+    {
+      "kind": "blog",
+      "slug": "power-quality-working-principles-in-portugal",
+      "file": "data/wp-extracts\\pt-power-quality-working-principles-in-portugal.json",
+      "wordCount": 1222,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "importance-of-load-flow-and-short-circuit-analysis-for-a-portuguese-business",
+      "file": "data/wp-extracts\\pt-importance-of-load-flow-and-short-circuit-analysis-for-a-portuguese-business.json",
+      "wordCount": 675,
+      "h2Count": 5
+    },
+    {
+      "kind": "blog",
+      "slug": "test-and-verifelectrical-motor-efficiency-in-accordance-with-portuguese-guidelines",
+      "file": "data/wp-extracts\\pt-test-and-verifelectrical-motor-efficiency-in-accordance-with-portuguese-guidelines.json",
+      "wordCount": 693,
+      "h2Count": 6
+    },
+    {
+      "kind": "blog",
+      "slug": "how-to-evaluate-the-efficiency-and-dependability-of-commercial-motors",
+      "file": "data/wp-extracts\\pt-how-to-evaluate-the-efficiency-and-dependability-of-commercial-motors.json",
+      "wordCount": 801,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "arc-flash-analysis-in-portugal-a-step-by-step-guide",
+      "file": "data/wp-extracts\\pt-arc-flash-analysis-in-portugal-a-step-by-step-guide.json",
+      "wordCount": 790,
+      "h2Count": 5
+    },
+    {
+      "kind": "blog",
+      "slug": "load-flow-short-circuit-and-relay-coordination-in-power-system-analysis",
+      "file": "data/wp-extracts\\pt-load-flow-short-circuit-and-relay-coordination-in-power-system-analysis.json",
+      "wordCount": 1101,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "why-is-harmonic-analysis-and-study-important-for-portuguese-businesses",
+      "file": "data/wp-extracts\\pt-why-is-harmonic-analysis-and-study-important-for-portuguese-businesses.json",
+      "wordCount": 729,
+      "h2Count": 6
+    },
+    {
+      "kind": "blog",
+      "slug": "importance-of-arc-flash-hazard-analysis-and-mitigation-methods",
+      "file": "data/wp-extracts\\pt-importance-of-arc-flash-hazard-analysis-and-mitigation-methods.json",
+      "wordCount": 810,
+      "h2Count": 6
+    },
+    {
+      "kind": "blog",
+      "slug": "harmonic-analysis-in-power-system-in-portugal",
+      "file": "data/wp-extracts\\pt-harmonic-analysis-in-power-system-in-portugal.json",
+      "wordCount": 792,
+      "h2Count": 8
+    },
+    {
+      "kind": "blog",
+      "slug": "power-quality-analysis-in-portugal",
+      "file": "data/wp-extracts\\pt-power-quality-analysis-in-portugal.json",
+      "wordCount": 653,
+      "h2Count": 8
+    },
+    {
+      "kind": "blog",
+      "slug": "arc-flash-study-in-portugal",
+      "file": "data/wp-extracts\\pt-arc-flash-study-in-portugal.json",
+      "wordCount": 726,
+      "h2Count": 8
+    },
+    {
+      "kind": "blog",
+      "slug": "careers",
+      "file": "data/wp-extracts\\pt-careers.json",
+      "wordCount": 516,
+      "h2Count": 17
+    },
+    {
+      "kind": "blog",
+      "slug": "harmonic-study-and-analysis-in-portugal",
+      "file": "data/wp-extracts\\pt-harmonic-study-and-analysis-in-portugal.json",
+      "wordCount": 709,
+      "h2Count": 8
+    },
+    {
+      "kind": "blog",
+      "slug": "motor-start-analysis-in-portugal",
+      "file": "data/wp-extracts\\pt-motor-start-analysis-in-portugal.json",
+      "wordCount": 817,
+      "h2Count": 8
+    },
+    {
+      "kind": "blog",
+      "slug": "power-system-study-and-analysis-in-portugal",
+      "file": "data/wp-extracts\\pt-power-system-study-and-analysis-in-portugal.json",
+      "wordCount": 754,
+      "h2Count": 8
+    },
+    {
+      "kind": "blog",
+      "slug": "privacy-policy",
+      "file": "data/wp-extracts\\pt-privacy-policy.json",
+      "wordCount": 1163,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "terms-and-conditions",
+      "file": "data/wp-extracts\\pt-terms-and-conditions.json",
+      "wordCount": 1493,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "uncategorized",
+      "file": "data/wp-extracts\\pt-uncategorized.json",
+      "wordCount": 435,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "admin",
+      "file": "data/wp-extracts\\pt-admin.json",
+      "wordCount": 435,
+      "h2Count": 1
+    }
+  ],
+  "skipped": {},
+  "discovered": 29
+}
