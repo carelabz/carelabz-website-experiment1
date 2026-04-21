@@ -13,13 +13,13 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const study = await getCaseStudy("us", params.slug);
-  if (!study) return { title: "Case Study Not Found | CareLabs US" };
+  if (!study) return { title: "Case Study Not Found | Carelabs US" };
   return {
-    title: study.metaTitle ?? `${study.title} | CareLabs US`,
+    title: study.metaTitle ?? `${study.title} | Carelabs US`,
     description:
       study.metaDescription ??
       study.excerpt ??
-      "Read this CareLabs case study.",
+      "Read this Carelabs case study.",
   };
 }
 
@@ -141,7 +141,7 @@ export default async function CaseStudyPage({ params }: Props) {
               {study.ctaText ?? "Ready to achieve similar results?"}
             </h2>
             <p className="text-white/70 mb-8">
-              Contact our team to discuss how CareLabs can help your
+              Contact our team to discuss how Carelabs can help your
               organization.
             </p>
             <Link

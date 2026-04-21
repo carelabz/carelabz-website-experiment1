@@ -64,10 +64,10 @@ function WhyIcon({ name, ...props }: { name: string } & LucideProps) {
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getHomePage("us");
   return {
-    title: page?.metaTitle ?? "CareLabs — Electrical Safety & Power System Studies | USA",
+    title: page?.metaTitle ?? "Carelabs — Electrical Safety & Power System Studies | USA",
     description:
       page?.metaDescription ??
-      "CareLabs provides IEEE 1584 arc flash studies, NFPA 70E compliance, short circuit analysis, and power system engineering across the United States.",
+      "Carelabs provides IEEE 1584 arc flash studies, NFPA 70E compliance, short circuit analysis, and power system engineering across the United States.",
     keywords: page?.seoKeywords ?? undefined,
     alternates: {
       canonical: "https://carelabz.com/us/",
@@ -94,7 +94,7 @@ export default async function USHomePage() {
   const jsonLdData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "CareLabs",
+    name: "Carelabs",
     description: page.metaDescription,
     url: "https://carelabz.com/us/",
     telephone: page.footerPhone,
@@ -252,7 +252,7 @@ export default async function USHomePage() {
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold text-[#1A2538] mb-6">Proactive Risk Assessment Solutions Tailored to Your Needs</h2>
           <p className="text-lg text-[#374151] max-w-3xl mx-auto">
-            At CareLabs, we understand the importance of identifying risks and mitigating them to enhance the performance and safety of your power system and your people. We are committed to ensuring that your power system is perfect and compliant with US standards of electrical safety by integrating technical expertise with high-end tools like ETAP.
+            At Carelabs, we understand the importance of identifying risks and mitigating them to enhance the performance and safety of your power system and your people. We are committed to ensuring that your power system is perfect and compliant with US standards of electrical safety by integrating technical expertise with high-end tools like ETAP.
           </p>
         </div>
       </section>
@@ -303,7 +303,7 @@ export default async function USHomePage() {
         </section>
       )}
 
-      {/* ── Why CareLabs ─────────────────────────────────────────────────── */}
+      {/* ── Why Carelabs ─────────────────────────────────────────────────── */}
       {page.whyFeatures && page.whyFeatures.length > 0 && (
         <section className="bg-white py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

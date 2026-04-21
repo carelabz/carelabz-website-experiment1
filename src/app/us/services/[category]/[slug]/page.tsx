@@ -54,11 +54,11 @@ export async function generateMetadata({
   const service = await getServicePageBySlug(strapiSlug);
 
   if (!service) {
-    return { title: "Service Not Found | CareLabs USA" };
+    return { title: "Service Not Found | Carelabs USA" };
   }
 
   return {
-    title: service.metaTitle || `${service.title} | CareLabs USA`,
+    title: service.metaTitle || `${service.title} | Carelabs USA`,
     description: service.metaDescription || undefined,
     keywords: service.seoKeywords?.join(", "),
     alternates: {
@@ -69,14 +69,14 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: service.metaTitle || `${service.title} | CareLabs USA`,
+      title: service.metaTitle || `${service.title} | Carelabs USA`,
       description: service.metaDescription || undefined,
       url: `https://carelabz.com/us/services/${params.category}/${params.slug}/`,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: service.metaTitle || `${service.title} | CareLabs USA`,
+      title: service.metaTitle || `${service.title} | Carelabs USA`,
       description: service.metaDescription || undefined,
     },
   };
@@ -194,7 +194,7 @@ export default async function ServiceDetailPage({
         "@type": "WebPage",
         "@id": pageUrl,
         url: pageUrl,
-        name: service.metaTitle || `${service.title} | CareLabs USA`,
+        name: service.metaTitle || `${service.title} | Carelabs USA`,
         description: service.metaDescription || undefined,
         inLanguage: "en-US",
         isPartOf: { "@id": "https://carelabz.com/#website" },
@@ -207,7 +207,7 @@ export default async function ServiceDetailPage({
         url: pageUrl,
         provider: {
           "@type": "LocalBusiness",
-          name: "CareLabs",
+          name: "Carelabs",
           url: "https://carelabz.com",
           telephone: data.footerPhone,
           email: data.footerEmail,
@@ -279,7 +279,7 @@ export default async function ServiceDetailPage({
         ? [
             {
               "@type": "HowTo",
-              name: `How CareLabs Performs ${service.title}`,
+              name: `How Carelabs Performs ${service.title}`,
               description: data.processHeading,
               totalTime: "P2W",
               step: data.processSteps.map((s, i) => ({

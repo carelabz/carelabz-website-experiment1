@@ -17,7 +17,7 @@ const COMPANY = [
 ];
 
 const FOOTER_DESCRIPTION =
-  "CareLabs delivers CSA Z462 arc flash studies, Canadian Electrical Code compliance, and full power system engineering services across Canada.";
+  "Carelabs delivers CSA Z462 arc flash studies, Canadian Electrical Code compliance, and full power system engineering services across Canada.";
 
 const ADDRESS = "Toronto, ON, Canada";
 const PHONE = "+1 (800) 456-7890";
@@ -32,7 +32,7 @@ export default function CAFooter() {
             <Link href="/ca/" className="inline-block mb-4">
               <Image
                 src="/images/logo/carelabs-logo.svg"
-                alt="CareLabs"
+                alt="Carelabs"
                 width={866}
                 height={288}
                 className="h-8 w-auto"
@@ -112,7 +112,7 @@ export default function CAFooter() {
 
         <div className="mt-12 border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/40">
-            &copy; {new Date().getFullYear()} CareLabs Canada. All rights reserved.
+            &copy; {new Date().getFullYear()} Carelabs Canada. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link

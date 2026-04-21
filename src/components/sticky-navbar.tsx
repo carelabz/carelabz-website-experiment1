@@ -43,10 +43,10 @@ export function StickyNavbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-[74px] items-center justify-between">
           {/* Logo */}
-          <Link href="/us/" className="flex items-center" aria-label="CareLabs home">
+          <Link href="/us/" className="flex items-center" aria-label="Carelabs home">
             <Image
               src="/images/logo/carelabs-logo.svg"
-              alt="CareLabs"
+              alt="Carelabs"
               width={866}
               height={288}
               priority

@@ -9,7 +9,7 @@ import { buildJsonLd, getOrganizationSchema, getWebPageSchema, getBreadcrumbSche
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Achieve Compliance with OSHA and IEEE Standards | CareLabs USA",
+  title: "Achieve Compliance with OSHA and IEEE Standards | Carelabs USA",
   description:
     "Discover our comprehensive electrical safety services ensuring compliance with USA standards. Arc flash studies, short circuit analysis, and power system engineering.",
   alternates: {
@@ -20,17 +20,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Power System Engineering Services in the USA | CareLabs",
+    title: "Power System Engineering Services in the USA | Carelabs",
     description:
       "Professional electrical safety services including arc flash studies, short circuit analysis, and power system engineering across the USA.",
     url: "https://carelabz.com/us/services/",
-    siteName: "CareLabs",
+    siteName: "Carelabs",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Power System Engineering Services in the USA | CareLabs",
+    title: "Power System Engineering Services in the USA | Carelabs",
     description:
       "Professional electrical safety services including arc flash studies, short circuit analysis, and power system engineering across the USA.",
   },
@@ -55,7 +55,7 @@ export default async function ServicesIndexPage() {
     getOrganizationSchema(),
     getWebPageSchema(
       "https://carelabz.com/us/services/",
-      "Power System Engineering Services in the USA | CareLabs",
+      "Power System Engineering Services in the USA | Carelabs",
       "Professional electrical safety services including arc flash studies, short circuit analysis, and power system engineering across the USA."
     ),
     getBreadcrumbSchema([

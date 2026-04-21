@@ -60,10 +60,10 @@ function WhyIcon({ name, ...props }: { name: string } & LucideProps) {
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getHomePage("ca");
   return {
-    title: page?.metaTitle ?? "CareLabs — Electrical Safety & Power System Studies | Canada",
+    title: page?.metaTitle ?? "Carelabs — Electrical Safety & Power System Studies | Canada",
     description:
       page?.metaDescription ??
-      "CareLabs provides IEEE 1584 arc flash studies, CSA Z462 compliance, short circuit analysis, and power system engineering across Canada.",
+      "Carelabs provides IEEE 1584 arc flash studies, CSA Z462 compliance, short circuit analysis, and power system engineering across Canada.",
     keywords: page?.seoKeywords ?? undefined,
     alternates: {
       canonical: "https://carelabz.com/ca/",
@@ -73,17 +73,17 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: page?.metaTitle ?? "CareLabs Canada — Electrical Safety & Power System Studies",
+      title: page?.metaTitle ?? "Carelabs Canada — Electrical Safety & Power System Studies",
       description:
         page?.metaDescription ?? "IEEE 1584 arc flash studies, CSA Z462 compliance, and power system engineering across Canada.",
       url: "https://carelabz.com/ca/",
-      siteName: "CareLabs",
+      siteName: "Carelabs",
       type: "website",
       locale: "en_CA",
     },
     twitter: {
       card: "summary_large_image",
-      title: page?.metaTitle ?? "CareLabs Canada — Electrical Safety & Power System Studies",
+      title: page?.metaTitle ?? "Carelabs Canada — Electrical Safety & Power System Studies",
       description:
         page?.metaDescription ?? "IEEE 1584 arc flash studies, CSA Z462 compliance, and power system engineering across Canada.",
     },
@@ -104,7 +104,7 @@ export default async function CAHomePage() {
   const jsonLdData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "CareLabs",
+    name: "Carelabs",
     description: page.metaDescription,
     url: "https://carelabz.com/ca/",
     telephone: page.footerPhone ?? "+1-800-456-7890",
@@ -253,7 +253,7 @@ export default async function CAHomePage() {
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold text-[#1A2538] mb-6">Proactive Risk Assessment Solutions Tailored to Your Needs</h2>
           <p className="text-lg text-[#374151] max-w-3xl mx-auto">
-            At CareLabs, we understand the importance of identifying risks and mitigating them to enhance the performance and safety of your power system and your people. We are committed to ensuring that your power system is compliant with Canadian standards of electrical safety by integrating technical expertise with high-end tools like ETAP.
+            At Carelabs, we understand the importance of identifying risks and mitigating them to enhance the performance and safety of your power system and your people. We are committed to ensuring that your power system is compliant with Canadian standards of electrical safety by integrating technical expertise with high-end tools like ETAP.
           </p>
         </div>
       </section>

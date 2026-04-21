@@ -24,10 +24,10 @@ export const dynamic = "force-dynamic";
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getAboutPage("us");
   return {
-    title: page?.metaTitle ?? "About CareLabs | Electrical Safety Experts",
+    title: page?.metaTitle ?? "About Carelabs | Electrical Safety Experts",
     description:
       page?.metaDescription ??
-      "Learn about CareLabs — our mission, values, and the team dedicated to electrical safety testing and compliance across the US.",
+      "Learn about Carelabs — our mission, values, and the team dedicated to electrical safety testing and compliance across the US.",
     alternates: {
       canonical: "https://carelabz.com/us/about/",
       languages: {
@@ -36,18 +36,18 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: page?.metaTitle ?? "About CareLabs — Power System Consultants USA",
+      title: page?.metaTitle ?? "About Carelabs — Power System Consultants USA",
       description:
-        page?.metaDescription ?? "CareLabs is a leading electrical safety engineering firm.",
+        page?.metaDescription ?? "Carelabs is a leading electrical safety engineering firm.",
       url: "https://carelabz.com/us/about/",
-      siteName: "CareLabs",
+      siteName: "Carelabs",
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: page?.metaTitle ?? "About CareLabs — Power System Consultants USA",
+      title: page?.metaTitle ?? "About Carelabs — Power System Consultants USA",
       description:
-        page?.metaDescription ?? "CareLabs is a leading electrical safety engineering firm.",
+        page?.metaDescription ?? "Carelabs is a leading electrical safety engineering firm.",
     },
   };
 }
@@ -79,14 +79,14 @@ export default async function AboutPage() {
   const headline = page?.heroHeadline ?? "Who We Are";
   const subtext =
     page?.heroSubtext ??
-    "CareLabs is a trusted partner for electrical safety testing, calibration, inspection, and certification services across the United States.";
+    "Carelabs is a trusted partner for electrical safety testing, calibration, inspection, and certification services across the United States.";
 
   const jsonLd = buildJsonLd([
     getOrganizationSchema(),
     getWebPageSchema(
       "https://carelabz.com/us/about/",
-      page?.metaTitle ?? "About CareLabs — Power System Consultants USA",
-      page?.metaDescription ?? "CareLabs is a leading electrical safety engineering firm."
+      page?.metaTitle ?? "About Carelabs — Power System Consultants USA",
+      page?.metaDescription ?? "Carelabs is a leading electrical safety engineering firm."
     ),
     getBreadcrumbSchema([
       { name: "Home", url: "https://carelabz.com/us/" },
@@ -192,7 +192,7 @@ export default async function AboutPage() {
         <section className="bg-[#0050B3] py-20 px-4">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {page?.ctaBannerHeading ?? "Partner with CareLabs"}
+              {page?.ctaBannerHeading ?? "Partner with Carelabs"}
             </h2>
             {page?.ctaBannerSubtext && (
               <p className="text-white/70 text-lg mb-8">{page.ctaBannerSubtext}</p>

@@ -15,10 +15,10 @@ export const dynamic = "force-dynamic";
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getContactPage("ca");
   return {
-    title: page?.metaTitle ?? "Contact CareLabs Canada | Get in Touch",
+    title: page?.metaTitle ?? "Contact Carelabs Canada | Get in Touch",
     description:
       page?.metaDescription ??
-      "Contact the CareLabs team for electrical safety testing, arc flash studies, and CSA Z462 compliance services across Canada.",
+      "Contact the Carelabs team for electrical safety testing, arc flash studies, and CSA Z462 compliance services across Canada.",
     alternates: {
       canonical: "https://carelabz.com/ca/contact/",
       languages: {
@@ -27,16 +27,16 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: page?.metaTitle ?? "Contact CareLabs — Get a Free Consultation Canada",
+      title: page?.metaTitle ?? "Contact Carelabs — Get a Free Consultation Canada",
       description:
         page?.metaDescription ?? "Get in touch for a free consultation on electrical safety services in Canada.",
       url: "https://carelabz.com/ca/contact/",
-      siteName: "CareLabs",
+      siteName: "Carelabs",
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: page?.metaTitle ?? "Contact CareLabs — Get a Free Consultation Canada",
+      title: page?.metaTitle ?? "Contact Carelabs — Get a Free Consultation Canada",
       description:
         page?.metaDescription ?? "Get in touch for a free consultation on electrical safety services in Canada.",
     },
@@ -69,7 +69,7 @@ export default async function CAContactPage() {
     getOrganizationSchemaCA(),
     getWebPageSchema(
       "https://carelabz.com/ca/contact/",
-      page?.metaTitle ?? "Contact CareLabs — Get a Free Consultation Canada",
+      page?.metaTitle ?? "Contact Carelabs — Get a Free Consultation Canada",
       page?.metaDescription ?? "Get in touch for a free consultation on electrical safety services in Canada.",
       "en-CA"
     ),
@@ -231,7 +231,7 @@ export default async function CAContactPage() {
                       allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      title="CareLabs Canada Office Location"
+                      title="Carelabs Canada Office Location"
                     />
                   </div>
                 )}

@@ -23,16 +23,16 @@ export async function generateMetadata({
 
   if (!post) {
     return {
-      title: "Article Not Found | CareLabs Canada",
+      title: "Article Not Found | Carelabs Canada",
     };
   }
 
   return {
-    title: post.metaTitle ?? `${post.title} | CareLabs Canada`,
+    title: post.metaTitle ?? `${post.title} | Carelabs Canada`,
     description:
       post.metaDescription ??
       post.excerpt ??
-      "Expert electrical safety insights from the CareLabs engineering team.",
+      "Expert electrical safety insights from the Carelabs engineering team.",
     keywords: post.seoKeywords ?? undefined,
     alternates: {
       canonical: `https://carelabz.com/ca/${params.slug}/`,
@@ -42,15 +42,15 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: post.metaTitle ?? `${post.title} | CareLabs Canada`,
+      title: post.metaTitle ?? `${post.title} | Carelabs Canada`,
       description: post.metaDescription ?? post.excerpt ?? undefined,
       url: `https://carelabz.com/ca/${params.slug}/`,
-      siteName: "CareLabs",
+      siteName: "Carelabs",
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
-      title: post.metaTitle ?? `${post.title} | CareLabs Canada`,
+      title: post.metaTitle ?? `${post.title} | Carelabs Canada`,
       description: post.metaDescription ?? post.excerpt ?? undefined,
     },
   };
@@ -84,13 +84,13 @@ export default async function CABlogPostPage({ params }: PageProps) {
     inLanguage: "en-CA",
     author: {
       "@type": "Person",
-      name: post.author ?? "CareLabs Engineering Team",
+      name: post.author ?? "Carelabs Engineering Team",
     },
     datePublished: post.publishedDate ?? post.publishedAt,
     dateModified: post.updatedAt,
     publisher: {
       "@type": "Organization",
-      name: "CareLabs",
+      name: "Carelabs",
       url: "https://carelabz.com",
     },
     ...(post.heroImage
@@ -207,7 +207,7 @@ export default async function CABlogPostPage({ params }: PageProps) {
               Need Expert Electrical Safety Support?
             </h2>
             <p className="text-white/70 text-lg mb-8 max-w-2xl mx-auto">
-              CareLabs provides arc flash studies, power system analysis, and
+              Carelabs provides arc flash studies, power system analysis, and
               CSA Z462 compliance services across Canada.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

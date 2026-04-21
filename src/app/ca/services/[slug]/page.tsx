@@ -54,13 +54,13 @@ export async function generateMetadata({
   const service = await getServicePageBySlug(strapiSlug);
 
   if (!service) {
-    return { title: "Service Not Found | CareLabs Canada" };
+    return { title: "Service Not Found | Carelabs Canada" };
   }
 
   const pageUrl = `https://carelabz.com/ca/services/${params.slug}/`;
 
   return {
-    title: service.metaTitle || `${service.title} | CareLabs Canada`,
+    title: service.metaTitle || `${service.title} | Carelabs Canada`,
     description: service.metaDescription || undefined,
     keywords: service.seoKeywords?.join(", "),
     alternates: {
@@ -71,14 +71,14 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: service.metaTitle || `${service.title} | CareLabs Canada`,
+      title: service.metaTitle || `${service.title} | Carelabs Canada`,
       description: service.metaDescription || undefined,
       url: pageUrl,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: service.metaTitle || `${service.title} | CareLabs Canada`,
+      title: service.metaTitle || `${service.title} | Carelabs Canada`,
       description: service.metaDescription || undefined,
     },
   };
@@ -196,7 +196,7 @@ export default async function CAServiceDetailPage({
         "@type": "WebPage",
         "@id": pageUrl,
         url: pageUrl,
-        name: service.metaTitle || `${service.title} | CareLabs Canada`,
+        name: service.metaTitle || `${service.title} | Carelabs Canada`,
         description: service.metaDescription || undefined,
         inLanguage: "en-CA",
         isPartOf: { "@id": "https://carelabz.com/#website" },
@@ -209,7 +209,7 @@ export default async function CAServiceDetailPage({
         url: pageUrl,
         provider: {
           "@type": "LocalBusiness",
-          name: "CareLabs",
+          name: "Carelabs",
           url: "https://carelabz.com",
           telephone: data.footerPhone,
           email: data.footerEmail,
@@ -271,7 +271,7 @@ export default async function CAServiceDetailPage({
         ? [
             {
               "@type": "HowTo",
-              name: `How CareLabs Performs ${service.title}`,
+              name: `How Carelabs Performs ${service.title}`,
               description: data.processHeading,
               totalTime: "P2W",
               step: data.processSteps.map((s, i) => ({

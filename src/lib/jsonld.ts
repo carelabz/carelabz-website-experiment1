@@ -2,7 +2,7 @@ export function getOrganizationSchema() {
   return {
     "@type": "Organization",
     "@id": "https://carelabz.com/#organization",
-    name: "CareLabs",
+    name: "Carelabs",
     url: "https://carelabz.com",
     logo: "https://carelabz.com/images/logo/carelabs-logo.svg",
     telephone: "+1-800-123-4567",
@@ -23,7 +23,7 @@ export function getOrganizationSchemaCA() {
   return {
     "@type": "Organization",
     "@id": "https://carelabz.com/#organization-ca",
-    name: "CareLabs",
+    name: "Carelabs",
     url: "https://carelabz.com/ca/",
     logo: "https://carelabz.com/images/logo/carelabs-logo.svg",
     telephone: "+1-800-456-7890",
@@ -43,7 +43,7 @@ export function getWebSiteSchema() {
     "@type": "WebSite",
     "@id": "https://carelabz.com/#website",
     url: "https://carelabz.com",
-    name: "CareLabs",
+    name: "Carelabs",
     publisher: { "@id": "https://carelabz.com/#organization" },
   };
 }

@@ -18,10 +18,10 @@ export const dynamic = "force-dynamic";
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getContactPage("us");
   return {
-    title: page?.metaTitle ?? "Contact CareLabs | Get in Touch",
+    title: page?.metaTitle ?? "Contact Carelabs | Get in Touch",
     description:
       page?.metaDescription ??
-      "Contact the CareLabs team for electrical safety testing, calibration, and compliance services across the United States.",
+      "Contact the Carelabs team for electrical safety testing, calibration, and compliance services across the United States.",
     alternates: {
       canonical: "https://carelabz.com/us/contact/",
       languages: {
@@ -30,16 +30,16 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: page?.metaTitle ?? "Contact CareLabs — Get a Free Consultation USA",
+      title: page?.metaTitle ?? "Contact Carelabs — Get a Free Consultation USA",
       description:
         page?.metaDescription ?? "Get in touch for a free consultation on electrical safety services.",
       url: "https://carelabz.com/us/contact/",
-      siteName: "CareLabs",
+      siteName: "Carelabs",
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: page?.metaTitle ?? "Contact CareLabs — Get a Free Consultation USA",
+      title: page?.metaTitle ?? "Contact Carelabs — Get a Free Consultation USA",
       description:
         page?.metaDescription ?? "Get in touch for a free consultation on electrical safety services.",
     },
@@ -70,7 +70,7 @@ export default async function ContactPage() {
     getOrganizationSchema(),
     getWebPageSchema(
       "https://carelabz.com/us/contact/",
-      page?.metaTitle ?? "Contact CareLabs — Get a Free Consultation USA",
+      page?.metaTitle ?? "Contact Carelabs — Get a Free Consultation USA",
       page?.metaDescription ?? "Get in touch for a free consultation on electrical safety services."
     ),
     getBreadcrumbSchema([
@@ -237,7 +237,7 @@ export default async function ContactPage() {
                       allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      title="CareLabs Office Location"
+                      title="Carelabs Office Location"
                     />
                   </div>
                 )}

@@ -37,12 +37,12 @@ export async function generateMetadata({
   params,
 }: CategoryPageProps): Promise<Metadata> {
   if (!VALID_CATEGORIES.includes(params.category as ValidCategory)) {
-    return { title: "Services | CareLabs USA" };
+    return { title: "Services | Carelabs USA" };
   }
   const label = getCategoryLabel(params.category as ValidCategory);
   return {
-    title: `${label} Services | CareLabs USA`,
-    description: `Browse CareLabs USA ${label.toLowerCase()} electrical safety services for US facilities.`,
+    title: `${label} Services | Carelabs USA`,
+    description: `Browse Carelabs USA ${label.toLowerCase()} electrical safety services for US facilities.`,
     alternates: {
       canonical: `https://carelabz.com/us/services/${params.category}/`,
       languages: {
@@ -51,16 +51,16 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: `${label} Services | CareLabs USA`,
-      description: `Browse CareLabs USA ${label.toLowerCase()} electrical safety services.`,
+      title: `${label} Services | Carelabs USA`,
+      description: `Browse Carelabs USA ${label.toLowerCase()} electrical safety services.`,
       url: `https://carelabz.com/us/services/${params.category}/`,
-      siteName: "CareLabs",
+      siteName: "Carelabs",
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${label} Services | CareLabs USA`,
-      description: `Browse CareLabs USA ${label.toLowerCase()} electrical safety services.`,
+      title: `${label} Services | Carelabs USA`,
+      description: `Browse Carelabs USA ${label.toLowerCase()} electrical safety services.`,
     },
   };
 }
@@ -82,8 +82,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     getOrganizationSchema(),
     getWebPageSchema(
       `https://carelabz.com/us/services/${params.category}/`,
-      `${categoryLabel} Services | CareLabs USA`,
-      `Browse CareLabs USA ${categoryLabel.toLowerCase()} electrical safety services.`
+      `${categoryLabel} Services | Carelabs USA`,
+      `Browse Carelabs USA ${categoryLabel.toLowerCase()} electrical safety services.`
     ),
     getBreadcrumbSchema([
       { name: "Home", url: "https://carelabz.com/us/" },

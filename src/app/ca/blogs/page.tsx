@@ -10,9 +10,9 @@ import { buildJsonLd, getOrganizationSchemaCA, getWebPageSchema, getBreadcrumbSc
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Electrical Safety Blog: Power System Studies & Analysis | CareLabs Canada",
+  title: "Electrical Safety Blog: Power System Studies & Analysis | Carelabs Canada",
   description:
-    "Expert insights on electrical safety, power system studies, arc flash analysis, and CSA Z462 compliance for Canadian facilities. Stay informed with CareLabs.",
+    "Expert insights on electrical safety, power system studies, arc flash analysis, and CSA Z462 compliance for Canadian facilities. Stay informed with Carelabs.",
   alternates: {
     canonical: "https://carelabz.com/ca/blogs/",
     languages: {
@@ -21,16 +21,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Electrical Safety Blog & Industry Insights | CareLabs Canada",
+    title: "Electrical Safety Blog & Industry Insights | Carelabs Canada",
     description:
       "Expert insights on arc flash analysis, power system engineering, and electrical safety compliance in Canada.",
     url: "https://carelabz.com/ca/blogs/",
-    siteName: "CareLabs",
+    siteName: "Carelabs",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Electrical Safety Blog & Industry Insights | CareLabs Canada",
+    title: "Electrical Safety Blog & Industry Insights | Carelabs Canada",
     description:
       "Expert insights on arc flash analysis, power system engineering, and electrical safety compliance in Canada.",
   },
@@ -68,7 +68,7 @@ export default async function CABlogIndexPage() {
     getOrganizationSchemaCA(),
     getWebPageSchema(
       "https://carelabz.com/ca/blogs/",
-      "Electrical Safety Blog & Industry Insights | CareLabs Canada",
+      "Electrical Safety Blog & Industry Insights | Carelabs Canada",
       "Expert insights on arc flash analysis, power system engineering, and electrical safety compliance in Canada.",
       "en-CA"
     ),
@@ -97,7 +97,7 @@ export default async function CABlogIndexPage() {
             </h1>
             <p className="text-lg text-[#374151] max-w-2xl mx-auto">
               Stay ahead of CSA Z462, Canadian Electrical Code, and IEEE 1584 requirements.
-              Expert knowledge from the CareLabs engineering team to help Canadian
+              Expert knowledge from the Carelabs engineering team to help Canadian
               facilities stay safe and compliant.
             </p>
           </div>

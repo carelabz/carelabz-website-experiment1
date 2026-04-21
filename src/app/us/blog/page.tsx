@@ -10,9 +10,9 @@ import { buildJsonLd, getOrganizationSchema, getWebPageSchema, getBreadcrumbSche
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Electrical Safety Blog: Power System Studies & Analysis | CareLabs USA",
+  title: "Electrical Safety Blog: Power System Studies & Analysis | Carelabs USA",
   description:
-    "Expert insights on electrical safety, power system study and analysis, arc flash studies, and compliance for US facilities. Stay informed with CareLabs.",
+    "Expert insights on electrical safety, power system study and analysis, arc flash studies, and compliance for US facilities. Stay informed with Carelabs.",
   alternates: {
     canonical: "https://carelabz.com/us/blog/",
     languages: {
@@ -21,16 +21,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Electrical Safety Blog & Industry Insights | CareLabs USA",
+    title: "Electrical Safety Blog & Industry Insights | Carelabs USA",
     description:
       "Expert insights on arc flash analysis, power system engineering, and electrical safety compliance in the USA.",
     url: "https://carelabz.com/us/blog/",
-    siteName: "CareLabs",
+    siteName: "Carelabs",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Electrical Safety Blog & Industry Insights | CareLabs USA",
+    title: "Electrical Safety Blog & Industry Insights | Carelabs USA",
     description:
       "Expert insights on arc flash analysis, power system engineering, and electrical safety compliance in the USA.",
   },
@@ -68,7 +68,7 @@ export default async function BlogIndexPage() {
     getOrganizationSchema(),
     getWebPageSchema(
       "https://carelabz.com/us/blog/",
-      "Electrical Safety Blog & Industry Insights | CareLabs USA",
+      "Electrical Safety Blog & Industry Insights | Carelabs USA",
       "Expert insights on arc flash analysis, power system engineering, and electrical safety compliance in the USA."
     ),
     getBreadcrumbSchema([
@@ -97,7 +97,7 @@ export default async function BlogIndexPage() {
             </h1>
             <p className="text-lg text-[#374151] max-w-2xl mx-auto">
               Stay ahead of electrical safety regulations, compliance standards,
-              and best practices. Expert knowledge from the CareLabs engineering
+              and best practices. Expert knowledge from the Carelabs engineering
               team to help US facilities stay safe and compliant.
             </p>
           </div>

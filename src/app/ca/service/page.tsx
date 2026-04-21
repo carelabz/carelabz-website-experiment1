@@ -9,9 +9,9 @@ import { buildJsonLd, getOrganizationSchemaCA, getWebPageSchema, getBreadcrumbSc
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Electrical Safety Services Canada | CareLabs",
+  title: "Electrical Safety Services Canada | Carelabs",
   description:
-    "Discover CareLabs' Canadian electrical safety services — arc flash studies, short circuit analysis, load flow analysis, and relay coordination aligned with CSA Z462 and the Canadian Electrical Code.",
+    "Discover Carelabs' Canadian electrical safety services — arc flash studies, short circuit analysis, load flow analysis, and relay coordination aligned with CSA Z462 and the Canadian Electrical Code.",
   alternates: {
     canonical: "https://carelabz.com/ca/service/",
     languages: {
@@ -20,17 +20,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Power System Engineering Services in Canada | CareLabs",
+    title: "Power System Engineering Services in Canada | Carelabs",
     description:
       "Professional electrical safety services including arc flash studies, short circuit analysis, and power system engineering across Canada.",
     url: "https://carelabz.com/ca/service/",
-    siteName: "CareLabs",
+    siteName: "Carelabs",
     type: "website",
     locale: "en_CA",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Power System Engineering Services in Canada | CareLabs",
+    title: "Power System Engineering Services in Canada | Carelabs",
     description:
       "Professional electrical safety services including arc flash studies, short circuit analysis, and power system engineering across Canada.",
   },
@@ -49,7 +49,7 @@ export default async function CAServicesIndexPage() {
     getOrganizationSchemaCA(),
     getWebPageSchema(
       "https://carelabz.com/ca/service/",
-      "Power System Engineering Services in Canada | CareLabs",
+      "Power System Engineering Services in Canada | Carelabs",
       "Professional electrical safety services including arc flash studies, short circuit analysis, and power system engineering across Canada.",
       "en-CA"
     ),

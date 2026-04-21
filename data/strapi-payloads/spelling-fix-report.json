@@ -1,0 +1,56 @@
+{
+  "updates": 41,
+  "failures": 0,
+  "per_collection": {
+    "ca/service-pages": {
+      "ok": 4,
+      "clean": 0,
+      "fail": 0
+    },
+    "ca/home-pages": {
+      "ok": 1,
+      "clean": 0,
+      "fail": 0
+    },
+    "ca/blog-posts": {
+      "ok": 20,
+      "clean": 0,
+      "fail": 0
+    },
+    "ca/about-pages": {
+      "ok": 1,
+      "clean": 0,
+      "fail": 0
+    },
+    "ca/contact-pages": {
+      "ok": 0,
+      "clean": 1,
+      "fail": 0
+    },
+    "us/service-pages": {
+      "ok": 7,
+      "clean": 2,
+      "fail": 0
+    },
+    "us/home-pages": {
+      "ok": 1,
+      "clean": 0,
+      "fail": 0
+    },
+    "us/blog-posts": {
+      "ok": 5,
+      "clean": 0,
+      "fail": 0
+    },
+    "us/about-pages": {
+      "ok": 1,
+      "clean": 0,
+      "fail": 0
+    },
+    "us/contact-pages": {
+      "ok": 1,
+      "clean": 0,
+      "fail": 0
+    }
+  }
+}

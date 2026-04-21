@@ -18,7 +18,7 @@ const COMPANY = [
 ];
 
 const FOOTER_DESCRIPTION =
-  "CareLabs delivers IEEE 1584 arc flash studies, NFPA 70E compliance, and full power system engineering services across the United States.";
+  "Carelabs delivers IEEE 1584 arc flash studies, NFPA 70E compliance, and full power system engineering services across the United States.";
 
 const ADDRESS = "Houston, TX, United States";
 const PHONE = "+1 (800) 123-4567";
@@ -34,7 +34,7 @@ export default function USFooter() {
             <Link href="/us/" className="inline-block mb-4">
               <Image
                 src="/images/logo/carelabs-logo.svg"
-                alt="CareLabs"
+                alt="Carelabs"
                 width={866}
                 height={288}
                 className="h-8 w-auto"
@@ -118,7 +118,7 @@ export default function USFooter() {
         {/* Bottom row */}
         <div className="mt-12 border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/40">
-            &copy; {new Date().getFullYear()} CareLabs. All rights reserved.
+            &copy; {new Date().getFullYear()} Carelabs. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link

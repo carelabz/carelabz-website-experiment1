@@ -24,10 +24,10 @@ export const dynamic = "force-dynamic";
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getAboutPage("ca");
   return {
-    title: page?.metaTitle ?? "About CareLabs | Canadian Electrical Safety Experts",
+    title: page?.metaTitle ?? "About Carelabs | Canadian Electrical Safety Experts",
     description:
       page?.metaDescription ??
-      "Learn about CareLabs — our mission, values, and the team dedicated to electrical safety testing and CSA Z462 compliance across Canada.",
+      "Learn about Carelabs — our mission, values, and the team dedicated to electrical safety testing and CSA Z462 compliance across Canada.",
     alternates: {
       canonical: "https://carelabz.com/ca/about-us/",
       languages: {
@@ -36,18 +36,18 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: page?.metaTitle ?? "About CareLabs — Power System Consultants Canada",
+      title: page?.metaTitle ?? "About Carelabs — Power System Consultants Canada",
       description:
-        page?.metaDescription ?? "CareLabs is a leading electrical safety engineering firm in Canada.",
+        page?.metaDescription ?? "Carelabs is a leading electrical safety engineering firm in Canada.",
       url: "https://carelabz.com/ca/about-us/",
-      siteName: "CareLabs",
+      siteName: "Carelabs",
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: page?.metaTitle ?? "About CareLabs — Power System Consultants Canada",
+      title: page?.metaTitle ?? "About Carelabs — Power System Consultants Canada",
       description:
-        page?.metaDescription ?? "CareLabs is a leading electrical safety engineering firm in Canada.",
+        page?.metaDescription ?? "Carelabs is a leading electrical safety engineering firm in Canada.",
     },
   };
 }
@@ -79,14 +79,14 @@ export default async function CAAboutPage() {
   const headline = page?.heroHeadline ?? "Who We Are";
   const subtext =
     page?.heroSubtext ??
-    "CareLabs is a trusted partner for electrical safety testing, calibration, inspection, and certification services across Canada.";
+    "Carelabs is a trusted partner for electrical safety testing, calibration, inspection, and certification services across Canada.";
 
   const jsonLd = buildJsonLd([
     getOrganizationSchemaCA(),
     getWebPageSchema(
       "https://carelabz.com/ca/about-us/",
-      page?.metaTitle ?? "About CareLabs — Power System Consultants Canada",
-      page?.metaDescription ?? "CareLabs is a leading electrical safety engineering firm in Canada.",
+      page?.metaTitle ?? "About Carelabs — Power System Consultants Canada",
+      page?.metaDescription ?? "Carelabs is a leading electrical safety engineering firm in Canada.",
       "en-CA"
     ),
     getBreadcrumbSchema([
@@ -188,7 +188,7 @@ export default async function CAAboutPage() {
         <section className="bg-[#0050B3] py-20 px-4">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {page?.ctaBannerHeading ?? "Partner with CareLabs Canada"}
+              {page?.ctaBannerHeading ?? "Partner with Carelabs Canada"}
             </h2>
             {page?.ctaBannerSubtext ? (
               <p className="text-white/70 text-lg mb-8">{page.ctaBannerSubtext}</p>

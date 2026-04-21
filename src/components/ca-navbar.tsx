@@ -37,10 +37,10 @@ export function CAStickyNavbar() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-[74px] items-center justify-between">
-          <Link href="/ca/" className="flex items-center" aria-label="CareLabs Canada home">
+          <Link href="/ca/" className="flex items-center" aria-label="Carelabs Canada home">
             <Image
               src="/images/logo/carelabs-logo.svg"
-              alt="CareLabs"
+              alt="Carelabs"
               width={866}
               height={288}
               priority

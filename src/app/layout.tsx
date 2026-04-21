@@ -16,12 +16,12 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://carelabz.com"),
-  title: "CareLabs — Electrical Safety Services",
+  title: "Carelabs — Electrical Safety Services",
   description:
     "Professional electrical safety services including arc flash studies, power system analysis, and compliance solutions in Dubai, UAE.",
   openGraph: {
     type: "website",
-    siteName: "CareLabs",
+    siteName: "Carelabs",
     locale: "en_US",
   },
   twitter: {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "CareLabs",
+  name: "Carelabs",
   url: "https://carelabz.com",
   logo: "https://carelabz.com/icon.svg",
   sameAs: [

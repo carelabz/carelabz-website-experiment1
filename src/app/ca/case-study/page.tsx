@@ -9,9 +9,9 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Case Studies | CareLabs Canada",
+    title: "Case Studies | Carelabs Canada",
     description:
-      "Explore how CareLabs helps clients across Canada achieve electrical safety compliance and operational excellence.",
+      "Explore how Carelabs helps clients across Canada achieve electrical safety compliance and operational excellence.",
     alternates: {
       canonical: "https://carelabz.com/ca/case-study/",
       languages: {
@@ -20,18 +20,18 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: "Electrical Safety Case Studies | CareLabs Canada",
+      title: "Electrical Safety Case Studies | Carelabs Canada",
       description:
-        "Real-world electrical safety project case studies from CareLabs engineers across Canada.",
+        "Real-world electrical safety project case studies from Carelabs engineers across Canada.",
       url: "https://carelabz.com/ca/case-study/",
-      siteName: "CareLabs",
+      siteName: "Carelabs",
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Electrical Safety Case Studies | CareLabs Canada",
+      title: "Electrical Safety Case Studies | Carelabs Canada",
       description:
-        "Real-world electrical safety project case studies from CareLabs engineers across Canada.",
+        "Real-world electrical safety project case studies from Carelabs engineers across Canada.",
     },
   };
 }
@@ -41,8 +41,8 @@ export default function CACaseStudiesPage() {
     getOrganizationSchemaCA(),
     getWebPageSchema(
       "https://carelabz.com/ca/case-study/",
-      "Electrical Safety Case Studies | CareLabs Canada",
-      "Real-world electrical safety project case studies from CareLabs engineers across Canada.",
+      "Electrical Safety Case Studies | Carelabs Canada",
+      "Real-world electrical safety project case studies from Carelabs engineers across Canada.",
       "en-CA"
     ),
     getBreadcrumbSchema([
@@ -65,7 +65,7 @@ export default function CACaseStudiesPage() {
               Case Studies
             </h1>
             <p className="text-lg md:text-xl text-[#374151] max-w-2xl mx-auto">
-              Real-world results from our partnerships. See how CareLabs has
+              Real-world results from our partnerships. See how Carelabs has
               helped organizations across Canada achieve safety compliance,
               reduce risk, and drive operational excellence.
             </p>
@@ -80,7 +80,7 @@ export default function CACaseStudiesPage() {
             </h2>
             <p className="text-[#374151] max-w-xl mx-auto mb-8">
               We are currently documenting our project successes. Check back
-              soon to read about how CareLabs has helped facilities across
+              soon to read about how Carelabs has helped facilities across
               Canada achieve electrical safety compliance.
             </p>
             <Link
@@ -98,7 +98,7 @@ export default function CACaseStudiesPage() {
               Ready to write your success story?
             </h2>
             <p className="text-white/70 text-lg mb-8">
-              Contact our team to learn how CareLabs can help your Canadian
+              Contact our team to learn how Carelabs can help your Canadian
               organization achieve its safety and compliance goals.
             </p>
             <Link

@@ -9,9 +9,9 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Case Studies | CareLabs US",
+    title: "Case Studies | Carelabs US",
     description:
-      "Explore how CareLabs helps clients across the US achieve electrical safety compliance and operational excellence.",
+      "Explore how Carelabs helps clients across the US achieve electrical safety compliance and operational excellence.",
     alternates: {
       canonical: "https://carelabz.com/us/case-studies/",
       languages: {
@@ -20,18 +20,18 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: "Electrical Safety Case Studies | CareLabs USA",
+      title: "Electrical Safety Case Studies | Carelabs USA",
       description:
-        "Real-world electrical safety project case studies from CareLabs engineers across the United States.",
+        "Real-world electrical safety project case studies from Carelabs engineers across the United States.",
       url: "https://carelabz.com/us/case-studies/",
-      siteName: "CareLabs",
+      siteName: "Carelabs",
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Electrical Safety Case Studies | CareLabs USA",
+      title: "Electrical Safety Case Studies | Carelabs USA",
       description:
-        "Real-world electrical safety project case studies from CareLabs engineers across the United States.",
+        "Real-world electrical safety project case studies from Carelabs engineers across the United States.",
     },
   };
 }
@@ -41,8 +41,8 @@ export default function CaseStudiesPage() {
     getOrganizationSchema(),
     getWebPageSchema(
       "https://carelabz.com/us/case-studies/",
-      "Electrical Safety Case Studies | CareLabs USA",
-      "Real-world electrical safety project case studies from CareLabs engineers across the United States."
+      "Electrical Safety Case Studies | Carelabs USA",
+      "Real-world electrical safety project case studies from Carelabs engineers across the United States."
     ),
     getBreadcrumbSchema([
       { name: "Home", url: "https://carelabz.com/us/" },
@@ -65,7 +65,7 @@ export default function CaseStudiesPage() {
               Case Studies
             </h1>
             <p className="text-lg md:text-xl text-[#374151] max-w-2xl mx-auto">
-              Real-world results from our partnerships. See how CareLabs has
+              Real-world results from our partnerships. See how Carelabs has
               helped organizations across the US achieve safety compliance,
               reduce risk, and drive operational excellence.
             </p>
@@ -81,7 +81,7 @@ export default function CaseStudiesPage() {
             </h2>
             <p className="text-[#374151] max-w-xl mx-auto mb-8">
               We are currently documenting our project successes. Check back
-              soon to read about how CareLabs has helped facilities across the
+              soon to read about how Carelabs has helped facilities across the
               USA achieve electrical safety compliance.
             </p>
             <Link
@@ -100,7 +100,7 @@ export default function CaseStudiesPage() {
               Ready to write your success story?
             </h2>
             <p className="text-white/70 text-lg mb-8">
-              Contact our team to learn how CareLabs can help your organization
+              Contact our team to learn how Carelabs can help your organization
               achieve its safety and compliance goals.
             </p>
             <Link
