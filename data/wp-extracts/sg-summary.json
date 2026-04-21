@@ -1,0 +1,233 @@
+{
+  "cc": "sg",
+  "wpUrl": "https://carelabz.com/sg/",
+  "totalPages": 31,
+  "byKind": {
+    "home": 1,
+    "about": 1,
+    "contact": 1,
+    "service": 1,
+    "blog": 27
+  },
+  "pages": [
+    {
+      "kind": "home",
+      "slug": "sg",
+      "file": "data/wp-extracts\\sg-sg.json",
+      "wordCount": 1204,
+      "h2Count": 16
+    },
+    {
+      "kind": "about",
+      "slug": "about-us",
+      "file": "data/wp-extracts\\sg-about-us.json",
+      "wordCount": 769,
+      "h2Count": 6
+    },
+    {
+      "kind": "contact",
+      "slug": "contact-us",
+      "file": "data/wp-extracts\\sg-contact-us.json",
+      "wordCount": 487,
+      "h2Count": 2
+    },
+    {
+      "kind": "service",
+      "slug": "arc-flash-study",
+      "file": "data/wp-extracts\\sg-arc-flash-study.json",
+      "wordCount": 1070,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "short-circuit-analysis",
+      "file": "data/wp-extracts\\sg-short-circuit-analysis.json",
+      "wordCount": 1002,
+      "h2Count": 6
+    },
+    {
+      "kind": "blog",
+      "slug": "load-flow-analysis",
+      "file": "data/wp-extracts\\sg-load-flow-analysis.json",
+      "wordCount": 969,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "relay-coordination-study",
+      "file": "data/wp-extracts\\sg-relay-coordination-study.json",
+      "wordCount": 1037,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "analyze-and-assess-electric-motor-performance-in-compliance-with-singapore-legislation",
+      "file": "data/wp-extracts\\sg-analyze-and-assess-electric-motor-performance-in-compliance-with-singapore-legislation.json",
+      "wordCount": 1161,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "how-can-the-performance-and-dependability-of-commercial-motors-be-assessed",
+      "file": "data/wp-extracts\\sg-how-can-the-performance-and-dependability-of-commercial-motors-be-assessed.json",
+      "wordCount": 1260,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "the-study-of-the-power-system-looks-at-relay-coordination-short-circuits-and-load-flow",
+      "file": "data/wp-extracts\\sg-the-study-of-the-power-system-looks-at-relay-coordination-short-circuits-and-load-flow.json",
+      "wordCount": 1617,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "the-importance-of-load-flow-and-short-circuit-analysis-for-singapore-companies",
+      "file": "data/wp-extracts\\sg-the-importance-of-load-flow-and-short-circuit-analysis-for-singapore-companies.json",
+      "wordCount": 1180,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "how-to-perform-a-study-of-power-quality-in-singapore",
+      "file": "data/wp-extracts\\sg-how-to-perform-a-study-of-power-quality-in-singapore.json",
+      "wordCount": 1240,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "power-quality-working-principles-in-singapore",
+      "file": "data/wp-extracts\\sg-power-quality-working-principles-in-singapore.json",
+      "wordCount": 1700,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "singapore-power-system-harmonic-analysis",
+      "file": "data/wp-extracts\\sg-singapore-power-system-harmonic-analysis.json",
+      "wordCount": 1247,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "why-is-harmonic-analysis-and-study-so-important-for-singapore-businesses",
+      "file": "data/wp-extracts\\sg-why-is-harmonic-analysis-and-study-so-important-for-singapore-businesses.json",
+      "wordCount": 1220,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "significance-of-arc-flash-risk-evaluation-and-mitigation-techniques",
+      "file": "data/wp-extracts\\sg-significance-of-arc-flash-risk-evaluation-and-mitigation-techniques.json",
+      "wordCount": 1219,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "arc-flash-analysis-step-by-step-instructions-for-singapore",
+      "file": "data/wp-extracts\\sg-arc-flash-analysis-step-by-step-instructions-for-singapore.json",
+      "wordCount": 1278,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "our-blogs",
+      "file": "data/wp-extracts\\sg-our-blogs.json",
+      "wordCount": 554,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "our-services",
+      "file": "data/wp-extracts\\sg-our-services.json",
+      "wordCount": 610,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "arc-flash-study-in-singapore",
+      "file": "data/wp-extracts\\sg-arc-flash-study-in-singapore.json",
+      "wordCount": 1370,
+      "h2Count": 11
+    },
+    {
+      "kind": "blog",
+      "slug": "load-flow-analysis-in-singapore",
+      "file": "data/wp-extracts\\sg-load-flow-analysis-in-singapore.json",
+      "wordCount": 1409,
+      "h2Count": 11
+    },
+    {
+      "kind": "blog",
+      "slug": "relay-coordination-study-in-singapore",
+      "file": "data/wp-extracts\\sg-relay-coordination-study-in-singapore.json",
+      "wordCount": 1383,
+      "h2Count": 11
+    },
+    {
+      "kind": "blog",
+      "slug": "short-circuit-analysis-3",
+      "file": "data/wp-extracts\\sg-short-circuit-analysis-3.json",
+      "wordCount": 1376,
+      "h2Count": 11
+    },
+    {
+      "kind": "blog",
+      "slug": "arc-flash",
+      "file": "data/wp-extracts\\sg-arc-flash.json",
+      "wordCount": 132,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "blog-post",
+      "file": "data/wp-extracts\\sg-blog-post.json",
+      "wordCount": 244,
+      "h2Count": 4
+    },
+    {
+      "kind": "blog",
+      "slug": "harmonic-study-analysis",
+      "file": "data/wp-extracts\\sg-harmonic-study-analysis.json",
+      "wordCount": 132,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "motor-start-analysis",
+      "file": "data/wp-extracts\\sg-motor-start-analysis.json",
+      "wordCount": 120,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "power-quality-analysis",
+      "file": "data/wp-extracts\\sg-power-quality-analysis.json",
+      "wordCount": 132,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "power-system-study-analysis",
+      "file": "data/wp-extracts\\sg-power-system-study-analysis.json",
+      "wordCount": 130,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "admin_sg",
+      "file": "data/wp-extracts\\sg-admin_sg.json",
+      "wordCount": 554,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "sajini_sg",
+      "file": "data/wp-extracts\\sg-sajini_sg.json",
+      "wordCount": 244,
+      "h2Count": 4
+    }
+  ],
+  "skipped": {},
+  "discovered": 33
+}
