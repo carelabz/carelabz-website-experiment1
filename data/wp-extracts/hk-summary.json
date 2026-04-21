@@ -1,0 +1,163 @@
+{
+  "cc": "hk",
+  "wpUrl": "https://carelabz.com/hk/",
+  "totalPages": 21,
+  "byKind": {
+    "home": 1,
+    "about": 1,
+    "contact": 1,
+    "service": 5,
+    "blog": 13
+  },
+  "pages": [
+    {
+      "kind": "home",
+      "slug": "hk",
+      "file": "data/wp-extracts\\hk-hk.json",
+      "wordCount": 1382,
+      "h2Count": 8
+    },
+    {
+      "kind": "about",
+      "slug": "about-us",
+      "file": "data/wp-extracts\\hk-about-us.json",
+      "wordCount": 942,
+      "h2Count": 7
+    },
+    {
+      "kind": "contact",
+      "slug": "contact-us",
+      "file": "data/wp-extracts\\hk-contact-us.json",
+      "wordCount": 349,
+      "h2Count": 3
+    },
+    {
+      "kind": "service",
+      "slug": "arc-flash-study",
+      "file": "data/wp-extracts\\hk-arc-flash-study.json",
+      "wordCount": 1182,
+      "h2Count": 18
+    },
+    {
+      "kind": "service",
+      "slug": "harmonic-study-and-analysis",
+      "file": "data/wp-extracts\\hk-harmonic-study-and-analysis.json",
+      "wordCount": 1192,
+      "h2Count": 17
+    },
+    {
+      "kind": "service",
+      "slug": "motor-start-analysis",
+      "file": "data/wp-extracts\\hk-motor-start-analysis.json",
+      "wordCount": 1259,
+      "h2Count": 17
+    },
+    {
+      "kind": "service",
+      "slug": "power-quality-analysis",
+      "file": "data/wp-extracts\\hk-power-quality-analysis.json",
+      "wordCount": 1123,
+      "h2Count": 16
+    },
+    {
+      "kind": "service",
+      "slug": "power-system-study-and-analysis",
+      "file": "data/wp-extracts\\hk-power-system-study-and-analysis.json",
+      "wordCount": 1233,
+      "h2Count": 20
+    },
+    {
+      "kind": "blog",
+      "slug": "check-and-test-the-performance-of-electric-motors-according-to-hong-konger-rules",
+      "file": "data/wp-extracts\\hk-check-and-test-the-performance-of-electric-motors-according-to-hong-konger-rules.json",
+      "wordCount": 1428,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "how-can-the-quality-and-dependability-of-commercial-motors-be-evaluated",
+      "file": "data/wp-extracts\\hk-how-can-the-quality-and-dependability-of-commercial-motors-be-evaluated.json",
+      "wordCount": 1539,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "analysis-of-power-system-load-flow-short-circuit-and-relay-coordination",
+      "file": "data/wp-extracts\\hk-analysis-of-power-system-load-flow-short-circuit-and-relay-coordination.json",
+      "wordCount": 1822,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "why-load-flow-and-short-circuit-analysis-are-important-for-a-hong-konger-business",
+      "file": "data/wp-extracts\\hk-why-load-flow-and-short-circuit-analysis-are-important-for-a-hong-konger-business.json",
+      "wordCount": 1431,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "working-principles-for-power-quality-in-hong-kong",
+      "file": "data/wp-extracts\\hk-working-principles-for-power-quality-in-hong-kong.json",
+      "wordCount": 1967,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "how-to-conduct-a-power-quality-analysis-in-hong-kong",
+      "file": "data/wp-extracts\\hk-how-to-conduct-a-power-quality-analysis-in-hong-kong.json",
+      "wordCount": 1491,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "analysis-of-harmonics-in-the-hong-konger-power-system",
+      "file": "data/wp-extracts\\hk-analysis-of-harmonics-in-the-hong-konger-power-system.json",
+      "wordCount": 1574,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "why-are-harmonic-analysis-and-research-crucial-for-hong-konger-businesses",
+      "file": "data/wp-extracts\\hk-why-are-harmonic-analysis-and-research-crucial-for-hong-konger-businesses.json",
+      "wordCount": 1442,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "the-significance-of-arc-flash-hazard-analysis-and-mitigation-techniques",
+      "file": "data/wp-extracts\\hk-the-significance-of-arc-flash-hazard-analysis-and-mitigation-techniques.json",
+      "wordCount": 1541,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "hong-konger-arc-flash-analysis-a-comprehensive-guide",
+      "file": "data/wp-extracts\\hk-hong-konger-arc-flash-analysis-a-comprehensive-guide.json",
+      "wordCount": 1560,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "404-page",
+      "file": "data/wp-extracts\\hk-404-page.json",
+      "wordCount": 258,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "uncategorized",
+      "file": "data/wp-extracts\\hk-uncategorized.json",
+      "wordCount": 300,
+      "h2Count": 0
+    },
+    {
+      "kind": "blog",
+      "slug": "admin_hk",
+      "file": "data/wp-extracts\\hk-admin_hk.json",
+      "wordCount": 300,
+      "h2Count": 0
+    }
+  ],
+  "skipped": {},
+  "discovered": 23
+}
