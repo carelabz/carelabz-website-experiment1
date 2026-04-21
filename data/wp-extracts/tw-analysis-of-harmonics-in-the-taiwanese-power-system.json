@@ -1,0 +1,59 @@
+{
+  "url": "https://carelabz.com/tw/analysis-of-harmonics-in-the-taiwanese-power-system/",
+  "slug": "analysis-of-harmonics-in-the-taiwanese-power-system",
+  "pageType": "blog",
+  "metaTitle": "Analysis of Harmonics in the Taiwanese Power System: - Carelabs Taiwan",
+  "metaDescription": "",
+  "canonicalSource": "https://carelabz.com/tw/analysis-of-harmonics-in-the-taiwanese-power-system/",
+  "h1": "",
+  "h2": [
+    "Analysis of Harmonics in the Taiwanese Power System:",
+    "RELATED NEWS",
+    "RELATED NEWS"
+  ],
+  "h3": [
+    "Harmonic Distortion:",
+    "Relevance of Harmonic Analysis:",
+    "Benefits of Power System Harmonics Mitigation:",
+    "Methods for Conducting a Power Quality Analysis:",
+    "Leave a Reply Cancel reply"
+  ],
+  "paragraphs": [
+    "Home / Blog / Analysis of Harmonics in the Taiwanese Power System:",
+    "Power is an essential component of living in the modern world. Most items we use every day are powered in some form. We must employ the most efficient power technologies to supply electricity that is both affordable and safe. Several power system issues have been identified because of harmonics, which increase the RMS of the current flow in the circuit and thus increase loss. Harmonics can influence the whole distribution system, including the loads. In an industrial or commercial structure, harmonics can also cause damage to delicate appliances and equipment. In certain circumstances, the existence of a harmonic breakdown is not immediately apparent and cannot be distinguished from the normal ageing of the appliance.",
+    "If harmonic problems arise, their restricted scope might compromise the dependability of the power supply. Electric current and voltage harmonics are a concern in power systems. In power systems, excessive harmonic levels can damage or destroy equipment. A non-linear load frequently results in harmonics, or distortion of the current waveform, in an electrical system. Personal computers, driven motors, variable speed motors, fax machines, laser printers, switch-mode power supplies (SMPS), batteries, and uninterruptible power supply (UPS) are examples of non-linear and harmonically produced loads in power systems.",
+    "Harmonic reduces the effectiveness and quality of electrical systems. Using harmonic analysis to discover harmonics inside the power system will increase the reliability of the system. Currents are nonlinear when modern power electronics equipment is utilized often. As a result, harmonics are generated based on the system loads. Equipment must be energy-efficient and compliant with energy-saving regulations.",
+    "When a sinusoidal waveform interacts with a nonlinear load, the system produces distortion and harmonics. Harmonic analysis is frequently necessary for determining the presence of harmonics in a system.",
+    "Care Lab s provides its personnel with innovative tools to secure the safety of your electrical equipment and provide you with a trustworthy working environment. Learn more about the research and analysis services for harmonics offered by Care Lab s and get a quote now."
+  ],
+  "bulletLists": [
+    [
+      "To address harmonics-related issues such as equipment malfunction and damage.",
+      "On that date the plant will be enlarged, and the quantity of non-linear loads will be added.",
+      "When the new capacitor bank is connected to the electrical systems, a harmonic analysis is required."
+    ],
+    [
+      "Harmonic analysis diminishes the power losses of cables, switch gears, and safety devices, hence reducing operational costs. Additionally, it aids in reducing power system losses.",
+      "It reduces the power system’s RMS current and helps avoid transformer oversizing, hence lowering the need for cable, switchgear, and busbars."
+    ],
+    [
+      "Obtain a one-line figure that highlights nonlinear loads.",
+      "Focus closely on the common connecting point (PCC).",
+      "Draws attention to plant buses that might be impacted by harmonics.",
+      "Compile all relevant information on non-linear loads and historical harmonic performance of the utility.",
+      "Create a mockup utilizing ETAP (Electrical Transient Analysis Program) software and the electrical system’s performance.",
+      "Determine the quantity of voltage and current distortion and conduct research and a study of harmonics.",
+      "Choose a technique for minimizing harmonic distortion if it exceeds the acceptable limit.",
+      "After using the mitigation technique, the harmonic analysis must be performed to confirm CEC compliance."
+    ],
+    [
+      "Email Us",
+      "Chat with Us",
+      "Enquire Now"
+    ]
+  ],
+  "wordCount": 1493,
+  "phones": [],
+  "emails": [],
+  "scrapedAt": "2026-04-21T17:38:57Z"
+}

@@ -1,0 +1,163 @@
+{
+  "cc": "tw",
+  "wpUrl": "https://carelabz.com/tw/",
+  "totalPages": 21,
+  "byKind": {
+    "home": 1,
+    "about": 1,
+    "contact": 1,
+    "service": 5,
+    "blog": 13
+  },
+  "pages": [
+    {
+      "kind": "home",
+      "slug": "tw",
+      "file": "data/wp-extracts\\tw-tw.json",
+      "wordCount": 1368,
+      "h2Count": 8
+    },
+    {
+      "kind": "about",
+      "slug": "about-us",
+      "file": "data/wp-extracts\\tw-about-us.json",
+      "wordCount": 942,
+      "h2Count": 7
+    },
+    {
+      "kind": "contact",
+      "slug": "contact-us",
+      "file": "data/wp-extracts\\tw-contact-us.json",
+      "wordCount": 349,
+      "h2Count": 3
+    },
+    {
+      "kind": "service",
+      "slug": "power-system-study-and-analysis",
+      "file": "data/wp-extracts\\tw-power-system-study-and-analysis.json",
+      "wordCount": 1234,
+      "h2Count": 20
+    },
+    {
+      "kind": "service",
+      "slug": "arc-flash-study",
+      "file": "data/wp-extracts\\tw-arc-flash-study.json",
+      "wordCount": 1184,
+      "h2Count": 18
+    },
+    {
+      "kind": "service",
+      "slug": "harmonic-study-and-analysis",
+      "file": "data/wp-extracts\\tw-harmonic-study-and-analysis.json",
+      "wordCount": 1160,
+      "h2Count": 17
+    },
+    {
+      "kind": "service",
+      "slug": "motor-start-analysis",
+      "file": "data/wp-extracts\\tw-motor-start-analysis.json",
+      "wordCount": 1157,
+      "h2Count": 17
+    },
+    {
+      "kind": "service",
+      "slug": "power-quality-analysis",
+      "file": "data/wp-extracts\\tw-power-quality-analysis.json",
+      "wordCount": 1105,
+      "h2Count": 16
+    },
+    {
+      "kind": "blog",
+      "slug": "check-and-test-the-performance-of-electric-motors-according-to-taiwanese-rules",
+      "file": "data/wp-extracts\\tw-check-and-test-the-performance-of-electric-motors-according-to-taiwanese-rules.json",
+      "wordCount": 1669,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "how-can-the-quality-and-dependability-of-commercial-motors-be-evaluated",
+      "file": "data/wp-extracts\\tw-how-can-the-quality-and-dependability-of-commercial-motors-be-evaluated.json",
+      "wordCount": 1487,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "analysis-of-power-system-load-flow-short-circuit-and-relay-coordination",
+      "file": "data/wp-extracts\\tw-analysis-of-power-system-load-flow-short-circuit-and-relay-coordination.json",
+      "wordCount": 1805,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "why-load-flow-and-short-circuit-analysis-are-important-for-a-taiwanese-business",
+      "file": "data/wp-extracts\\tw-why-load-flow-and-short-circuit-analysis-are-important-for-a-taiwanese-business.json",
+      "wordCount": 1369,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "working-principles-for-power-quality-in-taiwan",
+      "file": "data/wp-extracts\\tw-working-principles-for-power-quality-in-taiwan.json",
+      "wordCount": 1887,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "how-to-conduct-a-power-quality-analysis-in-taiwan",
+      "file": "data/wp-extracts\\tw-how-to-conduct-a-power-quality-analysis-in-taiwan.json",
+      "wordCount": 1459,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "analysis-of-harmonics-in-the-taiwanese-power-system",
+      "file": "data/wp-extracts\\tw-analysis-of-harmonics-in-the-taiwanese-power-system.json",
+      "wordCount": 1493,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "why-are-harmonic-analysis-and-research-crucial-for-taiwanese-businesses",
+      "file": "data/wp-extracts\\tw-why-are-harmonic-analysis-and-research-crucial-for-taiwanese-businesses.json",
+      "wordCount": 1417,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "the-significance-of-arc-flash-hazard-analysis-and-mitigation-techniques",
+      "file": "data/wp-extracts\\tw-the-significance-of-arc-flash-hazard-analysis-and-mitigation-techniques.json",
+      "wordCount": 1416,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "taiwanese-arc-flash-analysis-a-comprehensive-guide",
+      "file": "data/wp-extracts\\tw-taiwanese-arc-flash-analysis-a-comprehensive-guide.json",
+      "wordCount": 1460,
+      "h2Count": 3
+    },
+    {
+      "kind": "blog",
+      "slug": "404-page",
+      "file": "data/wp-extracts\\tw-404-page.json",
+      "wordCount": 258,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "uncategorized",
+      "file": "data/wp-extracts\\tw-uncategorized.json",
+      "wordCount": 300,
+      "h2Count": 0
+    },
+    {
+      "kind": "blog",
+      "slug": "admin_tw",
+      "file": "data/wp-extracts\\tw-admin_tw.json",
+      "wordCount": 300,
+      "h2Count": 0
+    }
+  ],
+  "skipped": {},
+  "discovered": 23
+}
