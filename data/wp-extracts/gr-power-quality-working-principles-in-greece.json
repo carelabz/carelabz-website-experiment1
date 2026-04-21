@@ -1,0 +1,87 @@
+{
+  "url": "https://carelabz.com/gr/power-quality-working-principles-in-greece/",
+  "slug": "power-quality-working-principles-in-greece",
+  "pageType": "blog",
+  "metaTitle": "Power Quality Principles in Greece | Carelabs Insights",
+  "metaDescription": "Understand the key principles of power quality in Greece with Carelabs. Improve system efficiency, minimize electrical risks.",
+  "canonicalSource": "https://carelabz.com/gr/power-quality-working-principles-in-greece/",
+  "h1": "Power Quality Working Principles in Greece",
+  "h2": [
+    "The Effects of Poor Power Quality:",
+    "Recognizing the Root Causes of Poor Power Quality:",
+    "3. Harmonic of voltage",
+    "5. Voltage sags",
+    "How Can Power Quality Issues Be Minimized?",
+    "Share Post",
+    "Related Posts"
+  ],
+  "h3": [],
+  "paragraphs": [
+    "The basic functionality and performance of the equipment connected to the distribution network are directly affected by the quality of the power supply. There is an assumption that the equipment will function as intended and that its lifespan will be roughly equal to the specified value. Similarly, it is assumed that the network’s stability is sufficient to avoid problems such as poor output or loss of functionality. In reality, the power system suffers from a variety of power quality issues. These power quality disruptions, regardless of duration, can damage equipment. As a result, maintaining power quality is critical in order to avoid equipment failure.",
+    "This blog will look at the studies that are required to measure power quality and reliability. Following that, various power quality systems are investigated, as well as methods for evaluating both the effect and the control. In contrast to reliability, which deals with extended power outages, the impact of power quality disturbances cannot be seen immediately.",
+    "Although, in some cases, the impact of a power quality disruption is immediate due to equipment damage and/or process delay. This is especially true of sags, interruptions, and transients. In other cases, the impact of the power quality disruption may not be apparent for some time. One example is the deterioration of equipment. In this situation, equipment degradation goes unnoticed for many years. In other cases, power quality issues will cause additional losses that are absorbed as part of the day-to-day costs of doing business and thus go unnoticed.",
+    "Power quality is determined by whether the voltage, frequency, and waveform of a power supply system meet the required specifications. Various factors, however, influence power quality. This blog addresses the following power quality issues:",
+    "Other phenomena, such as swells, transients, inter harmonics, and noise, have received little attention because they occur infrequently.",
+    "Long-term (minutes or hours) sustained voltage magnitudes correspond to steady-state voltage magnitudes. The main consequences of sustained high voltage levels (overvoltage) or low voltage levels (Under voltage) are equipment failure, increased equipment energy consumption, and potential system malfunction.",
+    "Voltage unbalance is frequently associated with additional losses, particularly in induction motors and three-phase motors.",
+    "Flicker is an envelope modulation of a voltage waveform. It causes incandescent lighting sources to have rhythmic variations in light intensity. This rhythmic transition in light output can cause health issues ranging from irritation and decreased productivity to headaches and, in rare cases, seizures in some people.",
+    "The value of customer reliability (VCR) calculated by AEMO estimates the economic impact of interruptions on all consumers. While these figures primarily reflect customers’ willingness to pay to avoid an interruption, it is expected that this willingness to pay is strongly related to the actual cost. According to these estimates, a one-second outage costs about 20% of what a one-hour outage costs."
+  ],
+  "bulletLists": [
+    [
+      "Loss of production",
+      "Additional costs associated with restarting a process",
+      "Costs of equipment damage and repair",
+      "More downtime and delays",
+      "Concerns about human health and safety",
+      "Financial costs incurred due to contract noncompliance.",
+      "Penalties for environmental violations in the form of money",
+      "Increased utility costs as a result of the outage"
+    ],
+    [
+      "The expenses incurred by a company as a result of delayed revenue/income.",
+      "The monetary cost of market share loss",
+      "The cost of restoring brand value"
+    ],
+    [
+      "An increase in building temperatures, which may impair performance, health, or safety.",
+      "A personal injury or concern",
+      "The failure to recognize the power quality disturbance may result in an electrical hazard."
+    ],
+    [
+      "This causes inverse torque and wears on bearings.",
+      "Additional stator and rotor heating",
+      "Installation cables’ current capacity is reduced.",
+      "The neutral conductor sustains additional losses.",
+      "Additional energy is lost in cables."
+    ],
+    [
+      "In the manufacturing industry, for example, the cost difference between a one-second, one-minute, and one-hour interruption is stated to be marginal.",
+      "The day, time of day, and location where it occurs (weekday, weekend, day time, night time)"
+    ],
+    [
+      "Load Flow Analysis: This study is carried out in accordance with the operating conditions. It predicts power flow magnitudes, voltage levels, pf, and system losses.",
+      "Harmonic Analysis: This is the process of identifying and forecasting potential harmonic problems using computer algorithms. Furthermore, reduction techniques are suggested based on the results.",
+      "Surge and Transient Analysis: The cause of transients and surges is identified in this study.",
+      "Voltage Dips and Swells Analysis: This analysis would track the short-term drop and rise in voltage, as well as its value and path.",
+      "Reactive Power Analysis: The preferred reactive power at the distribution and load ends will be determined by this analysis.",
+      "Captive Power Analysis: This research would quantify and synchronize captive power to meet demand while lowering energy surcharges and fuel consumption."
+    ],
+    [
+      "How to Conduct Power Quality Analysis in Greece",
+      "Power Quality Working Principles in Greece",
+      "The Importance of Load Flow and Short Circuit Analysis for a Greek Business",
+      "Test and Verify Electrical Motor Efficiency in accordance with Greek Guidelines",
+      "How to evaluate efficiency and dependability of commercial motors?",
+      "Arc Flash Analysis in Greece: A Step-by-Step Guide",
+      "Load Flow, Short Circuit, and Relay Coordination in Power System Analysis",
+      "Why is Harmonic Analysis and Study Important for Greek Businesses?",
+      "Importance of Arc Flash Hazard Analysis and Mitigation Methods",
+      "Harmonic Analysis in Power System in Greece"
+    ]
+  ],
+  "wordCount": 1234,
+  "phones": [],
+  "emails": [],
+  "scrapedAt": "2026-04-21T13:57:11Z"
+}

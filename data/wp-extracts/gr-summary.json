@@ -1,0 +1,157 @@
+{
+  "cc": "gr",
+  "wpUrl": "https://carelabz.com/gr/",
+  "totalPages": 20,
+  "byKind": {
+    "home": 1,
+    "about": 1,
+    "contact": 1,
+    "blog": 17
+  },
+  "pages": [
+    {
+      "kind": "home",
+      "slug": "gr",
+      "file": "data/wp-extracts\\gr-gr.json",
+      "wordCount": 170,
+      "h2Count": 8
+    },
+    {
+      "kind": "about",
+      "slug": "about-us",
+      "file": "data/wp-extracts\\gr-about-us.json",
+      "wordCount": 477,
+      "h2Count": 11
+    },
+    {
+      "kind": "contact",
+      "slug": "contact-us",
+      "file": "data/wp-extracts\\gr-contact-us.json",
+      "wordCount": 218,
+      "h2Count": 5
+    },
+    {
+      "kind": "blog",
+      "slug": "how-to-conduct-power-quality-analysis-in-greece-2",
+      "file": "data/wp-extracts\\gr-how-to-conduct-power-quality-analysis-in-greece-2.json",
+      "wordCount": 756,
+      "h2Count": 11
+    },
+    {
+      "kind": "blog",
+      "slug": "power-quality-working-principles-in-greece",
+      "file": "data/wp-extracts\\gr-power-quality-working-principles-in-greece.json",
+      "wordCount": 1234,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "test-and-verifelectrical-motor-efficiency-in-accordance-with-greek-guidelines",
+      "file": "data/wp-extracts\\gr-test-and-verifelectrical-motor-efficiency-in-accordance-with-greek-guidelines.json",
+      "wordCount": 651,
+      "h2Count": 6
+    },
+    {
+      "kind": "blog",
+      "slug": "how-to-evaluate-the-efficiency-and-dependability-of-commercial-motors",
+      "file": "data/wp-extracts\\gr-how-to-evaluate-the-efficiency-and-dependability-of-commercial-motors.json",
+      "wordCount": 763,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "why-is-harmonic-analysis-and-study-important-for-greek-businesses",
+      "file": "data/wp-extracts\\gr-why-is-harmonic-analysis-and-study-important-for-greek-businesses.json",
+      "wordCount": 731,
+      "h2Count": 6
+    },
+    {
+      "kind": "blog",
+      "slug": "importance-of-arc-flash-hazard-analysis-and-mitigation-methods",
+      "file": "data/wp-extracts\\gr-importance-of-arc-flash-hazard-analysis-and-mitigation-methods.json",
+      "wordCount": 761,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "load-flow-short-circuit-and-relay-coordination-in-power-system-analysis",
+      "file": "data/wp-extracts\\gr-load-flow-short-circuit-and-relay-coordination-in-power-system-analysis.json",
+      "wordCount": 1117,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "harmonic-analysis-in-power-system-in-greece",
+      "file": "data/wp-extracts\\gr-harmonic-analysis-in-power-system-in-greece.json",
+      "wordCount": 832,
+      "h2Count": 8
+    },
+    {
+      "kind": "blog",
+      "slug": "careers",
+      "file": "data/wp-extracts\\gr-careers.json",
+      "wordCount": 516,
+      "h2Count": 17
+    },
+    {
+      "kind": "blog",
+      "slug": "harmonic-study-and-analysis-in-greece",
+      "file": "data/wp-extracts\\gr-harmonic-study-and-analysis-in-greece.json",
+      "wordCount": 701,
+      "h2Count": 8
+    },
+    {
+      "kind": "blog",
+      "slug": "motor-start-analysis-in-greece",
+      "file": "data/wp-extracts\\gr-motor-start-analysis-in-greece.json",
+      "wordCount": 746,
+      "h2Count": 8
+    },
+    {
+      "kind": "blog",
+      "slug": "power-quality-analysis-in-greece",
+      "file": "data/wp-extracts\\gr-power-quality-analysis-in-greece.json",
+      "wordCount": 694,
+      "h2Count": 8
+    },
+    {
+      "kind": "blog",
+      "slug": "power-system-study-and-analysis-in-greece",
+      "file": "data/wp-extracts\\gr-power-system-study-and-analysis-in-greece.json",
+      "wordCount": 726,
+      "h2Count": 8
+    },
+    {
+      "kind": "blog",
+      "slug": "privacy-policy",
+      "file": "data/wp-extracts\\gr-privacy-policy.json",
+      "wordCount": 1163,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "terms-and-conditions",
+      "file": "data/wp-extracts\\gr-terms-and-conditions.json",
+      "wordCount": 1493,
+      "h2Count": 7
+    },
+    {
+      "kind": "blog",
+      "slug": "uncategorized",
+      "file": "data/wp-extracts\\gr-uncategorized.json",
+      "wordCount": 450,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "admin_gr",
+      "file": "data/wp-extracts\\gr-admin_gr.json",
+      "wordCount": 450,
+      "h2Count": 2
+    }
+  ],
+  "skipped": {
+    "service-legacy": 3
+  },
+  "discovered": 29
+}
