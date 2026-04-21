@@ -1,0 +1,102 @@
+{
+  "cc": "fi",
+  "wpUrl": "https://carelabz.com/fi/",
+  "totalPages": 12,
+  "byKind": {
+    "home": 1,
+    "about": 1,
+    "contact": 1,
+    "service": 5,
+    "blog": 4
+  },
+  "pages": [
+    {
+      "kind": "home",
+      "slug": "fi",
+      "file": "data/wp-extracts\\fi-fi.json",
+      "wordCount": 537,
+      "h2Count": 13
+    },
+    {
+      "kind": "about",
+      "slug": "about-us",
+      "file": "data/wp-extracts\\fi-about-us.json",
+      "wordCount": 410,
+      "h2Count": 20
+    },
+    {
+      "kind": "contact",
+      "slug": "contact-us",
+      "file": "data/wp-extracts\\fi-contact-us.json",
+      "wordCount": 365,
+      "h2Count": 16
+    },
+    {
+      "kind": "service",
+      "slug": "arc-flash-study",
+      "file": "data/wp-extracts\\fi-arc-flash-study.json",
+      "wordCount": 908,
+      "h2Count": 14
+    },
+    {
+      "kind": "service",
+      "slug": "harmonic-study-and-analysis",
+      "file": "data/wp-extracts\\fi-harmonic-study-and-analysis.json",
+      "wordCount": 902,
+      "h2Count": 14
+    },
+    {
+      "kind": "service",
+      "slug": "motor-start-analysis",
+      "file": "data/wp-extracts\\fi-motor-start-analysis.json",
+      "wordCount": 939,
+      "h2Count": 14
+    },
+    {
+      "kind": "service",
+      "slug": "power-quality-analysis",
+      "file": "data/wp-extracts\\fi-power-quality-analysis.json",
+      "wordCount": 833,
+      "h2Count": 14
+    },
+    {
+      "kind": "service",
+      "slug": "power-system-study-and-analysis",
+      "file": "data/wp-extracts\\fi-power-system-study-and-analysis.json",
+      "wordCount": 909,
+      "h2Count": 14
+    },
+    {
+      "kind": "blog",
+      "slug": "home-demo",
+      "file": "data/wp-extracts\\fi-home-demo.json",
+      "wordCount": 259,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "our-services",
+      "file": "data/wp-extracts\\fi-our-services.json",
+      "wordCount": 259,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "blog-post",
+      "file": "data/wp-extracts\\fi-blog-post.json",
+      "wordCount": 488,
+      "h2Count": 9
+    },
+    {
+      "kind": "blog",
+      "slug": "admin_ie",
+      "file": "data/wp-extracts\\fi-admin_ie.json",
+      "wordCount": 488,
+      "h2Count": 9
+    }
+  ],
+  "skipped": {
+    "service-legacy": 3
+  },
+  "discovered": 24
+}
