@@ -97,6 +97,24 @@ const nextConfig = {
       ...pair("/ca/services-arch-flash-analysis", "/ca/services/arc-flash-study/"),
       ...pair("/ca/services-old", "/ca/service/"),
       ...pair("/ca/home", "/ca/"),
+
+      /* ============================================================ */
+      /*  LATAM + UK — WP junk/legacy redirects                        */
+      /* ============================================================ */
+      ...pair("/mx/404-page", "/mx/"),
+      ...pair("/mx/home", "/mx/"),
+      ...pair("/mx/services-old", "/mx/service/"),
+      ...pair("/br/404-page", "/br/"),
+      ...pair("/co/404-page", "/co/"),
+      ...pair("/cl/404-page", "/cl/"),
+      ...pair("/ar/404-page", "/ar/"),
+      ...pair("/pe/404-page", "/pe/"),
+      ...pair("/uk/home-demo", "/uk/"),
+      ...pair("/uk/ss", "/uk/"),
+      ...pair("/uk/404-page", "/uk/"),
+      // UK services index is at /our-services/, not /services/
+      ...pair("/uk/services", "/uk/our-services/"),
+      ...pair("/uk/service", "/uk/our-services/"),
     ];
   },
 };

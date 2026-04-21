@@ -261,9 +261,13 @@ def build_contact(cc: str, localize, ext: dict, us_ref: dict, fallback_phone: st
 
 def build_blog(cc: str, localize, ext: dict, us_ref: dict, standards: list, country_name: str) -> dict:
     payload = strip_meta(copy.deepcopy(us_ref)) if us_ref else {}
+    raw_slug = ext["slug"]
+    # Suffix blog slugs with -cc to avoid cross-region slug uniqueness collisions in Strapi.
+    # Existing CA/MX/BR/CO/CL/AR/PE/UK entries pre-dating this patch keep their raw slugs.
+    namespaced = raw_slug if raw_slug.endswith(f"-{cc}") else f"{raw_slug}-{cc}"
     payload.update({
         "region": cc,
-        "slug": ext["slug"],
+        "slug": namespaced,
         "title": ext.get("h1") or ext.get("metaTitle", ""),
         "metaTitle": ext.get("metaTitle", ""),
         "metaDescription": ext.get("metaDescription", ""),
@@ -415,7 +419,9 @@ def run():
             break
         slug = data["slug"]
         p = build_blog(cc, localize, data, us_blog_ref, standards, country_name)
-        r = upsert("blog-posts", cc, slug, p, token, singleton=False)
+        # find_existing must use the same namespaced slug
+        namespaced = slug if slug.endswith(f"-{cc}") else f"{slug}-{cc}"
+        r = upsert("blog-posts", cc, namespaced, p, token, singleton=False)
         ok = "error" not in r
         print(f"  {'OK' if ok else 'ERR'} blog: {slug[:55]}" + ("" if ok else f" :: {r.get('error','')[:80]}"))
         results.append(ok)

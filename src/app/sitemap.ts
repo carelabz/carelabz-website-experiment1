@@ -48,6 +48,43 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/mx/relay-coordination-study/`, priority: 0.9, changeFrequency: "monthly" },
   ];
 
+  // Helper: per-country static + service page entries (post-CA countries use shared pattern)
+  const LATAM_EU_SERVICE_SLUGS = [
+    "arc-flash-study",
+    "harmonic-study-and-analysis",
+    "motor-start-analysis",
+    "power-system-study-and-analysis",
+    "power-quality-analysis",
+  ];
+
+  const multiCountryStatic: MetadataRoute.Sitemap = [];
+  const multiCountryServices: MetadataRoute.Sitemap = [];
+  for (const { cc, servicesIdx } of [
+    { cc: "br", servicesIdx: "services" },
+    { cc: "co", servicesIdx: "services" },
+    { cc: "cl", servicesIdx: "services" },
+    { cc: "ar", servicesIdx: "services" },
+    { cc: "pe", servicesIdx: "services" },
+    { cc: "uk", servicesIdx: "our-services" },
+  ]) {
+    multiCountryStatic.push(
+      { url: `${baseUrl}/${cc}/`, priority: 1.0, changeFrequency: "weekly" },
+      { url: `${baseUrl}/${cc}/${servicesIdx}/`, priority: 0.9, changeFrequency: "weekly" },
+      { url: `${baseUrl}/${cc}/about-us/`, priority: 0.7, changeFrequency: "monthly" },
+      { url: `${baseUrl}/${cc}/contact-us/`, priority: 0.8, changeFrequency: "monthly" },
+      { url: `${baseUrl}/${cc}/blogs/`, priority: 0.8, changeFrequency: "daily" },
+    );
+    for (const slug of LATAM_EU_SERVICE_SLUGS) {
+      multiCountryServices.push({
+        url: `${baseUrl}/${cc}/${slug}/`,
+        lastModified: new Date(),
+        priority: 0.9,
+        changeFrequency: "monthly",
+      });
+    }
+  }
+  staticPages.push(...multiCountryStatic);
+
   const servicePages: MetadataRoute.Sitemap = serviceSlugs.map((slug) => ({
     url: `${baseUrl}/us/services/${slug}/`,
     lastModified: new Date(),
@@ -88,5 +125,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Strapi unavailable — skip CA blog posts in sitemap
   }
 
-  return [...staticPages, ...servicePages, ...caServicePages, ...blogPages, ...caBlogPages];
+  return [
+    ...staticPages,
+    ...servicePages,
+    ...caServicePages,
+    ...multiCountryServices,
+    ...blogPages,
+    ...caBlogPages,
+  ];
 }

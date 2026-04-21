@@ -68,7 +68,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       },
     };
   }
-  const post = await getBlogPost(CC, params.slug);
+  const post = await getBlogPost(CC, `${params.slug}-${CC}`);
   if (post) {
     return {
       title: post.metaTitle ?? `${post.title} | Carelabs ${COUNTRY_NAME}`,
@@ -467,7 +467,7 @@ function BlogView({ post }: { post: BlogPost }) {
 export default async function Page({ params }: PageProps) {
   const service = await getServicePageBySlug(`${params.slug}-${CC}`);
   if (service) return <ServiceView service={service} slug={params.slug} />;
-  const post = await getBlogPost(CC, params.slug);
+  const post = await getBlogPost(CC, `${params.slug}-${CC}`);
   if (post) return <BlogView post={post} />;
   notFound();
 }
