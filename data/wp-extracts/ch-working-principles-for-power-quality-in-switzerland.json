@@ -1,0 +1,139 @@
+{
+  "url": "https://carelabz.com/ch/working-principles-for-power-quality-in-switzerland/",
+  "slug": "working-principles-for-power-quality-in-switzerland",
+  "pageType": "blog",
+  "metaTitle": "Working Principles for Power Quality in Switzerland - Carelabz Switzerland",
+  "metaDescription": "",
+  "canonicalSource": "https://carelabz.com/ch/working-principles-for-power-quality-in-switzerland/",
+  "h1": "Working Principles for Power Quality in Switzerland",
+  "h2": [
+    "Leave a Reply Cancel reply"
+  ],
+  "h3": [
+    "Consequences of Low-grade Electricity:",
+    "Identifying the Sources of Unreliable Electricity:",
+    "4. Unsteady or flashing voltage",
+    "How Can Problems with Power Quality Be Reduced?"
+  ],
+  "paragraphs": [
+    "The performance and fundamental functioning of equipment connected to a distribution network are directly affected by the quality of the power supply. It is anticipated that the equipment will function as intended and have a useful life roughly equal to that of the given service. It is also anticipated that the network’s stability would be sufficient to prevent problems such as substandard output or missing functionality. T here are several power quality issues that plague the power system. Regardless of their duration, these power quality disruptions may damage equipment. Maintaining power quality is vital for preventing device failure. This blog will discuss the research needed to evaluate the quality and reliability of power. The following is an examination of several methods and strategies for assessing the influence and management of power quality.",
+    "In contrast to dependability, which is concerned with protracted power outages, the impacts of power quality changes are not immediately noticeable. In other circumstances, however, equipment damage and/or a delay in the process are the direct results of a power quality interruption. This is especially true about pauses, breaks, and ephemera. The impacts of a disturbance in power quality may not always be immediately apparent . Equipment deterioration is one example. Under these circumstances, equipment degradation has occurred unchecked for decades. In certain circumstances, low power quality will result in additional losses that are viewed as a necessary evil and are therefore ignored.",
+    "The following are immediate economic repercussions:",
+    "Voltage, frequency, and waveform evaluations are utilized to determine the power quality of a power supply system. Nonetheless, a variety of variables influence power quality. In this blog, the following electrical quality issues are discussed:",
+    "Other phenomena, such as swells, transients, inter – harmonics , and noise, have received less attention due to their rarity.",
+    "Consistent voltage magnitudes over a long period of time (minutes or hours) are equivalent to steady-state voltage magnitudes. Equipment failure, increased equipment energy consumption, and possible system failure are the major effects of sustained high voltage levels (overvoltage) or low voltage levels (under voltage).",
+    "Particularly in induction motors and three-phase motors, voltage imbalance is typically linked to extra losses.",
+    "Almost all energy users produce harmonic currents, which are then injected into the power system. A harmonic current is an alternating current that has a fundamental frequency greater than or equal to 50 hertz. Non-linear electrical equipment like computers, variable speed drives (VSD), and discharge lamps are the most typical generators of harmonic currents. Harmonic currents have the potential to do serious damage to the installation and the power supply system. Damaged components, installation component damage, component loading, inefficient use of the installation’s current carrying capability, shortened component lifespan, and ineffective operation of protective components are only a few of the repercussions of harmonics.",
+    "An envelope modulation of a voltage waveform is flicker. It results in cyclic fluctuations in light intensity in incandescent lighting sources. The health effects of this cyclic variation in light output can range from annoyance and decreased productivity to migraines and, in rare instances, convulsions in certain people.",
+    "Voltage sags and interruptions often do not cause equipment damage; however, lengthier disruptions commonly cause output loss due to equipment tripping. One overarching finding is that the expense of a protracted interruption does not increase linearly with time but rather increases progressively. According to reports, the following elements have a significant impact on how much a lengthy disruption will cost:",
+    "The economic impact of disruptions on all customers is estimated using AEMO’s value of customer reliability (VCR) calculation. While the primary focus of these numbers is on consumers’ willingness to pay to avoid disruption, it is anticipated that this desire to pay is closely correlated with the actual cost. Our calculations suggest that the cost of a one-second interruption is around 20% of the cost of an hour-long outage.",
+    "To find and evaluate power quality problems, Carelabs offers a range of power quality services. Some of them are:",
+    "Care Lab s uses ETAP (Electrical Transient Analysis Program) – Electrical Transient Analysis Program software to analyze and evaluate power quality. It is the appropriate program for calculations and simulations of all electrical system components, ensuring the safety of the machinery. In all major cities, including Zurich, Geneva, Basel, and Bern we conduct power quality assessments. Care Lab s is devoted to providing the highest quality services to improve the performance and quality of your electrical system. Contact us immediately to book a power quality test or to receive a quote!",
+    "Your email address will not be published. Required fields are marked *",
+    "Save my name, email, and website in this browser for the next time I comment.",
+    "Copyright © 2023 Designed and Developed by Carelabs Development Team"
+  ],
+  "bulletLists": [
+    [
+      "March 20, 2023",
+      "9:37 am",
+      "No Comments",
+      "Power Quality Study"
+    ],
+    [
+      "Production loss.",
+      "Restarting a procedure incurs additional expenditure.",
+      "Repair and replacement costs for equipment.",
+      "More delays and downtime.",
+      "Worries for the safety and health of people.",
+      "Financial losses brought on the breach of contract.",
+      "Monetary fines as punishment for environmental offences.",
+      "Utility bill increases because of the outage."
+    ],
+    [
+      "The costs experienced by a business because of a revenue or income delay.",
+      "The monetary price of losing market share.",
+      "The price of regaining the brand’s worth."
+    ],
+    [
+      "A rise in interior temperature that might harm occupants’ health, safety, or performance.",
+      "A problem or personal harm.",
+      "An electrical hazard might arise if the power quality disruption is not recognized."
+    ],
+    [
+      "Inverse torque results from this, which damages bearings.",
+      "Reduced current capacity of Installation cables due to more stator and rotor heating.",
+      "Further losses are sustained by the neutral conductor.",
+      "Cables lose more energy than they gain."
+    ],
+    [
+      "For instance, it is said that there is little financial difference between a one-second, one-minute, and one-hour delay in the industrial sector.",
+      "The day, hour, and place where it takes place (weekday, weekend, daytime, nighttime)"
+    ],
+    [
+      "Load Flow Analysis: This research was conducted under operational circumstances. It forecasts system losses, voltage levels, and power flow magnitudes.",
+      "Using computer algorithms, the harmonic analysis identifies and predicts probable harmonic issues. Based on the outcomes, reducing strategies are also recommended.",
+      "Surge and Transient Analysis: This research identifies the causes of transients and surges.",
+      "Analysis of Short-Term Voltage Dips and Swells: This analysis will follow the short-term voltage dips and swells, their magnitude and direction.",
+      "Reactive Power Analysis: This study will establish the preferred reactive power at the distribution and load ends.",
+      "Captive Power Analysis: To fulfill demand while reducing energy surcharges and fuel usage, this research would measure and synchronize captive power."
+    ],
+    [
+      "Email Us",
+      "Chat with Us",
+      "Enquire Now"
+    ],
+    [
+      "About Us",
+      "Services Arc Flash Study Power System Study and Analysis Power Quality Analysis Harmonic Study and Analysis Motor Start Analysis",
+      "Contact Us"
+    ],
+    [
+      "Arc Flash Study",
+      "Power System Study and Analysis",
+      "Power Quality Analysis",
+      "Harmonic Study and Analysis",
+      "Motor Start Analysis"
+    ],
+    [
+      "About Us",
+      "Services Arc Flash Study Power System Study and Analysis Power Quality Analysis Harmonic Study and Analysis Motor Start Analysis",
+      "Contact Us"
+    ],
+    [
+      "Arc Flash Study",
+      "Power System Study and Analysis",
+      "Power Quality Analysis",
+      "Harmonic Study and Analysis",
+      "Motor Start Analysis"
+    ],
+    [
+      "About Us",
+      "Services Arc Flash Study Power System Study and Analysis Power Quality Analysis Harmonic Study and Analysis Motor Start Analysis",
+      "Contact Us"
+    ],
+    [
+      "Arc Flash Study",
+      "Power System Study and Analysis",
+      "Power Quality Analysis",
+      "Harmonic Study and Analysis",
+      "Motor Start Analysis"
+    ],
+    [
+      "About Us",
+      "Services Arc Flash Study Power System Study and Analysis Power Quality Analysis Harmonic Study and Analysis Motor Start Analysis",
+      "Contact Us"
+    ],
+    [
+      "Arc Flash Study",
+      "Power System Study and Analysis",
+      "Power Quality Analysis",
+      "Harmonic Study and Analysis",
+      "Motor Start Analysis"
+    ]
+  ],
+  "wordCount": 1663,
+  "phones": [],
+  "emails": [],
+  "scrapedAt": "2026-04-21T14:09:55Z"
+}

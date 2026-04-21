@@ -1,0 +1,187 @@
+{
+  "cc": "ch",
+  "wpUrl": "https://carelabz.com/ch/",
+  "totalPages": 24,
+  "byKind": {
+    "home": 1,
+    "about": 1,
+    "contact": 1,
+    "service": 5,
+    "case-study": 1,
+    "blog": 15
+  },
+  "pages": [
+    {
+      "kind": "home",
+      "slug": "ch",
+      "file": "data/wp-extracts\\ch-ch.json",
+      "wordCount": 794,
+      "h2Count": 0
+    },
+    {
+      "kind": "about",
+      "slug": "about-us",
+      "file": "data/wp-extracts\\ch-about-us.json",
+      "wordCount": 923,
+      "h2Count": 0
+    },
+    {
+      "kind": "contact",
+      "slug": "contact-us",
+      "file": "data/wp-extracts\\ch-contact-us.json",
+      "wordCount": 607,
+      "h2Count": 3
+    },
+    {
+      "kind": "service",
+      "slug": "arc-flash-study",
+      "file": "data/wp-extracts\\ch-arc-flash-study.json",
+      "wordCount": 1204,
+      "h2Count": 6
+    },
+    {
+      "kind": "service",
+      "slug": "harmonic-study-and-analysis",
+      "file": "data/wp-extracts\\ch-harmonic-study-and-analysis.json",
+      "wordCount": 1210,
+      "h2Count": 5
+    },
+    {
+      "kind": "service",
+      "slug": "motor-start-analysis",
+      "file": "data/wp-extracts\\ch-motor-start-analysis.json",
+      "wordCount": 1191,
+      "h2Count": 5
+    },
+    {
+      "kind": "service",
+      "slug": "power-quality-analysis",
+      "file": "data/wp-extracts\\ch-power-quality-analysis.json",
+      "wordCount": 1153,
+      "h2Count": 5
+    },
+    {
+      "kind": "service",
+      "slug": "power-system-study-and-analysis",
+      "file": "data/wp-extracts\\ch-power-system-study-and-analysis.json",
+      "wordCount": 1218,
+      "h2Count": 6
+    },
+    {
+      "kind": "case-study",
+      "slug": "case-study",
+      "file": "data/wp-extracts\\ch-case-study.json",
+      "wordCount": 513,
+      "h2Count": 0
+    },
+    {
+      "kind": "blog",
+      "slug": "the-importance-of-load-flow-and-short-circuit-analysis-for-swiss-businesses",
+      "file": "data/wp-extracts\\ch-the-importance-of-load-flow-and-short-circuit-analysis-for-swiss-businesses.json",
+      "wordCount": 1080,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "load-flow-short-circuit-and-relay-coordination-in-power-system-analysis",
+      "file": "data/wp-extracts\\ch-load-flow-short-circuit-and-relay-coordination-in-power-system-analysis.json",
+      "wordCount": 1512,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "verify-that-electrical-motor-performance-complies-with-swiss-regulations-by-inspecting-and-confirming",
+      "file": "data/wp-extracts\\ch-verify-that-electrical-motor-performance-complies-with-swiss-regulations-by-inspecting-and-confirming.json",
+      "wordCount": 1068,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "how-are-the-effectiveness-and-dependability-of-commercial-motors-assessed",
+      "file": "data/wp-extracts\\ch-how-are-the-effectiveness-and-dependability-of-commercial-motors-assessed.json",
+      "wordCount": 1222,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "how-to-conduct-an-analysis-of-power-quality-in-switzerland",
+      "file": "data/wp-extracts\\ch-how-to-conduct-an-analysis-of-power-quality-in-switzerland.json",
+      "wordCount": 1181,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "working-principles-for-power-quality-in-switzerland",
+      "file": "data/wp-extracts\\ch-working-principles-for-power-quality-in-switzerland.json",
+      "wordCount": 1663,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "power-system-harmonic-analysis-in-switzerland",
+      "file": "data/wp-extracts\\ch-power-system-harmonic-analysis-in-switzerland.json",
+      "wordCount": 1275,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "why-harmonic-analysis-and-study-crucial-for-swiss-businesses",
+      "file": "data/wp-extracts\\ch-why-harmonic-analysis-and-study-crucial-for-swiss-businesses.json",
+      "wordCount": 1121,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "switzerlands-arc-flash-analysis-a-comprehensive-guide",
+      "file": "data/wp-extracts\\ch-switzerlands-arc-flash-analysis-a-comprehensive-guide.json",
+      "wordCount": 1212,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "blog",
+      "file": "data/wp-extracts\\ch-blog.json",
+      "wordCount": 597,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "harmonic-study",
+      "file": "data/wp-extracts\\ch-harmonic-study.json",
+      "wordCount": 130,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "motor-start-study",
+      "file": "data/wp-extracts\\ch-motor-start-study.json",
+      "wordCount": 139,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "power-quality-study",
+      "file": "data/wp-extracts\\ch-power-quality-study.json",
+      "wordCount": 133,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "power-system-study",
+      "file": "data/wp-extracts\\ch-power-system-study.json",
+      "wordCount": 139,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "admin_fr",
+      "file": "data/wp-extracts\\ch-admin_fr.json",
+      "wordCount": 657,
+      "h2Count": 10
+    }
+  ],
+  "skipped": {
+    "service-legacy": 1
+  },
+  "discovered": 27
+}
