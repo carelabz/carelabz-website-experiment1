@@ -115,6 +115,27 @@ const nextConfig = {
       // UK services index is at /our-services/, not /services/
       ...pair("/uk/services", "/uk/our-services/"),
       ...pair("/uk/service", "/uk/our-services/"),
+
+      /* ============================================================ */
+      /*  NZ — WP legacy 'carelabz-com-nz-*' slugs cleaned up          */
+      /*  Old WP URL preserved via 301 to new clean URL                */
+      /* ============================================================ */
+      ...pair(
+        "/nz/carelabz-com-nz-arc-flash-study-and-analysis-in-new-zealand",
+        "/nz/arc-flash-study-in-new-zealand/"
+      ),
+      ...pair(
+        "/nz/carelabz-com-nz-harmonic-study-and-analysis-in-new-zealand",
+        "/nz/harmonic-study-in-new-zealand/"
+      ),
+      ...pair(
+        "/nz/carelabz-com-nz-power-system-study-and-analysis-in-new-zealand",
+        "/nz/power-system-study-in-new-zealand/"
+      ),
+      ...pair(
+        "/nz/carelabz-com-nz-power-quality-analysis-in-new-zealand",
+        "/nz/power-quality-analysis-in-new-zealand/"
+      ),
     ];
   },
 };
