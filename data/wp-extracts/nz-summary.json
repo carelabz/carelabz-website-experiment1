@@ -1,12 +1,12 @@
 {
   "cc": "nz",
   "wpUrl": "https://carelabz.com/nz/",
-  "totalPages": 8,
+  "totalPages": 13,
   "byKind": {
     "home": 1,
     "about": 1,
     "contact": 1,
-    "service": 4,
+    "service": 9,
     "case-study": 1
   },
   "pages": [
@@ -28,6 +28,41 @@
       "kind": "contact",
       "slug": "contact-us",
       "file": "data/wp-extracts\\nz-contact-us.json",
+      "wordCount": 39,
+      "h2Count": 0
+    },
+    {
+      "kind": "service",
+      "slug": "carelabz-com-nz-arc-flash-study-and-analysis-in-new-zealand",
+      "file": "data/wp-extracts\\nz-carelabz-com-nz-arc-flash-study-and-analysis-in-new-zealand.json",
+      "wordCount": 39,
+      "h2Count": 0
+    },
+    {
+      "kind": "service",
+      "slug": "carelabz-com-nz-harmonic-study-and-analysis-in-new-zealand",
+      "file": "data/wp-extracts\\nz-carelabz-com-nz-harmonic-study-and-analysis-in-new-zealand.json",
+      "wordCount": 39,
+      "h2Count": 0
+    },
+    {
+      "kind": "service",
+      "slug": "carelabz-com-nz-power-system-study-and-analysis-in-new-zealand",
+      "file": "data/wp-extracts\\nz-carelabz-com-nz-power-system-study-and-analysis-in-new-zealand.json",
+      "wordCount": 39,
+      "h2Count": 0
+    },
+    {
+      "kind": "service",
+      "slug": "carelabz-com-nz-power-quality-analysis-in-new-zealand",
+      "file": "data/wp-extracts\\nz-carelabz-com-nz-power-quality-analysis-in-new-zealand.json",
+      "wordCount": 39,
+      "h2Count": 0
+    },
+    {
+      "kind": "service",
+      "slug": "motor-start-analysis-in-new-zealand",
+      "file": "data/wp-extracts\\nz-motor-start-analysis-in-new-zealand.json",
       "wordCount": 39,
       "h2Count": 0
     },
@@ -67,8 +102,6 @@
       "h2Count": 0
     }
   ],
-  "skipped": {
-    "service-legacy": 1
-  },
+  "skipped": {},
   "discovered": 64
 }

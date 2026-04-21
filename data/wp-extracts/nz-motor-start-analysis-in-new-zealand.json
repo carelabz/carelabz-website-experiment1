@@ -1,10 +1,10 @@
 {
-  "url": "https://carelabz.com/nz/about-us/",
-  "slug": "about-us",
-  "pageType": "about",
-  "metaTitle": "Carelabs: Your Partner in Electrical System Safety",
-  "metaDescription": "Elevate your electrical safety standards with Carelabs. We specialize in intelligent solutions and power system studies tailored to New Zealand's industrial needs.",
-  "canonicalSource": "https://carelabs.me/nz/about-us/",
+  "url": "https://carelabz.com/nz/motor-start-analysis-in-new-zealand/",
+  "slug": "motor-start-analysis-in-new-zealand",
+  "pageType": "service",
+  "metaTitle": "Motor Start Study and Analysis | Motor Acceleration Study",
+  "metaDescription": "Motor start study will help you to ensure that motor will perform as designed, reach its potential efficiency, and not hamper performance of other electrical equipment in power system in New Zealand.",
+  "canonicalSource": "https://carelabs.me/nz/services/motor-start-analysis-in-new-zealand/",
   "h1": "",
   "h2": [],
   "h3": [],
@@ -36,5 +36,5 @@
   "wordCount": 39,
   "phones": [],
   "emails": [],
-  "scrapedAt": "2026-04-21T18:56:23Z"
+  "scrapedAt": "2026-04-21T18:56:28Z"
 }

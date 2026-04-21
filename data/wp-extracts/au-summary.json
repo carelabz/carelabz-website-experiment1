@@ -1,11 +1,12 @@
 {
   "cc": "au",
   "wpUrl": "https://carelabz.com/au/",
-  "totalPages": 43,
+  "totalPages": 47,
   "byKind": {
     "home": 1,
     "about": 1,
     "contact": 1,
+    "service": 4,
     "blog": 40
   },
   "pages": [
@@ -29,6 +30,34 @@
       "file": "data/wp-extracts\\au-contact-us.json",
       "wordCount": 402,
       "h2Count": 6
+    },
+    {
+      "kind": "service",
+      "slug": "short-circuit-analysis-in-australia",
+      "file": "data/wp-extracts\\au-short-circuit-analysis-in-australia.json",
+      "wordCount": 1003,
+      "h2Count": 18
+    },
+    {
+      "kind": "service",
+      "slug": "load-flow-analysis-in-australia",
+      "file": "data/wp-extracts\\au-load-flow-analysis-in-australia.json",
+      "wordCount": 969,
+      "h2Count": 18
+    },
+    {
+      "kind": "service",
+      "slug": "arc-flash-study-in-australia",
+      "file": "data/wp-extracts\\au-arc-flash-study-in-australia.json",
+      "wordCount": 1093,
+      "h2Count": 18
+    },
+    {
+      "kind": "service",
+      "slug": "relay-coordination-study-services-in-australia",
+      "file": "data/wp-extracts\\au-relay-coordination-study-services-in-australia.json",
+      "wordCount": 1002,
+      "h2Count": 18
     },
     {
       "kind": "blog",
@@ -312,7 +341,7 @@
     }
   ],
   "skipped": {
-    "service-legacy": 9
+    "service-legacy": 5
   },
   "discovered": 78
 }
