@@ -1,0 +1,156 @@
+{
+  "cc": "ph",
+  "wpUrl": "https://carelabz.com/ph/",
+  "totalPages": 20,
+  "byKind": {
+    "home": 1,
+    "service": 4,
+    "blog": 15
+  },
+  "pages": [
+    {
+      "kind": "home",
+      "slug": "ph",
+      "file": "data/wp-extracts\\ph-ph.json",
+      "wordCount": 1150,
+      "h2Count": 15
+    },
+    {
+      "kind": "service",
+      "slug": "harmonic-study-and-analysis",
+      "file": "data/wp-extracts\\ph-harmonic-study-and-analysis.json",
+      "wordCount": 721,
+      "h2Count": 2
+    },
+    {
+      "kind": "service",
+      "slug": "motor-start-analysis",
+      "file": "data/wp-extracts\\ph-motor-start-analysis.json",
+      "wordCount": 775,
+      "h2Count": 2
+    },
+    {
+      "kind": "service",
+      "slug": "power-quality-analysis",
+      "file": "data/wp-extracts\\ph-power-quality-analysis.json",
+      "wordCount": 659,
+      "h2Count": 2
+    },
+    {
+      "kind": "service",
+      "slug": "power-system-study-and-analysis",
+      "file": "data/wp-extracts\\ph-power-system-study-and-analysis.json",
+      "wordCount": 756,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "how-to-perform-a-study-of-power-quality-in-philippines",
+      "file": "data/wp-extracts\\ph-how-to-perform-a-study-of-power-quality-in-philippines.json",
+      "wordCount": 1170,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "power-quality-working-principles-in-philippines",
+      "file": "data/wp-extracts\\ph-power-quality-working-principles-in-philippines.json",
+      "wordCount": 1623,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "philippine-power-system-harmonic-analysis",
+      "file": "data/wp-extracts\\ph-philippine-power-system-harmonic-analysis.json",
+      "wordCount": 1159,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "why-is-harmonic-analysis-and-study-so-important-for-philippine-businesses",
+      "file": "data/wp-extracts\\ph-why-is-harmonic-analysis-and-study-so-important-for-philippine-businesses.json",
+      "wordCount": 1154,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "analyze-and-assess-electric-motor-performance-in-compliance-with-philippines-legislation",
+      "file": "data/wp-extracts\\ph-analyze-and-assess-electric-motor-performance-in-compliance-with-philippines-legislation.json",
+      "wordCount": 1153,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "how-can-the-performance-and-dependability-of-commercial-motors-be-assessed",
+      "file": "data/wp-extracts\\ph-how-can-the-performance-and-dependability-of-commercial-motors-be-assessed.json",
+      "wordCount": 1261,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "the-study-of-the-power-system-looks-at-relay-coordination-short-circuits-and-load-flow",
+      "file": "data/wp-extracts\\ph-the-study-of-the-power-system-looks-at-relay-coordination-short-circuits-and-load-flow.json",
+      "wordCount": 1576,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "significance-of-arc-flash-risk-evaluation-and-mitigation-techniques",
+      "file": "data/wp-extracts\\ph-significance-of-arc-flash-risk-evaluation-and-mitigation-techniques.json",
+      "wordCount": 1276,
+      "h2Count": 1
+    },
+    {
+      "kind": "blog",
+      "slug": "help-center",
+      "file": "data/wp-extracts\\ph-help-center.json",
+      "wordCount": 2,
+      "h2Count": 0
+    },
+    {
+      "kind": "blog",
+      "slug": "arc-flash",
+      "file": "data/wp-extracts\\ph-arc-flash.json",
+      "wordCount": 132,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "blog-post",
+      "file": "data/wp-extracts\\ph-blog-post.json",
+      "wordCount": 244,
+      "h2Count": 4
+    },
+    {
+      "kind": "blog",
+      "slug": "harmonic-study-analysis",
+      "file": "data/wp-extracts\\ph-harmonic-study-analysis.json",
+      "wordCount": 132,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "power-system-study-analysis",
+      "file": "data/wp-extracts\\ph-power-system-study-analysis.json",
+      "wordCount": 143,
+      "h2Count": 2
+    },
+    {
+      "kind": "blog",
+      "slug": "admin_sg",
+      "file": "data/wp-extracts\\ph-admin_sg.json",
+      "wordCount": 516,
+      "h2Count": 6
+    },
+    {
+      "kind": "blog",
+      "slug": "sajini_ph",
+      "file": "data/wp-extracts\\ph-sajini_ph.json",
+      "wordCount": 244,
+      "h2Count": 4
+    }
+  ],
+  "skipped": {
+    "service-legacy": 2
+  },
+  "discovered": 24
+}
