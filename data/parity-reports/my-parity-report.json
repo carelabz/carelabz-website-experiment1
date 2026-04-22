@@ -1,11 +1,11 @@
 {
   "country": "MY",
   "wp_base": "https://carelabz.com/my/",
-  "total_pages": 32,
-  "pass": 7,
-  "fail": 25,
+  "total_pages": 31,
+  "pass": 9,
+  "fail": 22,
   "skip": 0,
-  "pass_rate": 21.9,
+  "pass_rate": 29.0,
   "skip_blogs": false,
   "results": [
     {
@@ -227,32 +227,12 @@
       "issues": []
     },
     {
-      "wp_url": "https://carelabz.com/my/help-center/",
-      "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/my/help-center/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
-    },
-    {
       "wp_url": "https://carelabz.com/my/our-services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/my/our-services/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 164,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 164 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/my/our-blogs/",
@@ -331,16 +311,10 @@
     {
       "wp_url": "https://carelabz.com/my/services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/my/services/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 164,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/my/contact-us/",

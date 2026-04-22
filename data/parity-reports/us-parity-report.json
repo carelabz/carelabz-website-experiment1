@@ -2,10 +2,10 @@
   "country": "US",
   "wp_base": "https://carelabz.com/us/",
   "total_pages": 45,
-  "pass": 21,
-  "fail": 24,
+  "pass": 23,
+  "fail": 22,
   "skip": 0,
-  "pass_rate": 46.7,
+  "pass_rate": 51.1,
   "skip_blogs": false,
   "results": [
     {
@@ -61,16 +61,10 @@
     {
       "wp_url": "https://carelabz.com/us/arc-flash-at-turkey-point-2017/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/us/arc-flash-at-turkey-point-2017/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 352,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/us/priest-rapids-dam-arc-flash-explosion-2014/",
@@ -219,16 +213,10 @@
     {
       "wp_url": "https://carelabz.com/us/energy-conservation-by-auditing-power-quality/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/us/energy-conservation-by-auditing-power-quality/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 339,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/us/three-mile-island-blast-1979/",

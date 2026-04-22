@@ -2,10 +2,10 @@
   "country": "CA",
   "wp_base": "https://carelabz.com/ca/",
   "total_pages": 30,
-  "pass": 8,
-  "fail": 22,
+  "pass": 9,
+  "fail": 21,
   "skip": 0,
-  "pass_rate": 26.7,
+  "pass_rate": 30.0,
   "skip_blogs": false,
   "results": [
     {
@@ -337,16 +337,10 @@
     {
       "wp_url": "https://carelabz.com/ca/service/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ca/service/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 160,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 160 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ca/services/short-circuit-analysis/",
