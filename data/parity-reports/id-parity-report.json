@@ -1,11 +1,11 @@
 {
   "country": "ID",
   "wp_base": "https://carelabz.com/id/",
-  "total_pages": 29,
-  "pass": 9,
-  "fail": 20,
+  "total_pages": 28,
+  "pass": 11,
+  "fail": 17,
   "skip": 0,
-  "pass_rate": 31.0,
+  "pass_rate": 39.3,
   "skip_blogs": false,
   "results": [
     {
@@ -229,25 +229,6 @@
       "issues": []
     },
     {
-      "wp_url": "https://carelabz.com/id/help-center/",
-      "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/id/help-center/",
-      "status": "FAIL",
-      "new_word_count": 50,
-      "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        },
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 50 words - page may be empty or broken"
-        }
-      ]
-    },
-    {
       "wp_url": "https://carelabz.com/id/motor-start-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/id/motor-start-analysis/",
       "status": "PASS",
@@ -282,16 +263,10 @@
     {
       "wp_url": "https://carelabz.com/id/our-services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/id/our-services/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 184,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 184 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/id/our-blogs/",
@@ -354,16 +329,10 @@
     {
       "wp_url": "https://carelabz.com/id/load-flow-analysis-in-indonesia/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/id/load-flow-analysis-in-indonesia/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 165,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 165 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     }
   ]
 }

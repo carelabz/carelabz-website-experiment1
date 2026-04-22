@@ -2,10 +2,10 @@
   "country": "NZ",
   "wp_base": "https://carelabz.com/nz/",
   "total_pages": 41,
-  "pass": 8,
-  "fail": 33,
+  "pass": 10,
+  "fail": 31,
   "skip": 0,
-  "pass_rate": 19.5,
+  "pass_rate": 24.4,
   "skip_blogs": false,
   "results": [
     {
@@ -369,16 +369,10 @@
     {
       "wp_url": "https://carelabz.com/nz/services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/nz/services/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 222,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/nz/contact-us/",
@@ -467,16 +461,10 @@
     {
       "wp_url": "https://carelabz.com/nz/case-study/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/nz/case-study/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 616,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/nz/service/short-circuit-analysis-in-new-zealand/",

@@ -1,11 +1,11 @@
 {
   "country": "GR",
   "wp_base": "https://carelabz.com/gr/",
-  "total_pages": 25,
-  "pass": 20,
+  "total_pages": 24,
+  "pass": 19,
   "fail": 5,
   "skip": 0,
-  "pass_rate": 80.0,
+  "pass_rate": 79.2,
   "skip_blogs": false,
   "results": [
     {
@@ -196,23 +196,15 @@
       "wp_url": "https://carelabz.com/gr/services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/gr/services/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 57,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 57 words - page may be empty or broken"
         }
       ]
-    },
-    {
-      "wp_url": "https://carelabz.com/gr/?elementskit_template=elementskit-header",
-      "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/gr/?elementskit_template=elementskit-header",
-      "status": "PASS",
-      "new_word_count": 621,
-      "new_status": 200,
-      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/gr/?oceanwp_library=custom-header",

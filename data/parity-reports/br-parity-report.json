@@ -2,10 +2,10 @@
   "country": "BR",
   "wp_base": "https://carelabz.com/br/",
   "total_pages": 19,
-  "pass": 16,
-  "fail": 3,
+  "pass": 17,
+  "fail": 2,
   "skip": 0,
-  "pass_rate": 84.2,
+  "pass_rate": 89.5,
   "skip_blogs": false,
   "results": [
     {
@@ -159,16 +159,10 @@
     {
       "wp_url": "https://carelabz.com/br/services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/br/services/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 192,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 192 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/br/power-quality-analysis/",

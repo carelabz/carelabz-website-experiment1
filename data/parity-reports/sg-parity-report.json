@@ -1,11 +1,11 @@
 {
   "country": "SG",
   "wp_base": "https://carelabz.com/sg/",
-  "total_pages": 25,
-  "pass": 7,
-  "fail": 18,
+  "total_pages": 23,
+  "pass": 9,
+  "fail": 14,
   "skip": 0,
-  "pass_rate": 28.0,
+  "pass_rate": 39.1,
   "skip_blogs": false,
   "results": [
     {
@@ -25,16 +25,10 @@
     {
       "wp_url": "https://carelabz.com/sg/load-flow-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sg/load-flow-analysis/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 147,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 147 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/sg/relay-coordination-study/",
@@ -217,30 +211,18 @@
     {
       "wp_url": "https://carelabz.com/sg/our-blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sg/our-blogs/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 121,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 121 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/sg/our-services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sg/our-services/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 130,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 130 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/sg/arc-flash-study-in-singapore/",
@@ -253,16 +235,10 @@
     {
       "wp_url": "https://carelabz.com/sg/load-flow-analysis-in-singapore/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sg/load-flow-analysis-in-singapore/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 180,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 180 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/sg/relay-coordination-study-in-singapore/",
@@ -297,22 +273,6 @@
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sg/contact-us/",
       "status": "PASS",
       "new_word_count": 637,
-      "new_status": 200,
-      "issues": []
-    },
-    {
-      "wp_url": "https://carelabz.com/sg/?elementskit_template=footer",
-      "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sg/?elementskit_template=footer",
-      "status": "PASS",
-      "new_word_count": 595,
-      "new_status": 200,
-      "issues": []
-    },
-    {
-      "wp_url": "https://carelabz.com/sg/?elementskit_template=header",
-      "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sg/?elementskit_template=header",
-      "status": "PASS",
-      "new_word_count": 595,
       "new_status": 200,
       "issues": []
     }

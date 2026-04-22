@@ -2,10 +2,10 @@
   "country": "IN",
   "wp_base": "https://carelabz.com/in/",
   "total_pages": 23,
-  "pass": 5,
-  "fail": 18,
+  "pass": 8,
+  "fail": 15,
   "skip": 0,
-  "pass_rate": 21.7,
+  "pass_rate": 34.8,
   "skip_blogs": false,
   "results": [
     {
@@ -67,16 +67,10 @@
     {
       "wp_url": "https://carelabz.com/in/short-circuit-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/in/short-circuit-analysis/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 165,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 165 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/in/relay-coordination-study/",
@@ -109,16 +103,10 @@
     {
       "wp_url": "https://carelabz.com/in/load-flow-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/in/load-flow-analysis/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 174,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 174 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/in/indian-power-system-harmonic-analysis/",
@@ -209,16 +197,10 @@
     {
       "wp_url": "https://carelabz.com/in/our-services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/in/our-services/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 137,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 137 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/in/about-us/",

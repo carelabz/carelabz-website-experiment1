@@ -1,11 +1,11 @@
 {
   "country": "PH",
   "wp_base": "https://carelabz.com/ph/",
-  "total_pages": 16,
+  "total_pages": 15,
   "pass": 5,
-  "fail": 11,
+  "fail": 10,
   "skip": 0,
-  "pass_rate": 31.2,
+  "pass_rate": 33.3,
   "skip_blogs": false,
   "results": [
     {
@@ -163,25 +163,6 @@
       "new_word_count": 442,
       "new_status": 200,
       "issues": []
-    },
-    {
-      "wp_url": "https://carelabz.com/ph/help-center/",
-      "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ph/help-center/",
-      "status": "FAIL",
-      "new_word_count": 51,
-      "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        },
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 51 words - page may be empty or broken"
-        }
-      ]
     },
     {
       "wp_url": "https://carelabz.com/ph/motor-start-analysis/",

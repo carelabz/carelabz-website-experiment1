@@ -2,10 +2,10 @@
   "country": "NO",
   "wp_base": "https://carelabz.com/no/",
   "total_pages": 20,
-  "pass": 9,
-  "fail": 11,
+  "pass": 10,
+  "fail": 10,
   "skip": 0,
-  "pass_rate": 45.0,
+  "pass_rate": 50.0,
   "skip_blogs": false,
   "results": [
     {
@@ -159,16 +159,10 @@
     {
       "wp_url": "https://carelabz.com/no/our-services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/no/our-services/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 105,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 105 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/no/blogs/",

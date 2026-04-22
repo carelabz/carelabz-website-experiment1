@@ -2,10 +2,10 @@
   "country": "TW",
   "wp_base": "https://carelabz.com/tw/",
   "total_pages": 20,
-  "pass": 9,
-  "fail": 11,
+  "pass": 10,
+  "fail": 10,
   "skip": 0,
-  "pass_rate": 45.0,
+  "pass_rate": 50.0,
   "skip_blogs": false,
   "results": [
     {
@@ -223,16 +223,10 @@
     {
       "wp_url": "https://carelabz.com/tw/services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/tw/services/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 194,
+      "new_status": 200,
+      "issues": []
     }
   ]
 }

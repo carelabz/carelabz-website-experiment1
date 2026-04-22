@@ -1,11 +1,11 @@
 {
   "country": "TR",
   "wp_base": "https://carelabz.com/tr/",
-  "total_pages": 21,
-  "pass": 16,
-  "fail": 5,
+  "total_pages": 20,
+  "pass": 17,
+  "fail": 3,
   "skip": 0,
-  "pass_rate": 76.2,
+  "pass_rate": 85.0,
   "skip_blogs": false,
   "results": [
     {
@@ -165,30 +165,10 @@
     {
       "wp_url": "https://carelabz.com/tr/services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/tr/services/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
-    },
-    {
-      "wp_url": "https://carelabz.com/tr/404-2/",
-      "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/tr/404-2/",
-      "status": "FAIL",
-      "new_word_count": 193,
+      "status": "PASS",
+      "new_word_count": 138,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 193 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/tr/arc-flash-study/",

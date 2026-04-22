@@ -2,10 +2,10 @@
   "country": "FR",
   "wp_base": "https://carelabz.com/fr/",
   "total_pages": 21,
-  "pass": 10,
-  "fail": 11,
+  "pass": 18,
+  "fail": 3,
   "skip": 0,
-  "pass_rate": 47.6,
+  "pass_rate": 85.7,
   "skip_blogs": false,
   "results": [
     {
@@ -117,86 +117,50 @@
     {
       "wp_url": "https://carelabz.com/fr/services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/fr/services/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 171,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/fr/services/arc-flash-study/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/fr/services/arc-flash-study/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 442,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/fr/services/harmonic-study-and-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/fr/services/harmonic-study-and-analysis/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 444,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/fr/services/motor-start-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/fr/services/motor-start-analysis/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 442,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/fr/services/power-quality-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/fr/services/power-quality-analysis/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 442,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/fr/services/power-system-study-and-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/fr/services/power-system-study-and-analysis/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 446,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/fr/about-us/",
@@ -209,30 +173,18 @@
     {
       "wp_url": "https://carelabz.com/fr/blog/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/fr/blog/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 187,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 187 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/fr/case-study/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/fr/case-study/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 600,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/fr/contact-us/",

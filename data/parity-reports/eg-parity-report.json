@@ -1,11 +1,11 @@
 {
   "country": "EG",
   "wp_base": "https://carelabz.com/eg/",
-  "total_pages": 23,
-  "pass": 17,
-  "fail": 6,
+  "total_pages": 22,
+  "pass": 18,
+  "fail": 4,
   "skip": 0,
-  "pass_rate": 73.9,
+  "pass_rate": 81.8,
   "skip_blogs": false,
   "results": [
     {
@@ -157,16 +157,10 @@
     {
       "wp_url": "https://carelabz.com/eg/services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/eg/services/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 146,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/eg/power-system-study-analysis/",
@@ -199,20 +193,6 @@
       "new_word_count": 453,
       "new_status": 200,
       "issues": []
-    },
-    {
-      "wp_url": "https://carelabz.com/eg/404-2/",
-      "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/eg/404-2/",
-      "status": "FAIL",
-      "new_word_count": 61,
-      "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 61 words - page may be empty or broken"
-        }
-      ]
     },
     {
       "wp_url": "https://carelabz.com/eg/elementor-hf/footer/",

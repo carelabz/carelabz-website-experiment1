@@ -2,10 +2,10 @@
   "country": "FI",
   "wp_base": "https://carelabz.com/fi/",
   "total_pages": 20,
-  "pass": 8,
-  "fail": 12,
+  "pass": 10,
+  "fail": 10,
   "skip": 0,
-  "pass_rate": 40.0,
+  "pass_rate": 50.0,
   "skip_blogs": false,
   "results": [
     {
@@ -175,16 +175,10 @@
     {
       "wp_url": "https://carelabz.com/fi/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/fi/blogs/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 178,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 178 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/fi/contact-us/",
@@ -213,16 +207,10 @@
     {
       "wp_url": "https://carelabz.com/fi/our-services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/fi/our-services/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 105,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 105 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/fi/power-quality-analysis/",

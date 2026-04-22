@@ -1,11 +1,11 @@
 {
   "country": "SA",
   "wp_base": "https://carelabz.com/sa/",
-  "total_pages": 22,
-  "pass": 7,
-  "fail": 15,
+  "total_pages": 21,
+  "pass": 8,
+  "fail": 13,
   "skip": 0,
-  "pass_rate": 31.8,
+  "pass_rate": 38.1,
   "skip_blogs": false,
   "results": [
     {
@@ -171,25 +171,6 @@
       "issues": []
     },
     {
-      "wp_url": "https://carelabz.com/sa/404-2/",
-      "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sa/404-2/",
-      "status": "FAIL",
-      "new_word_count": 190,
-      "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        },
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 190 words - page may be empty or broken"
-        }
-      ]
-    },
-    {
       "wp_url": "https://carelabz.com/sa/about-us/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sa/about-us/",
       "status": "PASS",
@@ -260,16 +241,10 @@
     {
       "wp_url": "https://carelabz.com/sa/services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sa/services/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 137,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/sa/motor-start-analysis/",

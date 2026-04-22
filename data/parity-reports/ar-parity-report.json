@@ -2,10 +2,10 @@
   "country": "AR",
   "wp_base": "https://carelabz.com/ar/",
   "total_pages": 20,
-  "pass": 16,
-  "fail": 4,
+  "pass": 17,
+  "fail": 3,
   "skip": 0,
-  "pass_rate": 80.0,
+  "pass_rate": 85.0,
   "skip_blogs": false,
   "results": [
     {
@@ -117,16 +117,10 @@
     {
       "wp_url": "https://carelabz.com/ar/services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ar/services/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 197,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 197 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ar/power-system-study-and-analysis/",

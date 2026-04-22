@@ -1,11 +1,11 @@
 {
   "country": "RO",
   "wp_base": "https://carelabz.com/ro/",
-  "total_pages": 21,
-  "pass": 7,
-  "fail": 14,
+  "total_pages": 20,
+  "pass": 8,
+  "fail": 12,
   "skip": 0,
-  "pass_rate": 33.3,
+  "pass_rate": 40.0,
   "skip_blogs": false,
   "results": [
     {
@@ -157,25 +157,6 @@
       "issues": []
     },
     {
-      "wp_url": "https://carelabz.com/ro/404-2/",
-      "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ro/404-2/",
-      "status": "FAIL",
-      "new_word_count": 50,
-      "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        },
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 50 words - page may be empty or broken"
-        }
-      ]
-    },
-    {
       "wp_url": "https://carelabz.com/ro/about-us/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ro/about-us/",
       "status": "PASS",
@@ -254,16 +235,10 @@
     {
       "wp_url": "https://carelabz.com/ro/services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ro/services/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 133,
+      "new_status": 200,
+      "issues": []
     }
   ]
 }

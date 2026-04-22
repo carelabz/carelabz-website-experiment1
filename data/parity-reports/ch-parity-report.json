@@ -2,10 +2,10 @@
   "country": "CH",
   "wp_base": "https://carelabz.com/ch/",
   "total_pages": 21,
-  "pass": 3,
-  "fail": 18,
+  "pass": 10,
+  "fail": 11,
   "skip": 0,
-  "pass_rate": 14.3,
+  "pass_rate": 47.6,
   "skip_blogs": false,
   "results": [
     {
@@ -175,27 +175,16 @@
           "field": "META_DESC",
           "severity": "HIGH",
           "detail": "Meta description missing or too short. Got: \"\""
-        },
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 182 words - page may be empty or broken"
         }
       ]
     },
     {
       "wp_url": "https://carelabz.com/ch/case-study/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ch/case-study/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 598,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ch/contact-us/",
@@ -208,86 +197,50 @@
     {
       "wp_url": "https://carelabz.com/ch/services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ch/services/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 171,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ch/services/arc-flash-study/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ch/services/arc-flash-study/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 440,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ch/services/harmonic-study-and-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ch/services/harmonic-study-and-analysis/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 442,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ch/services/motor-start-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ch/services/motor-start-analysis/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 440,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ch/services/power-quality-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ch/services/power-quality-analysis/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 440,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ch/services/power-system-study-and-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ch/services/power-system-study-and-analysis/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 444,
+      "new_status": 200,
+      "issues": []
     }
   ]
 }
