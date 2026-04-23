@@ -17,6 +17,22 @@ import argparse
 
 NEW_SITE_BASE = 'https://carelabz-website-experiment1-ivory.vercel.app'
 
+# Known index / listing pages — exempt from the <100 word-count "broken" check.
+# These pages are legitimately minimal (render title + breadcrumb + grid/list only).
+INDEX_PAGE_SUFFIXES = (
+    '/blogs/', '/blog/', '/our-blogs/',
+    '/service/', '/services/', '/our-services/',
+    '/case-study/', '/case-studies/',
+    '/about-us/', '/about/',
+    '/contact/', '/contact-us/',
+)
+
+
+def is_index_page(url: str) -> bool:
+    clean = url.rstrip('/') + '/'
+    return any(clean.endswith(suf) for suf in INDEX_PAGE_SUFFIXES)
+
+
 # WP footer/sidebar widget headings to ignore in H2 comparison
 NOISE_H2S = {
     'connect with us',
@@ -276,7 +292,7 @@ def fetch_page(url, retries=3):
     return None, 0
 
 
-def is_broken(new_html, new_status):
+def is_broken(new_html, new_status, new_url=''):
     """
     Broken-pages-only detector (Option D).
     A page is BROKEN if any of:
@@ -325,9 +341,9 @@ def is_broken(new_html, new_status):
             'detail': f'Meta description missing or too short. Got: "{meta_desc}"',
         })
 
-    # Threshold 100 (not 200): index/empty-state pages are legitimately ~150 words.
-    # Below 100 indicates a genuinely blank or broken page.
-    if word_count < 100:
+    # Threshold 100: below that is genuinely thin, BUT index/listing pages are
+    # legitimately minimal (title + grid/list only) so they're exempt.
+    if word_count < 100 and not is_index_page(new_url):
         issues.append({
             'field': 'WORD_COUNT',
             'severity': 'HIGH',
@@ -413,7 +429,7 @@ def main():
         if not args.quiet:
             print(f'Checking: {short}')
         new_html, new_status = fetch_page(new_url)
-        issues, word_count = is_broken(new_html, new_status)
+        issues, word_count = is_broken(new_html, new_status, new_url)
         if issues:
             f_ct += 1
             if not args.quiet:

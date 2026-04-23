@@ -138,6 +138,23 @@ const nextConfig = {
       ),
 
       /* ============================================================ */
+      /*  MY + VN — WP uses "-in-malaysia" / "-in-vietnam" suffix AND */
+      /*  swaps "arc-flash-analysis" where our slug is "arc-flash-    */
+      /*  study". Must come BEFORE the generic /xx/service/:slug/     */
+      /*  rule so specific mappings win.                               */
+      /* ============================================================ */
+      ...pair("/my/arc-flash-study-in-malaysia", "/my/arc-flash-study/"),
+      ...pair("/my/service/arc-flash-analysis-in-malaysia", "/my/arc-flash-study/"),
+      ...pair("/my/service/short-circuit-analysis-in-malaysia", "/my/short-circuit-analysis/"),
+      ...pair("/my/service/load-flow-analysis-in-malaysia", "/my/load-flow-analysis/"),
+      ...pair("/my/service/relay-coordination-study-in-malaysia", "/my/relay-coordination-study/"),
+      ...pair("/vn/arc-flash-study-in-vietnam", "/vn/arc-flash-study/"),
+      ...pair("/vn/service/arc-flash-analysis-in-vietnam", "/vn/arc-flash-study/"),
+      ...pair("/vn/service/short-circuit-analysis-in-vietnam", "/vn/short-circuit-analysis/"),
+      ...pair("/vn/service/load-flow-analysis-in-vietnam", "/vn/load-flow-analysis/"),
+      ...pair("/vn/service/relay-coordination-study-in-vietnam", "/vn/relay-coordination-study/"),
+
+      /* ============================================================ */
       /*  Flat-service countries — WP serves duplicate URLs at         */
       /*  /xx/services/slug/ and /xx/services/ that don't map to our  */
       /*  flat routes. Redirect them to the canonical flat location.  */
