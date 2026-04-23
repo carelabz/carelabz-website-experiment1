@@ -2,10 +2,10 @@
   "country": "GR",
   "wp_base": "https://carelabz.com/gr/",
   "total_pages": 24,
-  "pass": 19,
-  "fail": 5,
+  "pass": 23,
+  "fail": 1,
   "skip": 0,
-  "pass_rate": 79.2,
+  "pass_rate": 95.8,
   "skip_blogs": false,
   "results": [
     {
@@ -27,16 +27,10 @@
     {
       "wp_url": "https://carelabz.com/gr/importance-of-load-flow-and-short-circuit-analysis-for-a-greek-business/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/gr/importance-of-load-flow-and-short-circuit-analysis-for-a-greek-business/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 505,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/gr/test-and-verifelectrical-motor-efficiency-in-accordance-with-greek-guidelines/",
@@ -57,30 +51,18 @@
     {
       "wp_url": "https://carelabz.com/gr/arc-flash-analysis-in-greece-a-step-by-step-guide/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/gr/arc-flash-analysis-in-greece-a-step-by-step-guide/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 216,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/gr/why-is-harmonic-analysis-and-study-important-for-greek-businesses/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/gr/why-is-harmonic-analysis-and-study-important-for-greek-businesses/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 337,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/gr/importance-of-arc-flash-hazard-analysis-and-mitigation-methods/",
@@ -140,7 +122,7 @@
       "wp_url": "https://carelabz.com/gr/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/gr/blogs/",
       "status": "PASS",
-      "new_word_count": 348,
+      "new_word_count": 385,
       "new_status": 200,
       "issues": []
     },
@@ -195,16 +177,10 @@
     {
       "wp_url": "https://carelabz.com/gr/services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/gr/services/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 57,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 57 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/gr/?oceanwp_library=custom-header",

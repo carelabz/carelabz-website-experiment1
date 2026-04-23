@@ -2,10 +2,10 @@
   "country": "MY",
   "wp_base": "https://carelabz.com/my/",
   "total_pages": 31,
-  "pass": 10,
-  "fail": 21,
+  "pass": 17,
+  "fail": 14,
   "skip": 0,
-  "pass_rate": 32.3,
+  "pass_rate": 54.8,
   "skip_blogs": false,
   "results": [
     {
@@ -224,37 +224,25 @@
       "wp_url": "https://carelabz.com/my/our-services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/my/our-services/",
       "status": "PASS",
-      "new_word_count": 164,
+      "new_word_count": 296,
       "new_status": 200,
       "issues": []
     },
     {
       "wp_url": "https://carelabz.com/my/our-blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/my/our-blogs/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 369,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/my/arc-flash-study-in-malaysia/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/my/arc-flash-study-in-malaysia/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 453,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/my/harmonic-study-and-analysis/",
@@ -291,22 +279,16 @@
     {
       "wp_url": "https://carelabz.com/my/home-2/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/my/home-2/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 610,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/my/services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/my/services/",
       "status": "PASS",
-      "new_word_count": 164,
+      "new_word_count": 296,
       "new_status": 200,
       "issues": []
     },
@@ -314,7 +296,7 @@
       "wp_url": "https://carelabz.com/my/contact-us/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/my/contact-us/",
       "status": "PASS",
-      "new_word_count": 648,
+      "new_word_count": 680,
       "new_status": 200,
       "issues": []
     },
@@ -329,58 +311,34 @@
     {
       "wp_url": "https://carelabz.com/my/service/arc-flash-analysis-in-malaysia/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/my/service/arc-flash-analysis-in-malaysia/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 453,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/my/service/load-flow-analysis-in-malaysia/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/my/service/load-flow-analysis-in-malaysia/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 436,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/my/service/short-circuit-analysis-in-malaysia/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/my/service/short-circuit-analysis-in-malaysia/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 613,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/my/service/relay-coordination-study-in-malaysia/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/my/service/relay-coordination-study-in-malaysia/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 438,
+      "new_status": 200,
+      "issues": []
     }
   ]
 }

@@ -2,10 +2,10 @@
   "country": "TR",
   "wp_base": "https://carelabz.com/tr/",
   "total_pages": 20,
-  "pass": 19,
-  "fail": 1,
+  "pass": 20,
+  "fail": 0,
   "skip": 0,
-  "pass_rate": 95.0,
+  "pass_rate": 100.0,
   "skip_blogs": false,
   "results": [
     {
@@ -83,16 +83,10 @@
     {
       "wp_url": "https://carelabz.com/tr/complete-instructions-for-arc-flash-analysis-in-turkey/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/tr/complete-instructions-for-arc-flash-analysis-in-turkey/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 372,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/tr/",
@@ -170,7 +164,7 @@
       "wp_url": "https://carelabz.com/tr/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/tr/blogs/",
       "status": "PASS",
-      "new_word_count": 355,
+      "new_word_count": 387,
       "new_status": 200,
       "issues": []
     }

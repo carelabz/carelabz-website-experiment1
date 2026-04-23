@@ -2,10 +2,10 @@
   "country": "PL",
   "wp_base": "https://carelabz.com/pl/",
   "total_pages": 20,
-  "pass": 19,
-  "fail": 1,
+  "pass": 20,
+  "fail": 0,
   "skip": 0,
-  "pass_rate": 95.0,
+  "pass_rate": 100.0,
   "skip_blogs": false,
   "results": [
     {
@@ -75,16 +75,10 @@
     {
       "wp_url": "https://carelabz.com/pl/polish-arc-flash-analysis-a-complete-guide/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/pl/polish-arc-flash-analysis-a-complete-guide/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 383,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/pl/analysis-of-arc-flash-hazards-and-mitigation-techniques/",
@@ -122,7 +116,7 @@
       "wp_url": "https://carelabz.com/pl/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/pl/blogs/",
       "status": "PASS",
-      "new_word_count": 257,
+      "new_word_count": 284,
       "new_status": 200,
       "issues": []
     },

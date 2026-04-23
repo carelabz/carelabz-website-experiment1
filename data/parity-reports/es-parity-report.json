@@ -2,10 +2,10 @@
   "country": "ES",
   "wp_base": "https://carelabz.com/es/",
   "total_pages": 24,
-  "pass": 20,
-  "fail": 4,
+  "pass": 24,
+  "fail": 0,
   "skip": 0,
-  "pass_rate": 83.3,
+  "pass_rate": 100.0,
   "skip_blogs": false,
   "results": [
     {
@@ -27,30 +27,18 @@
     {
       "wp_url": "https://carelabz.com/es/importance-of-load-flow-and-short-circuit-analysis-for-a-spanish-business/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/es/importance-of-load-flow-and-short-circuit-analysis-for-a-spanish-business/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 453,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/es/test-and-verify-electrical-motor-efficiency-in-accordance-with-spanish-guidelines/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/es/test-and-verify-electrical-motor-efficiency-in-accordance-with-spanish-guidelines/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 509,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/es/how-to-evaluate-the-efficiency-and-dependability-of-commercial-motors/",
@@ -79,16 +67,10 @@
     {
       "wp_url": "https://carelabz.com/es/why-is-harmonic-analysis-and-study-important-for-spanish-businesses/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/es/why-is-harmonic-analysis-and-study-important-for-spanish-businesses/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 390,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/es/importance-of-arc-flash-hazard-analysis-and-mitigation-methods/",
@@ -134,7 +116,7 @@
       "wp_url": "https://carelabz.com/es/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/es/blogs/",
       "status": "PASS",
-      "new_word_count": 369,
+      "new_word_count": 405,
       "new_status": 200,
       "issues": []
     },
@@ -189,16 +171,10 @@
     {
       "wp_url": "https://carelabz.com/es/services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/es/services/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 55,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 55 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/es/?oceanwp_library=custom-header",

@@ -2,25 +2,19 @@
   "country": "PH",
   "wp_base": "https://carelabz.com/ph/",
   "total_pages": 15,
-  "pass": 13,
-  "fail": 2,
+  "pass": 15,
+  "fail": 0,
   "skip": 0,
-  "pass_rate": 86.7,
+  "pass_rate": 100.0,
   "skip_blogs": false,
   "results": [
     {
       "wp_url": "https://carelabz.com/ph/the-importance-of-load-flow-and-short-circuit-analysis-for-philippine-companies/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ph/the-importance-of-load-flow-and-short-circuit-analysis-for-philippine-companies/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 460,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ph/how-to-perform-a-study-of-power-quality-in-philippines/",
@@ -57,16 +51,10 @@
     {
       "wp_url": "https://carelabz.com/ph/arc-flash-analysis-step-by-step-instructions-for-philippines/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ph/arc-flash-analysis-step-by-step-instructions-for-philippines/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 293,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ph/analyze-and-assess-electric-motor-performance-in-compliance-with-philippines-legislation/",

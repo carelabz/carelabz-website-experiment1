@@ -2,151 +2,91 @@
   "country": "TW",
   "wp_base": "https://carelabz.com/tw/",
   "total_pages": 20,
-  "pass": 10,
-  "fail": 10,
+  "pass": 20,
+  "fail": 0,
   "skip": 0,
-  "pass_rate": 50.0,
+  "pass_rate": 100.0,
   "skip_blogs": false,
   "results": [
     {
       "wp_url": "https://carelabz.com/tw/check-and-test-the-performance-of-electric-motors-according-to-taiwanese-rules/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/tw/check-and-test-the-performance-of-electric-motors-according-to-taiwanese-rules/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 667,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/tw/how-can-the-quality-and-dependability-of-commercial-motors-be-evaluated/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/tw/how-can-the-quality-and-dependability-of-commercial-motors-be-evaluated/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 421,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/tw/analysis-of-power-system-load-flow-short-circuit-and-relay-coordination/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/tw/analysis-of-power-system-load-flow-short-circuit-and-relay-coordination/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 656,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/tw/why-load-flow-and-short-circuit-analysis-are-important-for-a-taiwanese-business/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/tw/why-load-flow-and-short-circuit-analysis-are-important-for-a-taiwanese-business/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 465,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/tw/working-principles-for-power-quality-in-taiwan/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/tw/working-principles-for-power-quality-in-taiwan/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 755,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/tw/how-to-conduct-a-power-quality-analysis-in-taiwan/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/tw/how-to-conduct-a-power-quality-analysis-in-taiwan/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 555,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/tw/analysis-of-harmonics-in-the-taiwanese-power-system/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/tw/analysis-of-harmonics-in-the-taiwanese-power-system/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 410,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/tw/why-are-harmonic-analysis-and-research-crucial-for-taiwanese-businesses/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/tw/why-are-harmonic-analysis-and-research-crucial-for-taiwanese-businesses/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 392,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/tw/the-significance-of-arc-flash-hazard-analysis-and-mitigation-techniques/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/tw/the-significance-of-arc-flash-hazard-analysis-and-mitigation-techniques/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 498,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/tw/taiwanese-arc-flash-analysis-a-comprehensive-guide/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/tw/taiwanese-arc-flash-analysis-a-comprehensive-guide/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 279,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/tw/",
@@ -184,7 +124,7 @@
       "wp_url": "https://carelabz.com/tw/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/tw/blogs/",
       "status": "PASS",
-      "new_word_count": 328,
+      "new_word_count": 318,
       "new_status": 200,
       "issues": []
     },

@@ -2,10 +2,10 @@
   "country": "US",
   "wp_base": "https://carelabz.com/us/",
   "total_pages": 45,
-  "pass": 29,
-  "fail": 16,
+  "pass": 31,
+  "fail": 14,
   "skip": 0,
-  "pass_rate": 64.4,
+  "pass_rate": 68.9,
   "skip_blogs": false,
   "results": [
     {
@@ -19,16 +19,10 @@
     {
       "wp_url": "https://carelabz.com/us/step-by-step-guide-to-perform-arc-flash-analysis-in-the-us/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/us/step-by-step-guide-to-perform-arc-flash-analysis-in-the-us/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 735,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/us/working-principles-of-power-quality-analysis-in-the-us/",
@@ -357,16 +351,10 @@
     {
       "wp_url": "https://carelabz.com/us/case-study/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/us/case-study/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 91,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 91 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/us/harmonic-study-and-analysis-in-usa/",

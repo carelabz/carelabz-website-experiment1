@@ -2,10 +2,10 @@
   "country": "PT",
   "wp_base": "https://carelabz.com/pt/",
   "total_pages": 24,
-  "pass": 20,
-  "fail": 4,
+  "pass": 24,
+  "fail": 0,
   "skip": 0,
-  "pass_rate": 83.3,
+  "pass_rate": 100.0,
   "skip_blogs": false,
   "results": [
     {
@@ -35,16 +35,10 @@
     {
       "wp_url": "https://carelabz.com/pt/test-and-verifelectrical-motor-efficiency-in-accordance-with-portuguese-guidelines/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/pt/test-and-verifelectrical-motor-efficiency-in-accordance-with-portuguese-guidelines/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 515,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/pt/how-to-evaluate-the-efficiency-and-dependability-of-commercial-motors/",
@@ -73,16 +67,10 @@
     {
       "wp_url": "https://carelabz.com/pt/why-is-harmonic-analysis-and-study-important-for-portuguese-businesses/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/pt/why-is-harmonic-analysis-and-study-important-for-portuguese-businesses/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 377,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/pt/importance-of-arc-flash-hazard-analysis-and-mitigation-methods/",
@@ -111,16 +99,10 @@
     {
       "wp_url": "https://carelabz.com/pt/power-quality-analysis-in-portugal/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/pt/power-quality-analysis-in-portugal/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 405,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/pt/about-us/",
@@ -142,7 +124,7 @@
       "wp_url": "https://carelabz.com/pt/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/pt/blogs/",
       "status": "PASS",
-      "new_word_count": 353,
+      "new_word_count": 378,
       "new_status": 200,
       "issues": []
     },
@@ -189,16 +171,10 @@
     {
       "wp_url": "https://carelabz.com/pt/services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/pt/services/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 55,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 55 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/pt/?oceanwp_library=custom-header",

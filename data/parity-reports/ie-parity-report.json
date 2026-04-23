@@ -12,13 +12,13 @@
       "wp_url": "https://carelabz.com/ie/study-of-the-power-systems-load-flow-short-circuit-and-relay-coordination/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ie/study-of-the-power-systems-load-flow-short-circuit-and-relay-coordination/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 66,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 66 words - page may be empty or broken"
         }
       ]
     },
@@ -26,13 +26,13 @@
       "wp_url": "https://carelabz.com/ie/load-flow-and-short-circuit-analysis-significance-for-irish-businesses/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ie/load-flow-and-short-circuit-analysis-significance-for-irish-businesses/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 63,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 63 words - page may be empty or broken"
         }
       ]
     },
@@ -40,13 +40,13 @@
       "wp_url": "https://carelabz.com/ie/how-can-the-electricity-quality-in-irish-be-analyzed/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ie/how-can-the-electricity-quality-in-irish-be-analyzed/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 60,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 60 words - page may be empty or broken"
         }
       ]
     },
@@ -54,13 +54,13 @@
       "wp_url": "https://carelabz.com/ie/irish-power-quality-working-principles/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ie/irish-power-quality-working-principles/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 56,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 56 words - page may be empty or broken"
         }
       ]
     },
@@ -68,13 +68,13 @@
       "wp_url": "https://carelabz.com/ie/analyze-and-evaluate-the-performance-of-electric-motors-as-per-irish-regulations/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ie/analyze-and-evaluate-the-performance-of-electric-motors-as-per-irish-regulations/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 63,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 63 words - page may be empty or broken"
         }
       ]
     },
@@ -82,13 +82,13 @@
       "wp_url": "https://carelabz.com/ie/how-can-you-evaluate-the-functionality-and-dependability-of-commercial-motors/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ie/how-can-you-evaluate-the-functionality-and-dependability-of-commercial-motors/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 62,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 62 words - page may be empty or broken"
         }
       ]
     },
@@ -96,13 +96,13 @@
       "wp_url": "https://carelabz.com/ie/harmonic-analysis-of-irish-power-system/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ie/harmonic-analysis-of-irish-power-system/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 57,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 57 words - page may be empty or broken"
         }
       ]
     },
@@ -110,13 +110,13 @@
       "wp_url": "https://carelabz.com/ie/why-are-harmonic-analysis-and-studies-so-vital-for-irish-businesses/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ie/why-are-harmonic-analysis-and-studies-so-vital-for-irish-businesses/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 63,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 63 words - page may be empty or broken"
         }
       ]
     },
@@ -124,13 +124,13 @@
       "wp_url": "https://carelabz.com/ie/a-step-by-step-guide-to-arc-flash-analysis-in-ireland/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ie/a-step-by-step-guide-to-arc-flash-analysis-in-ireland/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 63,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 63 words - page may be empty or broken"
         }
       ]
     },
@@ -138,13 +138,13 @@
       "wp_url": "https://carelabz.com/ie/the-value-of-arc-flash-risk-assessment-and-prevention-strategies-in-ireland/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ie/the-value-of-arc-flash-risk-assessment-and-prevention-strategies-in-ireland/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 66,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 66 words - page may be empty or broken"
         }
       ]
     },
@@ -176,7 +176,7 @@
       "wp_url": "https://carelabz.com/ie/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ie/blogs/",
       "status": "PASS",
-      "new_word_count": 224,
+      "new_word_count": 347,
       "new_status": 200,
       "issues": []
     },

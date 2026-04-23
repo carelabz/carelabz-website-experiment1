@@ -2,10 +2,10 @@
   "country": "EG",
   "wp_base": "https://carelabz.com/eg/",
   "total_pages": 22,
-  "pass": 18,
-  "fail": 4,
+  "pass": 21,
+  "fail": 1,
   "skip": 0,
-  "pass_rate": 81.8,
+  "pass_rate": 95.5,
   "skip_blogs": false,
   "results": [
     {
@@ -35,16 +35,10 @@
     {
       "wp_url": "https://carelabz.com/eg/why-does-egyptian-business-need-short-circuit-and-load-flow-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/eg/why-does-egyptian-business-need-short-circuit-and-load-flow-analysis/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 438,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/eg/how-to-analyze-egyptian-power-quality/",
@@ -89,30 +83,18 @@
     {
       "wp_url": "https://carelabz.com/eg/a-comprehensive-guide-to-arc-flash-analysis-in-egypt/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/eg/a-comprehensive-guide-to-arc-flash-analysis-in-egypt/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 331,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/eg/the-impact-of-egypts-climate-on-arc-flash-hazards-in-data-centers/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/eg/the-impact-of-egypts-climate-on-arc-flash-hazards-in-data-centers/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 145,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/eg/",
@@ -142,7 +124,7 @@
       "wp_url": "https://carelabz.com/eg/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/eg/blogs/",
       "status": "PASS",
-      "new_word_count": 327,
+      "new_word_count": 367,
       "new_status": 200,
       "issues": []
     },

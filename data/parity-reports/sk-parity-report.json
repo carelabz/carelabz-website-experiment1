@@ -2,123 +2,75 @@
   "country": "SK",
   "wp_base": "https://carelabz.com/sk/",
   "total_pages": 20,
-  "pass": 8,
-  "fail": 12,
+  "pass": 19,
+  "fail": 1,
   "skip": 0,
-  "pass_rate": 40.0,
+  "pass_rate": 95.0,
   "skip_blogs": false,
   "results": [
     {
       "wp_url": "https://carelabz.com/sk/how-are-the-dependability-and-performance-of-commercial-motors-assessed/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sk/how-are-the-dependability-and-performance-of-commercial-motors-assessed/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 646,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/sk/the-importance-of-load-flow-and-short-circuit-analysis-to-a-slovak-business/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sk/the-importance-of-load-flow-and-short-circuit-analysis-to-a-slovak-business/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 679,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/sk/slovak-guidelines-for-testing-and-verifying-electrical-motor-efficiency/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sk/slovak-guidelines-for-testing-and-verifying-electrical-motor-efficiency/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 736,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/sk/why-analysis-of-the-power-system-considers-relay-coordination-short-circuits-and-load-flow/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sk/why-analysis-of-the-power-system-considers-relay-coordination-short-circuits-and-load-flow/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 847,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/sk/principles-of-operation-for-the-power-quality-in-slovakia/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sk/principles-of-operation-for-the-power-quality-in-slovakia/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 901,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/sk/how-to-analyze-the-power-quality-in-slovakia/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sk/how-to-analyze-the-power-quality-in-slovakia/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 691,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/sk/why-are-harmonic-research-and-analysis-so-crucial-to-slovak-businesses/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sk/why-are-harmonic-research-and-analysis-so-crucial-to-slovak-businesses/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 636,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/sk/analysis-of-the-slovak-power-systems-harmony/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sk/analysis-of-the-slovak-power-systems-harmony/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 630,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/sk/slovak-arc-flash-analysis-a-complete-guide/",
@@ -137,16 +89,10 @@
     {
       "wp_url": "https://carelabz.com/sk/analysis-of-arc-flash-hazards-and-mitigation-techniques/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sk/analysis-of-arc-flash-hazards-and-mitigation-techniques/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 751,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/sk/",
@@ -176,7 +122,7 @@
       "wp_url": "https://carelabz.com/sk/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sk/blogs/",
       "status": "PASS",
-      "new_word_count": 320,
+      "new_word_count": 276,
       "new_status": 200,
       "issues": []
     },
@@ -191,16 +137,10 @@
     {
       "wp_url": "https://carelabz.com/sk/harmonic-study-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sk/harmonic-study-analysis/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 410,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/sk/motor-start-analysis/",
@@ -221,16 +161,10 @@
     {
       "wp_url": "https://carelabz.com/sk/power-system-study-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sk/power-system-study-analysis/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 585,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/sk/services/",

@@ -2,10 +2,10 @@
   "country": "HU",
   "wp_base": "https://carelabz.com/hu/",
   "total_pages": 20,
-  "pass": 18,
-  "fail": 2,
+  "pass": 20,
+  "fail": 0,
   "skip": 0,
-  "pass_rate": 90.0,
+  "pass_rate": 100.0,
   "skip_blogs": false,
   "results": [
     {
@@ -27,16 +27,10 @@
     {
       "wp_url": "https://carelabz.com/hu/the-importance-of-load-flow-and-short-circuit-analysis-to-a-hungarian-business/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/hu/the-importance-of-load-flow-and-short-circuit-analysis-to-a-hungarian-business/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 632,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/hu/why-analysis-of-the-power-system-considers-relay-coordination-short-circuits-and-load-flow/",
@@ -81,16 +75,10 @@
     {
       "wp_url": "https://carelabz.com/hu/hungarian-arc-flash-analysis-a-complete-guide/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/hu/hungarian-arc-flash-analysis-a-complete-guide/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 384,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/hu/analysis-of-arc-flash-hazards-and-mitigation-techniques/",
@@ -136,7 +124,7 @@
       "wp_url": "https://carelabz.com/hu/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/hu/blogs/",
       "status": "PASS",
-      "new_word_count": 254,
+      "new_word_count": 296,
       "new_status": 200,
       "issues": []
     },

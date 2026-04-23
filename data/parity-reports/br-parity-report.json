@@ -2,10 +2,10 @@
   "country": "BR",
   "wp_base": "https://carelabz.com/br/",
   "total_pages": 19,
-  "pass": 17,
-  "fail": 2,
+  "pass": 19,
+  "fail": 0,
   "skip": 0,
-  "pass_rate": 89.5,
+  "pass_rate": 100.0,
   "skip_blogs": false,
   "results": [
     {
@@ -27,16 +27,10 @@
     {
       "wp_url": "https://carelabz.com/br/why-load-flow-and-short-circuit-analysis-important-for-brazilian-business/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/br/why-load-flow-and-short-circuit-analysis-important-for-brazilian-business/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 477,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/br/how-to-perform-a-power-quality-analysis-in-brazil/",
@@ -81,16 +75,10 @@
     {
       "wp_url": "https://carelabz.com/br/arc-flash-analysis-in-brazil-a-detailed-guide/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/br/arc-flash-analysis-in-brazil-a-detailed-guide/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 264,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/br/",
@@ -120,7 +108,7 @@
       "wp_url": "https://carelabz.com/br/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/br/blogs/",
       "status": "PASS",
-      "new_word_count": 402,
+      "new_word_count": 427,
       "new_status": 200,
       "issues": []
     },

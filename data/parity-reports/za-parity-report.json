@@ -2,10 +2,10 @@
   "country": "ZA",
   "wp_base": "https://carelabz.com/za/",
   "total_pages": 21,
-  "pass": 9,
-  "fail": 12,
+  "pass": 12,
+  "fail": 9,
   "skip": 0,
-  "pass_rate": 42.9,
+  "pass_rate": 57.1,
   "skip_blogs": false,
   "results": [
     {
@@ -67,16 +67,10 @@
     {
       "wp_url": "https://carelabz.com/za/why-does-south-african-business-need-short-circuit-and-load-flow-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/za/why-does-south-african-business-need-short-circuit-and-load-flow-analysis/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 431,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/za/how-to-analyze-south-african-power-quality/",
@@ -95,16 +89,10 @@
     {
       "wp_url": "https://carelabz.com/za/principles-of-work-on-south-african-power-quality/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/za/principles-of-work-on-south-african-power-quality/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 802,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/za/harmonics-analysis-of-the-south-african-electric-power-system/",
@@ -182,7 +170,7 @@
       "wp_url": "https://carelabz.com/za/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/za/blogs/",
       "status": "PASS",
-      "new_word_count": 375,
+      "new_word_count": 425,
       "new_status": 200,
       "issues": []
     },
@@ -213,16 +201,10 @@
     {
       "wp_url": "https://carelabz.com/za/power-system-study-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/za/power-system-study-analysis/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 626,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/za/harmonic-study-analysis/",

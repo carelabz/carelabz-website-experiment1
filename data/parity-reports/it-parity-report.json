@@ -2,10 +2,10 @@
   "country": "IT",
   "wp_base": "https://carelabz.com/it/",
   "total_pages": 24,
-  "pass": 18,
-  "fail": 6,
+  "pass": 23,
+  "fail": 1,
   "skip": 0,
-  "pass_rate": 75.0,
+  "pass_rate": 95.8,
   "skip_blogs": false,
   "results": [
     {
@@ -27,16 +27,10 @@
     {
       "wp_url": "https://carelabz.com/it/importance-of-load-flow-and-short-circuit-analysis-for-a-italian-business/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/it/importance-of-load-flow-and-short-circuit-analysis-for-a-italian-business/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 444,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/it/test-and-verifelectrical-motor-efficiency-in-accordance-with-italian-guidelines/",
@@ -57,30 +51,18 @@
     {
       "wp_url": "https://carelabz.com/it/arc-flash-analysis-in-italy-a-detailed-guide/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/it/arc-flash-analysis-in-italy-a-detailed-guide/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 239,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/it/load-flow-short-circuit-and-relay-coordination-in-power-system-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/it/load-flow-short-circuit-and-relay-coordination-in-power-system-analysis/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 665,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/it/why-is-harmonic-analysis-and-research-important-for-italian-businesses/",
@@ -93,16 +75,10 @@
     {
       "wp_url": "https://carelabz.com/it/arc-flash-risk-evaluation-and-mitigation-are-essential/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/it/arc-flash-risk-evaluation-and-mitigation-are-essential/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 417,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/it/harmonic-examination-of-the-italian-power-system/",
@@ -146,7 +122,7 @@
       "wp_url": "https://carelabz.com/it/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/it/blogs/",
       "status": "PASS",
-      "new_word_count": 320,
+      "new_word_count": 371,
       "new_status": 200,
       "issues": []
     },
@@ -201,16 +177,10 @@
     {
       "wp_url": "https://carelabz.com/it/services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/it/services/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 56,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 56 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/it/?oceanwp_library=custom-header",

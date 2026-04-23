@@ -2,25 +2,19 @@
   "country": "SA",
   "wp_base": "https://carelabz.com/sa/",
   "total_pages": 21,
-  "pass": 18,
-  "fail": 3,
+  "pass": 21,
+  "fail": 0,
   "skip": 0,
-  "pass_rate": 85.7,
+  "pass_rate": 100.0,
   "skip_blogs": false,
   "results": [
     {
       "wp_url": "https://carelabz.com/sa/data-center-safety-arc-flash-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sa/data-center-safety-arc-flash-analysis/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 350,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/sa/verify-saudi-arabian-electrical-motor-performance-regulations-compliance/",
@@ -49,16 +43,10 @@
     {
       "wp_url": "https://carelabz.com/sa/why-does-saudi-arabian-business-need-short-circuit-and-load-flow-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sa/why-does-saudi-arabian-business-need-short-circuit-and-load-flow-analysis/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 555,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/sa/how-to-analyze-saudi-arabian-power-quality/",
@@ -103,16 +91,10 @@
     {
       "wp_url": "https://carelabz.com/sa/complete-instructions-for-arc-flash-analysis-in-saudi-arabia/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sa/complete-instructions-for-arc-flash-analysis-in-saudi-arabia/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 380,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/sa/",
@@ -142,7 +124,7 @@
       "wp_url": "https://carelabz.com/sa/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/sa/blogs/",
       "status": "PASS",
-      "new_word_count": 392,
+      "new_word_count": 464,
       "new_status": 200,
       "issues": []
     },

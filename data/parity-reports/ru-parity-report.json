@@ -2,10 +2,10 @@
   "country": "RU",
   "wp_base": "https://carelabz.com/ru/",
   "total_pages": 20,
-  "pass": 18,
-  "fail": 2,
+  "pass": 20,
+  "fail": 0,
   "skip": 0,
-  "pass_rate": 90.0,
+  "pass_rate": 100.0,
   "skip_blogs": false,
   "results": [
     {
@@ -27,16 +27,10 @@
     {
       "wp_url": "https://carelabz.com/ru/the-importance-of-load-flow-and-short-circuit-analysis-to-a-russian-business/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ru/the-importance-of-load-flow-and-short-circuit-analysis-to-a-russian-business/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 631,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ru/why-analysis-of-the-power-system-considers-relay-coordination-short-circuits-and-load-flow/",
@@ -81,16 +75,10 @@
     {
       "wp_url": "https://carelabz.com/ru/russian-arc-flash-analysis-a-complete-guide/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ru/russian-arc-flash-analysis-a-complete-guide/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 383,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ru/analysis-of-arc-flash-hazards-and-mitigation-techniques/",
@@ -128,7 +116,7 @@
       "wp_url": "https://carelabz.com/ru/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ru/blogs/",
       "status": "PASS",
-      "new_word_count": 238,
+      "new_word_count": 288,
       "new_status": 200,
       "issues": []
     },

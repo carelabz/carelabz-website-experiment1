@@ -2,10 +2,10 @@
   "country": "AT",
   "wp_base": "https://carelabz.com/at/",
   "total_pages": 21,
-  "pass": 19,
-  "fail": 2,
+  "pass": 21,
+  "fail": 0,
   "skip": 0,
-  "pass_rate": 90.5,
+  "pass_rate": 100.0,
   "skip_blogs": false,
   "results": [
     {
@@ -19,16 +19,10 @@
     {
       "wp_url": "https://carelabz.com/at/load-flow-short-circuit-and-relay-coordination-in-power-system-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/at/load-flow-short-circuit-and-relay-coordination-in-power-system-analysis/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 710,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/at/verify-that-electrical-motor-performance-complies-with-austrian-regulations-by-inspecting-and-confirming/",
@@ -89,16 +83,10 @@
     {
       "wp_url": "https://carelabz.com/at/the-importance-of-arc-flash-hazard-analysis-and-mitigation-techniques/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/at/the-importance-of-arc-flash-hazard-analysis-and-mitigation-techniques/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 398,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/at/",

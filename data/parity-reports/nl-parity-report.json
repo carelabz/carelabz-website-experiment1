@@ -2,10 +2,10 @@
   "country": "NL",
   "wp_base": "https://carelabz.com/nl/",
   "total_pages": 21,
-  "pass": 20,
-  "fail": 1,
+  "pass": 21,
+  "fail": 0,
   "skip": 0,
-  "pass_rate": 95.2,
+  "pass_rate": 100.0,
   "skip_blogs": false,
   "results": [
     {
@@ -43,16 +43,10 @@
     {
       "wp_url": "https://carelabz.com/nl/working-principles-for-power-quality-in-netherlands/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/nl/working-principles-for-power-quality-in-netherlands/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 786,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/nl/how-to-conduct-an-analysis-of-power-quality-in-netherlands/",

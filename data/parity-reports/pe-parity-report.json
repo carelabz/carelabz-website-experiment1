@@ -2,10 +2,10 @@
   "country": "PE",
   "wp_base": "https://carelabz.com/pe/",
   "total_pages": 20,
-  "pass": 18,
-  "fail": 2,
+  "pass": 20,
+  "fail": 0,
   "skip": 0,
-  "pass_rate": 90.0,
+  "pass_rate": 100.0,
   "skip_blogs": false,
   "results": [
     {
@@ -35,16 +35,10 @@
     {
       "wp_url": "https://carelabz.com/pe/why-load-flow-and-short-circuit-analysis-important-for-peruvian-business/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/pe/why-load-flow-and-short-circuit-analysis-important-for-peruvian-business/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 477,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/pe/how-to-perform-a-power-quality-analysis-in-peru/",
@@ -89,16 +83,10 @@
     {
       "wp_url": "https://carelabz.com/pe/arc-flash-analysis-in-peru-a-detailed-guide/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/pe/arc-flash-analysis-in-peru-a-detailed-guide/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 262,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/pe/",
@@ -128,7 +116,7 @@
       "wp_url": "https://carelabz.com/pe/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/pe/blogs/",
       "status": "PASS",
-      "new_word_count": 382,
+      "new_word_count": 408,
       "new_status": 200,
       "issues": []
     },

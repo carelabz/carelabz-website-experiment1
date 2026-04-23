@@ -2,53 +2,35 @@
   "country": "HK",
   "wp_base": "https://carelabz.com/hk/",
   "total_pages": 20,
-  "pass": 10,
-  "fail": 10,
+  "pass": 19,
+  "fail": 1,
   "skip": 0,
-  "pass_rate": 50.0,
+  "pass_rate": 95.0,
   "skip_blogs": false,
   "results": [
     {
       "wp_url": "https://carelabz.com/hk/check-and-test-the-performance-of-electric-motors-according-to-hong-konger-rules/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/hk/check-and-test-the-performance-of-electric-motors-according-to-hong-konger-rules/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 570,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/hk/how-can-the-quality-and-dependability-of-commercial-motors-be-evaluated/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/hk/how-can-the-quality-and-dependability-of-commercial-motors-be-evaluated/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 442,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/hk/analysis-of-power-system-load-flow-short-circuit-and-relay-coordination/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/hk/analysis-of-power-system-load-flow-short-circuit-and-relay-coordination/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 664,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/hk/why-load-flow-and-short-circuit-analysis-are-important-for-a-hong-konger-business/",
@@ -67,86 +49,50 @@
     {
       "wp_url": "https://carelabz.com/hk/working-principles-for-power-quality-in-hong-kong/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/hk/working-principles-for-power-quality-in-hong-kong/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 816,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/hk/how-to-conduct-a-power-quality-analysis-in-hong-kong/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/hk/how-to-conduct-a-power-quality-analysis-in-hong-kong/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 573,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/hk/analysis-of-harmonics-in-the-hong-konger-power-system/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/hk/analysis-of-harmonics-in-the-hong-konger-power-system/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 424,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/hk/why-are-harmonic-analysis-and-research-crucial-for-hong-konger-businesses/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/hk/why-are-harmonic-analysis-and-research-crucial-for-hong-konger-businesses/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 392,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/hk/the-significance-of-arc-flash-hazard-analysis-and-mitigation-techniques/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/hk/the-significance-of-arc-flash-hazard-analysis-and-mitigation-techniques/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 550,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/hk/hong-konger-arc-flash-analysis-a-comprehensive-guide/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/hk/hong-konger-arc-flash-analysis-a-comprehensive-guide/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 340,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/hk/",
@@ -176,7 +122,7 @@
       "wp_url": "https://carelabz.com/hk/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/hk/blogs/",
       "status": "PASS",
-      "new_word_count": 352,
+      "new_word_count": 348,
       "new_status": 200,
       "issues": []
     },

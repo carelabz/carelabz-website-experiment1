@@ -2,25 +2,19 @@
   "country": "NZ",
   "wp_base": "https://carelabz.com/nz/",
   "total_pages": 41,
-  "pass": 10,
-  "fail": 31,
+  "pass": 11,
+  "fail": 30,
   "skip": 0,
-  "pass_rate": 24.4,
+  "pass_rate": 26.8,
   "skip_blogs": false,
   "results": [
     {
       "wp_url": "https://carelabz.com/nz/blog/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/nz/blog/",
-      "status": "FAIL",
-      "new_word_count": 52,
+      "status": "PASS",
+      "new_word_count": 527,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 52 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/nz/step-by-step-guide-to-perform-arc-flash-analysis-in-new-zealand/",

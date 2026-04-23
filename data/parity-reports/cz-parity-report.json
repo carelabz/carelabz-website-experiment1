@@ -2,81 +2,51 @@
   "country": "CZ",
   "wp_base": "https://carelabz.com/cz/",
   "total_pages": 20,
-  "pass": 9,
-  "fail": 11,
+  "pass": 18,
+  "fail": 2,
   "skip": 0,
-  "pass_rate": 45.0,
+  "pass_rate": 90.0,
   "skip_blogs": false,
   "results": [
     {
       "wp_url": "https://carelabz.com/cz/how-are-the-dependability-and-performance-of-commercial-motors-assessed/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/cz/how-are-the-dependability-and-performance-of-commercial-motors-assessed/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 649,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/cz/czech-guidelines-for-testing-and-verifying-electrical-motor-efficiency/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/cz/czech-guidelines-for-testing-and-verifying-electrical-motor-efficiency/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 739,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/cz/the-importance-of-load-flow-and-short-circuit-analysis-to-a-czech-business/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/cz/the-importance-of-load-flow-and-short-circuit-analysis-to-a-czech-business/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 633,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/cz/why-analysis-of-the-power-system-considers-relay-coordination-short-circuits-and-load-flow/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/cz/why-analysis-of-the-power-system-considers-relay-coordination-short-circuits-and-load-flow/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 850,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/cz/principles-of-operation-for-the-power-quality-in-czech-republic/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/cz/principles-of-operation-for-the-power-quality-in-czech-republic/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 905,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/cz/how-to-analyze-the-power-quality-in-czech-republic/",
@@ -95,44 +65,26 @@
     {
       "wp_url": "https://carelabz.com/cz/why-are-harmonic-research-and-analysis-so-crucial-to-czech-businesses/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/cz/why-are-harmonic-research-and-analysis-so-crucial-to-czech-businesses/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 639,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/cz/analysis-of-the-czech-power-systems-harmony/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/cz/analysis-of-the-czech-power-systems-harmony/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 633,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/cz/czech-arc-flash-analysis-a-complete-guide/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/cz/czech-arc-flash-analysis-a-complete-guide/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 385,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/cz/analysis-of-arc-flash-hazards-and-mitigation-techniques/",
@@ -170,7 +122,7 @@
       "wp_url": "https://carelabz.com/cz/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/cz/blogs/",
       "status": "PASS",
-      "new_word_count": 331,
+      "new_word_count": 335,
       "new_status": 200,
       "issues": []
     },
@@ -215,16 +167,10 @@
     {
       "wp_url": "https://carelabz.com/cz/power-system-study-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/cz/power-system-study-analysis/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 589,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/cz/services/",

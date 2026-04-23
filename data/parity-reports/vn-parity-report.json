@@ -2,10 +2,10 @@
   "country": "VN",
   "wp_base": "https://carelabz.com/vn/",
   "total_pages": 30,
-  "pass": 10,
-  "fail": 20,
+  "pass": 16,
+  "fail": 14,
   "skip": 0,
-  "pass_rate": 33.3,
+  "pass_rate": 53.3,
   "skip_blogs": false,
   "results": [
     {
@@ -231,30 +231,18 @@
     {
       "wp_url": "https://carelabz.com/vn/our-blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/vn/our-blogs/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 364,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/vn/arc-flash-study-in-vietnam/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/vn/arc-flash-study-in-vietnam/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 449,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/vn/motor-start-analysis/",
@@ -292,7 +280,7 @@
       "wp_url": "https://carelabz.com/vn/contact-us/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/vn/contact-us/",
       "status": "PASS",
-      "new_word_count": 650,
+      "new_word_count": 682,
       "new_status": 200,
       "issues": []
     },
@@ -300,7 +288,7 @@
       "wp_url": "https://carelabz.com/vn/services/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/vn/services/",
       "status": "PASS",
-      "new_word_count": 163,
+      "new_word_count": 295,
       "new_status": 200,
       "issues": []
     },
@@ -315,58 +303,34 @@
     {
       "wp_url": "https://carelabz.com/vn/service/relay-coordination-study-in-vietnam/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/vn/service/relay-coordination-study-in-vietnam/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 436,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/vn/service/load-flow-analysis-in-vietnam/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/vn/service/load-flow-analysis-in-vietnam/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 434,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/vn/service/short-circuit-analysis-in-vietnam/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/vn/service/short-circuit-analysis-in-vietnam/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 610,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/vn/service/arc-flash-analysis-in-vietnam/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/vn/service/arc-flash-analysis-in-vietnam/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 449,
+      "new_status": 200,
+      "issues": []
     }
   ]
 }

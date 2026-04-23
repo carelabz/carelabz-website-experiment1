@@ -2,67 +2,43 @@
   "country": "KR",
   "wp_base": "https://carelabz.com/kr/",
   "total_pages": 20,
-  "pass": 10,
-  "fail": 10,
+  "pass": 18,
+  "fail": 2,
   "skip": 0,
-  "pass_rate": 50.0,
+  "pass_rate": 90.0,
   "skip_blogs": false,
   "results": [
     {
       "wp_url": "https://carelabz.com/kr/check-and-test-the-performance-of-electric-motors-according-to-korean-rules/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/kr/check-and-test-the-performance-of-electric-motors-according-to-korean-rules/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 491,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/kr/how-can-the-quality-and-dependability-of-commercial-motors-be-evaluated/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/kr/how-can-the-quality-and-dependability-of-commercial-motors-be-evaluated/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 431,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/kr/analysis-of-power-system-load-flow-short-circuit-and-relay-coordination/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/kr/analysis-of-power-system-load-flow-short-circuit-and-relay-coordination/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 622,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/kr/why-load-flow-and-short-circuit-analysis-are-important-for-a-korean-business/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/kr/why-load-flow-and-short-circuit-analysis-are-important-for-a-korean-business/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 436,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/kr/working-principles-for-power-quality-in-korea/",
@@ -95,58 +71,34 @@
     {
       "wp_url": "https://carelabz.com/kr/analysis-of-harmonics-in-the-korean-power-system/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/kr/analysis-of-harmonics-in-the-korean-power-system/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 425,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/kr/why-are-harmonic-analysis-and-research-crucial-for-korean-businesses/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/kr/why-are-harmonic-analysis-and-research-crucial-for-korean-businesses/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 432,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/kr/the-significance-of-arc-flash-hazard-analysis-and-mitigation-techniques/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/kr/the-significance-of-arc-flash-hazard-analysis-and-mitigation-techniques/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 561,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/kr/korean-arc-flash-analysis-a-comprehensive-guide/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/kr/korean-arc-flash-analysis-a-comprehensive-guide/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 348,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/kr/",
@@ -176,7 +128,7 @@
       "wp_url": "https://carelabz.com/kr/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/kr/blogs/",
       "status": "PASS",
-      "new_word_count": 335,
+      "new_word_count": 324,
       "new_status": 200,
       "issues": []
     },

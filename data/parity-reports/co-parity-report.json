@@ -2,10 +2,10 @@
   "country": "CO",
   "wp_base": "https://carelabz.com/co/",
   "total_pages": 20,
-  "pass": 17,
-  "fail": 3,
+  "pass": 20,
+  "fail": 0,
   "skip": 0,
-  "pass_rate": 85.0,
+  "pass_rate": 100.0,
   "skip_blogs": false,
   "results": [
     {
@@ -27,30 +27,18 @@
     {
       "wp_url": "https://carelabz.com/co/load-flow-short-circuit-and-relay-coordination-in-power-system-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/co/load-flow-short-circuit-and-relay-coordination-in-power-system-analysis/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 268,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/co/why-load-flow-and-short-circuit-analysis-important-for-colombian-business/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/co/why-load-flow-and-short-circuit-analysis-important-for-colombian-business/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 266,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/co/how-to-perform-a-power-quality-analysis-in-colombia/",
@@ -95,16 +83,10 @@
     {
       "wp_url": "https://carelabz.com/co/arc-flash-analysis-in-colombia-a-detailed-guide/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/co/arc-flash-analysis-in-colombia-a-detailed-guide/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 261,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/co/",
@@ -134,7 +116,7 @@
       "wp_url": "https://carelabz.com/co/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/co/blogs/",
       "status": "PASS",
-      "new_word_count": 408,
+      "new_word_count": 447,
       "new_status": 200,
       "issues": []
     },

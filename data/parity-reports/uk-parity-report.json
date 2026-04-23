@@ -12,13 +12,13 @@
       "wp_url": "https://carelabz.com/uk/a-step-by-step-guide-to-arc-flash-analysis-in-the-united-kingdom/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/uk/a-step-by-step-guide-to-arc-flash-analysis-in-the-united-kingdom/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 67,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 67 words - page may be empty or broken"
         }
       ]
     },
@@ -26,13 +26,13 @@
       "wp_url": "https://carelabz.com/uk/the-value-of-arc-flash-risk-assessment-and-prevention-strategies-in-the-uk/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/uk/the-value-of-arc-flash-risk-assessment-and-prevention-strategies-in-the-uk/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 68,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 68 words - page may be empty or broken"
         }
       ]
     },
@@ -40,13 +40,13 @@
       "wp_url": "https://carelabz.com/uk/why-are-harmonic-analysis-and-studies-so-vital-for-uk-businesses/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/uk/why-are-harmonic-analysis-and-studies-so-vital-for-uk-businesses/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 66,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 66 words - page may be empty or broken"
         }
       ]
     },
@@ -54,13 +54,13 @@
       "wp_url": "https://carelabz.com/uk/harmonic-analysis-of-the-uk-power-system/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/uk/harmonic-analysis-of-the-uk-power-system/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 61,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 61 words - page may be empty or broken"
         }
       ]
     },
@@ -68,13 +68,13 @@
       "wp_url": "https://carelabz.com/uk/how-can-you-evaluate-the-functionality-and-dependability-of-commercial-motors/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/uk/how-can-you-evaluate-the-functionality-and-dependability-of-commercial-motors/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 64,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 64 words - page may be empty or broken"
         }
       ]
     },
@@ -82,13 +82,13 @@
       "wp_url": "https://carelabz.com/uk/analyze-and-evaluate-the-performance-of-electric-motors-as-per-uk-regulations/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/uk/analyze-and-evaluate-the-performance-of-electric-motors-as-per-uk-regulations/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 66,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 66 words - page may be empty or broken"
         }
       ]
     },
@@ -96,13 +96,13 @@
       "wp_url": "https://carelabz.com/uk/uk-power-quality-working-principles/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/uk/uk-power-quality-working-principles/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 57,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 57 words - page may be empty or broken"
         }
       ]
     },
@@ -110,13 +110,13 @@
       "wp_url": "https://carelabz.com/uk/how-can-the-electricity-quality-in-the-uk-be-analyzed/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/uk/how-can-the-electricity-quality-in-the-uk-be-analyzed/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 66,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 66 words - page may be empty or broken"
         }
       ]
     },
@@ -124,13 +124,13 @@
       "wp_url": "https://carelabz.com/uk/load-flow-and-short-circuit-analysis-significance-for-uk-businesses/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/uk/load-flow-and-short-circuit-analysis-significance-for-uk-businesses/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 65,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 65 words - page may be empty or broken"
         }
       ]
     },
@@ -138,13 +138,13 @@
       "wp_url": "https://carelabz.com/uk/study-of-the-power-systems-load-flow-short-circuit-and-relay-coordination/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/uk/study-of-the-power-systems-load-flow-short-circuit-and-relay-coordination/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 68,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 68 words - page may be empty or broken"
         }
       ]
     },
@@ -224,7 +224,7 @@
       "wp_url": "https://carelabz.com/uk/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/uk/blogs/",
       "status": "PASS",
-      "new_word_count": 221,
+      "new_word_count": 377,
       "new_status": 200,
       "issues": []
     }

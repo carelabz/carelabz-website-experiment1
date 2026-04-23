@@ -2,67 +2,43 @@
   "country": "IN",
   "wp_base": "https://carelabz.com/in/",
   "total_pages": 23,
-  "pass": 12,
-  "fail": 11,
+  "pass": 19,
+  "fail": 4,
   "skip": 0,
-  "pass_rate": 52.2,
+  "pass_rate": 82.6,
   "skip_blogs": false,
   "results": [
     {
       "wp_url": "https://carelabz.com/in/why-is-harmonic-analysis-and-study-so-important-for-indian-businesses/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/in/why-is-harmonic-analysis-and-study-so-important-for-indian-businesses/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 507,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/in/the-study-of-the-power-system-looks-at-relay-coordination-short-circuits-and-load-flow/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/in/the-study-of-the-power-system-looks-at-relay-coordination-short-circuits-and-load-flow/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 785,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/in/the-importance-of-load-flow-and-short-circuit-analysis-for-indian-companies/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/in/the-importance-of-load-flow-and-short-circuit-analysis-for-indian-companies/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 561,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/in/significance-of-arc-flash-risk-evaluation-and-mitigation-techniques/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/in/significance-of-arc-flash-risk-evaluation-and-mitigation-techniques/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 537,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/in/short-circuit-analysis/",
@@ -75,16 +51,10 @@
     {
       "wp_url": "https://carelabz.com/in/relay-coordination-study/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/in/relay-coordination-study/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 167,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/in/power-quality-working-principles-in-india/",
@@ -137,30 +107,18 @@
     {
       "wp_url": "https://carelabz.com/in/arc-flash-analysis-step-by-step-instructions-for-india/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/in/arc-flash-analysis-step-by-step-instructions-for-india/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 416,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/in/analyze-and-assess-electric-motor-performance-in-compliance-with-indian-legislation/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/in/analyze-and-assess-electric-motor-performance-in-compliance-with-indian-legislation/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 599,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/in/",
@@ -190,7 +148,7 @@
       "wp_url": "https://carelabz.com/in/our-blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/in/our-blogs/",
       "status": "PASS",
-      "new_word_count": 361,
+      "new_word_count": 524,
       "new_status": 200,
       "issues": []
     },

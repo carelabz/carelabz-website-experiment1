@@ -2,10 +2,10 @@
   "country": "ID",
   "wp_base": "https://carelabz.com/id/",
   "total_pages": 28,
-  "pass": 17,
-  "fail": 11,
+  "pass": 24,
+  "fail": 4,
   "skip": 0,
-  "pass_rate": 60.7,
+  "pass_rate": 85.7,
   "skip_blogs": false,
   "results": [
     {
@@ -35,16 +35,10 @@
     {
       "wp_url": "https://carelabz.com/id/the-importance-of-load-flow-and-short-circuit-analysis-for-indonesian-companies/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/id/the-importance-of-load-flow-and-short-circuit-analysis-for-indonesian-companies/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 496,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/id/how-to-perform-a-study-of-power-quality-in-indonesia/",
@@ -57,16 +51,10 @@
     {
       "wp_url": "https://carelabz.com/id/power-quality-working-principles-in-indonesia/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/id/power-quality-working-principles-in-indonesia/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 816,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/id/indonesian-power-system-harmonic-analysis/",
@@ -79,30 +67,18 @@
     {
       "wp_url": "https://carelabz.com/id/the-study-of-the-power-system-looks-at-relay-coordination-short-circuits-and-load-flow/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/id/the-study-of-the-power-system-looks-at-relay-coordination-short-circuits-and-load-flow/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 698,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/id/significance-of-arc-flash-risk-evaluation-and-mitigation-techniques/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/id/significance-of-arc-flash-risk-evaluation-and-mitigation-techniques/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 347,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/id/arc-flash-analysis-step-by-step-instructions-for-indonesia/",
@@ -115,28 +91,22 @@
     {
       "wp_url": "https://carelabz.com/id/why-is-harmonic-analysis-and-study-so-important-for-indonesian-businesses/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/id/why-is-harmonic-analysis-and-study-so-important-for-indonesian-businesses/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 415,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/id/short-circuit-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/id/short-circuit-analysis/",
       "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
+      "new_word_count": 81,
+      "new_status": 200,
       "issues": [
         {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
+          "field": "WORD_COUNT",
+          "severity": "HIGH",
+          "detail": "Main content only 81 words - page may be empty or broken"
         }
       ]
     },
@@ -151,16 +121,10 @@
     {
       "wp_url": "https://carelabz.com/id/relay-coordination-study/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/id/relay-coordination-study/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 239,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/id/load-flow-analysis/",
@@ -235,16 +199,10 @@
     {
       "wp_url": "https://carelabz.com/id/our-blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/id/our-blogs/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 538,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/id/contact-us/",

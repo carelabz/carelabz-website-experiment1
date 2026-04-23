@@ -2,151 +2,91 @@
   "country": "UA",
   "wp_base": "https://carelabz.com/ua/",
   "total_pages": 20,
-  "pass": 7,
-  "fail": 13,
+  "pass": 18,
+  "fail": 2,
   "skip": 0,
-  "pass_rate": 35.0,
+  "pass_rate": 90.0,
   "skip_blogs": false,
   "results": [
     {
       "wp_url": "https://carelabz.com/ua/how-are-the-dependability-and-performance-of-commercial-motors-assessed/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ua/how-are-the-dependability-and-performance-of-commercial-motors-assessed/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 597,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ua/ukrainian-guidelines-for-testing-and-verifying-electrical-motor-efficiency/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ua/ukrainian-guidelines-for-testing-and-verifying-electrical-motor-efficiency/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 687,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ua/the-importance-of-load-flow-and-short-circuit-analysis-to-a-ukrainian-business/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ua/the-importance-of-load-flow-and-short-circuit-analysis-to-a-ukrainian-business/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 630,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ua/why-analysis-of-the-power-system-considers-relay-coordination-short-circuits-and-load-flow/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ua/why-analysis-of-the-power-system-considers-relay-coordination-short-circuits-and-load-flow/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 843,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ua/why-are-harmonic-research-and-analysis-so-crucial-to-ukrainian-businesses/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ua/why-are-harmonic-research-and-analysis-so-crucial-to-ukrainian-businesses/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 587,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ua/principles-of-operation-for-the-power-quality-in-ukraine/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ua/principles-of-operation-for-the-power-quality-in-ukraine/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 945,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ua/how-to-analyze-the-power-quality-in-ukraine/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ua/how-to-analyze-the-power-quality-in-ukraine/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 736,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ua/analysis-of-the-ukrainian-power-systems-harmony/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ua/analysis-of-the-ukrainian-power-systems-harmony/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 584,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ua/ukrainian-arc-flash-analysis-a-complete-guide/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ua/ukrainian-arc-flash-analysis-a-complete-guide/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 382,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ua/analysis-of-arc-flash-hazards-and-mitigation-techniques/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ua/analysis-of-arc-flash-hazards-and-mitigation-techniques/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 651,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ua/",
@@ -175,16 +115,10 @@
     {
       "wp_url": "https://carelabz.com/ua/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ua/blogs/",
-      "status": "FAIL",
-      "new_word_count": 95,
+      "status": "PASS",
+      "new_word_count": 290,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "WORD_COUNT",
-          "severity": "HIGH",
-          "detail": "Main content only 95 words - page may be empty or broken"
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ua/contact-us/",

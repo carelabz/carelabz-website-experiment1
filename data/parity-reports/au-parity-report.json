@@ -2,39 +2,27 @@
   "country": "AU",
   "wp_base": "https://carelabz.com/au/",
   "total_pages": 15,
-  "pass": 10,
-  "fail": 5,
+  "pass": 12,
+  "fail": 3,
   "skip": 0,
-  "pass_rate": 66.7,
+  "pass_rate": 80.0,
   "skip_blogs": false,
   "results": [
     {
       "wp_url": "https://carelabz.com/au/five-compelling-reasons-why-your-facility-needs-an-arc-flash-study-and-analysis-in-australia/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/au/five-compelling-reasons-why-your-facility-needs-an-arc-flash-study-and-analysis-in-australia/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 169,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/au/factors-that-contribute-to-the-cost-of-an-arc-flash-study-in-your-facility/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/au/factors-that-contribute-to-the-cost-of-an-arc-flash-study-in-your-facility/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 238,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/au/",
@@ -96,7 +84,7 @@
       "wp_url": "https://carelabz.com/au/blog/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/au/blog/",
       "status": "PASS",
-      "new_word_count": 405,
+      "new_word_count": 433,
       "new_status": 200,
       "issues": []
     },

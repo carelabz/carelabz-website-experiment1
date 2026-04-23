@@ -2,151 +2,91 @@
   "country": "RO",
   "wp_base": "https://carelabz.com/ro/",
   "total_pages": 20,
-  "pass": 8,
-  "fail": 12,
+  "pass": 20,
+  "fail": 0,
   "skip": 0,
-  "pass_rate": 40.0,
+  "pass_rate": 100.0,
   "skip_blogs": false,
   "results": [
     {
       "wp_url": "https://carelabz.com/ro/how-are-the-dependability-and-performance-of-commercial-motors-assessed/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ro/how-are-the-dependability-and-performance-of-commercial-motors-assessed/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 644,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ro/romanian-guidelines-for-testing-and-verifying-electrical-motor-efficiency/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ro/romanian-guidelines-for-testing-and-verifying-electrical-motor-efficiency/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 734,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ro/the-importance-of-load-flow-and-short-circuit-analysis-to-a-romanian-business/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ro/the-importance-of-load-flow-and-short-circuit-analysis-to-a-romanian-business/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 657,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ro/why-analysis-of-the-power-system-considers-relay-coordination-short-circuits-and-load-flow/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ro/why-analysis-of-the-power-system-considers-relay-coordination-short-circuits-and-load-flow/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 845,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ro/principles-of-operation-for-the-power-quality-in-romania/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ro/principles-of-operation-for-the-power-quality-in-romania/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 899,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ro/how-to-analyze-the-power-quality-in-romania/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ro/how-to-analyze-the-power-quality-in-romania/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 689,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ro/why-are-harmonic-research-and-analysis-so-crucial-to-romanian-businesses/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ro/why-are-harmonic-research-and-analysis-so-crucial-to-romanian-businesses/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 634,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ro/analysis-of-the-romanian-power-systems-harmony/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ro/analysis-of-the-romanian-power-systems-harmony/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 628,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ro/romanian-arc-flash-analysis-a-complete-guide/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ro/romanian-arc-flash-analysis-a-complete-guide/",
-      "status": "FAIL",
-      "new_word_count": 0,
-      "new_status": 404,
-      "issues": [
-        {
-          "field": "PAGE",
-          "severity": "CRITICAL",
-          "detail": "404 - page does not exist on new site"
-        }
-      ]
+      "status": "PASS",
+      "new_word_count": 382,
+      "new_status": 200,
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ro/analysis-of-arc-flash-hazards-and-mitigation-techniques/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ro/analysis-of-arc-flash-hazards-and-mitigation-techniques/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 749,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ro/",
@@ -176,7 +116,7 @@
       "wp_url": "https://carelabz.com/ro/blogs/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ro/blogs/",
       "status": "PASS",
-      "new_word_count": 280,
+      "new_word_count": 311,
       "new_status": 200,
       "issues": []
     },
@@ -191,16 +131,10 @@
     {
       "wp_url": "https://carelabz.com/ro/harmonic-study-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ro/harmonic-study-analysis/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 408,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ro/motor-start-analysis/",
@@ -221,16 +155,10 @@
     {
       "wp_url": "https://carelabz.com/ro/power-system-study-analysis/",
       "new_url": "https://carelabz-website-experiment1-ivory.vercel.app/ro/power-system-study-analysis/",
-      "status": "FAIL",
+      "status": "PASS",
       "new_word_count": 583,
       "new_status": 200,
-      "issues": [
-        {
-          "field": "META_DESC",
-          "severity": "HIGH",
-          "detail": "Meta description missing or too short. Got: \"\""
-        }
-      ]
+      "issues": []
     },
     {
       "wp_url": "https://carelabz.com/ro/services/",
