@@ -51,7 +51,7 @@ const FALLBACK_PROCESS_STEPS = [
   },
   {
     title: "Compliance",
-    description: `Full regulatory compliance with ${config.primaryStandard}, IEEE 1584, and ABNT NBR 5410 standards.`,
+    description: `Full regulatory compliance with ${config.primaryStandard}, IEEE 1584, and international standards.`,
   },
 ];
 

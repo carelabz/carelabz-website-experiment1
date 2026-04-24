@@ -1,15 +1,9 @@
 export const dynamic = "force-dynamic";
 
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Award,
-  Globe,
-  Clock,
-  Shield,
-  CheckCircle2,
-} from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { SAAnnouncementTicker } from "@/components/sa-announcement-ticker";
 import { SANavbar } from "@/components/sa-navbar";
 import { SAFooter } from "@/components/sa-footer";
@@ -24,6 +18,8 @@ const COUNTRY_NAME = "Peru";
 const HREFLANG = "en-PE";
 const config = COUNTRY_CONFIGS[CC];
 
+// ── Fallback constants (BR-specific) ──────────────────────────────────────
+
 const FALLBACK_INDUSTRIES = [
   "Manufacturing",
   "Commercial Buildings",
@@ -37,11 +33,29 @@ const FALLBACK_INDUSTRIES = [
   "Energy",
 ];
 
-const MANIFESTO_CREDENTIALS = [
-  { icon: Award, title: "IEEE Certified", label: "Industry Standards" },
-  { icon: Globe, title: "Global Reach", label: "50+ Countries" },
-  { icon: Clock, title: "25+ Years", label: "Experience" },
+const FALLBACK_PROCESS_STEPS = [
+  {
+    title: "Discovery",
+    description:
+      "Comprehensive analysis of your electrical infrastructure and current compliance status.",
+  },
+  {
+    title: "Analysis",
+    description:
+      "Detailed power system studies including arc flash, short circuit, and load flow analysis.",
+  },
+  {
+    title: "Reporting",
+    description:
+      "Complete technical documentation with findings, risk assessments, and actionable recommendations.",
+  },
+  {
+    title: "Compliance",
+    description: `Full regulatory compliance with ${config.primaryStandard}, IEEE 1584, and international standards.`,
+  },
 ];
+
+// ── Metadata ──────────────────────────────────────────────────────────────
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getHomePage(CC);
@@ -84,19 +98,13 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-function splitHeadline(headline: string): {
-  lead: string;
-  accent: string;
-  watermark: string;
-} {
+// ── Helpers ───────────────────────────────────────────────────────────────
+
+function splitAccent(headline: string): { lead: string; accent: string } {
   const words = headline.trim().split(/\s+/);
-  if (words.length <= 1) {
-    return { lead: "", accent: headline, watermark: "POWER" };
-  }
+  if (words.length <= 1) return { lead: "", accent: headline };
   const last = words[words.length - 1];
-  const lead = words.slice(0, -1).join(" ");
-  const firstWord = words[0].toUpperCase();
-  return { lead, accent: last, watermark: firstWord };
+  return { lead: words.slice(0, -1).join(" "), accent: last };
 }
 
 function trimTo(text: string | null | undefined, max: number): string {
@@ -119,6 +127,8 @@ function formatDate(value: string | null | undefined): string {
   }
 }
 
+// ── Page ──────────────────────────────────────────────────────────────────
+
 export default async function PEHomePage() {
   const [page, servicePages, allPosts] = await Promise.all([
     getHomePage(CC),
@@ -128,14 +138,15 @@ export default async function PEHomePage() {
 
   if (!page) {
     return (
-      <main className="flex min-h-screen items-center justify-center bg-white text-[#094d76] font-sans">
+      <main className="flex min-h-screen items-center justify-center bg-white text-[#0B1A2F] font-body">
         <p className="text-lg">Page content unavailable</p>
       </main>
     );
   }
 
   const headlineRaw = page.heroHeadline ?? "Electrical Safety Experts";
-  const { lead, accent, watermark } = splitHeadline(headlineRaw);
+  const { lead: headlineLead } = splitAccent(headlineRaw);
+  const heroLead = headlineLead || headlineRaw;
 
   const heroSubtext =
     page.heroSubtext ??
@@ -143,76 +154,51 @@ export default async function PEHomePage() {
 
   const heroPrimaryText = page.heroPrimaryCtaText ?? "Request a Study";
   const heroPrimaryHref = page.heroPrimaryCtaHref ?? config.contactPath;
-  const heroSecondaryText = page.heroSecondaryCtaText ?? "Our Services";
-  const heroSecondaryHref =
-    page.heroSecondaryCtaHref ?? config.servicesIndexPath;
 
-  // Trust / certification pills for hero (prefer Strapi, fallback to config.standards)
+  // Trust / certification pills (prefer Strapi, fallback to config.standards)
   const trustBadgesForHero: string[] =
     page.trustBadges && page.trustBadges.length > 0
       ? page.trustBadges.map((b) => b.label)
       : config.standards.slice(0, 6);
 
-  // Services for editorial list: prefer Strapi home.services, fallback to ServicePage rows
-  const servicesForList: Array<{
-    title: string;
-    description: string;
-    href: string;
-  }> = (() => {
-    if (page.services && page.services.length > 0) {
-      return page.services.slice(0, 6).map((s) => ({
-        title: s.title,
-        description: s.description,
-        href: s.href,
-      }));
-    }
-    return servicePages.slice(0, 6).map((s) => {
-      const urlSlug = s.slug.endsWith(`-${CC}`) ? s.slug.slice(0, -3) : s.slug;
-      return {
-        title: s.title,
-        description: trimTo(s.metaDescription, 120),
-        href: `/${CC}/${urlSlug}/`,
-      };
+  // Services: always derive from ServicePage query so every card href points
+  // to a slug that actually exists in Strapi. Using page.services (the
+  // HomePage content type) is fragile — editors can publish hrefs that do
+  // not map to any ServicePage, causing 404s on click. ServicePage-derived
+  // cards are guaranteed to resolve via the /{cc}/[slug] route.
+  const knownSlugs = new Set(
+    servicePages.map((s) =>
+      s.slug.endsWith(`-${CC}`) ? s.slug.slice(0, -3) : s.slug
+    )
+  );
+
+  const servicePageCards = servicePages.slice(0, 8).map((s) => {
+    const urlSlug = s.slug.endsWith(`-${CC}`) ? s.slug.slice(0, -3) : s.slug;
+    return {
+      title: s.title,
+      description: trimTo(s.metaDescription, 140),
+      href: `/${CC}/${urlSlug}/`,
+    };
+  });
+
+  const homeServiceCards = (page.services ?? [])
+    .map((s) => ({ title: s.title, description: s.description, href: s.href }))
+    .filter((s) => {
+      const m = s.href.match(/^\/[a-z]{2}\/([^/]+)\/?$/);
+      return m ? knownSlugs.has(m[1]) : false;
     });
-  })();
 
-  // WhyUs: whyFeatures first, else synthesize from services
-  const whyFeaturesData: Array<{
-    title: string;
-    description: string;
-  }> = (() => {
-    if (page.whyFeatures && page.whyFeatures.length >= 3) {
-      return page.whyFeatures.slice(0, 3).map((w) => ({
-        title: w.title,
-        description: w.description,
-      }));
-    }
-    if (servicesForList.length >= 3) {
-      return servicesForList.slice(0, 3).map((s) => ({
-        title: s.title,
-        description: s.description,
-      }));
-    }
-    return [
-      {
-        title: "Industry Certified Engineers",
-        description:
-          "Our engineers hold PE licenses and maintain certifications aligned with IEEE, NETA, and NFPA standards.",
-      },
-      {
-        title: "Precision Results",
-        description:
-          "We use industry-leading software like ETAP and EasyPower for reliable results every time.",
-      },
-      {
-        title: "Practical Solutions",
-        description:
-          "Actionable recommendations that balance safety, compliance, and operational continuity.",
-      },
-    ];
-  })();
+  // Prefer Strapi-authored cards only if every one of them resolves to a
+  // real ServicePage; otherwise fall through to ServicePage-derived cards.
+  const servicesToShow =
+    homeServiceCards.length > 0 &&
+    homeServiceCards.length === (page.services?.length ?? 0)
+      ? homeServiceCards.slice(0, 8)
+      : servicePageCards;
 
-  const whyIcons = [Award, Shield, CheckCircle2];
+  // Process steps — prefer Strapi service-level processSteps if they exist at
+  // the service scope; home page has no dedicated field, so use BR fallbacks
+  const processSteps = FALLBACK_PROCESS_STEPS;
 
   // Industries marquee
   const industriesForMarquee: string[] =
@@ -220,12 +206,13 @@ export default async function PEHomePage() {
       ? page.industries.map((i) => i.name)
       : FALLBACK_INDUSTRIES;
 
-  // Insights: Strapi insights[] first, else blog posts
+  // Insights / blog: Strapi insights[] first, else blog posts
   const insightsForList: Array<{
     category: string | null;
     title: string;
     description: string;
     href: string;
+    image?: string | null;
     date?: string | null;
   }> = (() => {
     if (page.insights && page.insights.length > 0) {
@@ -234,6 +221,7 @@ export default async function PEHomePage() {
         title: i.title,
         description: i.description,
         href: i.href,
+        image: i.image,
       }));
     }
     const sorted = [...allPosts].sort(
@@ -248,35 +236,26 @@ export default async function PEHomePage() {
         title: p.title,
         description: trimTo(p.excerpt ?? p.metaDescription, 140),
         href: `/${CC}/${urlSlug}/`,
+        image: p.heroImage,
         date: p.publishedDate ?? p.publishedAt,
       };
     });
   })();
 
-  const hasInsights = insightsForList.length > 0;
-  const featuredInsight = insightsForList[0];
-  const sideInsights = insightsForList.slice(1);
-
-  // Manifesto
-  const manifestoHeading =
-    page.whyHeading ??
-    page.servicesHeading ??
-    "We believe every worker deserves to go home safely.";
-  const manifestoBody =
-    page.whySubtext ??
-    trimTo(
-      heroSubtext,
-      240
-    ) ??
-    `Carelabs is at the forefront of electrical safety engineering in ${COUNTRY_NAME}. Our team brings deep expertise and a commitment to excellence.`;
-
-  // CTA split section
-  const ctaLeadText = page.ctaBannerHeading ?? "Ready to";
-  const ctaTailText = page.ctaBannerSubtext
-    ? trimTo(page.ctaBannerSubtext, 16)
-    : "Get Started?";
+  // CTA
+  const ctaHeading = [
+    page.ctaBannerHeading ?? "Ready to",
+    page.ctaBannerSubtext ? "" : "Get Started?",
+  ]
+    .filter(Boolean)
+    .join(" ");
+  const ctaSubtext = page.ctaBannerSubtext ?? null;
   const ctaButtonText = page.ctaBannerPrimaryText ?? "Contact Us";
   const ctaButtonHref = page.ctaBannerPrimaryHref ?? config.contactPath;
+
+  // How-It-Works heading (two-part: condensed lead + italic accent)
+  const serviceHeadingRaw = page.servicesHeading ?? "Our Core Services";
+  const serviceHeading = splitAccent(serviceHeadingRaw);
 
   // JSON-LD
   const jsonLdData = {
@@ -294,473 +273,327 @@ export default async function PEHomePage() {
   };
 
   return (
-    <main className="bg-white font-sans">
+    <div className="bg-white">
       <JsonLd data={jsonLdData} />
 
-      {/* 1. ANNOUNCEMENT TICKER */}
-      <SAAnnouncementTicker
-        countryName={COUNTRY_NAME}
-        standards={config.standards}
-      />
-
-      {/* 2. NAVBAR */}
-      <SANavbar config={config} />
-
-      {/* 3. HERO */}
-      <section className="relative bg-[#f2f2f4] overflow-hidden">
-        {/* Warm SA texture overlay */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 2px 2px, rgba(241,92,48,0.08) 1.2px, transparent 0)",
-            backgroundSize: "26px 26px",
-          }}
-          aria-hidden="true"
+      {/* Fixed header: ticker + navbar */}
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <SAAnnouncementTicker
+          countryName={COUNTRY_NAME}
+          standards={config.standards}
         />
+        <SANavbar config={config} />
+      </div>
 
-        {/* Watermark */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">
-          <span className="font-serif font-black text-[20vw] text-[#e8f4fd] leading-none whitespace-nowrap">
-            {watermark}
-          </span>
-        </div>
+      <main className="pt-[112px]">
+        {/* 1. HERO — typographic, full-viewport, navy */}
+        <section className="relative min-h-[calc(100vh-112px)] bg-[#0B1A2F] overflow-hidden flex items-center justify-center">
+          {/* subtle grid texture at 4% opacity */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)",
+              backgroundSize: "48px 48px",
+            }}
+            aria-hidden="true"
+          />
 
-        {/* Geometric circles top-right */}
-        <div className="absolute top-20 right-[10%] w-64 h-64 border-[3px] border-[#2575B6]/30 rounded-full" />
-        <div className="absolute top-32 right-[15%] w-48 h-48 bg-[#3d8fd4]/20 rounded-full" />
-        <div className="absolute top-10 right-[5%] w-32 h-32 border-[3px] border-[#1a5fa0]/20 rounded-full" />
-
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 py-24 lg:py-40">
-          <div className="max-w-4xl">
-            <h1 className="font-serif font-black text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-[#094d76] leading-[0.9] tracking-tight">
-              {lead && (
-                <>
-                  {lead.split(/\s+/).map((word, i) => (
-                    <span key={i} className="block">
-                      {word}
-                    </span>
-                  ))}
-                </>
-              )}
-              <span className="text-[#2575B6] block">{accent}</span>
+          <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 py-24 text-center">
+            <h1 className="font-condensed font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase text-white leading-[0.95] tracking-tight">
+              {heroLead}
+              <span className="text-orange-500 block">{COUNTRY_NAME}</span>
             </h1>
-            <p className="mt-10 text-lg text-[#9c9b9a] max-w-md leading-relaxed font-sans">
+            <p className="font-body text-lg text-white/70 max-w-2xl mx-auto mt-8">
               {heroSubtext}
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <div className="mt-10">
               <Link
                 href={heroPrimaryHref}
-                className="inline-flex items-center justify-center gap-3 bg-[#F15C30] text-white font-sans font-semibold px-8 py-4 rounded-full hover:bg-[#c44a1f] transition-colors"
+                className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-condensed font-bold uppercase tracking-wide px-10 py-4 rounded-full text-base hover:scale-105 transition-all"
               >
                 {heroPrimaryText}
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link
-                href={heroSecondaryHref}
-                className="inline-flex items-center justify-center gap-3 border-2 border-[#094d76] text-[#094d76] font-sans font-semibold px-8 py-4 rounded-full hover:bg-[#094d76] hover:text-white transition-colors"
-              >
-                {heroSecondaryText}
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
-
-            {/* Trust / certification pills */}
-            {trustBadgesForHero.length > 0 && (
-              <div className="mt-12">
-                <p className="text-[#094d76]/60 text-xs uppercase tracking-widest font-serif font-semibold mb-4">
-                  Standards We Follow
-                </p>
-                <div className="flex flex-wrap gap-3 max-w-2xl">
-                  {trustBadgesForHero.map((badge, i) => (
-                    <span
-                      key={i}
-                      className="inline-flex items-center gap-2 rounded-full bg-white border border-[#094d76]/10 px-4 py-2 shadow-sm hover:shadow-md hover:border-[#F15C30]/40 transition-all"
-                    >
-                      <CheckCircle2 className="w-4 h-4 text-[#F15C30] shrink-0" />
-                      <span className="text-xs font-semibold text-[#094d76] font-sans">
-                        {badge}
-                      </span>
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* 4. INTRO */}
-      <section className="bg-white py-20 lg:py-24">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
-          <div className="w-1 h-16 bg-[#F15C30] mx-auto mb-8" />
-          <h2 className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-[#094d76] tracking-tight mb-6">
-            Proactive Risk Assessment Tailored to Your Facility
-          </h2>
-          <p className="text-lg text-[#9c9b9a] leading-relaxed font-sans max-w-3xl mx-auto">
-            Carelabs identifies and mitigates electrical risk to keep your{" "}
-            {COUNTRY_NAME} facility compliant with {config.primaryStandard} and
-            international standards. Our engineers pair deep technical
-            expertise with industry tools like ETAP to deliver reports you and
-            your regulators can act on.
-          </p>
-        </div>
-      </section>
-
-      {/* 5. SERVICES EDITORIAL LIST */}
-      {servicesForList.length > 0 && (
-        <section id="services" className="py-24 lg:py-40 bg-white">
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <div className="mb-20">
-              <span className="text-[#F15C30] text-sm uppercase tracking-widest font-semibold font-serif">
-                What We Do
-              </span>
-              <h2 className="font-serif font-black text-4xl sm:text-5xl lg:text-6xl text-[#094d76] mt-4 tracking-tight">
-                {page.servicesHeading ?? "Our Services"}
-              </h2>
-              {page.servicesSubtext && (
-                <p className="mt-6 max-w-2xl text-[#9c9b9a] font-sans leading-relaxed">
-                  {page.servicesSubtext}
-                </p>
-              )}
-            </div>
-            <div className="divide-y divide-[#094d76]/10">
-              {servicesForList.map((service, index) => (
-                <Link
-                  key={index}
-                  href={service.href}
-                  className="group relative flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-12 py-8 lg:py-10 hover:bg-[#e8f4fd] -mx-6 lg:-mx-12 px-6 lg:px-12 transition-colors cursor-pointer border-l-4 border-transparent hover:border-[#F15C30]"
-                >
-                  <span className="font-serif font-black text-6xl lg:text-7xl text-[#f2f2f4] group-hover:text-[#e8f4fd] transition-colors w-24 flex-shrink-0">
-                    {String(index + 1).padStart(2, "0")}
+        {/* 2. TRUST BAR — certification pills only */}
+        {trustBadgesForHero.length > 0 && (
+          <section className="bg-[#1E293B] py-12">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+              <div className="flex flex-wrap lg:flex-nowrap justify-center gap-4">
+                {trustBadgesForHero.map((badge, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-5 py-2.5 hover:bg-white/15 hover:scale-[1.02] transition-all"
+                  >
+                    <CheckCircle2 className="w-4 h-4 text-orange-500 shrink-0" />
+                    <span className="text-sm font-semibold text-white font-body whitespace-nowrap">
+                      {badge}
+                    </span>
                   </span>
-                  <h3 className="font-serif font-bold text-2xl lg:text-3xl text-[#094d76] flex-1">
-                    {service.title}
-                  </h3>
-                  <p className="text-[#9c9b9a] max-w-sm leading-relaxed hidden lg:block font-sans">
-                    {service.description}
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* 3. SERVICES — folder-tab horizontal scroll */}
+        {servicesToShow.length > 0 && (
+          <section id="services" className="bg-[#F8FAFC] py-20 lg:py-28">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+              <div className="mb-12 max-w-3xl">
+                <h2 className="text-3xl md:text-5xl leading-tight">
+                  {serviceHeading.lead && (
+                    <span className="font-condensed font-extrabold uppercase text-[#0B1A2F]">
+                      {serviceHeading.lead}{" "}
+                    </span>
+                  )}
+                  <span className="font-accent italic text-orange-500">
+                    {serviceHeading.accent}
+                  </span>
+                </h2>
+                {page.servicesSubtext && (
+                  <p className="font-body text-lg text-gray-600 mt-6 max-w-2xl">
+                    {page.servicesSubtext}
                   </p>
-                  <div className="text-[#F15C30] transform group-hover:translate-x-2 transition-transform">
-                    <ArrowRight className="w-6 h-6" />
+                )}
+              </div>
+
+              <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide -mx-6 px-6 lg:-mx-12 lg:px-12">
+                {servicesToShow.map((service, i) => {
+                  const featured = i === 0;
+                  const cardBg = featured
+                    ? "bg-[#0B1A2F] text-white"
+                    : "bg-white border border-gray-200 text-[#0B1A2F]";
+                  return (
+                    <Link
+                      key={i}
+                      href={service.href}
+                      className={`snap-start shrink-0 w-[280px] sm:w-[320px] rounded-2xl rounded-tr-none overflow-hidden min-h-[380px] flex flex-col ${cardBg} hover:shadow-2xl transition-shadow group`}
+                    >
+                      <div className="p-6 pb-0">
+                        <span
+                          className={`inline-block font-condensed text-xs uppercase tracking-widest font-semibold ${
+                            featured ? "text-orange-500" : "text-orange-500"
+                          }`}
+                        >
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                      </div>
+                      <h3 className="font-condensed font-bold text-xl uppercase mt-4 px-6 leading-tight">
+                        {service.title}
+                      </h3>
+                      <p
+                        className={`font-body text-sm leading-relaxed mt-3 px-6 flex-grow ${
+                          featured ? "text-white/70" : "text-gray-600"
+                        }`}
+                      >
+                        {service.description}
+                      </p>
+                      <span className="px-6 pb-6 mt-4 font-condensed font-semibold uppercase tracking-wider text-orange-500 group-hover:text-orange-400 inline-flex items-center gap-2">
+                        View Details <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* 4. HOW IT WORKS — editorial numbered flow */}
+        <section className="bg-white py-20 lg:py-28">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <p className="font-condensed text-xs uppercase tracking-[0.15em] text-orange-500 mb-4">
+              How It Works
+            </p>
+            <h2 className="font-condensed font-extrabold text-4xl md:text-6xl text-[#0B1A2F] uppercase max-w-4xl leading-tight">
+              From messy{" "}
+              <span className="font-accent italic font-normal text-orange-500 normal-case">
+                power systems
+              </span>{" "}
+              to total{" "}
+              <span className="font-accent italic font-normal text-orange-500 normal-case">
+                compliance
+              </span>
+              .
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+              {processSteps.map((step, i) => (
+                <div key={i} className="border-t-2 border-orange-500 pt-6">
+                  <div className="font-condensed font-extrabold text-6xl text-orange-500/20 leading-none">
+                    {String(i + 1).padStart(2, "0")}
                   </div>
-                </Link>
+                  <h3 className="font-condensed font-bold text-xl text-[#0B1A2F] uppercase mt-2">
+                    {step.title}
+                  </h3>
+                  <p className="font-body text-sm text-gray-600 leading-relaxed mt-3">
+                    {step.description}
+                  </p>
+                </div>
               ))}
             </div>
           </div>
         </section>
-      )}
 
-      {/* 6. MANIFESTO */}
-      <section
-        id="about"
-        className="relative py-24 lg:py-40 bg-[#094d76] overflow-hidden"
-      >
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none"
-          aria-hidden="true"
-        >
-          <span className="font-serif font-black text-[15vw] text-white/5 leading-none whitespace-nowrap">
-            CARELABS
-          </span>
-        </div>
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl">
-            <div className="w-1 h-24 bg-[#F15C30] mb-10" />
-            <h2 className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-white leading-tight">
-              {manifestoHeading}
-            </h2>
-            <p className="mt-10 text-lg text-white/70 leading-relaxed max-w-2xl font-sans">
-              {manifestoBody}
-            </p>
-            <div className="mt-12 grid sm:grid-cols-3 gap-6 sm:gap-8">
-              {MANIFESTO_CREDENTIALS.map((cred, i) => {
-                const Icon = cred.icon;
-                return (
-                  <div key={i} className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-[#F15C30] rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="font-serif font-bold text-white text-lg">
-                        {cred.title}
-                      </div>
-                      <div className="text-white/50 text-sm font-sans">
-                        {cred.label}
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-
-        {/* SA curved wave divider at bottom */}
-        <svg
-          className="absolute bottom-0 left-0 w-full pointer-events-none"
-          viewBox="0 0 1440 60"
-          fill="none"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M0,30 Q360,0 720,30 T1440,30 L1440,60 L0,60 Z"
-            fill="#f2f2f4"
-          />
-          <path
-            d="M0,30 Q360,0 720,30 T1440,30"
-            stroke="#F15C30"
-            strokeWidth="2"
-            fill="none"
-            opacity="0.6"
-          />
-        </svg>
-      </section>
-
-      {/* 7. WHY US */}
-      <section className="py-24 lg:py-40 bg-[#f2f2f4]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="mb-16">
-            <span className="text-[#F15C30] text-sm uppercase tracking-widest font-semibold font-serif">
-              {page.whyHeading ? "Why Choose Us" : "Why Choose Us"}
-            </span>
-            <h2 className="font-serif font-black text-4xl sm:text-5xl lg:text-6xl text-[#094d76] mt-4 tracking-tight">
-              Engineering Excellence
-            </h2>
-          </div>
-          <div className="grid lg:grid-cols-2 gap-6">
-            <div className="bg-white p-10 lg:p-14 rounded-3xl hover:shadow-2xl transition-shadow">
-              <div className="w-20 h-20 bg-[#e8f4fd] rounded-2xl flex items-center justify-center mb-8">
-                {(() => {
-                  const Icon = whyIcons[0];
-                  return <Icon className="w-10 h-10 text-[#2575B6]" />;
-                })()}
-              </div>
-              <h3 className="font-serif font-bold text-3xl lg:text-4xl text-[#094d76] mb-6">
-                {whyFeaturesData[0].title}
-              </h3>
-              <p className="text-[#9c9b9a] text-lg leading-relaxed font-sans">
-                {whyFeaturesData[0].description}
-              </p>
-            </div>
-            <div className="space-y-6">
-              {whyFeaturesData.slice(1, 3).map((feature, index) => {
-                const Icon = whyIcons[index + 1] ?? Shield;
-                return (
-                  <div
-                    key={index}
-                    className="bg-white p-8 lg:p-10 rounded-3xl hover:shadow-2xl transition-shadow"
-                  >
-                    <div className="flex items-start gap-6">
-                      <div className="w-16 h-16 bg-[#e8f4fd] rounded-2xl flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-8 h-8 text-[#2575B6]" />
-                      </div>
-                      <div>
-                        <h3 className="font-serif font-bold text-2xl text-[#094d76] mb-3">
-                          {feature.title}
-                        </h3>
-                        <p className="text-[#9c9b9a] leading-relaxed font-sans">
-                          {feature.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 8. INDUSTRIES MARQUEE */}
-      <section
-        id="industries"
-        className="py-24 lg:py-32 bg-[#094d76] overflow-hidden"
-      >
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 mb-12">
-          <span className="text-[#F15C30] text-sm uppercase tracking-widest font-semibold font-serif">
+        {/* 5. INDUSTRIES — marquee only */}
+        <section id="industries" className="bg-[#0B1A2F] py-12">
+          <p className="text-center font-condensed text-xs uppercase tracking-[0.15em] text-orange-500 mb-6">
             Industries We Serve
-          </span>
-          <h2 className="font-serif font-black text-4xl sm:text-5xl text-white mt-4 tracking-tight">
-            {page.industriesHeading ?? "Trusted Across Sectors"}
-          </h2>
-        </div>
-        <div className="relative">
-          <div className="animate-marquee-slow whitespace-nowrap py-8">
-            {[...Array(3)].map((_, setIndex) => (
-              <span key={setIndex} className="inline-flex items-center">
-                {industriesForMarquee.map((industry, index) => (
-                  <span key={index} className="inline-flex items-center">
-                    <span className="text-white font-serif font-bold text-2xl lg:text-3xl mx-8">
-                      {industry}
+          </p>
+          <div className="overflow-hidden">
+            <div className="animate-marquee-slow whitespace-nowrap">
+              {Array.from({ length: 3 }).map((_, setIdx) => (
+                <span key={setIdx} className="inline-flex items-center">
+                  {industriesForMarquee.map((industry, i) => (
+                    <span key={i} className="inline-flex items-center">
+                      <span className="font-condensed font-extrabold text-4xl md:text-6xl uppercase text-white/10 mx-8">
+                        {industry}
+                      </span>
+                      <span className="text-orange-500 text-3xl">·</span>
                     </span>
-                    <span className="text-[#F15C30] text-2xl">•</span>
-                  </span>
-                ))}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 9. INSIGHTS */}
-      {hasInsights && featuredInsight && (
-        <section id="insights" className="py-24 lg:py-40 bg-white">
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
-              <div>
-                <span className="text-[#F15C30] text-sm uppercase tracking-widest font-semibold font-serif">
-                  Insights
+                  ))}
                 </span>
-                <h2 className="font-serif font-black text-4xl sm:text-5xl lg:text-6xl text-[#094d76] mt-4 tracking-tight">
-                  {page.insightsHeading ?? "Latest Articles"}
-                </h2>
-              </div>
-              <Link
-                href={config.blogIndexPath}
-                className="group inline-flex items-center gap-3 text-[#094d76] font-serif font-semibold hover:text-[#F15C30] transition-colors"
-              >
-                View All Articles
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              ))}
             </div>
-            <div className="grid lg:grid-cols-2 gap-8">
-              <Link
-                href={featuredInsight.href}
-                className="group bg-[#094d76] rounded-3xl p-10 lg:p-14 flex flex-col justify-end min-h-[500px] relative overflow-hidden"
-              >
-                {/* Dot pattern */}
-                <div
-                  className="absolute inset-0 opacity-10"
-                  style={{
-                    backgroundImage:
-                      "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
-                    backgroundSize: "32px 32px",
-                  }}
-                  aria-hidden="true"
-                />
-                {/* SA warm gradient overlay */}
-                <div
-                  className="absolute inset-0 pointer-events-none"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, rgba(241,92,48,0.08) 0%, transparent 60%)",
-                  }}
-                  aria-hidden="true"
-                />
-                <div className="relative">
-                  {featuredInsight.category && (
-                    <span className="text-[#F15C30] text-sm font-semibold uppercase tracking-wider font-serif">
-                      {featuredInsight.category}
-                    </span>
-                  )}
-                  <h3 className="font-serif font-bold text-3xl lg:text-4xl text-white mt-4 mb-6 group-hover:text-[#F15C30] transition-colors">
-                    {featuredInsight.title}
-                  </h3>
-                  <p className="text-white/70 leading-relaxed mb-6 font-sans">
-                    {featuredInsight.description}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-white/50 text-sm font-sans">
-                      {formatDate(featuredInsight.date)}
-                    </span>
-                    <ArrowRight className="w-5 h-5 text-white group-hover:translate-x-2 transition-transform" />
-                  </div>
-                </div>
-              </Link>
-              <div className="space-y-8">
-                {sideInsights.map((post, index) => (
+          </div>
+        </section>
+
+        {/* 6. INSIGHTS — folder-tab cards */}
+        {insightsForList.length > 0 && (
+          <section id="blog" className="bg-white py-20 lg:py-28">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+                <h2 className="text-3xl md:text-5xl leading-tight">
+                  <span className="font-condensed font-extrabold uppercase text-[#0B1A2F]">
+                    From the{" "}
+                  </span>
+                  <span className="font-accent italic text-orange-500">
+                    Blog
+                  </span>
+                </h2>
+                <Link
+                  href={config.blogIndexPath}
+                  className="inline-flex items-center gap-2 font-condensed font-semibold uppercase tracking-wider text-orange-500 hover:text-orange-400"
+                >
+                  View All Articles <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {insightsForList.map((post, i) => (
                   <Link
-                    key={index}
+                    key={i}
                     href={post.href}
-                    className="group block p-8 lg:p-10 border border-[#094d76]/10 rounded-3xl hover:border-[#094d76]/30 transition-colors"
+                    className="group rounded-2xl rounded-tr-none overflow-hidden border border-gray-200 bg-white hover:shadow-2xl transition-shadow flex flex-col"
                   >
+                    {post.image && post.image.startsWith("http") ? (
+                      <div className="relative h-48 overflow-hidden">
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                    ) : (
+                      <div className="relative h-48 bg-[#0B1A2F]" />
+                    )}
                     {post.category && (
-                      <span className="text-[#F15C30] text-sm font-semibold uppercase tracking-wider font-serif">
+                      <span className="font-condensed text-xs uppercase tracking-wider text-orange-500 mt-4 px-6 font-semibold">
                         {post.category}
                       </span>
                     )}
-                    <h3 className="font-serif font-bold text-2xl text-[#094d76] mt-3 mb-4 group-hover:text-[#2575B6] transition-colors">
+                    <h3 className="font-condensed font-bold text-lg text-[#0B1A2F] mt-2 px-6 uppercase leading-tight">
                       {post.title}
                     </h3>
-                    <p className="text-[#9c9b9a] leading-relaxed mb-4 font-sans">
+                    <p className="font-body text-sm text-gray-600 mt-2 px-6 line-clamp-3 flex-grow">
                       {post.description}
                     </p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-[#9c9b9a] text-sm font-sans">
-                        {formatDate(post.date)}
+                    <div className="flex items-center justify-between px-6 pb-6 mt-4">
+                      {post.date && (
+                        <span className="font-body text-xs text-gray-500">
+                          {formatDate(post.date)}
+                        </span>
+                      )}
+                      <span className="font-condensed font-semibold uppercase tracking-wider text-orange-500 inline-flex items-center gap-2">
+                        Read More <ArrowRight className="w-4 h-4" />
                       </span>
-                      <ArrowRight className="w-5 h-5 text-[#094d76] group-hover:translate-x-2 transition-transform" />
                     </div>
                   </Link>
                 ))}
               </div>
             </div>
-          </div>
-        </section>
-      )}
+          </section>
+        )}
 
-      {/* FAQ (kept from Strapi if present) */}
-      {page.faqs && page.faqs.length > 0 && (
-        <section className="py-24 lg:py-32 bg-[#f2f2f4]">
-          <div className="max-w-3xl mx-auto px-6 lg:px-12">
-            <div className="mb-12 text-center">
-              <span className="text-[#F15C30] text-sm uppercase tracking-widest font-semibold font-serif">
-                FAQ
-              </span>
-              <h2 className="font-serif font-black text-4xl sm:text-5xl text-[#094d76] mt-4 tracking-tight">
-                {page.faqsHeading ?? "Frequently Asked Questions"}
-              </h2>
+        {/* 7. FAQ */}
+        {page.faqs && page.faqs.length > 0 && (
+          <section className="bg-[#F8FAFC] py-20 lg:py-28">
+            <div className="max-w-3xl mx-auto px-6 lg:px-12">
+              <div className="mb-10 text-center">
+                <p className="font-condensed text-xs uppercase tracking-[0.15em] text-orange-500 mb-4">
+                  FAQ
+                </p>
+                <h2 className="font-condensed font-extrabold text-3xl md:text-4xl text-[#0B1A2F] uppercase">
+                  {page.faqsHeading ?? "Frequently Asked Questions"}
+                </h2>
+              </div>
+              <div className="space-y-4">
+                {page.faqs.map((faq, i) => (
+                  <details
+                    key={i}
+                    className="group bg-white rounded-2xl p-6 border border-gray-200 open:shadow-lg transition-shadow"
+                  >
+                    <summary className="flex items-center justify-between cursor-pointer list-none">
+                      <span className="font-condensed font-bold uppercase text-[#0B1A2F] pr-6">
+                        {faq.question}
+                      </span>
+                      <span className="text-orange-500 text-2xl transition-transform group-open:rotate-45 shrink-0">
+                        +
+                      </span>
+                    </summary>
+                    <p className="mt-4 text-gray-600 font-body leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </details>
+                ))}
+              </div>
             </div>
-            <div className="space-y-4">
-              {page.faqs.map((faq, i) => (
-                <details
-                  key={i}
-                  className="group bg-white rounded-2xl p-6 open:shadow-lg transition-shadow"
-                >
-                  <summary className="flex items-center justify-between cursor-pointer list-none">
-                    <span className="font-serif font-bold text-[#094d76] text-lg pr-6">
-                      {faq.question}
-                    </span>
-                    <span className="text-[#F15C30] text-2xl transition-transform group-open:rotate-45">
-                      +
-                    </span>
-                  </summary>
-                  <p className="mt-4 text-[#9c9b9a] font-sans leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+          </section>
+        )}
 
-      {/* 10. CTA SPLIT SECTION */}
-      <section id="contact" className="relative">
-        <div className="flex flex-col lg:flex-row">
-          <div className="flex-1 bg-[#F15C30] py-24 lg:py-40 px-6 lg:px-12 flex items-center justify-center lg:justify-end">
-            <h2 className="font-serif font-black text-5xl lg:text-7xl text-white text-center lg:text-right lg:pr-8">
-              {ctaLeadText}
+        {/* 8. CTA BANNER — full-width gradient, centered */}
+        <section
+          id="contact"
+          className="relative py-24 lg:py-32 overflow-hidden bg-gradient-to-r from-orange-500 to-[#0B1A2F]"
+        >
+          <div className="relative max-w-4xl mx-auto text-center px-6">
+            <h2 className="font-condensed font-extrabold text-4xl md:text-6xl text-white uppercase leading-tight">
+              {ctaHeading}
             </h2>
-          </div>
-          <div className="flex-1 bg-[#094d76] py-24 lg:py-40 px-6 lg:px-12 flex items-center justify-center lg:justify-start">
-            <h2 className="font-serif font-black text-5xl lg:text-7xl text-white text-center lg:text-left lg:pl-8">
-              {ctaTailText}
-            </h2>
-          </div>
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            {ctaSubtext && (
+              <p className="font-body text-lg text-white/80 mt-6 max-w-2xl mx-auto">
+                {ctaSubtext}
+              </p>
+            )}
             <Link
               href={ctaButtonHref}
-              className="inline-flex items-center gap-3 bg-white text-[#094d76] font-serif font-bold px-10 py-5 rounded-full shadow-2xl hover:scale-105 transition-transform text-lg"
+              className="mt-10 inline-flex items-center gap-3 bg-white text-[#0B1A2F] font-condensed font-bold uppercase px-10 py-4 rounded-full shadow-2xl hover:scale-105 transition-transform text-base tracking-wide"
             >
               {ctaButtonText}
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
-      {/* 11. FOOTER */}
+      {/* 9. FOOTER */}
       <SAFooter
         config={config}
         phone={page.footerPhone}
@@ -768,6 +601,6 @@ export default async function PEHomePage() {
         address={page.footerAddress}
         description={page.footerDescription}
       />
-    </main>
+    </div>
   );
 }

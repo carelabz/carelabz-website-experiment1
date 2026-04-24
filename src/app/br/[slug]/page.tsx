@@ -531,8 +531,8 @@ function formatDate(s: string | null): string {
 
 function cleanTitle(raw: string): string {
   return raw
-    .replace(/\s*\|\s*Care[Ll]abs(\s+Brazil)?\s*$/i, "")
-    .replace(/\s*-\s*Care[Ll]abs\s+Brazil\s*$/i, "")
+    .replace(/\s*\|\s*Care[Ll]abs(\s+\w+)?\s*$/i, "")
+    .replace(/\s*-\s*Care[Ll]abs(\s+\w+)?\s*$/i, "")
     .replace(/^Uncategorized\s+Archives\s*-\s*/i, "")
     .replace(/^admin,\s*Author\s+at\s*/i, "")
     .trim();

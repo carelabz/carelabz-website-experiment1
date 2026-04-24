@@ -52,6 +52,7 @@ def transform(text: str, cc: str) -> str:
         (r"\bBRBlogIndexPage\b", f"{upper}BlogIndexPage"),
         (r"\bBRAboutPage\b", f"{upper}AboutPage"),
         (r"\bBRContactPage\b", f"{upper}ContactPage"),
+        (r"\bBRCaseStudiesPage\b", f"{upper}CaseStudiesPage"),
     ]
 
     out = text
@@ -67,6 +68,7 @@ FILES = [
     "about-us/page.tsx",
     "contact-us/page.tsx",
     "[slug]/page.tsx",
+    "case-studies/page.tsx",
 ]
 
 
