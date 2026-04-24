@@ -70,10 +70,21 @@ export default async function BRContactPage() {
     getServicesByRegion(CC),
   ]);
 
-  const serviceOptions = services.map((s) => ({
-    title: s.title,
-    slug: s.slug,
-  }));
+  // Prefer Strapi services (Bug 0 ensures unique titles); fall back to config
+  // when Strapi returns empty so the dropdown still has options.
+  const rawOptions =
+    services.length > 0
+      ? services.map((s) => ({ title: s.title, slug: s.slug }))
+      : config.services.map((s) => ({ title: s.label, slug: s.href }));
+
+  // Defensive dedup on title to prevent ghost duplicates in the dropdown.
+  const seen = new Set<string>();
+  const serviceOptions = rawOptions.filter((opt) => {
+    const key = opt.title.trim().toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 
   const headline = page?.heroHeadline ?? "Get in Touch";
   const subtext =

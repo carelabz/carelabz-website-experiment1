@@ -31,7 +31,8 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const pageUrl = `https://carelabz.com/${CC}/${params.slug}/`;
-  const service = await getServicePageBySlug(`${params.slug}-${CC}`);
+  let service = await getServicePageBySlug(`${params.slug}-${CC}`);
+  if (!service) service = await getServicePageBySlug(params.slug);
   if (service) {
     return {
       title: service.metaTitle || `${service.title} | Carelabs ${COUNTRY_NAME}`,
@@ -54,7 +55,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       },
     };
   }
-  const post = await getBlogPost(CC, `${params.slug}-${CC}`);
+  let post = await getBlogPost(CC, `${params.slug}-${CC}`);
+  if (!post) post = await getBlogPost(CC, params.slug);
   if (post) {
     return {
       title: post.metaTitle ?? `${post.title} | Carelabs ${COUNTRY_NAME}`,
@@ -527,6 +529,10 @@ function formatDate(s: string | null): string {
   }
 }
 
+function cleanTitle(raw: string): string {
+  return raw.replace(/\s*\|\s*Care[Ll]abs\s*$/, "").trim();
+}
+
 function BlogView({ post }: { post: BlogPost }) {
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -594,7 +600,9 @@ function BlogView({ post }: { post: BlogPost }) {
                 Blog
               </Link>
               <span aria-hidden="true">/</span>
-              <span className="text-white line-clamp-1">{post.title}</span>
+              <span className="text-white line-clamp-1">
+                {cleanTitle(post.title)}
+              </span>
             </nav>
             {post.category && (
               <span className="font-condensed text-xs uppercase tracking-[0.15em] bg-orange-500 text-white px-3 py-1 rounded-full inline-block mb-4">
@@ -602,7 +610,7 @@ function BlogView({ post }: { post: BlogPost }) {
               </span>
             )}
             <h1 className="font-condensed font-extrabold text-3xl md:text-4xl uppercase text-white leading-tight tracking-tight">
-              {post.title}
+              {cleanTitle(post.title)}
             </h1>
             <div className="font-body text-sm text-white/60 mt-4 flex flex-wrap items-center gap-4">
               {post.author && (
@@ -700,9 +708,13 @@ function BlogView({ post }: { post: BlogPost }) {
 }
 
 export default async function Page({ params }: PageProps) {
-  const service = await getServicePageBySlug(`${params.slug}-${CC}`);
+  let service = await getServicePageBySlug(`${params.slug}-${CC}`);
+  if (!service) service = await getServicePageBySlug(params.slug);
   if (service) return <ServiceView service={service} slug={params.slug} />;
-  const post = await getBlogPost(CC, `${params.slug}-${CC}`);
+
+  let post = await getBlogPost(CC, `${params.slug}-${CC}`);
+  if (!post) post = await getBlogPost(CC, params.slug);
   if (post) return <BlogView post={post} />;
+
   notFound();
 }

@@ -62,6 +62,17 @@ function formatDate(v: string | null): string {
   }
 }
 
+function cleanTitle(raw: string): string {
+  return raw.replace(/\s*\|\s*Care[Ll]abs\s*$/, "").trim();
+}
+
+function cleanExcerpt(raw: string): string {
+  return raw
+    .replace(/\s*\[…\]\s*$/, "")
+    .replace(/\s*\[\.{3}\]\s*$/, "")
+    .trim();
+}
+
 function slugPath(post: BlogPost): string {
   const slug = post.slug.endsWith(`-${CC}`) ? post.slug.slice(0, -3) : post.slug;
   return `/${CC}/${slug}/`;
@@ -180,13 +191,14 @@ export default async function BRBlogIndexPage() {
                       </span>
                     )}
                     <h2 className="font-condensed font-bold text-2xl md:text-3xl text-white uppercase group-hover:text-orange-500 transition-colors">
-                      {featuredPost.title}
+                      {cleanTitle(featuredPost.title)}
                     </h2>
                     {featuredPost.excerpt && (
                       <p className="font-body text-sm text-white/75 mt-4 leading-relaxed">
-                        {featuredPost.excerpt.length > 180
-                          ? featuredPost.excerpt.slice(0, 177) + "…"
-                          : featuredPost.excerpt}
+                        {(() => {
+                          const e = cleanExcerpt(featuredPost.excerpt);
+                          return e.length > 180 ? e.slice(0, 177) + "…" : e;
+                        })()}
                       </p>
                     )}
                     <div className="mt-6 flex items-center justify-between">
@@ -214,11 +226,11 @@ export default async function BRBlogIndexPage() {
                         </span>
                       )}
                       <h3 className="font-condensed font-bold text-lg text-[#0B1A2F] uppercase mt-2 group-hover:text-orange-500 transition-colors">
-                        {post.title}
+                        {cleanTitle(post.title)}
                       </h3>
                       {post.excerpt && (
                         <p className="font-body text-sm text-gray-600 mt-2 line-clamp-2">
-                          {post.excerpt}
+                          {cleanExcerpt(post.excerpt)}
                         </p>
                       )}
                       <div className="mt-4 flex items-center justify-between">
@@ -249,9 +261,6 @@ export default async function BRBlogIndexPage() {
                       href={slugPath(post)}
                       className="group flex items-start gap-6 py-6 border-b border-gray-100 hover:bg-[#F8FAFC] transition-colors px-4 rounded-lg"
                     >
-                      <span className="font-condensed text-sm text-orange-500 shrink-0 w-24 uppercase tracking-wider">
-                        {formatDate(postDate(post))}
-                      </span>
                       <div className="flex-1 min-w-0">
                         {post.category && (
                           <span className="font-condensed text-xs uppercase tracking-widest text-gray-500">
@@ -259,11 +268,11 @@ export default async function BRBlogIndexPage() {
                           </span>
                         )}
                         <h3 className="font-condensed font-bold text-lg text-[#0B1A2F] group-hover:text-orange-500 transition-colors mt-1">
-                          {post.title}
+                          {cleanTitle(post.title)}
                         </h3>
                         {post.excerpt && (
                           <p className="font-body text-sm text-gray-600 mt-1 line-clamp-2">
-                            {post.excerpt}
+                            {cleanExcerpt(post.excerpt)}
                           </p>
                         )}
                       </div>
