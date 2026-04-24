@@ -161,28 +161,40 @@ export default async function BRHomePage() {
       ? page.trustBadges.map((b) => b.label)
       : config.standards.slice(0, 6);
 
-  // Services: prefer Strapi home.services, fallback to ServicePage rows
-  const servicesToShow: Array<{
-    title: string;
-    description: string;
-    href: string;
-  }> = (() => {
-    if (page.services && page.services.length > 0) {
-      return page.services.slice(0, 8).map((s) => ({
-        title: s.title,
-        description: s.description,
-        href: s.href,
-      }));
-    }
-    return servicePages.slice(0, 8).map((s) => {
-      const urlSlug = s.slug.endsWith(`-${CC}`) ? s.slug.slice(0, -3) : s.slug;
-      return {
-        title: s.title,
-        description: trimTo(s.metaDescription, 140),
-        href: `/${CC}/${urlSlug}/`,
-      };
+  // Services: always derive from ServicePage query so every card href points
+  // to a slug that actually exists in Strapi. Using page.services (the
+  // HomePage content type) is fragile — editors can publish hrefs that do
+  // not map to any ServicePage, causing 404s on click. ServicePage-derived
+  // cards are guaranteed to resolve via the /{cc}/[slug] route.
+  const knownSlugs = new Set(
+    servicePages.map((s) =>
+      s.slug.endsWith(`-${CC}`) ? s.slug.slice(0, -3) : s.slug
+    )
+  );
+
+  const servicePageCards = servicePages.slice(0, 8).map((s) => {
+    const urlSlug = s.slug.endsWith(`-${CC}`) ? s.slug.slice(0, -3) : s.slug;
+    return {
+      title: s.title,
+      description: trimTo(s.metaDescription, 140),
+      href: `/${CC}/${urlSlug}/`,
+    };
+  });
+
+  const homeServiceCards = (page.services ?? [])
+    .map((s) => ({ title: s.title, description: s.description, href: s.href }))
+    .filter((s) => {
+      const m = s.href.match(/^\/[a-z]{2}\/([^/]+)\/?$/);
+      return m ? knownSlugs.has(m[1]) : false;
     });
-  })();
+
+  // Prefer Strapi-authored cards only if every one of them resolves to a
+  // real ServicePage; otherwise fall through to ServicePage-derived cards.
+  const servicesToShow =
+    homeServiceCards.length > 0 &&
+    homeServiceCards.length === (page.services?.length ?? 0)
+      ? homeServiceCards.slice(0, 8)
+      : servicePageCards;
 
   // Process steps — prefer Strapi service-level processSteps if they exist at
   // the service scope; home page has no dedicated field, so use BR fallbacks
