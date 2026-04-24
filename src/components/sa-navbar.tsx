@@ -27,13 +27,11 @@ export function SANavbar({ config }: SANavbarProps) {
     { name: "Contact Us", href: config.contactPath },
   ];
 
-  const navBg = isScrolled || mobileMenuOpen
-    ? "bg-[#0B1A2F] shadow-lg"
-    : "bg-transparent";
-
   return (
     <nav
-      className={`w-full transition-colors duration-300 ${navBg}`}
+      className={`w-full bg-[#0B1A2F] transition-shadow duration-300 ${
+        isScrolled ? "shadow-lg" : ""
+      }`}
       aria-label="Primary"
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
