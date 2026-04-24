@@ -7,16 +7,15 @@ export function SAAnnouncementTicker({
   countryName,
   standards,
 }: SAAnnouncementTickerProps) {
-  const primary = standards.slice(0, 3);
   const chunks =
-    primary.length > 0
-      ? primary
+    standards.length > 0
+      ? standards
       : ["Global Power System Engineering", "50+ Countries"];
 
   return (
-    <div className="bg-[#094d76] overflow-hidden py-3">
+    <div className="bg-[#0B1A2F] overflow-hidden py-3">
       <div className="animate-marquee whitespace-nowrap">
-        {Array.from({ length: 4 }).map((_, i) => (
+        {Array.from({ length: 3 }).map((_, i) => (
           <span key={i} className="inline-block mx-8">
             <span className="text-white text-sm font-medium tracking-wide">
               Carelabs
@@ -27,7 +26,7 @@ export function SAAnnouncementTicker({
             </span>
             {chunks.map((item, idx) => (
               <span key={idx} className="inline-block">
-                <span className="text-[#F15C30] mx-4">•</span>
+                <span className="text-orange-500 mx-4">•</span>
                 <span className="text-white/70 text-sm">{item}</span>
               </span>
             ))}
