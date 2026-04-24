@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight, Linkedin, Mail, MessageCircle } from "lucide-react";
 import type { CountryConfig } from "@/lib/countries-config";
 
 interface SAFooterProps {
@@ -15,35 +16,28 @@ export function SAFooter({
   phone,
   email,
   address,
-  description,
 }: SAFooterProps) {
   const resolvedPhone = phone ?? config.phone;
   const resolvedEmail = email ?? config.email;
   const resolvedAddress = address ?? config.address;
-  const resolvedDescription = description ?? config.footerDescription;
 
-  const companyLinks = [
-    { label: "About Us", href: config.aboutPath },
-    ...(config.caseStudyPath
-      ? [{ label: "Case Studies", href: config.caseStudyPath }]
-      : []),
-    { label: "Blog", href: config.blogIndexPath },
+  const navLinks = [
+    { label: "Services", href: config.servicesIndexPath },
+    { label: "About", href: config.aboutPath },
+    { label: "Industries", href: `/${config.cc}/#industries` },
+    { label: "Insights", href: config.blogIndexPath },
     { label: "Contact", href: config.contactPath },
   ];
 
-  return (
-    <footer className="bg-[#094d76] relative overflow-hidden">
-      <div className="absolute bottom-0 left-0 right-0 pointer-events-none select-none overflow-hidden">
-        <span
-          className="font-serif font-black text-[20vw] text-white/5 leading-none whitespace-nowrap block -mb-[5vw]"
-          aria-hidden="true"
-        >
-          CARELABS
-        </span>
-      </div>
+  const certLine = config.standards.slice(0, 3).join(" · ");
+  const whatsappNumber = resolvedPhone.replace(/[^\d+]/g, "");
 
-      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 py-20 lg:py-28">
-        <div className="grid lg:grid-cols-4 gap-12 lg:gap-8">
+  return (
+    <footer aria-label="Site footer">
+      {/* Top — orange */}
+      <div className="bg-orange-500 py-16 lg:py-20 px-6 lg:px-12">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+          {/* Column 1 — brand */}
           <div>
             <Link
               href={`/${config.cc}/`}
@@ -59,95 +53,90 @@ export function SAFooter({
                 style={{ filter: "brightness(0) invert(1)" }}
               />
             </Link>
-            <p className="text-white/60 text-sm leading-relaxed font-sans max-w-xs">
-              {resolvedDescription}
+            <p className="font-condensed uppercase tracking-widest text-xs text-white/90 mb-4">
+              Test | Calibrate | Inspect | Certify
+            </p>
+            <p className="font-body text-sm text-white/85 leading-relaxed whitespace-pre-line">
+              {resolvedAddress}
             </p>
           </div>
 
+          {/* Column 2 — nav */}
           <div>
-            <h4 className="font-serif font-bold text-[#F15C30] text-sm uppercase tracking-widest mb-6">
-              Services
+            <h4 className="font-condensed font-bold uppercase tracking-widest text-sm text-white mb-6">
+              Navigate
             </h4>
             <ul className="space-y-3">
-              {config.services.map((s) => (
-                <li key={s.href}>
+              {navLinks.map((link) => (
+                <li key={link.href}>
                   <Link
-                    href={s.href}
-                    className="text-white/70 hover:text-white transition-colors text-sm font-sans"
+                    href={link.href}
+                    className="font-body text-base text-white hover:text-white/80 transition-colors"
                   >
-                    {s.label}
+                    {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
+          {/* Column 3 — CTA */}
           <div>
-            <h4 className="font-serif font-bold text-[#F15C30] text-sm uppercase tracking-widest mb-6">
-              Company
+            <h4 className="font-condensed font-bold text-2xl text-white mb-4">
+              Ready to protect your team?
             </h4>
-            <ul className="space-y-3">
-              {companyLinks.map((c) => (
-                <li key={c.href}>
-                  <Link
-                    href={c.href}
-                    className="text-white/70 hover:text-white transition-colors text-sm font-sans"
-                  >
-                    {c.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-serif font-bold text-[#F15C30] text-sm uppercase tracking-widest mb-6">
-              Contact
-            </h4>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href={`mailto:${resolvedEmail}`}
-                  className="text-white/70 hover:text-white transition-colors text-sm font-sans"
-                >
-                  {resolvedEmail}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`tel:${resolvedPhone.replace(/\s/g, "")}`}
-                  className="text-white/70 hover:text-white transition-colors text-sm font-sans"
-                >
-                  {resolvedPhone}
-                </a>
-              </li>
-              <li>
-                <span className="text-white/70 text-sm font-sans whitespace-pre-line">
-                  {resolvedAddress}
-                </span>
-              </li>
-            </ul>
+            <p className="font-body text-sm text-white/85 mb-6">
+              Talk to our {config.countryName} engineers about your next power
+              system study or compliance audit.
+            </p>
+            <Link
+              href={config.contactPath}
+              className="inline-flex items-center gap-2 bg-[#0B1A2F] hover:bg-[#162a45] text-white font-condensed font-bold uppercase tracking-wide px-8 py-3 rounded-full transition-colors"
+            >
+              Contact Us
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
+      </div>
 
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-          <p className="text-white/50 text-sm font-sans">
-            © {new Date().getFullYear()} Carelabs {config.countryName}. All
-            rights reserved.
+      {/* Bottom — navy */}
+      <div className="bg-[#0B1A2F] py-5 px-6 lg:px-12">
+        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-white/60 text-sm font-body order-3 md:order-1">
+            © {new Date().getFullYear()} Carelabs. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <Link
-              href="/privacy/"
-              className="text-white/50 hover:text-white text-sm transition-colors font-sans"
+          {certLine && (
+            <p className="text-white/40 text-xs font-condensed uppercase tracking-wider order-1 md:order-2">
+              {certLine}
+            </p>
+          )}
+          <div className="flex items-center gap-4 order-2 md:order-3">
+            <a
+              href="https://ae.linkedin.com/company/carelabs"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-white/60 hover:text-white transition-colors"
             >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms/"
-              className="text-white/50 hover:text-white text-sm transition-colors font-sans"
+              <Linkedin className="w-4 h-4" />
+            </a>
+            <a
+              href={`https://wa.me/${whatsappNumber}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="text-white/60 hover:text-white transition-colors"
             >
-              Terms of Service
-            </Link>
+              <MessageCircle className="w-4 h-4" />
+            </a>
+            <a
+              href={`mailto:${resolvedEmail}`}
+              aria-label="Email"
+              className="text-white/60 hover:text-white transition-colors"
+            >
+              <Mail className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </div>

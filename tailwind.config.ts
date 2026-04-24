@@ -28,6 +28,12 @@ const config: Config = {
         serif: ["var(--font-montserrat)", "system-ui", "sans-serif"],
         display: ["var(--font-montserrat)", "system-ui", "sans-serif"],
         body: ["var(--font-poppins)", "system-ui", "sans-serif"],
+        condensed: [
+          "var(--font-barlow-condensed)",
+          "system-ui",
+          "sans-serif",
+        ],
+        accent: ["var(--font-playfair)", "Georgia", "serif"],
       },
       animation: {
         marquee: "marquee 30s linear infinite",

@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Montserrat, Poppins } from "next/font/google";
+import {
+  Montserrat,
+  Poppins,
+  Barlow_Condensed,
+  Playfair_Display,
+} from "next/font/google";
 import "./globals.css";
 import { JsonLd } from "@/components/JsonLd";
 
@@ -26,6 +31,21 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-poppins",
+  display: "swap",
+});
+
+const barlowCondensed = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
+  variable: "--font-barlow-condensed",
+  display: "swap",
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-playfair",
   display: "swap",
 });
 
@@ -67,7 +87,7 @@ export default function RootLayout({
   return (
     <html lang="en-AE">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} ${poppins.variable} antialiased bg-white text-gray-900`}
+        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} ${poppins.variable} ${barlowCondensed.variable} ${playfairDisplay.variable} antialiased bg-white text-gray-900`}
       >
         <a
           href="#main-content"
