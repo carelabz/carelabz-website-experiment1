@@ -24,13 +24,6 @@ const COUNTRY_NAME = "Brazil";
 const HREFLANG = "en-BR";
 const config = COUNTRY_CONFIGS[CC];
 
-const BRAND_STATS = [
-  { number: "50+", label: "Countries Served" },
-  { number: "500+", label: "Projects Completed" },
-  { number: "25%", label: "Faster Timelines" },
-  { number: "99%", label: "System Reliability" },
-];
-
 const FALLBACK_INDUSTRIES = [
   "Manufacturing",
   "Commercial Buildings",
@@ -153,6 +146,12 @@ export default async function BRHomePage() {
   const heroSecondaryText = page.heroSecondaryCtaText ?? "Our Services";
   const heroSecondaryHref =
     page.heroSecondaryCtaHref ?? config.servicesIndexPath;
+
+  // Trust / certification pills for hero (prefer Strapi, fallback to config.standards)
+  const trustBadgesForHero: string[] =
+    page.trustBadges && page.trustBadges.length > 0
+      ? page.trustBadges.map((b) => b.label)
+      : config.standards.slice(0, 6);
 
   // Services for editorial list: prefer Strapi home.services, fallback to ServicePage rows
   const servicesForList: Array<{
@@ -364,29 +363,46 @@ export default async function BRHomePage() {
                 {heroSecondaryText}
               </Link>
             </div>
+
+            {/* Trust / certification pills */}
+            {trustBadgesForHero.length > 0 && (
+              <div className="mt-12">
+                <p className="text-[#094d76]/60 text-xs uppercase tracking-widest font-serif font-semibold mb-4">
+                  Standards We Follow
+                </p>
+                <div className="flex flex-wrap gap-3 max-w-2xl">
+                  {trustBadgesForHero.map((badge, i) => (
+                    <span
+                      key={i}
+                      className="inline-flex items-center gap-2 rounded-full bg-white border border-[#094d76]/10 px-4 py-2 shadow-sm hover:shadow-md hover:border-[#F15C30]/40 transition-all"
+                    >
+                      <CheckCircle2 className="w-4 h-4 text-[#F15C30] shrink-0" />
+                      <span className="text-xs font-semibold text-[#094d76] font-sans">
+                        {badge}
+                      </span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
-
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-[#2575B6] transform origin-bottom-right -skew-y-3" />
       </section>
 
-      {/* 4. STATS STRIP */}
-      <section className="bg-[#2575B6] transform -skew-y-3 -mt-1">
-        <div className="transform skew-y-3">
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16 lg:py-20">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
-              {BRAND_STATS.map((stat, index) => (
-                <div key={index} className="text-center lg:text-left">
-                  <div className="font-serif font-black text-4xl sm:text-5xl lg:text-6xl text-white">
-                    {stat.number}
-                  </div>
-                  <div className="text-white/70 text-sm uppercase tracking-widest mt-2 font-sans">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+      {/* 4. INTRO */}
+      <section className="bg-white py-20 lg:py-24">
+        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+          <div className="w-1 h-16 bg-[#F15C30] mx-auto mb-8" />
+          <h2 className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-[#094d76] tracking-tight mb-6">
+            Proactive Risk Assessment Tailored to Your Facility
+          </h2>
+          <p className="text-lg text-[#9c9b9a] leading-relaxed font-sans max-w-3xl mx-auto">
+            Carelabs identifies and mitigates electrical risk to keep your{" "}
+            {COUNTRY_NAME} facility compliant with {config.primaryStandard} and
+            international standards. Our engineers pair deep technical
+            expertise with industry tools like ETAP to deliver reports you and
+            your regulators can act on.
+          </p>
         </div>
       </section>
 
