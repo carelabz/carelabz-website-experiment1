@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
-import "../styles/south-america.css";
 import { JsonLd } from "@/components/JsonLd";
 
 const geistSans = localFont({
@@ -18,7 +17,7 @@ const geistMono = localFont({
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   variable: "--font-montserrat",
   display: "swap",
 });

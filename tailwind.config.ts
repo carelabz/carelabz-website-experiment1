@@ -24,6 +24,25 @@ const config: Config = {
         carelabsTextSecondary: "#374151",
         carelabsFooter: "#23282D",
       },
+      fontFamily: {
+        serif: ["var(--font-montserrat)", "system-ui", "sans-serif"],
+        display: ["var(--font-montserrat)", "system-ui", "sans-serif"],
+        body: ["var(--font-poppins)", "system-ui", "sans-serif"],
+      },
+      animation: {
+        marquee: "marquee 30s linear infinite",
+        "marquee-slow": "marquee-slow 40s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "marquee-slow": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-33.333%)" },
+        },
+      },
     },
   },
   plugins: [typography],

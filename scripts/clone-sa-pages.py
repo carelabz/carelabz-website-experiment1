@@ -1,7 +1,12 @@
-"""Clone redesigned BR pages to CO/CL/AR/PE with country-specific token swaps."""
+"""Clone redesigned BR pages to CO/CL/AR/PE.
+
+New BR files are parametric: CC / COUNTRY_NAME / HREFLANG are defined as
+top-level consts and the rest of the file uses template literals +
+`${COUNTRY_CONFIGS[CC]}` lookups. Almost all tokens follow from those 3 consts,
+so the clone is small.
+"""
 import os
 import re
-import shutil
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 BR_DIR = os.path.join(ROOT, "src", "app", "br")
@@ -11,92 +16,42 @@ COUNTRIES = {
         "name": "Colombia",
         "upper": "CO",
         "hreflang": "en-CO",
-        "locale": "en_CO",
-        "primary_std": "RETIE",
-        "secondary_std": "NTC 2050",
     },
     "cl": {
         "name": "Chile",
         "upper": "CL",
         "hreflang": "en-CL",
-        "locale": "en_CL",
-        "primary_std": "NCh Elec. 4/2003",
-        "secondary_std": "NSEG 5 En. 71",
     },
     "ar": {
         "name": "Argentina",
         "upper": "AR",
         "hreflang": "en-AR",
-        "locale": "en_AR",
-        "primary_std": "AEA 90364",
-        "secondary_std": "IRAM 2281",
     },
     "pe": {
         "name": "Peru",
         "upper": "PE",
         "hreflang": "en-PE",
-        "locale": "en_PE",
-        "primary_std": "RM 111-2013-MEM",
-        "secondary_std": "CNE",
     },
 }
 
-# BR tokens in order of application (more-specific first so we don't
-# corrupt partial matches).
+
 def transform(text: str, cc: str) -> str:
     c = COUNTRIES[cc]
     name = c["name"]
     upper = c["upper"]
     hreflang = c["hreflang"]
-    locale = c["locale"]
-    primary = c["primary_std"]
-    secondary = c["secondary_std"]
 
     subs = [
-        # Standards first (most specific)
-        (r"\bABNT NBR 5410\b", secondary),
-        (r"\bNR-10\b", primary),
-        # Locale strings
-        (r"\ben-BR\b", hreflang),
-        (r"\ben_BR\b", locale),
-        # Config / identifier strings
-        (r'COUNTRY_CONFIGS\["br"\]', f'COUNTRY_CONFIGS["{cc}"]'),
-        (r'CC = "br"', f'CC = "{cc}"'),
-        (r'COUNTRY_NAME = "Brazil"', f'COUNTRY_NAME = "{name}"'),
-        (r'HREFLANG = "en-BR"', f'HREFLANG = "{hreflang}"'),
-        (r'countryName: "Brazil"', f'countryName: "{name}"'),
-        (r'countryIso2: "BR"', f'countryIso2: "{upper}"'),
-        (r'getCountryFromHeaders\(headersList, "BR"\)',
-         f'getCountryFromHeaders(headersList, "{upper}")'),
-        (r'const countryName = "Brazil";',
-         f'const countryName = "{name}";'),
-        # Strapi fetchers — any `("br")` call
-        (r'getHomePage\("br"\)', f'getHomePage("{cc}")'),
-        (r'getAboutPage\("br"\)', f'getAboutPage("{cc}")'),
-        (r'getContactPage\("br"\)', f'getContactPage("{cc}")'),
-        (r'getBlogPosts\("br"\)', f'getBlogPosts("{cc}")'),
-        (r'getServicesByRegion\("br"\)', f'getServicesByRegion("{cc}")'),
-        # JSON-LD helper `cc: "br",`
-        (r'cc: "br",', f'cc: "{cc}",'),
-        # URL paths
-        (r"/br/", f"/{cc}/"),
-        (r"carelabz\.com/br/", f"carelabz.com/{cc}/"),
+        # Top-level consts (the only literal refs to "br"/"Brazil"/"en-BR")
+        (r'const CC = "br";', f'const CC = "{cc}";'),
+        (r'const COUNTRY_NAME = "Brazil";', f'const COUNTRY_NAME = "{name}";'),
+        (r'const HREFLANG = "en-BR";', f'const HREFLANG = "{hreflang}";'),
         # Function names
         (r"\bBRHomePage\b", f"{upper}HomePage"),
         (r"\bBRServicesIndexPage\b", f"{upper}ServicesIndexPage"),
         (r"\bBRBlogIndexPage\b", f"{upper}BlogIndexPage"),
         (r"\bBRAboutPage\b", f"{upper}AboutPage"),
         (r"\bBRContactPage\b", f"{upper}ContactPage"),
-        # Human-visible "Brazil" word
-        (r"\bBrazil\b", name),
-        # toLocaleDateString locale
-        (r'"en-BR"', f'"{hreflang}"'),
-        # Alt / title text "Carelabs Brazil Office" already caught by \bBrazil\b
-        # Remaining literal slugs with -br suffix
-        (r'slug\.endsWith\("-br"\)', f'slug.endsWith("-{cc}")'),
-        (r"\$\{params\.slug\}-br", f"${{params.slug}}-{cc}"),
-        # Bare "br" const refs inside strings — last resort
-        (r'Carelabs Brazil Office', f'Carelabs {name} Office'),
     ]
 
     out = text

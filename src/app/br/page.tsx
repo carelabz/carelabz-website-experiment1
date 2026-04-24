@@ -1,119 +1,291 @@
 export const dynamic = "force-dynamic";
 
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import {
-  Shield,
-  Award,
-  Clock,
-  Zap,
-  Search,
-  Thermometer,
-  BarChart,
-  Settings,
-  CheckCircle,
   ArrowRight,
-  Phone,
+  Award,
+  Globe,
+  Clock,
+  Shield,
+  CheckCircle2,
 } from "lucide-react";
-import { RegionNavbar } from "@/components/region-navbar";
-import { SouthAmericaFooter } from "@/components/south-america-footer";
+import { SAAnnouncementTicker } from "@/components/sa-announcement-ticker";
+import { SANavbar } from "@/components/sa-navbar";
+import { SAFooter } from "@/components/sa-footer";
 import { COUNTRY_CONFIGS } from "@/lib/countries-config";
-const config = COUNTRY_CONFIGS["br"];
 import { JsonLd } from "@/components/JsonLd";
-import { ServiceFaqAccordion } from "@/components/service-page/faq-accordion-new";
 import { getHomePage } from "@/lib/strapi-home";
+import { getServicesByRegion } from "@/lib/strapi";
+import { getBlogPosts } from "@/lib/strapi-blog";
 
-type LucideProps = React.ComponentProps<typeof Zap>;
+const CC = "br";
+const COUNTRY_NAME = "Brazil";
+const HREFLANG = "en-BR";
+const config = COUNTRY_CONFIGS[CC];
 
-function ServiceIcon({ name, ...props }: { name: string } & LucideProps) {
-  switch (name) {
-    case "zap":
-      return <Zap {...props} />;
-    case "search":
-      return <Search {...props} />;
-    case "thermometer":
-      return <Thermometer {...props} />;
-    case "bar-chart":
-      return <BarChart {...props} />;
-    case "settings":
-      return <Settings {...props} />;
-    default:
-      return <Zap {...props} />;
-  }
-}
+const BRAND_STATS = [
+  { number: "50+", label: "Countries Served" },
+  { number: "500+", label: "Projects Completed" },
+  { number: "25%", label: "Faster Timelines" },
+  { number: "99%", label: "System Reliability" },
+];
 
-function WhyIcon({ name, ...props }: { name: string } & LucideProps) {
-  switch (name) {
-    case "shield":
-      return <Shield {...props} />;
-    case "award":
-      return <Award {...props} />;
-    case "clock":
-      return <Clock {...props} />;
-    default:
-      return <Shield {...props} />;
-  }
-}
+const FALLBACK_INDUSTRIES = [
+  "Manufacturing",
+  "Commercial Buildings",
+  "Data Centers",
+  "Utilities",
+  "Oil & Gas",
+  "Healthcare",
+  "Education",
+  "Government",
+  "Mining",
+  "Energy",
+];
+
+const MANIFESTO_CREDENTIALS = [
+  { icon: Award, title: "IEEE Certified", label: "Industry Standards" },
+  { icon: Globe, title: "Global Reach", label: "50+ Countries" },
+  { icon: Clock, title: "25+ Years", label: "Experience" },
+];
 
 export async function generateMetadata(): Promise<Metadata> {
-  const page = await getHomePage("br");
+  const page = await getHomePage(CC);
   return {
     title:
       page?.metaTitle ??
-      "Carelabs — Electrical Safety & Power System Studies | Brazil",
+      `Carelabs — Electrical Safety & Power System Studies | ${COUNTRY_NAME}`,
     description:
       page?.metaDescription ??
-      "Carelabs provides IEEE 1584 arc flash studies, NR-10 compliance, short circuit analysis, and power system engineering across Brazil.",
+      `Carelabs provides IEEE 1584 arc flash studies, ${config.primaryStandard} compliance, short circuit analysis, and power system engineering across ${COUNTRY_NAME}.`,
     keywords: page?.seoKeywords ?? undefined,
     alternates: {
-      canonical: "https://carelabz.com/br/",
+      canonical: `https://carelabz.com/${CC}/`,
       languages: {
-        "en-BR": "https://carelabz.com/br/",
-        "x-default": "https://carelabz.com/br/",
+        [HREFLANG]: `https://carelabz.com/${CC}/`,
+        "x-default": `https://carelabz.com/${CC}/`,
       },
     },
     openGraph: {
       title:
         page?.metaTitle ??
-        "Carelabs Brazil — Electrical Safety & Power System Studies",
+        `Carelabs ${COUNTRY_NAME} — Electrical Safety & Power System Studies`,
       description:
         page?.metaDescription ??
-        "IEEE 1584 arc flash studies, NR-10 compliance, and power system engineering across Brazil.",
-      url: "https://carelabz.com/br/",
+        `IEEE 1584 arc flash studies, ${config.primaryStandard} compliance, and power system engineering across ${COUNTRY_NAME}.`,
+      url: `https://carelabz.com/${CC}/`,
       siteName: "Carelabs",
       type: "website",
-      locale: "en_BR",
+      locale: HREFLANG.replace("-", "_"),
     },
     twitter: {
       card: "summary_large_image",
       title:
         page?.metaTitle ??
-        "Carelabs Brazil — Electrical Safety & Power System Studies",
+        `Carelabs ${COUNTRY_NAME} — Electrical Safety & Power System Studies`,
       description:
         page?.metaDescription ??
-        "IEEE 1584 arc flash studies, NR-10 compliance, and power system engineering across Brazil.",
+        `IEEE 1584 arc flash studies, ${config.primaryStandard} compliance, and power system engineering across ${COUNTRY_NAME}.`,
     },
   };
 }
 
+function splitHeadline(headline: string): {
+  lead: string;
+  accent: string;
+  watermark: string;
+} {
+  const words = headline.trim().split(/\s+/);
+  if (words.length <= 1) {
+    return { lead: "", accent: headline, watermark: "POWER" };
+  }
+  const last = words[words.length - 1];
+  const lead = words.slice(0, -1).join(" ");
+  const firstWord = words[0].toUpperCase();
+  return { lead, accent: last, watermark: firstWord };
+}
+
+function trimTo(text: string | null | undefined, max: number): string {
+  if (!text) return "";
+  const clean = text.replace(/\s+/g, " ").trim();
+  if (clean.length <= max) return clean;
+  return clean.slice(0, max - 1).trimEnd() + "…";
+}
+
+function formatDate(value: string | null | undefined): string {
+  if (!value) return "";
+  try {
+    return new Date(value).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  } catch {
+    return "";
+  }
+}
+
 export default async function BRHomePage() {
-  const page = await getHomePage("br");
+  const [page, servicePages, allPosts] = await Promise.all([
+    getHomePage(CC),
+    getServicesByRegion(CC),
+    getBlogPosts(CC),
+  ]);
 
   if (!page) {
     return (
-      <main className="sa-root flex min-h-screen items-center justify-center bg-white text-[#094d76]">
+      <main className="flex min-h-screen items-center justify-center bg-white text-[#094d76] font-sans">
         <p className="text-lg">Page content unavailable</p>
       </main>
     );
   }
 
+  const headlineRaw = page.heroHeadline ?? "Electrical Safety Experts";
+  const { lead, accent, watermark } = splitHeadline(headlineRaw);
+
+  const heroSubtext =
+    page.heroSubtext ??
+    `Industry-leading power systems engineering and arc flash studies for ${COUNTRY_NAME}.`;
+
+  const heroPrimaryText = page.heroPrimaryCtaText ?? "Request a Study";
+  const heroPrimaryHref = page.heroPrimaryCtaHref ?? config.contactPath;
+  const heroSecondaryText = page.heroSecondaryCtaText ?? "Our Services";
+  const heroSecondaryHref =
+    page.heroSecondaryCtaHref ?? config.servicesIndexPath;
+
+  // Services for editorial list: prefer Strapi home.services, fallback to ServicePage rows
+  const servicesForList: Array<{
+    title: string;
+    description: string;
+    href: string;
+  }> = (() => {
+    if (page.services && page.services.length > 0) {
+      return page.services.slice(0, 6).map((s) => ({
+        title: s.title,
+        description: s.description,
+        href: s.href,
+      }));
+    }
+    return servicePages.slice(0, 6).map((s) => {
+      const urlSlug = s.slug.endsWith(`-${CC}`) ? s.slug.slice(0, -3) : s.slug;
+      return {
+        title: s.title,
+        description: trimTo(s.metaDescription, 120),
+        href: `/${CC}/${urlSlug}/`,
+      };
+    });
+  })();
+
+  // WhyUs: whyFeatures first, else synthesize from services
+  const whyFeaturesData: Array<{
+    title: string;
+    description: string;
+  }> = (() => {
+    if (page.whyFeatures && page.whyFeatures.length >= 3) {
+      return page.whyFeatures.slice(0, 3).map((w) => ({
+        title: w.title,
+        description: w.description,
+      }));
+    }
+    if (servicesForList.length >= 3) {
+      return servicesForList.slice(0, 3).map((s) => ({
+        title: s.title,
+        description: s.description,
+      }));
+    }
+    return [
+      {
+        title: "Industry Certified Engineers",
+        description:
+          "Our engineers hold PE licenses and maintain certifications aligned with IEEE, NETA, and NFPA standards.",
+      },
+      {
+        title: "Precision Results",
+        description:
+          "We use industry-leading software like ETAP and EasyPower for reliable results every time.",
+      },
+      {
+        title: "Practical Solutions",
+        description:
+          "Actionable recommendations that balance safety, compliance, and operational continuity.",
+      },
+    ];
+  })();
+
+  const whyIcons = [Award, Shield, CheckCircle2];
+
+  // Industries marquee
+  const industriesForMarquee: string[] =
+    page.industries && page.industries.length > 0
+      ? page.industries.map((i) => i.name)
+      : FALLBACK_INDUSTRIES;
+
+  // Insights: Strapi insights[] first, else blog posts
+  const insightsForList: Array<{
+    category: string | null;
+    title: string;
+    description: string;
+    href: string;
+    date?: string | null;
+  }> = (() => {
+    if (page.insights && page.insights.length > 0) {
+      return page.insights.slice(0, 3).map((i) => ({
+        category: i.category,
+        title: i.title,
+        description: i.description,
+        href: i.href,
+      }));
+    }
+    const sorted = [...allPosts].sort(
+      (a, b) =>
+        new Date(b.publishedDate ?? b.publishedAt).getTime() -
+        new Date(a.publishedDate ?? a.publishedAt).getTime()
+    );
+    return sorted.slice(0, 3).map((p) => {
+      const urlSlug = p.slug.endsWith(`-${CC}`) ? p.slug.slice(0, -3) : p.slug;
+      return {
+        category: p.category,
+        title: p.title,
+        description: trimTo(p.excerpt ?? p.metaDescription, 140),
+        href: `/${CC}/${urlSlug}/`,
+        date: p.publishedDate ?? p.publishedAt,
+      };
+    });
+  })();
+
+  const hasInsights = insightsForList.length > 0;
+  const featuredInsight = insightsForList[0];
+  const sideInsights = insightsForList.slice(1);
+
+  // Manifesto
+  const manifestoHeading =
+    page.whyHeading ??
+    page.servicesHeading ??
+    "We believe every worker deserves to go home safely.";
+  const manifestoBody =
+    page.whySubtext ??
+    trimTo(
+      heroSubtext,
+      240
+    ) ??
+    `Carelabs is at the forefront of electrical safety engineering in ${COUNTRY_NAME}. Our team brings deep expertise and a commitment to excellence.`;
+
+  // CTA split section
+  const ctaLeadText = page.ctaBannerHeading ?? "Ready to";
+  const ctaTailText = page.ctaBannerSubtext
+    ? trimTo(page.ctaBannerSubtext, 16)
+    : "Get Started?";
+  const ctaButtonText = page.ctaBannerPrimaryText ?? "Contact Us";
+  const ctaButtonHref = page.ctaBannerPrimaryHref ?? config.contactPath;
+
+  // JSON-LD
   const jsonLdData = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Carelabs",
     description: page.metaDescription,
-    url: "https://carelabz.com/br/",
+    url: `https://carelabz.com/${CC}/`,
     telephone: page.footerPhone ?? config.phone,
     email: page.footerEmail ?? config.email,
     address: {
@@ -123,499 +295,136 @@ export default async function BRHomePage() {
   };
 
   return (
-    <div className="sa-root">
+    <main className="bg-white font-sans">
       <JsonLd data={jsonLdData} />
-      <RegionNavbar config={config} />
 
-      {/* HERO */}
-      <section
-        className="sa-hero-bg relative overflow-hidden flex items-center"
-        style={{ minHeight: "85vh" }}
-      >
-        <div className="sa-hero-shape" aria-hidden="true" />
+      {/* 1. ANNOUNCEMENT TICKER */}
+      <SAAnnouncementTicker
+        countryName={COUNTRY_NAME}
+        standards={config.standards}
+      />
 
-        <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-8 lg:px-16 py-24 pt-32">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              {page.heroEyebrow && (
-                <span
-                  className="inline-block mb-5 px-4 py-1.5 rounded-full text-xs uppercase tracking-widest"
-                  style={{
-                    backgroundColor: "rgba(241,92,48,0.18)",
-                    color: "#F15C30",
-                    fontFamily: "var(--sa-font-body)",
-                    fontWeight: 600,
-                  }}
-                >
-                  {page.heroEyebrow}
-                </span>
-              )}
-              {page.heroHeadline && (
-                <h1
-                  className="text-white mb-6"
-                  style={{
-                    fontFamily: "var(--sa-font-heading)",
-                    fontWeight: 800,
-                    fontSize: "clamp(2.8rem, 5vw, 4.2rem)",
-                    lineHeight: 1.05,
-                    letterSpacing: "-0.02em",
-                    maxWidth: "32rem",
-                  }}
-                >
-                  {page.heroHeadline}
-                </h1>
-              )}
-              {page.heroSubtext && (
-                <p
-                  className="mb-10"
-                  style={{
-                    fontFamily: "var(--sa-font-body)",
-                    color: "rgba(255,255,255,0.82)",
-                    fontSize: "1.125rem",
-                    lineHeight: 1.6,
-                    maxWidth: "34rem",
-                  }}
-                >
-                  {page.heroSubtext}
-                </p>
-              )}
+      {/* 2. NAVBAR */}
+      <SANavbar config={config} />
 
-              <div className="flex flex-wrap gap-4 mb-12">
-                {page.heroPrimaryCtaText && page.heroPrimaryCtaHref && (
-                  <Link href={page.heroPrimaryCtaHref} className="sa-btn-primary">
-                    {page.heroPrimaryCtaText}
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                )}
-                {page.heroSecondaryCtaText && page.heroSecondaryCtaHref && (
-                  <Link
-                    href={page.heroSecondaryCtaHref}
-                    className="sa-btn-ghost"
-                  >
-                    {page.heroSecondaryCtaText}
-                  </Link>
-                )}
-              </div>
+      {/* 3. HERO */}
+      <section className="relative bg-[#f2f2f4] overflow-hidden">
+        {/* Warm SA texture overlay */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 2px 2px, rgba(241,92,48,0.08) 1.2px, transparent 0)",
+            backgroundSize: "26px 26px",
+          }}
+          aria-hidden="true"
+        />
 
-              {page.trustBadges && page.trustBadges.length > 0 && (
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-lg">
-                  {page.trustBadges.map((badge, i) => (
-                    <div
-                      key={i}
-                      className="rounded-xl p-3 flex items-center gap-2"
-                      style={{
-                        backgroundColor: "rgba(255,255,255,0.08)",
-                        border: "1px solid rgba(255,255,255,0.15)",
-                        backdropFilter: "blur(8px)",
-                      }}
-                    >
-                      <CheckCircle
-                        className="w-4 h-4 shrink-0"
-                        style={{ color: "#F15C30" }}
-                      />
-                      <span
-                        className="text-xs text-white/95"
-                        style={{
-                          fontFamily: "var(--sa-font-body)",
-                          fontWeight: 500,
-                        }}
-                      >
-                        {badge.label}
-                      </span>
-                    </div>
+        {/* Watermark */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">
+          <span className="font-serif font-black text-[20vw] text-[#e8f4fd] leading-none whitespace-nowrap">
+            {watermark}
+          </span>
+        </div>
+
+        {/* Geometric circles top-right */}
+        <div className="absolute top-20 right-[10%] w-64 h-64 border-[3px] border-[#2575B6]/30 rounded-full" />
+        <div className="absolute top-32 right-[15%] w-48 h-48 bg-[#3d8fd4]/20 rounded-full" />
+        <div className="absolute top-10 right-[5%] w-32 h-32 border-[3px] border-[#1a5fa0]/20 rounded-full" />
+
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 py-24 lg:py-40">
+          <div className="max-w-4xl">
+            <h1 className="font-serif font-black text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-[#094d76] leading-[0.9] tracking-tight">
+              {lead && (
+                <>
+                  {lead.split(/\s+/).map((word, i) => (
+                    <span key={i} className="block">
+                      {word}
+                    </span>
                   ))}
-                </div>
+                </>
               )}
+              <span className="text-[#2575B6] block">{accent}</span>
+            </h1>
+            <p className="mt-10 text-lg text-[#9c9b9a] max-w-md leading-relaxed font-sans">
+              {heroSubtext}
+            </p>
+            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+              <Link
+                href={heroPrimaryHref}
+                className="inline-flex items-center justify-center gap-3 bg-[#F15C30] text-white font-sans font-semibold px-8 py-4 rounded-full hover:bg-[#c44a1f] transition-colors"
+              >
+                {heroPrimaryText}
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <Link
+                href={heroSecondaryHref}
+                className="inline-flex items-center justify-center gap-3 border-2 border-[#094d76] text-[#094d76] font-sans font-semibold px-8 py-4 rounded-full hover:bg-[#094d76] hover:text-white transition-colors"
+              >
+                {heroSecondaryText}
+              </Link>
             </div>
+          </div>
+        </div>
 
-            <div className="relative hidden lg:block">
-              {page.heroImage ? (
-                <div className="relative">
-                  <div
-                    className="absolute -inset-6 rounded-[32px]"
-                    style={{
-                      background:
-                        "radial-gradient(circle at 30% 30%, rgba(241,92,48,0.3), transparent 65%)",
-                      filter: "blur(40px)",
-                    }}
-                    aria-hidden="true"
-                  />
-                  <div className="relative aspect-[4/3] rounded-[24px] overflow-hidden shadow-2xl">
-                    <Image
-                      src={page.heroImage}
-                      alt={page.heroImageAlt ?? "Power system engineering"}
-                      fill
-                      priority
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                    />
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-[#2575B6] transform origin-bottom-right -skew-y-3" />
+      </section>
+
+      {/* 4. STATS STRIP */}
+      <section className="bg-[#2575B6] transform -skew-y-3 -mt-1">
+        <div className="transform skew-y-3">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16 lg:py-20">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
+              {BRAND_STATS.map((stat, index) => (
+                <div key={index} className="text-center lg:text-left">
+                  <div className="font-serif font-black text-4xl sm:text-5xl lg:text-6xl text-white">
+                    {stat.number}
+                  </div>
+                  <div className="text-white/70 text-sm uppercase tracking-widest mt-2 font-sans">
+                    {stat.label}
                   </div>
                 </div>
-              ) : (
-                <div className="relative aspect-[4/3]">
-                  <div
-                    className="absolute inset-0 rounded-full"
-                    style={{
-                      background:
-                        "radial-gradient(circle, rgba(61,143,212,0.4) 0%, transparent 70%)",
-                    }}
-                  />
-                  <div
-                    className="absolute top-10 right-10 w-64 h-64 rounded-full"
-                    style={{
-                      background:
-                        "linear-gradient(135deg, rgba(241,92,48,0.3), rgba(241,92,48,0.05))",
-                      border: "1px solid rgba(255,255,255,0.15)",
-                    }}
-                  />
-                  <div
-                    className="absolute bottom-16 left-16 w-48 h-48 rounded-full"
-                    style={{
-                      background:
-                        "linear-gradient(135deg, rgba(61,143,212,0.45), rgba(37,117,182,0.15))",
-                      border: "1px solid rgba(255,255,255,0.15)",
-                    }}
-                  />
-                </div>
-              )}
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* INTRO */}
-      <section style={{ backgroundColor: "#ffffff" }} className="py-20 px-4">
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="sa-accent-rule" aria-hidden="true" />
-          <h2
-            className="mb-6"
-            style={{
-              fontFamily: "var(--sa-font-heading)",
-              fontWeight: 800,
-              fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
-              color: "#094d76",
-            }}
-          >
-            Proactive Risk Assessment Tailored to Your Facility
-          </h2>
-          <p
-            style={{
-              fontFamily: "var(--sa-font-body)",
-              color: "#5a5d66",
-              fontSize: "1.075rem",
-              lineHeight: 1.7,
-            }}
-          >
-            Carelabs identifies and mitigates electrical risk to keep your
-            Brazil facility compliant with NR-10 and ABNT NBR 5410. Our
-            engineers pair deep technical expertise with industry tools like
-            ETAP to deliver reports you and your regulators can act on.
-          </p>
-        </div>
-      </section>
-
-      {/* SERVICES */}
-      {page.services && page.services.length > 0 && (
-        <section style={{ backgroundColor: "#f2f2f4" }} className="py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-            <div className="text-center mb-14 max-w-2xl mx-auto">
-              {page.servicesHeading && (
-                <h2
-                  style={{
-                    fontFamily: "var(--sa-font-heading)",
-                    fontWeight: 800,
-                    fontSize: "clamp(2rem, 3.5vw, 2.75rem)",
-                    color: "#094d76",
-                    marginBottom: "1rem",
-                  }}
-                >
-                  {page.servicesHeading}
-                </h2>
-              )}
+      {/* 5. SERVICES EDITORIAL LIST */}
+      {servicesForList.length > 0 && (
+        <section id="services" className="py-24 lg:py-40 bg-white">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div className="mb-20">
+              <span className="text-[#F15C30] text-sm uppercase tracking-widest font-semibold font-serif">
+                What We Do
+              </span>
+              <h2 className="font-serif font-black text-4xl sm:text-5xl lg:text-6xl text-[#094d76] mt-4 tracking-tight">
+                {page.servicesHeading ?? "Our Services"}
+              </h2>
               {page.servicesSubtext && (
-                <p
-                  style={{
-                    fontFamily: "var(--sa-font-body)",
-                    color: "#9c9b9a",
-                    fontSize: "1.075rem",
-                    lineHeight: 1.65,
-                  }}
-                >
+                <p className="mt-6 max-w-2xl text-[#9c9b9a] font-sans leading-relaxed">
                   {page.servicesSubtext}
                 </p>
               )}
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {page.services.map((service, i) => (
-                <div key={i} className="sa-card sa-card-accent p-8">
-                  <div
-                    className="mb-5 inline-flex items-center justify-center rounded-xl"
-                    style={{
-                      width: "3rem",
-                      height: "3rem",
-                      backgroundColor: "#e8f4fd",
-                      color: "#2575B6",
-                    }}
-                  >
-                    <ServiceIcon name={service.icon} className="w-6 h-6" />
-                  </div>
-                  <h3
-                    className="mb-3"
-                    style={{
-                      fontFamily: "var(--sa-font-heading)",
-                      fontWeight: 700,
-                      fontSize: "1.25rem",
-                      color: "#094d76",
-                    }}
-                  >
+            <div className="divide-y divide-[#094d76]/10">
+              {servicesForList.map((service, index) => (
+                <Link
+                  key={index}
+                  href={service.href}
+                  className="group relative flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-12 py-8 lg:py-10 hover:bg-[#e8f4fd] -mx-6 lg:-mx-12 px-6 lg:px-12 transition-colors cursor-pointer border-l-4 border-transparent hover:border-[#F15C30]"
+                >
+                  <span className="font-serif font-black text-6xl lg:text-7xl text-[#f2f2f4] group-hover:text-[#e8f4fd] transition-colors w-24 flex-shrink-0">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="font-serif font-bold text-2xl lg:text-3xl text-[#094d76] flex-1">
                     {service.title}
                   </h3>
-                  <p
-                    className="mb-6"
-                    style={{
-                      fontFamily: "var(--sa-font-body)",
-                      color: "#5a5d66",
-                      lineHeight: 1.65,
-                    }}
-                  >
+                  <p className="text-[#9c9b9a] max-w-sm leading-relaxed hidden lg:block font-sans">
                     {service.description}
                   </p>
-                  <Link
-                    href={service.href}
-                    className="inline-flex items-center gap-2 text-sm transition-colors"
-                    style={{
-                      fontFamily: "var(--sa-font-body)",
-                      fontWeight: 600,
-                      color: "#F15C30",
-                    }}
-                  >
-                    Learn more
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* WHY CARELABS */}
-      {page.whyFeatures && page.whyFeatures.length > 0 && (
-        <section style={{ backgroundColor: "#ffffff" }} className="py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-            <div className="text-center mb-14 max-w-2xl mx-auto">
-              <span className="sa-accent-rule" aria-hidden="true" />
-              {page.whyHeading && (
-                <h2
-                  style={{
-                    fontFamily: "var(--sa-font-heading)",
-                    fontWeight: 800,
-                    fontSize: "clamp(2rem, 3.5vw, 2.75rem)",
-                    color: "#094d76",
-                    marginBottom: "1rem",
-                  }}
-                >
-                  {page.whyHeading}
-                </h2>
-              )}
-              {page.whySubtext && (
-                <p
-                  style={{
-                    fontFamily: "var(--sa-font-body)",
-                    color: "#9c9b9a",
-                    fontSize: "1.075rem",
-                    lineHeight: 1.65,
-                  }}
-                >
-                  {page.whySubtext}
-                </p>
-              )}
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              {page.whyFeatures.map((feature, i) => (
-                <div key={i} className="text-center">
-                  <div
-                    className="mx-auto mb-5 inline-flex items-center justify-center rounded-full"
-                    style={{
-                      width: "4rem",
-                      height: "4rem",
-                      backgroundColor: "#e8f4fd",
-                      color: "#2575B6",
-                    }}
-                  >
-                    <WhyIcon name={feature.icon} className="w-7 h-7" />
-                  </div>
-                  <h3
-                    className="mb-3"
-                    style={{
-                      fontFamily: "var(--sa-font-heading)",
-                      fontWeight: 700,
-                      fontSize: "1.25rem",
-                      color: "#094d76",
-                    }}
-                  >
-                    {feature.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontFamily: "var(--sa-font-body)",
-                      color: "#9c9b9a",
-                      lineHeight: 1.65,
-                    }}
-                  >
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* INDUSTRIES */}
-      {page.industries && page.industries.length > 0 && (
-        <section
-          className="py-20 relative overflow-hidden"
-          style={{
-            background:
-              "linear-gradient(135deg, #094d76 0%, #2575B6 100%)",
-          }}
-        >
-          <div
-            className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none"
-            style={{
-              background:
-                "radial-gradient(circle, rgba(241,92,48,0.15), transparent 70%)",
-              transform: "translate(30%,-30%)",
-            }}
-            aria-hidden="true"
-          />
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-            <div className="text-center mb-14 max-w-2xl mx-auto">
-              {page.industriesHeading && (
-                <h2
-                  style={{
-                    fontFamily: "var(--sa-font-heading)",
-                    fontWeight: 800,
-                    fontSize: "clamp(2rem, 3.5vw, 2.75rem)",
-                    color: "#ffffff",
-                  }}
-                >
-                  {page.industriesHeading}
-                </h2>
-              )}
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {page.industries.map((industry, i) => (
-                <div
-                  key={i}
-                  className="rounded-2xl p-6 transition-all hover:scale-[1.02]"
-                  style={{
-                    backgroundColor: "rgba(255,255,255,0.08)",
-                    border: "1px solid rgba(255,255,255,0.15)",
-                    backdropFilter: "blur(10px)",
-                  }}
-                >
-                  <p
-                    className="text-white"
-                    style={{
-                      fontFamily: "var(--sa-font-heading)",
-                      fontWeight: 600,
-                      fontSize: "0.95rem",
-                    }}
-                  >
-                    {industry.name}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* INSIGHTS */}
-      {page.insights && page.insights.length > 0 && (
-        <section style={{ backgroundColor: "#f7f5f3" }} className="py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-            <div className="text-center mb-14">
-              {page.insightsHeading && (
-                <h2
-                  style={{
-                    fontFamily: "var(--sa-font-heading)",
-                    fontWeight: 800,
-                    fontSize: "clamp(2rem, 3.5vw, 2.75rem)",
-                    color: "#094d76",
-                  }}
-                >
-                  {page.insightsHeading}
-                </h2>
-              )}
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {page.insights.map((insight, i) => (
-                <Link
-                  key={i}
-                  href={insight.href}
-                  className="sa-card overflow-hidden group block"
-                >
-                  <div className="relative aspect-[16/9] overflow-hidden">
-                    <Image
-                      src={insight.image}
-                      alt={insight.alt}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <span
-                      className="inline-block mb-3 px-3 py-1 rounded-full text-xs uppercase tracking-wider"
-                      style={{
-                        backgroundColor: "#fde8e2",
-                        color: "#F15C30",
-                        fontFamily: "var(--sa-font-body)",
-                        fontWeight: 600,
-                      }}
-                    >
-                      {insight.category}
-                    </span>
-                    <h3
-                      className="mb-3"
-                      style={{
-                        fontFamily: "var(--sa-font-heading)",
-                        fontWeight: 700,
-                        fontSize: "1.125rem",
-                        color: "#094d76",
-                        lineHeight: 1.35,
-                      }}
-                    >
-                      {insight.title}
-                    </h3>
-                    <p
-                      className="mb-4 text-sm"
-                      style={{
-                        fontFamily: "var(--sa-font-body)",
-                        color: "#9c9b9a",
-                        lineHeight: 1.6,
-                      }}
-                    >
-                      {insight.description}
-                    </p>
-                    <span
-                      className="inline-flex items-center gap-2 text-sm"
-                      style={{
-                        fontFamily: "var(--sa-font-body)",
-                        fontWeight: 600,
-                        color: "#F15C30",
-                      }}
-                    >
-                      Read more
-                      <ArrowRight className="w-4 h-4" />
-                    </span>
+                  <div className="text-[#F15C30] transform group-hover:translate-x-2 transition-transform">
+                    <ArrowRight className="w-6 h-6" />
                   </div>
                 </Link>
               ))}
@@ -624,98 +433,325 @@ export default async function BRHomePage() {
         </section>
       )}
 
-      {/* FAQ */}
-      {page.faqs && page.faqs.length > 0 && (
-        <section style={{ backgroundColor: "#ffffff" }} className="py-24">
-          <div className="mx-auto max-w-4xl px-4 sm:px-8 lg:px-16">
-            <div className="text-center mb-12">
-              <span className="sa-accent-rule" aria-hidden="true" />
-              <h2
-                style={{
-                  fontFamily: "var(--sa-font-heading)",
-                  fontWeight: 800,
-                  fontSize: "clamp(2rem, 3.5vw, 2.75rem)",
-                  color: "#094d76",
-                }}
-              >
-                {page.faqsHeading ?? "Frequently Asked Questions"}
-              </h2>
-            </div>
-            <ServiceFaqAccordion faqs={page.faqs} />
-          </div>
-        </section>
-      )}
-
-      {/* CTA BANNER */}
+      {/* 6. MANIFESTO */}
       <section
-        id="contact"
-        className="relative py-24 overflow-hidden"
-        style={{
-          background: "linear-gradient(90deg, #F15C30 0%, #c44a1f 100%)",
-        }}
+        id="about"
+        className="relative py-24 lg:py-40 bg-[#094d76] overflow-hidden"
       >
-        <div className="relative mx-auto max-w-4xl px-4 sm:px-8 text-center">
-          {page.ctaBannerHeading && (
-            <h2
-              className="text-white mb-5"
-              style={{
-                fontFamily: "var(--sa-font-heading)",
-                fontWeight: 800,
-                fontSize: "clamp(2rem, 4vw, 3rem)",
-                lineHeight: 1.15,
-              }}
-            >
-              {page.ctaBannerHeading}
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none"
+          aria-hidden="true"
+        >
+          <span className="font-serif font-black text-[15vw] text-white/5 leading-none whitespace-nowrap">
+            CARELABS
+          </span>
+        </div>
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="max-w-3xl">
+            <div className="w-1 h-24 bg-[#F15C30] mb-10" />
+            <h2 className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-white leading-tight">
+              {manifestoHeading}
             </h2>
-          )}
-          {page.ctaBannerSubtext && (
-            <p
-              className="mx-auto mb-10"
-              style={{
-                fontFamily: "var(--sa-font-body)",
-                color: "rgba(255,255,255,0.92)",
-                fontSize: "1.125rem",
-                lineHeight: 1.65,
-                maxWidth: "42rem",
-              }}
-            >
-              {page.ctaBannerSubtext}
+            <p className="mt-10 text-lg text-white/70 leading-relaxed max-w-2xl font-sans">
+              {manifestoBody}
             </p>
-          )}
-          <div className="flex flex-wrap justify-center gap-4">
-            {page.ctaBannerPrimaryText && page.ctaBannerPrimaryHref && (
-              <Link
-                href={page.ctaBannerPrimaryHref}
-                className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 transition-all hover:scale-[1.02]"
-                style={{
-                  backgroundColor: "#ffffff",
-                  color: "#c44a1f",
-                  fontFamily: "var(--sa-font-heading)",
-                  fontWeight: 600,
-                }}
-              >
-                {page.ctaBannerPrimaryText}
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            )}
-            {page.ctaBannerSecondaryText && page.ctaBannerSecondaryHref && (
-              <Link
-                href={page.ctaBannerSecondaryHref}
-                className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 border-2 border-white text-white hover:bg-white/10 transition-colors"
-                style={{
-                  fontFamily: "var(--sa-font-heading)",
-                  fontWeight: 600,
-                }}
-              >
-                <Phone className="w-4 h-4" />
-                {page.ctaBannerSecondaryText}
-              </Link>
-            )}
+            <div className="mt-12 grid sm:grid-cols-3 gap-6 sm:gap-8">
+              {MANIFESTO_CREDENTIALS.map((cred, i) => {
+                const Icon = cred.icon;
+                return (
+                  <div key={i} className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-[#F15C30] rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <div className="font-serif font-bold text-white text-lg">
+                        {cred.title}
+                      </div>
+                      <div className="text-white/50 text-sm font-sans">
+                        {cred.label}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* SA curved wave divider at bottom */}
+        <svg
+          className="absolute bottom-0 left-0 w-full pointer-events-none"
+          viewBox="0 0 1440 60"
+          fill="none"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M0,30 Q360,0 720,30 T1440,30 L1440,60 L0,60 Z"
+            fill="#f2f2f4"
+          />
+          <path
+            d="M0,30 Q360,0 720,30 T1440,30"
+            stroke="#F15C30"
+            strokeWidth="2"
+            fill="none"
+            opacity="0.6"
+          />
+        </svg>
+      </section>
+
+      {/* 7. WHY US */}
+      <section className="py-24 lg:py-40 bg-[#f2f2f4]">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="mb-16">
+            <span className="text-[#F15C30] text-sm uppercase tracking-widest font-semibold font-serif">
+              {page.whyHeading ? "Why Choose Us" : "Why Choose Us"}
+            </span>
+            <h2 className="font-serif font-black text-4xl sm:text-5xl lg:text-6xl text-[#094d76] mt-4 tracking-tight">
+              Engineering Excellence
+            </h2>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-6">
+            <div className="bg-white p-10 lg:p-14 rounded-3xl hover:shadow-2xl transition-shadow">
+              <div className="w-20 h-20 bg-[#e8f4fd] rounded-2xl flex items-center justify-center mb-8">
+                {(() => {
+                  const Icon = whyIcons[0];
+                  return <Icon className="w-10 h-10 text-[#2575B6]" />;
+                })()}
+              </div>
+              <h3 className="font-serif font-bold text-3xl lg:text-4xl text-[#094d76] mb-6">
+                {whyFeaturesData[0].title}
+              </h3>
+              <p className="text-[#9c9b9a] text-lg leading-relaxed font-sans">
+                {whyFeaturesData[0].description}
+              </p>
+            </div>
+            <div className="space-y-6">
+              {whyFeaturesData.slice(1, 3).map((feature, index) => {
+                const Icon = whyIcons[index + 1] ?? Shield;
+                return (
+                  <div
+                    key={index}
+                    className="bg-white p-8 lg:p-10 rounded-3xl hover:shadow-2xl transition-shadow"
+                  >
+                    <div className="flex items-start gap-6">
+                      <div className="w-16 h-16 bg-[#e8f4fd] rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <Icon className="w-8 h-8 text-[#2575B6]" />
+                      </div>
+                      <div>
+                        <h3 className="font-serif font-bold text-2xl text-[#094d76] mb-3">
+                          {feature.title}
+                        </h3>
+                        <p className="text-[#9c9b9a] leading-relaxed font-sans">
+                          {feature.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
 
-      <SouthAmericaFooter config={config} />
-    </div>
+      {/* 8. INDUSTRIES MARQUEE */}
+      <section
+        id="industries"
+        className="py-24 lg:py-32 bg-[#094d76] overflow-hidden"
+      >
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 mb-12">
+          <span className="text-[#F15C30] text-sm uppercase tracking-widest font-semibold font-serif">
+            Industries We Serve
+          </span>
+          <h2 className="font-serif font-black text-4xl sm:text-5xl text-white mt-4 tracking-tight">
+            {page.industriesHeading ?? "Trusted Across Sectors"}
+          </h2>
+        </div>
+        <div className="relative">
+          <div className="animate-marquee-slow whitespace-nowrap py-8">
+            {[...Array(3)].map((_, setIndex) => (
+              <span key={setIndex} className="inline-flex items-center">
+                {industriesForMarquee.map((industry, index) => (
+                  <span key={index} className="inline-flex items-center">
+                    <span className="text-white font-serif font-bold text-2xl lg:text-3xl mx-8">
+                      {industry}
+                    </span>
+                    <span className="text-[#F15C30] text-2xl">•</span>
+                  </span>
+                ))}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 9. INSIGHTS */}
+      {hasInsights && featuredInsight && (
+        <section id="insights" className="py-24 lg:py-40 bg-white">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
+              <div>
+                <span className="text-[#F15C30] text-sm uppercase tracking-widest font-semibold font-serif">
+                  Insights
+                </span>
+                <h2 className="font-serif font-black text-4xl sm:text-5xl lg:text-6xl text-[#094d76] mt-4 tracking-tight">
+                  {page.insightsHeading ?? "Latest Articles"}
+                </h2>
+              </div>
+              <Link
+                href={config.blogIndexPath}
+                className="group inline-flex items-center gap-3 text-[#094d76] font-serif font-semibold hover:text-[#F15C30] transition-colors"
+              >
+                View All Articles
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+            <div className="grid lg:grid-cols-2 gap-8">
+              <Link
+                href={featuredInsight.href}
+                className="group bg-[#094d76] rounded-3xl p-10 lg:p-14 flex flex-col justify-end min-h-[500px] relative overflow-hidden"
+              >
+                {/* Dot pattern */}
+                <div
+                  className="absolute inset-0 opacity-10"
+                  style={{
+                    backgroundImage:
+                      "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
+                    backgroundSize: "32px 32px",
+                  }}
+                  aria-hidden="true"
+                />
+                {/* SA warm gradient overlay */}
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(241,92,48,0.08) 0%, transparent 60%)",
+                  }}
+                  aria-hidden="true"
+                />
+                <div className="relative">
+                  {featuredInsight.category && (
+                    <span className="text-[#F15C30] text-sm font-semibold uppercase tracking-wider font-serif">
+                      {featuredInsight.category}
+                    </span>
+                  )}
+                  <h3 className="font-serif font-bold text-3xl lg:text-4xl text-white mt-4 mb-6 group-hover:text-[#F15C30] transition-colors">
+                    {featuredInsight.title}
+                  </h3>
+                  <p className="text-white/70 leading-relaxed mb-6 font-sans">
+                    {featuredInsight.description}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-white/50 text-sm font-sans">
+                      {formatDate(featuredInsight.date)}
+                    </span>
+                    <ArrowRight className="w-5 h-5 text-white group-hover:translate-x-2 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+              <div className="space-y-8">
+                {sideInsights.map((post, index) => (
+                  <Link
+                    key={index}
+                    href={post.href}
+                    className="group block p-8 lg:p-10 border border-[#094d76]/10 rounded-3xl hover:border-[#094d76]/30 transition-colors"
+                  >
+                    {post.category && (
+                      <span className="text-[#F15C30] text-sm font-semibold uppercase tracking-wider font-serif">
+                        {post.category}
+                      </span>
+                    )}
+                    <h3 className="font-serif font-bold text-2xl text-[#094d76] mt-3 mb-4 group-hover:text-[#2575B6] transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="text-[#9c9b9a] leading-relaxed mb-4 font-sans">
+                      {post.description}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[#9c9b9a] text-sm font-sans">
+                        {formatDate(post.date)}
+                      </span>
+                      <ArrowRight className="w-5 h-5 text-[#094d76] group-hover:translate-x-2 transition-transform" />
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* FAQ (kept from Strapi if present) */}
+      {page.faqs && page.faqs.length > 0 && (
+        <section className="py-24 lg:py-32 bg-[#f2f2f4]">
+          <div className="max-w-3xl mx-auto px-6 lg:px-12">
+            <div className="mb-12 text-center">
+              <span className="text-[#F15C30] text-sm uppercase tracking-widest font-semibold font-serif">
+                FAQ
+              </span>
+              <h2 className="font-serif font-black text-4xl sm:text-5xl text-[#094d76] mt-4 tracking-tight">
+                {page.faqsHeading ?? "Frequently Asked Questions"}
+              </h2>
+            </div>
+            <div className="space-y-4">
+              {page.faqs.map((faq, i) => (
+                <details
+                  key={i}
+                  className="group bg-white rounded-2xl p-6 open:shadow-lg transition-shadow"
+                >
+                  <summary className="flex items-center justify-between cursor-pointer list-none">
+                    <span className="font-serif font-bold text-[#094d76] text-lg pr-6">
+                      {faq.question}
+                    </span>
+                    <span className="text-[#F15C30] text-2xl transition-transform group-open:rotate-45">
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-4 text-[#9c9b9a] font-sans leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 10. CTA SPLIT SECTION */}
+      <section id="contact" className="relative">
+        <div className="flex flex-col lg:flex-row">
+          <div className="flex-1 bg-[#F15C30] py-24 lg:py-40 px-6 lg:px-12 flex items-center justify-center lg:justify-end">
+            <h2 className="font-serif font-black text-5xl lg:text-7xl text-white text-center lg:text-right lg:pr-8">
+              {ctaLeadText}
+            </h2>
+          </div>
+          <div className="flex-1 bg-[#094d76] py-24 lg:py-40 px-6 lg:px-12 flex items-center justify-center lg:justify-start">
+            <h2 className="font-serif font-black text-5xl lg:text-7xl text-white text-center lg:text-left lg:pl-8">
+              {ctaTailText}
+            </h2>
+          </div>
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <Link
+              href={ctaButtonHref}
+              className="inline-flex items-center gap-3 bg-white text-[#094d76] font-serif font-bold px-10 py-5 rounded-full shadow-2xl hover:scale-105 transition-transform text-lg"
+            >
+              {ctaButtonText}
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 11. FOOTER */}
+      <SAFooter
+        config={config}
+        phone={page.footerPhone}
+        email={page.footerEmail}
+        address={page.footerAddress}
+        description={page.footerDescription}
+      />
+    </main>
   );
 }

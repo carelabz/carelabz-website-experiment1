@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { BookOpen, ChevronRight, ArrowRight } from "lucide-react";
-import { RegionNavbar } from "@/components/region-navbar";
-import { SouthAmericaFooter } from "@/components/south-america-footer";
+import { ArrowRight, BookOpen } from "lucide-react";
+import { SAAnnouncementTicker } from "@/components/sa-announcement-ticker";
+import { SANavbar } from "@/components/sa-navbar";
+import { SAFooter } from "@/components/sa-footer";
 import { COUNTRY_CONFIGS } from "@/lib/countries-config";
-const config = COUNTRY_CONFIGS["br"];
 import { getBlogPosts, type BlogPost } from "@/lib/strapi-blog";
 import {
   buildJsonLd,
@@ -16,31 +16,32 @@ import {
 
 export const dynamic = "force-dynamic";
 
+const CC = "br";
+const COUNTRY_NAME = "Brazil";
+const HREFLANG = "en-BR";
+const config = COUNTRY_CONFIGS[CC];
+
 export const metadata: Metadata = {
-  title:
-    "Electrical Safety Blog: Power System Studies & Analysis | Carelabs Brazil",
-  description:
-    "Expert insights on electrical safety, power system studies, arc flash analysis, and NR-10 compliance for Brazil facilities. Stay informed with Carelabs.",
+  title: `Electrical Safety Blog: Power System Studies & Analysis | Carelabs ${COUNTRY_NAME}`,
+  description: `Expert insights on electrical safety, power system studies, arc flash analysis, and ${config.primaryStandard} compliance for ${COUNTRY_NAME} facilities. Stay informed with Carelabs.`,
   alternates: {
-    canonical: "https://carelabz.com/br/blogs/",
+    canonical: `https://carelabz.com/${CC}/blogs/`,
     languages: {
-      "en-BR": "https://carelabz.com/br/blogs/",
-      "x-default": "https://carelabz.com/br/blogs/",
+      [HREFLANG]: `https://carelabz.com/${CC}/blogs/`,
+      "x-default": `https://carelabz.com/${CC}/blogs/`,
     },
   },
   openGraph: {
-    title: "Electrical Safety Blog & Industry Insights | Carelabs Brazil",
-    description:
-      "Expert insights on arc flash analysis, power system engineering, and electrical safety compliance in Brazil.",
-    url: "https://carelabz.com/br/blogs/",
+    title: `Electrical Safety Blog & Industry Insights | Carelabs ${COUNTRY_NAME}`,
+    description: `Expert insights on arc flash analysis, power system engineering, and electrical safety compliance in ${COUNTRY_NAME}.`,
+    url: `https://carelabz.com/${CC}/blogs/`,
     siteName: "Carelabs",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Electrical Safety Blog & Industry Insights | Carelabs Brazil",
-    description:
-      "Expert insights on arc flash analysis, power system engineering, and electrical safety compliance in Brazil.",
+    title: `Electrical Safety Blog & Industry Insights | Carelabs ${COUNTRY_NAME}`,
+    description: `Expert insights on arc flash analysis, power system engineering, and electrical safety compliance in ${COUNTRY_NAME}.`,
   },
 };
 
@@ -48,10 +49,10 @@ function postDate(post: BlogPost): string {
   return post.publishedDate ?? post.publishedAt;
 }
 
-function formatDateShort(dateString: string | null): string {
-  if (!dateString) return "";
+function formatDate(v: string | null): string {
+  if (!v) return "";
   try {
-    return new Date(dateString).toLocaleDateString("en-BR", {
+    return new Date(v).toLocaleDateString("en-US", {
       day: "numeric",
       month: "short",
       year: "numeric",
@@ -61,375 +62,275 @@ function formatDateShort(dateString: string | null): string {
   }
 }
 
-export default async function BRBlogIndexPage() {
-  const allPosts = await getBlogPosts("br");
+function slugPath(post: BlogPost): string {
+  const slug = post.slug.endsWith(`-${CC}`) ? post.slug.slice(0, -3) : post.slug;
+  return `/${CC}/${slug}/`;
+}
 
+export default async function BRBlogIndexPage() {
+  const allPosts = await getBlogPosts(CC);
   const sorted = [...allPosts].sort(
     (a, b) => new Date(postDate(b)).getTime() - new Date(postDate(a)).getTime()
   );
-
   const featured = sorted.slice(0, 3);
   const older = sorted.slice(3);
+  const featuredPost = featured[0];
+  const sideFeatured = featured.slice(1, 3);
 
   const jsonLd = buildJsonLd([
     getRegionOrganizationSchema({
-      cc: "br",
-      countryName: "Brazil",
-      countryIso2: "BR",
+      cc: CC,
+      countryName: COUNTRY_NAME,
+      countryIso2: CC.toUpperCase(),
       phone: config.phone,
       email: config.email,
       addressLocality: config.address,
     }),
     getWebPageSchema(
-      "https://carelabz.com/br/blogs/",
-      "Electrical Safety Blog & Industry Insights | Carelabs Brazil",
-      "Expert insights on arc flash analysis, power system engineering, and electrical safety compliance in Brazil.",
-      "en-BR"
+      `https://carelabz.com/${CC}/blogs/`,
+      `Electrical Safety Blog & Industry Insights | Carelabs ${COUNTRY_NAME}`,
+      `Expert insights on arc flash analysis, power system engineering, and electrical safety compliance in ${COUNTRY_NAME}.`,
+      HREFLANG
     ),
     getBreadcrumbSchema([
-      { name: "Home", url: "https://carelabz.com/br/" },
-      { name: "Blog", url: "https://carelabz.com/br/blogs/" },
+      { name: "Home", url: `https://carelabz.com/${CC}/` },
+      { name: "Blog", url: `https://carelabz.com/${CC}/blogs/` },
     ]),
   ]);
 
   return (
-    <div className="sa-root">
-      <RegionNavbar config={config} />
+    <main className="bg-white font-sans">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <SAAnnouncementTicker
+        countryName={COUNTRY_NAME}
+        standards={config.standards}
+      />
+      <SANavbar config={config} />
 
-      <main id="main-content">
-        {/* HERO */}
-        <section
-          className="sa-hero-bg relative overflow-hidden"
-          style={{ paddingTop: "8rem", paddingBottom: "5rem" }}
-        >
-          <div className="sa-hero-shape" aria-hidden="true" />
-          <div className="relative mx-auto max-w-4xl px-4 sm:px-8 text-center">
-            <span
-              className="inline-block mb-5 px-4 py-1.5 rounded-full text-xs uppercase tracking-widest"
-              style={{
-                backgroundColor: "rgba(241,92,48,0.18)",
-                color: "#F15C30",
-                fontFamily: "var(--sa-font-body)",
-                fontWeight: 600,
-              }}
-            >
-              Power Systems Knowledge Hub
-            </span>
-            <h1
-              className="text-white mb-6"
-              style={{
-                fontFamily: "var(--sa-font-heading)",
-                fontWeight: 800,
-                fontSize: "clamp(2.5rem, 5vw, 3.75rem)",
-                lineHeight: 1.1,
-              }}
-            >
-              Power up your Knowledge with our Blogs
-            </h1>
-            <p
-              className="mx-auto"
-              style={{
-                fontFamily: "var(--sa-font-body)",
-                color: "rgba(255,255,255,0.82)",
-                fontSize: "1.125rem",
-                lineHeight: 1.65,
-                maxWidth: "44rem",
-              }}
-            >
-              Stay ahead of NR-10, ABNT NBR 5410, and IEEE 1584 requirements.
-              Expert knowledge from the Carelabs engineering team to help
-              Brazil facilities stay safe and compliant.
-            </p>
-          </div>
-        </section>
-
-        {/* POSTS */}
-        <section style={{ backgroundColor: "#f7f5f3" }} className="py-20 px-4">
-          <div className="mx-auto max-w-7xl">
-            {sorted.length === 0 && (
-              <p
-                className="text-center py-20"
-                style={{
-                  fontFamily: "var(--sa-font-body)",
-                  color: "#9c9b9a",
-                }}
-              >
-                No articles yet. Check back soon.
-              </p>
-            )}
-
-            {featured.length > 0 && (
-              <>
-                <h2
-                  className="mb-10"
-                  style={{
-                    fontFamily: "var(--sa-font-heading)",
-                    fontWeight: 800,
-                    fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
-                    color: "#094d76",
-                  }}
-                >
-                  Latest Articles
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {featured.map((post) => {
-                    const date = postDate(post);
-                    return (
-                      <article
-                        key={post.id}
-                        className="sa-card overflow-hidden flex flex-col"
-                      >
-                        <Link
-                          href={`/br/${post.slug}/`}
-                          aria-hidden="true"
-                          tabIndex={-1}
-                          className="block relative aspect-[16/9] overflow-hidden"
-                        >
-                          {post.heroImage && post.heroImage.startsWith("http") ? (
-                            <Image
-                              src={post.heroImage}
-                              alt={post.heroImageAlt ?? post.title}
-                              fill
-                              className="object-cover transition-transform duration-500 hover:scale-105"
-                              sizes="(max-width: 768px) 100vw, 33vw"
-                            />
-                          ) : (
-                            <div
-                              className="absolute inset-0 flex items-center justify-center"
-                              style={{
-                                background:
-                                  "linear-gradient(135deg, #e8f4fd 0%, rgba(37,117,182,0.3) 100%)",
-                              }}
-                            >
-                              <BookOpen
-                                className="w-12 h-12"
-                                style={{ color: "rgba(37,117,182,0.5)" }}
-                              />
-                            </div>
-                          )}
-                        </Link>
-
-                        <div className="p-6 flex flex-col flex-1">
-                          {post.category && (
-                            <span
-                              className="inline-block mb-3 self-start px-3 py-1 rounded-full text-xs uppercase tracking-wider"
-                              style={{
-                                backgroundColor: "#fde8e2",
-                                color: "#F15C30",
-                                fontFamily: "var(--sa-font-body)",
-                                fontWeight: 600,
-                              }}
-                            >
-                              {post.category}
-                            </span>
-                          )}
-                          <h3
-                            className="mb-3 line-clamp-2"
-                            style={{
-                              fontFamily: "var(--sa-font-heading)",
-                              fontWeight: 700,
-                              fontSize: "1.125rem",
-                              color: "#094d76",
-                              lineHeight: 1.35,
-                            }}
-                          >
-                            <Link
-                              href={`/br/${post.slug}/`}
-                              className="transition-colors hover:text-[#2575B6]"
-                            >
-                              {post.title}
-                            </Link>
-                          </h3>
-                          {post.excerpt && (
-                            <p
-                              className="line-clamp-3 mb-4 text-sm"
-                              style={{
-                                fontFamily: "var(--sa-font-body)",
-                                color: "#9c9b9a",
-                                lineHeight: 1.6,
-                              }}
-                            >
-                              {post.excerpt}
-                            </p>
-                          )}
-                          <div className="flex items-center justify-between mt-auto pt-3">
-                            {date && (
-                              <time
-                                dateTime={date}
-                                className="text-xs"
-                                style={{
-                                  fontFamily: "var(--sa-font-body)",
-                                  color: "#9c9b9a",
-                                }}
-                              >
-                                {formatDateShort(date)}
-                              </time>
-                            )}
-                            <Link
-                              href={`/br/${post.slug}/`}
-                              className="inline-flex items-center gap-1 text-sm ml-auto"
-                              style={{
-                                fontFamily: "var(--sa-font-body)",
-                                fontWeight: 600,
-                                color: "#F15C30",
-                              }}
-                              aria-label={`Read more about ${post.title}`}
-                            >
-                              Read more
-                              <ArrowRight className="w-4 h-4" />
-                            </Link>
-                          </div>
-                        </div>
-                      </article>
-                    );
-                  })}
-                </div>
-              </>
-            )}
-
-            {older.length > 0 && (
-              <>
-                <h2
-                  className="mt-16 mb-6"
-                  style={{
-                    fontFamily: "var(--sa-font-heading)",
-                    fontWeight: 800,
-                    fontSize: "1.5rem",
-                    color: "#094d76",
-                  }}
-                >
-                  More Articles
-                </h2>
-                <div
-                  className="rounded-2xl overflow-hidden"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    boxShadow: "0 1px 3px rgba(15,23,42,0.04)",
-                  }}
-                >
-                  <ul>
-                    {older.map((post, idx) => (
-                      <li
-                        key={post.id}
-                        style={{
-                          borderTop:
-                            idx === 0 ? "none" : "1px solid #f2f2f4",
-                        }}
-                      >
-                        <Link
-                          href={`/br/${post.slug}/`}
-                          className="py-4 px-6 flex items-center justify-between gap-4 transition-colors hover:bg-[#e8f4fd]/40 group"
-                        >
-                          <div className="flex flex-col gap-1 min-w-0">
-                            {post.category && (
-                              <span
-                                className="text-xs uppercase"
-                                style={{
-                                  fontFamily: "var(--sa-font-body)",
-                                  fontWeight: 600,
-                                  color: "#F15C30",
-                                }}
-                              >
-                                {post.category}
-                              </span>
-                            )}
-                            <span
-                              className="line-clamp-1 transition-colors group-hover:text-[#2575B6]"
-                              style={{
-                                fontFamily: "var(--sa-font-heading)",
-                                fontWeight: 600,
-                                color: "#094d76",
-                              }}
-                            >
-                              {post.title}
-                            </span>
-                          </div>
-                          <span
-                            className="flex-shrink-0 inline-flex items-center gap-1 text-sm transition-colors"
-                            style={{
-                              fontFamily: "var(--sa-font-body)",
-                              fontWeight: 600,
-                              color: "#2575B6",
-                            }}
-                          >
-                            Read
-                            <ChevronRight className="w-4 h-4" />
-                          </span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </>
-            )}
-          </div>
-        </section>
-
-        {/* CTA BANNER */}
-        <section
-          className="relative py-24 px-4 overflow-hidden"
+      {/* HERO */}
+      <section
+        className="relative overflow-hidden py-24 lg:py-28"
+        style={{
+          background: "linear-gradient(135deg, #094d76 0%, #2575B6 100%)",
+        }}
+      >
+        <div
+          className="absolute inset-0 opacity-[0.08] pointer-events-none"
           style={{
-            background: "linear-gradient(90deg, #F15C30 0%, #c44a1f 100%)",
+            backgroundImage:
+              "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
+            backgroundSize: "32px 32px",
           }}
-        >
-          <div className="relative mx-auto max-w-4xl text-center">
-            <h2
-              className="text-white mb-4"
-              style={{
-                fontFamily: "var(--sa-font-heading)",
-                fontWeight: 800,
-                fontSize: "clamp(2rem, 4vw, 2.75rem)",
-              }}
-            >
-              Ready to Improve Your Electrical Safety?
-            </h2>
-            <p
-              className="mb-10 mx-auto max-w-2xl"
-              style={{
-                fontFamily: "var(--sa-font-body)",
-                color: "rgba(255,255,255,0.92)",
-                fontSize: "1.075rem",
-                lineHeight: 1.65,
-              }}
-            >
-              Our expert engineers are ready to help your Brazil facility meet
-              NR-10 and ABNT NBR 5410 requirements. Get a free consultation
-              today.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          aria-hidden="true"
+        />
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
+          <span className="text-[#F15C30] text-sm uppercase tracking-widest font-semibold font-serif">
+            Power Systems Knowledge Hub
+          </span>
+          <h1 className="mt-6 mx-auto max-w-3xl font-serif font-black text-5xl sm:text-6xl lg:text-7xl text-white tracking-tight leading-[1.05]">
+            Power up your Knowledge
+          </h1>
+          <p className="mx-auto mt-8 max-w-2xl text-lg text-white/75 leading-relaxed font-sans">
+            Stay ahead of {config.primaryStandard}, IEEE 1584, and international
+            compliance requirements. Expert knowledge from the Carelabs
+            engineering team.
+          </p>
+        </div>
+      </section>
+
+      {/* FEATURED + SIDE */}
+      {featuredPost && (
+        <section className="py-16 lg:py-24 bg-white">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
+              <div>
+                <span className="text-[#F15C30] text-sm uppercase tracking-widest font-semibold font-serif">
+                  Latest Articles
+                </span>
+                <h2 className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-[#094d76] mt-4 tracking-tight">
+                  Featured Insights
+                </h2>
+              </div>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8">
+              {/* Featured dark card */}
               <Link
-                href="/br/contact-us/"
-                className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-3.5 transition-all hover:scale-[1.02]"
-                style={{
-                  backgroundColor: "#ffffff",
-                  color: "#c44a1f",
-                  fontFamily: "var(--sa-font-heading)",
-                  fontWeight: 600,
-                }}
+                href={slugPath(featuredPost)}
+                className="group bg-[#094d76] rounded-3xl p-10 lg:p-14 flex flex-col justify-end min-h-[500px] relative overflow-hidden"
               >
-                Get a Free Quote
-                <ArrowRight className="w-4 h-4" />
+                {featuredPost.heroImage &&
+                featuredPost.heroImage.startsWith("http") ? (
+                  <Image
+                    src={featuredPost.heroImage}
+                    alt={featuredPost.heroImageAlt ?? featuredPost.title}
+                    fill
+                    className="object-cover opacity-30 group-hover:opacity-40 transition-opacity"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                ) : (
+                  <div
+                    className="absolute inset-0 opacity-10"
+                    style={{
+                      backgroundImage:
+                        "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
+                      backgroundSize: "32px 32px",
+                    }}
+                    aria-hidden="true"
+                  />
+                )}
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(241,92,48,0.08) 0%, transparent 60%)",
+                  }}
+                  aria-hidden="true"
+                />
+                <div className="relative">
+                  {featuredPost.category && (
+                    <span className="text-[#F15C30] text-sm font-semibold uppercase tracking-wider font-serif">
+                      {featuredPost.category}
+                    </span>
+                  )}
+                  <h3 className="font-serif font-bold text-3xl lg:text-4xl text-white mt-4 mb-6 group-hover:text-[#F15C30] transition-colors">
+                    {featuredPost.title}
+                  </h3>
+                  {featuredPost.excerpt && (
+                    <p className="text-white/75 leading-relaxed mb-6 font-sans">
+                      {featuredPost.excerpt.length > 160
+                        ? featuredPost.excerpt.slice(0, 157) + "…"
+                        : featuredPost.excerpt}
+                    </p>
+                  )}
+                  <div className="flex items-center justify-between">
+                    <span className="text-white/60 text-sm font-sans">
+                      {formatDate(postDate(featuredPost))}
+                    </span>
+                    <ArrowRight className="w-5 h-5 text-white group-hover:translate-x-2 transition-transform" />
+                  </div>
+                </div>
               </Link>
-              <Link
-                href="/br/services/"
-                className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-3.5 border-2 border-white text-white hover:bg-white/10 transition-colors"
-                style={{
-                  fontFamily: "var(--sa-font-heading)",
-                  fontWeight: 600,
-                }}
-              >
-                Our Services
-              </Link>
+
+              {/* Side cards */}
+              <div className="space-y-6">
+                {sideFeatured.map((post) => (
+                  <Link
+                    key={post.id}
+                    href={slugPath(post)}
+                    className="group block p-8 lg:p-10 border border-[#094d76]/10 rounded-3xl hover:border-[#094d76]/30 transition-colors"
+                  >
+                    {post.category && (
+                      <span className="text-[#F15C30] text-sm font-semibold uppercase tracking-wider font-serif">
+                        {post.category}
+                      </span>
+                    )}
+                    <h3 className="font-serif font-bold text-2xl text-[#094d76] mt-3 mb-4 group-hover:text-[#2575B6] transition-colors">
+                      {post.title}
+                    </h3>
+                    {post.excerpt && (
+                      <p className="text-[#9c9b9a] leading-relaxed mb-4 font-sans">
+                        {post.excerpt.length > 140
+                          ? post.excerpt.slice(0, 137) + "…"
+                          : post.excerpt}
+                      </p>
+                    )}
+                    <div className="flex items-center justify-between">
+                      <span className="text-[#9c9b9a] text-sm font-sans">
+                        {formatDate(postDate(post))}
+                      </span>
+                      <ArrowRight className="w-5 h-5 text-[#094d76] group-hover:translate-x-2 transition-transform" />
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>
-      </main>
+      )}
 
-      <SouthAmericaFooter config={config} />
-    </div>
+      {/* MORE ARTICLES */}
+      {older.length > 0 && (
+        <section className="py-16 lg:py-24 bg-[#f2f2f4]">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <h2 className="font-serif font-black text-3xl lg:text-4xl text-[#094d76] mb-10 tracking-tight">
+              More Articles
+            </h2>
+            <div className="bg-white rounded-3xl overflow-hidden">
+              <ul className="divide-y divide-[#094d76]/10">
+                {older.map((post) => (
+                  <li key={post.id}>
+                    <Link
+                      href={slugPath(post)}
+                      className="group block px-8 lg:px-10 py-6 hover:bg-[#e8f4fd] transition-colors border-l-4 border-transparent hover:border-[#F15C30]"
+                    >
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <div className="flex-1 min-w-0">
+                          {post.category && (
+                            <span className="text-[#F15C30] text-xs uppercase tracking-widest font-serif font-semibold">
+                              {post.category}
+                            </span>
+                          )}
+                          <h3 className="font-serif font-bold text-lg lg:text-xl text-[#094d76] group-hover:text-[#2575B6] transition-colors mt-1 line-clamp-1">
+                            {post.title}
+                          </h3>
+                        </div>
+                        <div className="flex items-center gap-6 shrink-0">
+                          <span className="text-[#9c9b9a] text-sm font-sans">
+                            {formatDate(postDate(post))}
+                          </span>
+                          <ArrowRight className="w-5 h-5 text-[#094d76] group-hover:translate-x-1 transition-transform" />
+                        </div>
+                      </div>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {sorted.length === 0 && (
+        <section className="py-32 bg-[#f2f2f4]">
+          <div className="max-w-2xl mx-auto px-6 text-center">
+            <BookOpen className="w-12 h-12 text-[#094d76]/30 mx-auto mb-6" />
+            <p className="text-[#9c9b9a] font-sans text-lg">
+              No articles yet. Check back soon.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* CTA SPLIT */}
+      <section className="relative">
+        <div className="flex flex-col lg:flex-row">
+          <div className="flex-1 bg-[#F15C30] py-24 lg:py-32 px-6 lg:px-12 flex items-center justify-center lg:justify-end">
+            <h2 className="font-serif font-black text-5xl lg:text-6xl text-white text-center lg:text-right lg:pr-8">
+              Ready to
+            </h2>
+          </div>
+          <div className="flex-1 bg-[#094d76] py-24 lg:py-32 px-6 lg:px-12 flex items-center justify-center lg:justify-start">
+            <h2 className="font-serif font-black text-5xl lg:text-6xl text-white text-center lg:text-left lg:pl-8">
+              Get Started?
+            </h2>
+          </div>
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <Link
+              href={config.contactPath}
+              className="inline-flex items-center gap-3 bg-white text-[#094d76] font-serif font-bold px-10 py-5 rounded-full shadow-2xl hover:scale-105 transition-transform text-lg"
+            >
+              Contact Us
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <SAFooter config={config} />
+    </main>
   );
 }
