@@ -28,7 +28,7 @@ export function SAFooter({
       label: "Case Studies",
       href: config.caseStudyPath ?? `/${config.cc}/case-studies/`,
     },
-    { label: "Insights", href: config.blogIndexPath },
+    { label: "Blog", href: config.blogIndexPath },
     { label: "Contact", href: config.contactPath },
   ];
 

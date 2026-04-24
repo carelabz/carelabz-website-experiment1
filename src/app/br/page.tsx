@@ -35,22 +35,22 @@ const FALLBACK_INDUSTRIES = [
 
 const FALLBACK_PROCESS_STEPS = [
   {
-    title: "Diagnóstico",
+    title: "Discovery",
     description:
       "Comprehensive analysis of your electrical infrastructure and current compliance status.",
   },
   {
-    title: "Análise",
+    title: "Analysis",
     description:
       "Detailed power system studies including arc flash, short circuit, and load flow analysis.",
   },
   {
-    title: "Relatório",
+    title: "Reporting",
     description:
       "Complete technical documentation with findings, risk assessments, and actionable recommendations.",
   },
   {
-    title: "Conformidade",
+    title: "Compliance",
     description: `Full regulatory compliance with ${config.primaryStandard}, IEEE 1584, and ABNT NBR 5410 standards.`,
   },
 ];
@@ -382,7 +382,7 @@ export default async function BRHomePage() {
                         {service.description}
                       </p>
                       <span className="px-6 pb-6 mt-4 font-condensed font-semibold uppercase tracking-wider text-orange-500 group-hover:text-orange-400 inline-flex items-center gap-2">
-                        Ver Detalhes <ArrowRight className="w-4 h-4" />
+                        View Details <ArrowRight className="w-4 h-4" />
                       </span>
                     </Link>
                   );
@@ -396,7 +396,7 @@ export default async function BRHomePage() {
         <section className="bg-white py-20 lg:py-28">
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
             <p className="font-condensed text-xs uppercase tracking-[0.15em] text-orange-500 mb-4">
-              Como Funciona
+              How It Works
             </p>
             <h2 className="font-condensed font-extrabold text-4xl md:text-6xl text-[#0B1A2F] uppercase max-w-4xl leading-tight">
               From messy{" "}
@@ -431,7 +431,7 @@ export default async function BRHomePage() {
         {/* 5. INDUSTRIES — marquee only */}
         <section id="industries" className="bg-[#0B1A2F] py-12">
           <p className="text-center font-condensed text-xs uppercase tracking-[0.15em] text-orange-500 mb-6">
-            Indústrias Que Atendemos
+            Industries We Serve
           </p>
           <div className="overflow-hidden">
             <div className="animate-marquee-slow whitespace-nowrap">
@@ -453,15 +453,15 @@ export default async function BRHomePage() {
 
         {/* 6. INSIGHTS — folder-tab cards */}
         {insightsForList.length > 0 && (
-          <section id="insights" className="bg-white py-20 lg:py-28">
+          <section id="blog" className="bg-white py-20 lg:py-28">
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
                 <h2 className="text-3xl md:text-5xl leading-tight">
                   <span className="font-condensed font-extrabold uppercase text-[#0B1A2F]">
-                    Latest{" "}
+                    From the{" "}
                   </span>
                   <span className="font-accent italic text-orange-500">
-                    Insights
+                    Blog
                   </span>
                 </h2>
                 <Link
