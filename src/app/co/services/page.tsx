@@ -6,6 +6,7 @@ import { SANavbar } from "@/components/sa-navbar";
 import { SAFooter } from "@/components/sa-footer";
 import { COUNTRY_CONFIGS } from "@/lib/countries-config";
 import { getServicesByRegion, ServicePage } from "@/lib/strapi";
+import { getHomePage } from "@/lib/strapi-home";
 import {
   buildJsonLd,
   getRegionOrganizationSchema,
@@ -51,8 +52,27 @@ function getServiceHref(service: ServicePage): string {
   return `/${CC}/${urlSlug}/`;
 }
 
+function splitAccent(headline: string): { lead: string; accent: string } {
+  const words = headline.trim().split(/\s+/);
+  if (words.length <= 1) return { lead: "", accent: headline };
+  return { lead: words.slice(0, -1).join(" "), accent: words[words.length - 1] };
+}
+
 export default async function COServicesIndexPage() {
-  const services = await getServicesByRegion(CC);
+  const [services, home] = await Promise.all([
+    getServicesByRegion(CC),
+    getHomePage(CC),
+  ]);
+
+  // Hero text — prefer Strapi HomePage.servicesHeading/Subtext so editors can
+  // tune the services-index hero without touching code. Fallback to hardcoded
+  // brand copy when Strapi is empty.
+  const heroTitleRaw =
+    home?.servicesHeading ?? "Comprehensive Electrical Safety Services";
+  const { lead: heroTitleLead, accent: heroTitleAccent } = splitAccent(heroTitleRaw);
+  const heroSubtext =
+    home?.servicesSubtext ??
+    `Services designed to keep your ${COUNTRY_NAME} facilities compliant with ${config.primaryStandard}, workers protected, and operations running smoothly.`;
 
   const jsonLd = buildJsonLd([
     getRegionOrganizationSchema({
@@ -108,15 +128,13 @@ export default async function COServicesIndexPage() {
               {COUNTRY_NAME} Electrical Engineering
             </p>
             <h1 className="font-condensed font-extrabold text-4xl md:text-5xl lg:text-6xl uppercase text-white leading-tight tracking-tight">
-              Our{" "}
+              {heroTitleLead && <>{heroTitleLead} </>}
               <span className="font-accent italic font-normal normal-case text-orange-500">
-                Services
+                {heroTitleAccent}
               </span>
             </h1>
             <p className="font-body text-lg text-white/70 mt-6 max-w-2xl mx-auto">
-              Comprehensive electrical safety services designed to keep your
-              facilities compliant with {config.primaryStandard}, your workers
-              protected, and your operations running smoothly.
+              {heroSubtext}
             </p>
           </div>
         </section>

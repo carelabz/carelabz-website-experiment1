@@ -7,6 +7,7 @@ import { SANavbar } from "@/components/sa-navbar";
 import { SAFooter } from "@/components/sa-footer";
 import { COUNTRY_CONFIGS } from "@/lib/countries-config";
 import { getBlogPosts, type BlogPost } from "@/lib/strapi-blog";
+import { getHomePage } from "@/lib/strapi-home";
 import {
   buildJsonLd,
   getRegionOrganizationSchema,
@@ -84,14 +85,28 @@ function slugPath(post: BlogPost): string {
   return `/${CC}/${slug}/`;
 }
 
+function splitAccent(headline: string): { lead: string; accent: string } {
+  const words = headline.trim().split(/\s+/);
+  if (words.length <= 1) return { lead: "", accent: headline };
+  return { lead: words.slice(0, -1).join(" "), accent: words[words.length - 1] };
+}
+
 export default async function ARBlogIndexPage() {
-  const allPosts = await getBlogPosts(CC);
+  const [allPosts, home] = await Promise.all([
+    getBlogPosts(CC),
+    getHomePage(CC),
+  ]);
   const sorted = [...allPosts].sort(
     (a, b) => new Date(postDate(b)).getTime() - new Date(postDate(a)).getTime()
   );
   const featuredPost = sorted[0];
   const sideFeatured = sorted.slice(1, 3);
   const older = sorted.slice(3);
+
+  // Hero title — prefer Strapi HomePage.insightsHeading so editors can tune
+  // the blog-index hero without touching code. Fallback to brand copy.
+  const heroTitleRaw = home?.insightsHeading ?? "From the Blog";
+  const { lead: heroTitleLead, accent: heroTitleAccent } = splitAccent(heroTitleRaw);
 
   const jsonLd = buildJsonLd([
     getRegionOrganizationSchema({
@@ -147,9 +162,9 @@ export default async function ARBlogIndexPage() {
               Power Systems Knowledge Hub
             </p>
             <h1 className="font-condensed font-extrabold text-4xl md:text-5xl lg:text-6xl uppercase text-white leading-tight tracking-tight">
-              From the{" "}
+              {heroTitleLead && <>{heroTitleLead} </>}
               <span className="font-accent italic font-normal normal-case text-orange-500">
-                Blog
+                {heroTitleAccent}
               </span>
             </h1>
             <p className="font-body text-lg text-white/70 mt-6 max-w-2xl mx-auto">
