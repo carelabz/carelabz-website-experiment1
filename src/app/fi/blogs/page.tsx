@@ -1,9 +1,8 @@
 export const dynamic = "force-dynamic";
 
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { BookOpen, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { NENavbar } from "@/components/ne-navbar";
 import { NEFooter } from "@/components/ne-footer";
 import { NEAnnouncementTicker } from "@/components/ne-announcement-ticker";
@@ -43,6 +42,19 @@ export const metadata: Metadata = {
   },
 };
 
+function cleanTitle(raw: string): string {
+  return raw
+    .replace(/\s*\|\s*Care[Ll]ab[sz]\s*$/i, "")
+    .replace(
+      /\s*-\s*Carelabs\s*(UK|United Kingdom|Ireland|Sweden|Norway|Denmark|Finland)\s*$/i,
+      ""
+    )
+    .replace(/^Uncategorized Archives\s*-\s*/i, "")
+    .replace(/^admin,\s*Author at\s*/i, "")
+    .replace(/\s+in\s+(the\s+)?(United Kingdom|UK|Ireland|Sweden|Norway|Denmark|Finland)\s*$/i, "")
+    .trim();
+}
+
 function postDate(post: BlogPost): string {
   return post.publishedDate ?? post.publishedAt;
 }
@@ -66,10 +78,6 @@ function getPostHref(slug: string): string {
   return config.blogDetailPattern.replace("{slug}", clean);
 }
 
-function cleanTitle(title: string): string {
-  return title.replace(/\s+in\s+(the\s+)?(United Kingdom|UK|Ireland|Sweden|Norway|Denmark|Finland)\s*$/i, "").trim();
-}
-
 export default async function BlogIndexPage() {
   const allPosts = await getBlogPosts(CC);
 
@@ -78,8 +86,8 @@ export default async function BlogIndexPage() {
       new Date(postDate(b)).getTime() - new Date(postDate(a)).getTime()
   );
 
-  const featured = sorted.slice(0, 3);
-  const older = sorted.slice(3);
+  const featured = sorted.slice(0, 5);
+  const older = sorted.slice(5);
 
   const jsonLd = buildJsonLd([
     getRegionOrganizationSchema({
@@ -115,37 +123,39 @@ export default async function BlogIndexPage() {
       />
 
       <main id="main-content">
-        {/* ---------------- HERO ---------------- */}
-        <section className="relative bg-[#0B1A2F] pt-36 pb-24 px-6 overflow-hidden">
+        {/* ---------------- HERO — left-aligned ---------------- */}
+        <section className="relative bg-[#0B1A2F] pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
           <div
-            className="absolute inset-0 opacity-[0.04]"
+            className="absolute inset-0 opacity-[0.03]"
             aria-hidden="true"
             style={{
               backgroundImage:
-                "radial-gradient(circle, #ffffff 1px, transparent 1px)",
-              backgroundSize: "24px 24px",
+                "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
+              backgroundSize: "60px 60px",
             }}
           />
-          <div className="relative max-w-4xl mx-auto text-center">
-            <span className="font-condensed text-xs uppercase tracking-[0.3em] text-orange-500 font-semibold mb-6 block">
-              Knowledge Hub
-            </span>
-            <h1 className="font-condensed font-extrabold text-5xl md:text-6xl lg:text-7xl uppercase text-white leading-[0.95] tracking-tight">
-              From the
-              <span className="block font-accent italic font-normal normal-case text-orange-500 mt-3">
-                Blog.
+          <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div className="max-w-3xl">
+              <span className="font-condensed text-xs uppercase tracking-[0.3em] text-orange-500/60 mb-6 block">
+                Knowledge Hub
               </span>
-            </h1>
-            <p className="font-body text-lg md:text-xl text-white/60 mt-8 max-w-2xl mx-auto leading-relaxed">
-              Expert knowledge on {config.primaryStandard}, IEEE 1584, and
-              power system engineering from the Carelabs {config.countryName} team.
-            </p>
+              <h1 className="font-condensed font-extrabold text-5xl md:text-6xl lg:text-7xl uppercase text-white leading-[0.95] tracking-tight">
+                From the<br />
+                <span className="font-accent italic font-normal normal-case text-orange-500">
+                  Blog.
+                </span>
+              </h1>
+              <p className="font-body text-lg text-white/50 mt-8 max-w-2xl leading-relaxed">
+                Expert knowledge on {config.primaryStandard}, IEEE 1584, and
+                power system engineering from the Carelabs {config.countryName} team.
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* ---------------- FEATURED ---------------- */}
-        <section className="bg-[#F8FAFC] py-20 px-6">
-          <div className="max-w-[1400px] mx-auto">
+        {/* ---------------- FEATURED — editorial rows ---------------- */}
+        <section className="bg-white py-20 lg:py-28 px-6">
+          <div className="max-w-[1400px] mx-auto lg:px-12">
             {sorted.length === 0 && (
               <p className="text-center font-body text-gray-500 py-20">
                 No articles yet. Check back soon.
@@ -155,14 +165,15 @@ export default async function BlogIndexPage() {
             {featured.length > 0 && (
               <>
                 <div className="mb-12">
-                  <span className="font-condensed text-xs uppercase tracking-[0.2em] text-orange-500 font-semibold mb-3 block">
+                  <span className="font-condensed text-xs uppercase tracking-[0.25em] text-orange-500/60 mb-3 block">
                     Latest
                   </span>
                   <h2 className="font-condensed font-extrabold text-3xl md:text-5xl uppercase text-[#0B1A2F] leading-[0.95]">
                     Latest Articles
                   </h2>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <div className="divide-y divide-[#0B1A2F]/10 border-t border-[#0B1A2F]/10">
                   {featured.map((post) => {
                     const date = postDate(post);
                     const href = getPostHref(post.slug);
@@ -170,58 +181,28 @@ export default async function BlogIndexPage() {
                       <Link
                         key={post.id}
                         href={href}
-                        className="group rounded-2xl overflow-hidden bg-white hover:shadow-lg transition-all duration-300 flex flex-col"
+                        className="group flex flex-col md:flex-row md:items-center justify-between py-7 gap-4 hover:pl-2 transition-all"
                       >
-                        <div className="relative aspect-[16/9] overflow-hidden bg-[#1E293B]">
-                          {post.heroImage && post.heroImage.startsWith("http") ? (
-                            <Image
-                              src={post.heroImage}
-                              alt={post.heroImageAlt ?? post.title}
-                              fill
-                              className="object-cover transition-transform duration-500 group-hover:scale-105"
-                              sizes="(max-width: 768px) 100vw, 33vw"
-                            />
-                          ) : (
-                            <div
-                              className="absolute inset-0 opacity-10"
-                              style={{
-                                backgroundImage:
-                                  "radial-gradient(circle, #F97316 1.5px, transparent 1.5px)",
-                                backgroundSize: "20px 20px",
-                              }}
-                              aria-hidden="true"
-                            >
-                              <BookOpen className="absolute inset-0 m-auto w-10 h-10 text-white/30" />
-                            </div>
-                          )}
-                        </div>
-                        <div className="p-6 flex flex-col flex-1">
+                        <div className="min-w-0 flex-1">
                           {post.category && (
-                            <span className="font-condensed text-xs uppercase tracking-[0.2em] text-orange-500 font-semibold">
+                            <span className="font-condensed text-xs uppercase tracking-[0.25em] text-orange-500/60 font-semibold mb-2 block">
                               {post.category}
                             </span>
                           )}
-                          <h3 className="font-condensed font-bold text-lg uppercase text-[#0B1A2F] mt-2 group-hover:text-orange-500 transition-colors line-clamp-2 tracking-tight">
+                          <h3 className="font-condensed font-bold text-xl md:text-2xl uppercase text-[#0B1A2F] tracking-tight group-hover:text-orange-500 transition-colors">
                             {cleanTitle(post.title)}
                           </h3>
-                          {post.excerpt && (
-                            <p className="font-body text-sm text-gray-600 mt-3 line-clamp-3 leading-relaxed">
-                              {post.excerpt}
-                            </p>
+                        </div>
+                        <div className="flex items-center gap-6 shrink-0 md:pl-8">
+                          {date && (
+                            <time
+                              dateTime={date}
+                              className="font-condensed text-xs uppercase tracking-[0.2em] text-[#0B1A2F]/40"
+                            >
+                              {formatDateShort(date)}
+                            </time>
                           )}
-                          <div className="flex items-center justify-between mt-auto pt-4">
-                            {date && (
-                              <time
-                                dateTime={date}
-                                className="font-condensed text-xs uppercase tracking-[0.15em] text-[#0B1A2F]/40"
-                              >
-                                {formatDateShort(date)}
-                              </time>
-                            )}
-                            <span className="font-condensed text-sm uppercase tracking-[0.15em] text-orange-500 inline-flex items-center gap-1">
-                              Read <ArrowRight className="w-3.5 h-3.5" />
-                            </span>
-                          </div>
+                          <ArrowRight className="w-5 h-5 text-[#0B1A2F]/20 group-hover:text-orange-500 transition-colors" />
                         </div>
                       </Link>
                     );
@@ -232,75 +213,59 @@ export default async function BlogIndexPage() {
           </div>
         </section>
 
-        {/* ---------------- OLDER ---------------- */}
+        {/* ---------------- OLDER — navy editorial rows ---------------- */}
         {older.length > 0 && (
-          <section className="bg-white py-20 px-6">
-            <div className="max-w-[1400px] mx-auto">
+          <section className="bg-[#0B1A2F] py-20 px-6">
+            <div className="max-w-[1400px] mx-auto lg:px-12">
               <div className="mb-10">
-                <span className="font-condensed text-xs uppercase tracking-[0.2em] text-orange-500 font-semibold mb-3 block">
+                <span className="font-condensed text-xs uppercase tracking-[0.25em] text-orange-500/60 mb-3 block">
                   Archive
                 </span>
-                <h2 className="font-condensed font-extrabold text-3xl md:text-4xl uppercase text-[#0B1A2F] leading-[0.95]">
+                <h2 className="font-condensed font-extrabold text-3xl md:text-4xl uppercase text-white leading-[0.95]">
                   More Articles
                 </h2>
               </div>
-              <ul className="border-t border-[#0B1A2F]/10">
+              <div className="divide-y divide-white/10 border-t border-white/10">
                 {older.map((post) => {
                   const href = getPostHref(post.slug);
                   return (
-                    <li key={post.id}>
-                      <Link
-                        href={href}
-                        className="border-b border-[#0B1A2F]/10 py-5 flex items-center justify-between gap-4 hover:bg-[#F8FAFC] transition-colors px-2 -mx-2 rounded-lg group"
-                      >
-                        <div className="flex flex-col gap-1 min-w-0">
-                          {post.category && (
-                            <span className="font-condensed text-xs uppercase tracking-[0.2em] text-orange-500 font-semibold">
-                              {post.category}
-                            </span>
-                          )}
-                          <span className="font-condensed text-base md:text-lg uppercase font-bold text-[#0B1A2F] group-hover:text-orange-500 transition-colors line-clamp-1 tracking-tight">
-                            {cleanTitle(post.title)}
+                    <Link
+                      key={post.id}
+                      href={href}
+                      className="group flex flex-col md:flex-row md:items-center justify-between py-6 gap-4 hover:pl-2 transition-all"
+                    >
+                      <div className="min-w-0 flex-1">
+                        {post.category && (
+                          <span className="font-condensed text-xs uppercase tracking-[0.25em] text-orange-500/60 font-semibold mb-1 block">
+                            {post.category}
                           </span>
-                        </div>
-                        <span className="font-condensed text-sm uppercase tracking-[0.15em] text-orange-500 inline-flex items-center gap-1 shrink-0">
-                          Read <ArrowRight className="w-3.5 h-3.5" />
-                        </span>
-                      </Link>
-                    </li>
+                        )}
+                        <h3 className="font-condensed font-bold text-base md:text-lg uppercase text-white/90 tracking-tight group-hover:text-orange-500 transition-colors line-clamp-1">
+                          {cleanTitle(post.title)}
+                        </h3>
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-white/20 group-hover:text-orange-500 transition-colors shrink-0" />
+                    </Link>
                   );
                 })}
-              </ul>
+              </div>
             </div>
           </section>
         )}
 
-        {/* ---------------- CTA ---------------- */}
-        <section className="bg-[#0B1A2F] py-24 lg:py-32 px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-condensed font-extrabold text-4xl md:text-5xl lg:text-6xl uppercase text-white leading-[0.95]">
-              Ready to Improve Your
-              <span className="block font-accent italic font-normal normal-case text-orange-500 mt-3">
-                Electrical Safety?
-              </span>
+        {/* ---------------- FINAL CTA ---------------- */}
+        <section className="bg-white py-20 lg:py-24 px-6 border-t border-[#0B1A2F]/5">
+          <div className="max-w-[1400px] mx-auto lg:px-12 text-center">
+            <h2 className="font-condensed font-extrabold text-3xl md:text-4xl uppercase text-[#0B1A2F] leading-tight">
+              Ready to improve your electrical safety?
             </h2>
-            <p className="font-body text-lg text-white/60 mt-8 max-w-2xl mx-auto leading-relaxed">
-              Our expert engineers are ready to help your {config.countryName}{" "}
-              facility meet {config.primaryStandard} requirements.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="mt-8">
               <Link
                 href={config.contactPath}
-                className="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-condensed font-bold text-sm uppercase tracking-[0.15em] px-8 py-3.5 rounded-full transition-colors"
+                className="inline-flex items-center gap-2 bg-[#0B1A2F] hover:bg-[#162a47] text-white font-condensed font-bold text-sm uppercase tracking-[0.15em] px-10 py-4 transition-colors"
               >
                 Get a Free Quote
                 <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href={config.servicesIndexPath}
-                className="inline-flex items-center justify-center gap-2 border-2 border-white/20 text-white hover:bg-white hover:text-[#0B1A2F] font-condensed font-bold text-sm uppercase tracking-[0.15em] px-8 py-3.5 rounded-full transition-colors"
-              >
-                Our Services
               </Link>
             </div>
           </div>

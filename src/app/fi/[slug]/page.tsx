@@ -6,7 +6,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { marked } from "marked";
 import {
-  Shield,
   CheckCircle,
   ChevronRight,
   ArrowRight,
@@ -28,6 +27,25 @@ const config = COUNTRY_CONFIGS[CC];
 
 interface PageProps {
   params: { slug: string };
+}
+
+function cleanTitle(raw: string): string {
+  return raw
+    .replace(/\s*\|\s*Care[Ll]ab[sz]\s*$/i, "")
+    .replace(
+      /\s*-\s*Carelabs\s*(UK|United Kingdom|Ireland|Sweden|Norway|Denmark|Finland)\s*$/i,
+      ""
+    )
+    .replace(/^Uncategorized Archives\s*-\s*/i, "")
+    .replace(/^admin,\s*Author at\s*/i, "")
+    .trim();
+}
+
+function cleanExcerpt(raw: string): string {
+  return raw
+    .replace(/\s*\[…?\]\s*$/, "")
+    .replace(/\s*\[\.{3}\]\s*$/, "")
+    .trim();
 }
 
 async function fetchServiceWithFallback(slug: string): Promise<ServicePage | null> {
@@ -70,24 +88,30 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const post = await fetchBlogWithFallback(params.slug);
   if (post) {
     return {
-      title: post.metaTitle ?? `${post.title} | Carelabs ${COUNTRY_NAME}`,
-      description: post.metaDescription ?? post.excerpt ?? undefined,
+      title: post.metaTitle ?? `${cleanTitle(post.title)} | Carelabs ${COUNTRY_NAME}`,
+      description:
+        post.metaDescription ??
+        (post.excerpt ? cleanExcerpt(post.excerpt) : undefined),
       keywords: post.seoKeywords ?? undefined,
       alternates: {
         canonical: pageUrl,
         languages: { [HREFLANG]: pageUrl, "x-default": pageUrl },
       },
       openGraph: {
-        title: post.metaTitle ?? `${post.title} | Carelabs ${COUNTRY_NAME}`,
-        description: post.metaDescription ?? post.excerpt ?? undefined,
+        title: post.metaTitle ?? `${cleanTitle(post.title)} | Carelabs ${COUNTRY_NAME}`,
+        description:
+          post.metaDescription ??
+          (post.excerpt ? cleanExcerpt(post.excerpt) : undefined),
         url: pageUrl,
         siteName: "Carelabs",
         type: "article",
       },
       twitter: {
         card: "summary_large_image",
-        title: post.metaTitle ?? `${post.title} | Carelabs ${COUNTRY_NAME}`,
-        description: post.metaDescription ?? post.excerpt ?? undefined,
+        title: post.metaTitle ?? `${cleanTitle(post.title)} | Carelabs ${COUNTRY_NAME}`,
+        description:
+          post.metaDescription ??
+          (post.excerpt ? cleanExcerpt(post.excerpt) : undefined),
       },
     };
   }
@@ -98,17 +122,11 @@ function ServiceView({ service, slug }: { service: ServicePage; slug: string }) 
   const pageUrl = `https://carelabz.com/${CC}/${slug}/`;
   const eyebrow = service.eyebrow || `IEEE 1584 · ${config.primaryStandard}`;
   const lede = service.definitionalLede || service.metaDescription || "";
-  const trustBadges =
-    service.trustBadges ||
-    config.standards.slice(0, 4).map((s) => ({ label: s }));
   const features = service.features || [];
   const processSteps = service.processSteps || [];
   const faqs = service.faqs || [];
   const safetyBullets = service.safetyBullets || [];
-  const ctaHeading = service.ctaBannerHeading || "Ready to Schedule Your Study?";
-  const ctaBody =
-    service.ctaBannerBody ||
-    "Our certified engineers deliver fast turnaround, clear reports, and full compliance support.";
+  const ctaHeading = service.ctaBannerHeading || "Ready to schedule your study?";
   const ctaPrimary = service.ctaBannerPrimaryText || "Get a Free Quote";
   const ctaPrimaryHref = service.ctaBannerPrimaryHref || config.contactPath;
 
@@ -175,20 +193,20 @@ function ServiceView({ service, slug }: { service: ServicePage; slug: string }) 
       <NENavbar config={config} />
       <JsonLd data={jsonLd} />
 
-      {/* ---------------- HERO ---------------- */}
-      <section className="relative bg-[#0B1A2F] pt-36 pb-24 px-6 overflow-hidden">
+      {/* ---------------- HERO — left-aligned ---------------- */}
+      <section className="relative bg-[#0B1A2F] pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.03]"
           aria-hidden="true"
           style={{
             backgroundImage:
-              "radial-gradient(circle, #ffffff 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
+              "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
           }}
         />
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
           <nav aria-label="Breadcrumb" className="mb-8">
-            <ol className="flex flex-wrap items-center gap-2 font-condensed text-xs uppercase tracking-[0.15em] text-white/40">
+            <ol className="flex flex-wrap items-center gap-2 font-condensed text-xs uppercase tracking-[0.2em] text-white/40">
               <li>
                 <Link
                   href={`/${CC}/`}
@@ -207,52 +225,48 @@ function ServiceView({ service, slug }: { service: ServicePage; slug: string }) 
                 </Link>
               </li>
               <li aria-hidden="true"><ChevronRight className="w-3 h-3" /></li>
-              <li className="text-white/70">{service.title}</li>
+              <li className="text-white/70 line-clamp-1">{service.title}</li>
             </ol>
           </nav>
 
-          <span className="font-condensed text-xs uppercase tracking-[0.3em] text-orange-500 font-semibold mb-6 block">
-            {eyebrow}
-          </span>
-          <h1 className="font-condensed font-extrabold text-4xl md:text-5xl lg:text-6xl uppercase text-white leading-[0.95] tracking-tight">
-            {service.title}
-          </h1>
-          {lede && (
-            <p className="font-body text-lg md:text-xl text-white/60 mt-8 max-w-3xl leading-relaxed">
-              {lede}
-            </p>
-          )}
-          <div className="mt-10">
-            <Link
-              href={ctaPrimaryHref}
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-condensed font-bold text-sm uppercase tracking-[0.15em] px-8 py-3.5 rounded-full transition-colors"
-            >
-              Free Consultation
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-          {trustBadges.length > 0 && (
-            <div className="flex flex-wrap gap-3 mt-10">
-              {trustBadges.map((badge, i) => (
-                <span
-                  key={i}
-                  className="inline-flex items-center gap-1.5 font-condensed text-xs uppercase tracking-[0.15em] text-white/60 border border-white/10 px-4 py-2 rounded-full"
-                >
-                  <Shield className="w-3 h-3 text-orange-500" />
-                  {badge.label}
-                </span>
-              ))}
+          <div className="max-w-3xl">
+            <span className="font-condensed text-xs uppercase tracking-[0.3em] text-orange-500/60 mb-6 block">
+              {eyebrow}
+            </span>
+            <h1 className="font-condensed font-extrabold text-4xl md:text-5xl lg:text-6xl uppercase text-white leading-[0.95] tracking-tight">
+              {service.title}
+            </h1>
+            {lede && (
+              <p className="font-body text-lg text-white/50 mt-8 leading-relaxed">
+                {lede}
+              </p>
+            )}
+            <div className="mt-10">
+              <Link
+                href={ctaPrimaryHref}
+                className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-condensed font-bold text-sm uppercase tracking-[0.15em] px-8 py-3.5 transition-colors"
+              >
+                Free Consultation
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
-          )}
+          </div>
         </div>
       </section>
 
-      {/* ---------------- FEATURES ---------------- */}
+      {/* ---------------- TRUST BAR ---------------- */}
+      <div className="bg-white py-6 px-6 border-b border-[#0B1A2F]/5">
+        <p className="text-center font-condensed text-xs uppercase tracking-[0.25em] text-[#0B1A2F]/40">
+          {config.standards.slice(0, 5).join("  ·  ")}
+        </p>
+      </div>
+
+      {/* ---------------- FEATURES — numbered editorial list ---------------- */}
       {features.length > 0 && (
-        <section className="bg-[#F8FAFC] py-20 lg:py-28 px-6">
-          <div className="max-w-[1400px] mx-auto">
-            <div className="max-w-3xl mb-14">
-              <span className="font-condensed text-xs uppercase tracking-[0.2em] text-orange-500 font-semibold mb-4 block">
+        <section className="bg-white py-20 lg:py-28">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div className="mb-14 max-w-3xl">
+              <span className="font-condensed text-xs uppercase tracking-[0.25em] text-orange-500/60 mb-4 block">
                 What We Deliver
               </span>
               <h2 className="font-condensed font-extrabold text-3xl md:text-5xl uppercase text-[#0B1A2F] leading-[0.95]">
@@ -264,21 +278,23 @@ function ServiceView({ service, slug }: { service: ServicePage; slug: string }) 
                 </p>
               )}
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
               {features.map((feature, i) => (
                 <div
                   key={i}
-                  className="rounded-2xl bg-white p-6 hover:shadow-lg transition-shadow"
+                  className="flex items-start gap-6 py-8 px-4 border-b border-[#0B1A2F]/10"
                 >
-                  <span className="font-condensed text-xs uppercase tracking-[0.2em] text-orange-500 font-semibold">
+                  <span className="font-condensed font-extrabold text-3xl text-[#0B1A2F]/10 leading-none shrink-0 w-12">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="font-condensed font-bold text-lg uppercase text-[#0B1A2F] mt-2 tracking-tight">
-                    {feature.title}
-                  </h3>
-                  <p className="font-body text-sm text-gray-600 mt-3 leading-relaxed">
-                    {feature.description}
-                  </p>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-condensed font-bold text-lg uppercase text-[#0B1A2F] tracking-tight">
+                      {feature.title}
+                    </h3>
+                    <p className="font-body text-sm text-gray-500 mt-2 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -286,35 +302,37 @@ function ServiceView({ service, slug }: { service: ServicePage; slug: string }) 
         </section>
       )}
 
-      {/* ---------------- PROCESS ---------------- */}
+      {/* ---------------- PROCESS — navy editorial ---------------- */}
       {processSteps.length > 0 && (
-        <section className="bg-white py-20 lg:py-28 px-6">
-          <div className="max-w-[1400px] mx-auto">
-            <div className="max-w-3xl mb-14">
-              <span className="font-condensed text-xs uppercase tracking-[0.2em] text-orange-500 font-semibold mb-4 block">
+        <section className="bg-[#0B1A2F] py-20 lg:py-28">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div className="mb-14 max-w-3xl">
+              <span className="font-condensed text-xs uppercase tracking-[0.25em] text-orange-500/60 mb-4 block">
                 Our Process
               </span>
-              <h2 className="font-condensed font-extrabold text-3xl md:text-5xl uppercase text-[#0B1A2F] leading-[0.95]">
+              <h2 className="font-condensed font-extrabold text-3xl md:text-5xl uppercase text-white leading-[0.95]">
                 {service.processHeading || "How We Work"}
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
               {processSteps.map((step, index) => {
                 const stepNum = step.number ?? index + 1;
                 return (
                   <div
                     key={stepNum}
-                    className="relative p-6 border-t-2 border-orange-500 bg-[#F8FAFC] rounded-b-2xl"
+                    className="flex items-start gap-6 py-8 px-4 border-b border-white/10"
                   >
-                    <span className="font-condensed text-xs uppercase tracking-[0.2em] text-orange-500 font-semibold">
-                      Step {String(stepNum).padStart(2, "0")}
+                    <span className="font-condensed font-extrabold text-3xl text-white/10 leading-none shrink-0 w-12">
+                      {String(stepNum).padStart(2, "0")}
                     </span>
-                    <h3 className="font-condensed font-bold text-lg uppercase text-[#0B1A2F] mt-2 tracking-tight">
-                      {step.title}
-                    </h3>
-                    <p className="font-body text-sm text-gray-600 mt-3 leading-relaxed">
-                      {step.description}
-                    </p>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-condensed font-bold text-lg uppercase text-white tracking-tight">
+                        {step.title}
+                      </h3>
+                      <p className="font-body text-sm text-white/50 mt-2 leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
                 );
               })}
@@ -323,61 +341,60 @@ function ServiceView({ service, slug }: { service: ServicePage; slug: string }) 
         </section>
       )}
 
-      {/* ---------------- SAFETY — slate band ---------------- */}
+      {/* ---------------- SAFETY ---------------- */}
       {(service.safetyHeading || service.safetyBody) && (
-        <section className="bg-[#1E293B] py-20 lg:py-28 px-6">
-          <div className="max-w-4xl mx-auto">
-            <span className="font-condensed text-xs uppercase tracking-[0.3em] text-orange-500 font-semibold mb-6 block">
-              {service.safetyEyebrow || "Worker Safety"}
-            </span>
-            <h2 className="font-condensed font-extrabold text-3xl md:text-4xl lg:text-5xl uppercase text-white leading-[0.95] tracking-tight">
-              {service.safetyHeading || "Protecting Your Team"}
-            </h2>
-            {service.safetyBody && (
-              <p className="font-body text-lg text-white/60 mt-6 leading-relaxed">
-                {service.safetyBody}
-              </p>
-            )}
-            {safetyBullets.length > 0 && (
-              <ul className="mt-8 space-y-3">
-                {safetyBullets.map((bullet, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-orange-500 mt-0.5 shrink-0" />
-                    <span className="font-body text-white/80">{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
+        <section className="bg-white py-20 lg:py-28 px-6">
+          <div className="max-w-[1400px] mx-auto lg:px-12">
+            <div className="max-w-3xl">
+              <span className="font-condensed text-xs uppercase tracking-[0.25em] text-orange-500/60 mb-4 block">
+                {service.safetyEyebrow || "Worker Safety"}
+              </span>
+              <h2 className="font-condensed font-extrabold text-3xl md:text-4xl lg:text-5xl uppercase text-[#0B1A2F] leading-[0.95] tracking-tight">
+                {service.safetyHeading || "Protecting Your Team"}
+              </h2>
+              {service.safetyBody && (
+                <p className="font-body text-lg text-gray-600 mt-6 leading-relaxed">
+                  {service.safetyBody}
+                </p>
+              )}
+              {safetyBullets.length > 0 && (
+                <ul className="mt-8 space-y-3">
+                  {safetyBullets.map((bullet, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-orange-500 mt-0.5 shrink-0" />
+                      <span className="font-body text-[#0B1A2F]/80">{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </div>
         </section>
       )}
 
-      {/* ---------------- FAQ ---------------- */}
+      {/* ---------------- FAQ — navy ---------------- */}
       {faqs.length > 0 && (
-        <section className="bg-[#F8FAFC] py-20 lg:py-28 px-6">
-          <div className="max-w-3xl mx-auto">
-            <div className="mb-10 text-center">
-              <span className="font-condensed text-xs uppercase tracking-[0.2em] text-orange-500 font-semibold mb-3 block">
+        <section className="bg-[#0B1A2F] py-16 lg:py-24 border-t border-white/5">
+          <div className="max-w-3xl mx-auto px-6">
+            <div className="mb-10">
+              <span className="font-condensed text-xs uppercase tracking-[0.25em] text-orange-500/60 mb-3 block">
                 FAQ
               </span>
-              <h2 className="font-condensed font-extrabold text-3xl md:text-5xl uppercase text-[#0B1A2F] leading-[0.95]">
-                {service.faqSectionHeading || "Frequently Asked"}
-                <span className="block font-accent italic font-normal normal-case text-orange-500 mt-2">
-                  Questions.
-                </span>
+              <h2 className="font-condensed font-extrabold text-3xl md:text-4xl uppercase text-white leading-[0.95]">
+                {service.faqSectionHeading || "Common Questions"}
               </h2>
             </div>
             <div>
               {faqs.map((faq, i) => (
                 <details
                   key={i}
-                  className="group border-b border-[#0B1A2F]/10 py-5"
+                  className="group border-b border-white/10 py-5"
                 >
-                  <summary className="flex items-start justify-between gap-4 cursor-pointer list-none font-condensed font-bold text-base md:text-lg uppercase text-[#0B1A2F] tracking-tight">
+                  <summary className="flex items-start justify-between gap-4 cursor-pointer list-none font-condensed font-bold text-base md:text-lg uppercase text-white/90 tracking-tight">
                     <span>{faq.question}</span>
                     <Plus className="w-5 h-5 text-orange-500 shrink-0 mt-0.5 transition-transform group-open:rotate-45" />
                   </summary>
-                  <p className="font-body text-base text-gray-600 mt-3 leading-relaxed">
+                  <p className="font-body text-base text-white/60 mt-3 leading-relaxed">
                     {faq.answer}
                   </p>
                 </details>
@@ -387,21 +404,16 @@ function ServiceView({ service, slug }: { service: ServicePage; slug: string }) 
         </section>
       )}
 
-      {/* ---------------- FINAL CTA ---------------- */}
-      <section className="bg-[#0B1A2F] py-24 lg:py-32 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-condensed font-extrabold text-4xl md:text-5xl lg:text-6xl uppercase text-white leading-[0.95]">
+      {/* ---------------- FINAL CTA — single-line ---------------- */}
+      <section className="bg-white py-20 lg:py-24 px-6">
+        <div className="max-w-[1400px] mx-auto lg:px-12 text-center">
+          <h2 className="font-condensed font-extrabold text-3xl md:text-4xl uppercase text-[#0B1A2F] leading-tight">
             {ctaHeading}
           </h2>
-          {ctaBody && (
-            <p className="font-body text-lg text-white/60 mt-6 max-w-2xl mx-auto leading-relaxed">
-              {ctaBody}
-            </p>
-          )}
-          <div className="mt-10 flex justify-center">
+          <div className="mt-8">
             <Link
               href={ctaPrimaryHref}
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-condensed font-bold text-sm uppercase tracking-[0.15em] px-8 py-3.5 rounded-full transition-colors"
+              className="inline-flex items-center gap-2 bg-[#0B1A2F] hover:bg-[#162a47] text-white font-condensed font-bold text-sm uppercase tracking-[0.15em] px-10 py-4 transition-colors"
             >
               {ctaPrimary}
               <ArrowRight className="w-4 h-4" />
@@ -432,8 +444,9 @@ function BlogView({ post }: { post: BlogPost }) {
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: post.title,
-    description: post.metaDescription ?? post.excerpt ?? "",
+    headline: cleanTitle(post.title),
+    description:
+      post.metaDescription ?? (post.excerpt ? cleanExcerpt(post.excerpt) : ""),
     inLanguage: HREFLANG,
     author: {
       "@type": "Person",
@@ -460,21 +473,21 @@ function BlogView({ post }: { post: BlogPost }) {
       <JsonLd data={articleJsonLd} />
 
       <main id="main-content">
-        {/* ---------------- HERO ---------------- */}
-        <section className="relative bg-[#0B1A2F] pt-36 pb-20 px-6 overflow-hidden">
+        {/* ---------------- HERO — left-aligned ---------------- */}
+        <section className="relative bg-[#0B1A2F] pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden">
           <div
-            className="absolute inset-0 opacity-[0.04]"
+            className="absolute inset-0 opacity-[0.03]"
             aria-hidden="true"
             style={{
               backgroundImage:
-                "radial-gradient(circle, #ffffff 1px, transparent 1px)",
-              backgroundSize: "24px 24px",
+                "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
+              backgroundSize: "60px 60px",
             }}
           />
-          <div className="relative max-w-3xl mx-auto">
+          <div className="relative max-w-3xl mx-auto px-6 lg:px-12">
             <nav
               aria-label="Breadcrumb"
-              className="flex items-center gap-2 font-condensed text-xs uppercase tracking-[0.15em] text-white/40 mb-6 flex-wrap"
+              className="flex items-center gap-2 font-condensed text-xs uppercase tracking-[0.2em] text-white/40 mb-6 flex-wrap"
             >
               <Link
                 href={`/${CC}/`}
@@ -491,12 +504,12 @@ function BlogView({ post }: { post: BlogPost }) {
               </Link>
             </nav>
             {post.category && (
-              <span className="inline-block font-condensed text-xs uppercase tracking-[0.3em] text-orange-500 font-semibold mb-4">
+              <span className="inline-block font-condensed text-xs uppercase tracking-[0.3em] text-orange-500/70 font-semibold mb-4">
                 {post.category}
               </span>
             )}
             <h1 className="font-condensed font-extrabold text-3xl md:text-4xl lg:text-5xl uppercase text-white leading-[0.95] tracking-tight">
-              {post.title}
+              {cleanTitle(post.title)}
             </h1>
             <div className="flex flex-wrap items-center gap-4 font-body text-sm text-white/40 mt-8">
               {post.author && (
@@ -514,10 +527,10 @@ function BlogView({ post }: { post: BlogPost }) {
               )}
             </div>
             {post.heroImage && post.heroImage.startsWith("http") && (
-              <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mt-10">
+              <div className="relative aspect-[16/9] overflow-hidden mt-10">
                 <Image
                   src={post.heroImage}
-                  alt={post.heroImageAlt ?? post.title}
+                  alt={post.heroImageAlt ?? cleanTitle(post.title)}
                   fill
                   priority
                   className="object-cover"
@@ -542,7 +555,7 @@ function BlogView({ post }: { post: BlogPost }) {
                 {post.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full bg-[#F8FAFC] px-4 py-1.5 font-condensed text-xs uppercase tracking-[0.15em] text-[#0B1A2F]/60"
+                    className="px-4 py-1.5 font-condensed text-xs uppercase tracking-[0.2em] text-[#0B1A2F]/60 border border-[#0B1A2F]/10"
                   >
                     {tag}
                   </span>
@@ -552,48 +565,42 @@ function BlogView({ post }: { post: BlogPost }) {
           </div>
         </section>
 
-        {/* ---------------- FAQ ---------------- */}
+        {/* ---------------- FAQ — navy ---------------- */}
         {post.faqs && post.faqs.length > 0 && (
-          <section className="bg-[#F8FAFC] py-16 px-6">
+          <section className="bg-[#0B1A2F] py-16 px-6">
             <div className="max-w-3xl mx-auto">
-              <span className="font-condensed text-xs uppercase tracking-[0.2em] text-orange-500 font-semibold mb-3 block text-center">
+              <span className="font-condensed text-xs uppercase tracking-[0.25em] text-orange-500/60 mb-3 block">
                 FAQ
               </span>
-              <h2 className="font-condensed font-extrabold text-3xl md:text-4xl uppercase text-[#0B1A2F] leading-[0.95] text-center mb-10">
-                Frequently Asked
-                <span className="block font-accent italic font-normal normal-case text-orange-500 mt-2">
-                  Questions.
-                </span>
+              <h2 className="font-condensed font-extrabold text-3xl md:text-4xl uppercase text-white leading-[0.95] mb-8">
+                Common Questions
               </h2>
               <FaqAccordion faqs={post.faqs} />
             </div>
           </section>
         )}
 
-        {/* ---------------- CTA ---------------- */}
-        <section className="bg-[#0B1A2F] py-24 lg:py-32 px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-condensed font-extrabold text-4xl md:text-5xl lg:text-6xl uppercase text-white leading-[0.95]">
-              Need Expert
-              <span className="block font-accent italic font-normal normal-case text-orange-500 mt-3">
-                Support?
-              </span>
+        {/* ---------------- FINAL CTA ---------------- */}
+        <section className="bg-white py-20 lg:py-24 px-6">
+          <div className="max-w-[1400px] mx-auto lg:px-12 text-center">
+            <h2 className="font-condensed font-extrabold text-3xl md:text-4xl uppercase text-[#0B1A2F] leading-tight">
+              Need expert support?
             </h2>
-            <p className="font-body text-lg text-white/60 mt-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="font-body text-base text-gray-600 mt-4 max-w-2xl mx-auto leading-relaxed">
               Carelabs provides arc flash studies, power system analysis, and{" "}
               {config.primaryStandard} compliance services across {COUNTRY_NAME}.
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href={config.contactPath}
-                className="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-condensed font-bold text-sm uppercase tracking-[0.15em] px-8 py-3.5 rounded-full transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-[#0B1A2F] hover:bg-[#162a47] text-white font-condensed font-bold text-sm uppercase tracking-[0.15em] px-10 py-4 transition-colors"
               >
                 Get a Free Quote
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href={config.blogIndexPath}
-                className="inline-flex items-center justify-center gap-2 border-2 border-white/20 text-white hover:bg-white hover:text-[#0B1A2F] font-condensed font-bold text-sm uppercase tracking-[0.15em] px-8 py-3.5 rounded-full transition-colors"
+                className="inline-flex items-center justify-center gap-2 border-2 border-[#0B1A2F]/20 text-[#0B1A2F] hover:bg-[#0B1A2F] hover:text-white font-condensed font-bold text-sm uppercase tracking-[0.15em] px-10 py-4 transition-colors"
               >
                 More Articles
               </Link>
