@@ -229,7 +229,7 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#1E5A8A]/20">
             {FALLBACK_PROCESS.map((step, i) => (
               <div key={i} className="bg-[#163560] p-8">
-                <span className="font-ae-display text-5xl text-[#2D7AB8]/15 block">
+                <span className="font-ae-display text-5xl text-[#2D7AB8]/40 block">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="font-ae-body font-semibold text-lg text-white uppercase mt-6 tracking-wide">
@@ -254,10 +254,10 @@ export default async function HomePage() {
                   {page.industries!.map((industry, i) => (
                     <span
                       key={`${dupe}-${i}`}
-                      className="inline-block mx-8 font-ae-display text-6xl md:text-8xl uppercase text-[#0F2847]/[0.05]"
+                      className="inline-block mx-8 font-ae-display text-6xl md:text-8xl uppercase text-[#0F2847]/25"
                     >
                       {industry.name}
-                      <span className="text-[#2D7AB8]/15 mx-8">·</span>
+                      <span className="text-[#F97316]/50 mx-8">·</span>
                     </span>
                   ))}
                 </span>

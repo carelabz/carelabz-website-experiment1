@@ -172,7 +172,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {features.map((feature, i) => (
                 <div key={i} className="bg-white border border-[#D4E3F0] p-6">
-                  <span className="font-ae-display text-3xl text-[#2D7AB8]/20">
+                  <span className="font-ae-display text-3xl text-[#2D7AB8]/50">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="font-ae-body font-semibold text-lg text-[#0F2847] mt-3">
@@ -203,7 +203,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#1E5A8A]/20">
               {processSteps.map((step, i) => (
                 <div key={step.number ?? i} className="bg-[#163560] p-8">
-                  <span className="font-ae-display text-5xl text-[#2D7AB8]/15 block">
+                  <span className="font-ae-display text-5xl text-[#2D7AB8]/40 block">
                     {String(step.number ?? i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="font-ae-body font-semibold text-lg text-white uppercase mt-6 tracking-wide">
