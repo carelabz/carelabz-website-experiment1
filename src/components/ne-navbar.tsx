@@ -44,7 +44,7 @@ export function NENavbar({ config }: NENavbarProps) {
               width={866}
               height={288}
               priority
-              className="h-7 w-auto"
+              className="h-12 w-auto"
               style={{ filter: "brightness(0) invert(1)" }}
             />
           </Link>

@@ -42,7 +42,7 @@ export function RegionNavbar({ config }: RegionNavbarProps) {
               width={866}
               height={288}
               priority
-              className="h-10 w-auto"
+              className="h-12 w-auto"
             />
           </Link>
 

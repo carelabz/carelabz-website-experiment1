@@ -142,7 +142,7 @@ export function NEFooter({ config, email }: NEFooterProps) {
                 alt="Carelabs"
                 width={866}
                 height={288}
-                className="h-7 w-auto"
+                className="h-10 w-auto"
                 style={{ filter: "brightness(0) invert(1) opacity(0.4)" }}
               />
             </Link>

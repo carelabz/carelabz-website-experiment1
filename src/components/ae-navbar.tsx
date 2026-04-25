@@ -39,17 +39,17 @@ export function AENavbar({ config }: AENavbarProps) {
               alt="Carelabs"
               width={130}
               height={43}
-              className="h-8 w-auto"
+              className="h-12 w-auto"
               priority
             />
           </Link>
 
           <div className="hidden lg:flex items-center gap-8">
             <Link
-              href={`/${config.cc}/`}
+              href={config.aboutPath}
               className="font-ae-nav font-medium text-[13px] tracking-[0.08em] text-white/70 hover:text-white transition-colors uppercase"
             >
-              Home
+              About Us
             </Link>
 
             <div
@@ -85,31 +85,10 @@ export function AENavbar({ config }: AENavbarProps) {
             </div>
 
             <Link
-              href={config.blogIndexPath}
-              className="font-ae-nav font-medium text-[13px] tracking-[0.08em] text-white/70 hover:text-white transition-colors uppercase"
-            >
-              Insights
-            </Link>
-            {config.caseStudyPath && (
-              <Link
-                href={config.caseStudyPath}
-                className="font-ae-nav font-medium text-[13px] tracking-[0.08em] text-white/70 hover:text-white transition-colors uppercase"
-              >
-                Case Studies
-              </Link>
-            )}
-            <Link
-              href={config.aboutPath}
-              className="font-ae-nav font-medium text-[13px] tracking-[0.08em] text-white/70 hover:text-white transition-colors uppercase"
-            >
-              About
-            </Link>
-
-            <Link
               href={config.contactPath}
               className="font-ae-nav font-semibold text-sm uppercase tracking-[0.1em] text-white bg-[#F97316] hover:bg-orange-600 px-6 py-2.5 transition-colors"
             >
-              Contact
+              Contact Us
             </Link>
           </div>
 
@@ -124,14 +103,9 @@ export function AENavbar({ config }: AENavbarProps) {
 
         {menuOpen && (
           <div className="lg:hidden bg-[#0F2847] border-t border-[#1E5A8A]/20 px-6 py-6 space-y-4">
-            <Link href={`/${config.cc}/`} className="block font-ae-nav text-sm uppercase tracking-[0.1em] text-white/70 hover:text-white" onClick={() => setMenuOpen(false)}>Home</Link>
+            <Link href={config.aboutPath} className="block font-ae-nav text-sm uppercase tracking-[0.1em] text-white/70 hover:text-white" onClick={() => setMenuOpen(false)}>About Us</Link>
             <Link href={config.servicesIndexPath} className="block font-ae-nav text-sm uppercase tracking-[0.1em] text-white/70 hover:text-white" onClick={() => setMenuOpen(false)}>Services</Link>
-            <Link href={config.blogIndexPath} className="block font-ae-nav text-sm uppercase tracking-[0.1em] text-white/70 hover:text-white" onClick={() => setMenuOpen(false)}>Insights</Link>
-            {config.caseStudyPath && (
-              <Link href={config.caseStudyPath} className="block font-ae-nav text-sm uppercase tracking-[0.1em] text-white/70 hover:text-white" onClick={() => setMenuOpen(false)}>Case Studies</Link>
-            )}
-            <Link href={config.aboutPath} className="block font-ae-nav text-sm uppercase tracking-[0.1em] text-white/70 hover:text-white" onClick={() => setMenuOpen(false)}>About</Link>
-            <Link href={config.contactPath} className="block font-ae-nav font-semibold text-sm uppercase tracking-[0.1em] text-white bg-[#F97316] hover:bg-orange-600 px-6 py-3 text-center mt-4" onClick={() => setMenuOpen(false)}>Contact</Link>
+            <Link href={config.contactPath} className="block font-ae-nav font-semibold text-sm uppercase tracking-[0.1em] text-white bg-[#F97316] hover:bg-orange-600 px-6 py-3 text-center mt-4" onClick={() => setMenuOpen(false)}>Contact Us</Link>
           </div>
         )}
       </header>

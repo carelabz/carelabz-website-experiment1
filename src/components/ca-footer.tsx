@@ -33,7 +33,7 @@ export default function CAFooter() {
                 alt="Carelabs"
                 width={866}
                 height={288}
-                className="h-8 w-auto"
+                className="h-10 w-auto"
               />
             </Link>
             <p className="text-sm text-white/60 leading-relaxed">

@@ -20,7 +20,7 @@ export function AEFooter({ config }: AEFooterProps) {
               alt="Carelabs"
               width={130}
               height={43}
-              className="h-8 w-auto mb-6"
+              className="h-10 w-auto mb-6"
             />
             <p className="font-ae-body text-sm text-white/30 leading-relaxed">
               {config.footerDescription}
