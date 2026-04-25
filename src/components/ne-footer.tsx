@@ -36,6 +36,7 @@ export function NEFooter({
 
   return (
     <footer aria-label="Site footer" className="relative overflow-hidden bg-[#0B1A2F]">
+      <div className="h-[2px] bg-orange-500" aria-hidden="true" />
       <div className="relative py-16 lg:py-20 px-6 lg:px-12">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Column 1 — Navigate */}
@@ -48,7 +49,7 @@ export function NEFooter({
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="font-body text-sm text-white/50 hover:text-white hover:underline transition-colors"
+                    className="font-body text-sm text-white/50 hover:underline hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -67,7 +68,7 @@ export function NEFooter({
                 <li key={s.href}>
                   <Link
                     href={s.href}
-                    className="font-body text-sm text-white/50 hover:text-white hover:underline transition-colors"
+                    className="font-body text-sm text-white/50 hover:underline hover:text-white transition-colors"
                   >
                     {s.label}
                   </Link>
@@ -122,11 +123,11 @@ export function NEFooter({
                 type="email"
                 aria-label="Email address"
                 placeholder="Email address"
-                className="bg-transparent border border-white/20 rounded-full px-4 py-2 text-white text-sm font-body placeholder:text-white/30 focus:border-orange-500 outline-none flex-1 min-w-0"
+                className="bg-transparent border border-white/20 px-4 py-2 text-white text-sm font-body placeholder:text-white/30 focus:border-orange-500 outline-none flex-1 min-w-0"
               />
               <button
                 type="submit"
-                className="bg-orange-500 text-white font-condensed font-bold text-xs uppercase tracking-[0.15em] px-5 py-2 rounded-full hover:bg-orange-600 transition-colors shrink-0"
+                className="bg-orange-500 text-white font-condensed font-bold text-xs uppercase tracking-[0.15em] px-5 py-2 hover:bg-orange-600 transition-colors shrink-0"
               >
                 Join
               </button>

@@ -135,85 +135,89 @@ export default async function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <main id="main-content">
-        {/* ---------------- HERO ---------------- */}
-        <section className="relative bg-[#0B1A2F] pt-36 pb-24 px-6 overflow-hidden">
+        {/* ---------------- HERO — left-aligned ---------------- */}
+        <section className="relative bg-[#0B1A2F] pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
           <div
-            className="absolute inset-0 opacity-[0.04]"
+            className="absolute inset-0 opacity-[0.03]"
             aria-hidden="true"
             style={{
               backgroundImage:
-                "radial-gradient(circle, #ffffff 1px, transparent 1px)",
-              backgroundSize: "24px 24px",
+                "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
+              backgroundSize: "60px 60px",
             }}
           />
-          <div className="relative max-w-4xl mx-auto text-center">
-            <span className="font-condensed text-xs uppercase tracking-[0.3em] text-orange-500 font-semibold mb-6 block">
-              About
-            </span>
-            <h1 className="font-condensed font-extrabold text-5xl md:text-6xl lg:text-7xl uppercase text-white leading-[0.95] tracking-tight">
-              {headline}
-              <span className="block font-accent italic font-normal normal-case text-orange-500 mt-3">
-                Carelabs.
+          <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div className="max-w-3xl">
+              <span className="font-condensed text-xs uppercase tracking-[0.3em] text-orange-500/60 mb-6 block">
+                About
               </span>
-            </h1>
-            <p className="font-body text-lg md:text-xl text-white/60 mt-8 max-w-2xl mx-auto leading-relaxed">
-              {subtext}
-            </p>
+              <h1 className="font-condensed font-extrabold text-5xl md:text-6xl lg:text-7xl uppercase text-white leading-[0.95] tracking-tight">
+                {headline}<br />
+                <span className="font-accent italic font-normal normal-case text-orange-500">
+                  Carelabs.
+                </span>
+              </h1>
+              <p className="font-body text-lg text-white/50 mt-8 max-w-2xl leading-relaxed">
+                {subtext}
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* ---------------- MISSION ---------------- */}
+        {/* ---------------- MISSION — white ---------------- */}
         {(page?.missionHeading || page?.missionBody) && (
-          <section className="bg-[#F8FAFC] py-20 lg:py-28 px-6">
-            <div className="max-w-3xl mx-auto text-center">
-              <span className="font-condensed text-xs uppercase tracking-[0.2em] text-orange-500 font-semibold mb-4 block">
-                Our Mission
-              </span>
-              {page?.missionHeading && (
-                <h2 className="font-condensed font-extrabold text-3xl md:text-5xl uppercase text-[#0B1A2F] leading-[0.95]">
-                  {page.missionHeading}
-                </h2>
-              )}
-              {page?.missionBody && (
-                <p className="font-body text-lg text-gray-600 mt-6 leading-relaxed">
-                  {page.missionBody}
-                </p>
-              )}
+          <section className="bg-white py-20 lg:py-28 px-6 border-b border-[#0B1A2F]/5">
+            <div className="max-w-[1400px] mx-auto lg:px-12">
+              <div className="max-w-3xl">
+                <span className="font-condensed text-xs uppercase tracking-[0.25em] text-orange-500/60 mb-4 block">
+                  Our Mission
+                </span>
+                {page?.missionHeading && (
+                  <h2 className="font-condensed font-extrabold text-3xl md:text-5xl uppercase text-[#0B1A2F] leading-[0.95]">
+                    {page.missionHeading}
+                  </h2>
+                )}
+                {page?.missionBody && (
+                  <p className="font-body text-lg text-gray-600 mt-6 leading-relaxed">
+                    {page.missionBody}
+                  </p>
+                )}
+              </div>
             </div>
           </section>
         )}
 
-        {/* ---------------- VALUES ---------------- */}
+        {/* ---------------- VALUES — navy editorial list ---------------- */}
         {page?.values && page.values.length > 0 && (
-          <section className="bg-white py-20 lg:py-28 px-6">
-            <div className="max-w-[1400px] mx-auto">
-              <div className="text-center mb-14 max-w-3xl mx-auto">
-                <span className="font-condensed text-xs uppercase tracking-[0.2em] text-orange-500 font-semibold mb-4 block">
+          <section className="bg-[#0B1A2F] py-20 lg:py-28 px-6">
+            <div className="max-w-[1400px] mx-auto lg:px-12">
+              <div className="mb-14 max-w-3xl">
+                <span className="font-condensed text-xs uppercase tracking-[0.25em] text-orange-500/60 mb-4 block">
                   Our Values
                 </span>
                 {page?.valuesHeading && (
-                  <h2 className="font-condensed font-extrabold text-3xl md:text-5xl uppercase text-[#0B1A2F] leading-[0.95]">
+                  <h2 className="font-condensed font-extrabold text-3xl md:text-5xl uppercase text-white leading-[0.95]">
                     {page.valuesHeading}
                   </h2>
                 )}
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                 {page.values.map((value, idx) => {
                   const Icon = resolveIcon(value.icon);
                   return (
                     <div
                       key={idx}
-                      className="rounded-2xl bg-[#F8FAFC] p-8 hover:shadow-lg transition-shadow"
+                      className="flex items-start gap-6 py-8 px-4 border-b border-white/10"
                     >
-                      <div className="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center mb-5">
-                        <Icon className="w-6 h-6 text-orange-500" />
+                      <Icon className="w-6 h-6 text-orange-500 shrink-0 mt-1" />
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-condensed font-bold text-lg uppercase text-white tracking-tight">
+                          {value.title}
+                        </h3>
+                        <p className="font-body text-sm text-white/60 mt-2 leading-relaxed">
+                          {value.description}
+                        </p>
                       </div>
-                      <h3 className="font-condensed font-bold text-lg uppercase text-[#0B1A2F] tracking-tight">
-                        {value.title}
-                      </h3>
-                      <p className="font-body text-sm text-gray-600 mt-3 leading-relaxed">
-                        {value.description}
-                      </p>
                     </div>
                   );
                 })}
@@ -222,49 +226,35 @@ export default async function AboutPage() {
           </section>
         )}
 
-        {/* ---------------- CERTIFICATIONS ---------------- */}
+        {/* ---------------- CERTIFICATIONS — white inline ---------------- */}
         {page?.certifications && page.certifications.length > 0 && (
-          <section className="bg-[#0B1A2F] py-16 px-6">
-            <div className="max-w-5xl mx-auto text-center">
-              <span className="font-condensed text-xs uppercase tracking-[0.2em] text-orange-500 font-semibold mb-4 block">
+          <section className="bg-white py-16 px-6 border-b border-[#0B1A2F]/5">
+            <div className="max-w-[1400px] mx-auto lg:px-12 text-center">
+              <span className="font-condensed text-xs uppercase tracking-[0.25em] text-orange-500/60 mb-4 block">
                 Standards
               </span>
-              <h2 className="font-condensed font-extrabold text-3xl md:text-4xl uppercase text-white leading-[0.95] mb-10">
-                Standards We Follow
-              </h2>
-              <div className="flex flex-wrap justify-center gap-3">
-                {page.certifications.map((cert, idx) => (
-                  <span
-                    key={idx}
-                    className="inline-flex items-center gap-2 font-condensed text-xs uppercase tracking-[0.15em] text-white/70 border border-white/10 px-4 py-2 rounded-full"
-                  >
-                    <Award className="w-3.5 h-3.5 text-orange-500" />
-                    {cert}
-                  </span>
-                ))}
-              </div>
+              <p className="font-condensed text-sm uppercase tracking-[0.2em] text-[#0B1A2F]/60">
+                {page.certifications.join("  ·  ")}
+              </p>
             </div>
           </section>
         )}
 
-        {/* ---------------- CTA ---------------- */}
-        <section className="bg-[#F8FAFC] py-24 lg:py-32 px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-condensed font-extrabold text-4xl md:text-5xl lg:text-6xl uppercase text-[#0B1A2F] leading-[0.95]">
-              {page?.ctaBannerHeading ?? "Partner with Carelabs"}
-              <span className="block font-accent italic font-normal normal-case text-orange-500 mt-3">
-                {config.countryName}.
-              </span>
+        {/* ---------------- FINAL CTA — single-line ---------------- */}
+        <section className="bg-white py-20 lg:py-24 px-6">
+          <div className="max-w-[1400px] mx-auto lg:px-12 text-center">
+            <h2 className="font-condensed font-extrabold text-3xl md:text-4xl uppercase text-[#0B1A2F] leading-tight">
+              {page?.ctaBannerHeading ?? `Partner with Carelabs ${config.countryName}.`}
             </h2>
             {page?.ctaBannerSubtext && (
-              <p className="font-body text-lg text-gray-600 mt-6 max-w-2xl mx-auto leading-relaxed">
+              <p className="font-body text-base text-gray-600 mt-4 max-w-2xl mx-auto leading-relaxed">
                 {page.ctaBannerSubtext}
               </p>
             )}
-            <div className="mt-10 flex justify-center">
+            <div className="mt-8">
               <Link
                 href={page?.ctaBannerPrimaryHref ?? config.contactPath}
-                className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-condensed font-bold text-sm uppercase tracking-[0.15em] px-8 py-3.5 rounded-full transition-colors"
+                className="inline-flex items-center gap-2 bg-[#0B1A2F] hover:bg-[#162a47] text-white font-condensed font-bold text-sm uppercase tracking-[0.15em] px-10 py-4 transition-colors"
               >
                 {page?.ctaBannerPrimaryText ?? "Get in Touch"}
                 <ArrowRight className="w-4 h-4" />
