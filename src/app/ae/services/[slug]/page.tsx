@@ -28,6 +28,17 @@ async function fetchServiceWithFallback(slug: string): Promise<ServicePage | nul
   return getServicePageBySlug(slug);
 }
 
+// Pick a column count that leaves no empty cells.
+// All literal Tailwind class strings live here so JIT picks them up.
+function gridColsClass(count: number): string {
+  if (count === 0) return "md:grid-cols-2 lg:grid-cols-4";
+  if (count % 4 === 0) return "md:grid-cols-2 lg:grid-cols-4";
+  if (count % 3 === 0) return "md:grid-cols-3 lg:grid-cols-3";
+  if (count % 2 === 0) return "md:grid-cols-2 lg:grid-cols-2";
+  // 5, 7, 11, etc. — not perfectly divisible. Default to 4 across.
+  return "md:grid-cols-2 lg:grid-cols-4";
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const pageUrl = `https://carelabz.com/${CC}/services/${params.slug}/`;
   const service = await fetchServiceWithFallback(params.slug);
@@ -171,7 +182,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               eyebrow="What We Deliver"
               title={service.featuresHeading ?? "Key Outcomes"}
             />
-            <div className="mt-16 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div className={`mt-16 grid grid-cols-1 gap-4 ${gridColsClass(features.length)}`}>
               {features.map((feature, i) => (
                 <ScrollReveal key={i} delay={i * 100}>
                   <div className="group h-full border-l-2 border-[#2575B6] bg-white p-8 transition-colors duration-300 hover:border-[#F15C30]">
@@ -200,7 +211,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               eyebrow="Our Process"
               title={service.processHeading ?? "How We Work"}
             />
-            <div className="mt-16 grid grid-cols-1 gap-px bg-gray-200 md:grid-cols-2 lg:grid-cols-4">
+            <div className={`mt-16 grid grid-cols-1 gap-px bg-gray-200 ${gridColsClass(processSteps.length)}`}>
               {processSteps.map((step, i) => (
                 <ScrollReveal key={step.number ?? i} delay={i * 100}>
                   <div className="h-full bg-white p-8">
