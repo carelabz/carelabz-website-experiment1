@@ -130,7 +130,7 @@ export default async function HomePage() {
   const process = FALLBACK_PROCESS;
 
   const heroEyebrow = "Power System Engineering";
-  const heroHeadline = page.heroHeadline ?? "Electrical";
+  const heroHeadline = "Electrical Safety Demands";
   const heroSubtext =
     page.heroSubtext ??
     "DEWA-compliant arc flash studies, power system analysis, and electrical safety engineering across the UAE.";
@@ -151,13 +151,15 @@ export default async function HomePage() {
             {heroEyebrow}
           </p>
           <h1 className="animate-fade-in-up animation-delay-200 mt-6 font-display text-display-hero uppercase tracking-tight text-white">
-            {heroHeadline}{" "}
-            <RotatingWord words={HERO_ROTATING} className="text-[#F15C30]" />
+            {heroHeadline}
           </h1>
-          <p className="animate-fade-in-up animation-delay-300 mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-white/70">
+          <p className="animate-fade-in-up animation-delay-300 mt-2 font-display text-display-hero uppercase tracking-tight text-[#F15C30]">
+            <RotatingWord words={HERO_ROTATING} />
+          </p>
+          <p className="animate-fade-in-up animation-delay-400 mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-white/70">
             {heroSubtext}
           </p>
-          <div className="animate-fade-in-up animation-delay-400 mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="animate-fade-in-up animation-delay-500 mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href={page.heroPrimaryCtaHref ?? config.contactPath}
               className="inline-flex items-center gap-2 bg-[#F15C30] px-8 py-3.5 text-sm font-semibold uppercase tracking-[0.1em] text-white transition-all duration-300 hover:scale-[1.02] hover:bg-[#d44a22]"
@@ -174,7 +176,7 @@ export default async function HomePage() {
           </div>
 
           {/* Stats row */}
-          <div className="animate-fade-in-up animation-delay-500 mx-auto mt-16 grid max-w-2xl grid-cols-3 gap-8 border-t border-white/10 pt-10">
+          <div className="animate-fade-in-up animation-delay-600 mx-auto mt-16 grid max-w-2xl grid-cols-3 gap-8 border-t border-white/10 pt-10">
             {stats.map((s) => (
               <div key={s.metric} className="text-center">
                 <p className="font-display text-3xl text-white sm:text-4xl">{s.value}</p>
