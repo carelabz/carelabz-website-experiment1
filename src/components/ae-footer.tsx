@@ -16,10 +16,10 @@ export function AEFooter({ config }: AEFooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           <div className="lg:col-span-1">
             <Image
-              src="/images/logo/carelabs-logo.png"
+              src="/images/logo/carelabs-logo.svg"
               alt="Carelabs"
-              width={130}
-              height={43}
+              width={950}
+              height={177}
               className="h-10 w-auto mb-6"
             />
             <p className="font-ae-body text-sm text-white/30 leading-relaxed">

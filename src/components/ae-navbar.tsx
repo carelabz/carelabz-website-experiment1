@@ -35,10 +35,10 @@ export function AENavbar({ config }: AENavbarProps) {
         <nav className="max-w-[1280px] mx-auto flex items-center justify-between h-16 px-6 lg:px-10">
           <Link href={`/${config.cc}/`} className="shrink-0">
             <Image
-              src="/images/logo/carelabs-logo.png"
+              src="/images/logo/carelabs-logo.svg"
               alt="Carelabs"
-              width={130}
-              height={43}
+              width={950}
+              height={177}
               className="h-12 w-auto"
               priority
             />
