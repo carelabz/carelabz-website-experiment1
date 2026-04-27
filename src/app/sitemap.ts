@@ -1,5 +1,7 @@
 import { MetadataRoute } from "next";
 import { getBlogPosts } from "@/lib/strapi-blog";
+import { getServicesByRegion } from "@/lib/strapi";
+import { getCaseStudies } from "@/lib/strapi-pages";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://carelabz.com";
@@ -125,6 +127,64 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Strapi unavailable — skip CA blog posts in sitemap
   }
 
+  // ── UAE (ae) ───────────────────────────────────────────────
+  const aeStatic: MetadataRoute.Sitemap = [
+    { url: `${baseUrl}/ae/`, priority: 1.0, changeFrequency: "weekly" },
+    { url: `${baseUrl}/ae/services/`, priority: 0.9, changeFrequency: "weekly" },
+    { url: `${baseUrl}/ae/about/`, priority: 0.7, changeFrequency: "monthly" },
+    { url: `${baseUrl}/ae/contact/`, priority: 0.8, changeFrequency: "monthly" },
+    { url: `${baseUrl}/ae/blog/`, priority: 0.8, changeFrequency: "daily" },
+    { url: `${baseUrl}/ae/case-studies/`, priority: 0.7, changeFrequency: "weekly" },
+  ];
+
+  let aeServicePages: MetadataRoute.Sitemap = [];
+  try {
+    const svc = await getServicesByRegion("ae");
+    aeServicePages = svc.map((s) => {
+      const slug = s.slug.endsWith("-ae") ? s.slug.slice(0, -3) : s.slug;
+      return {
+        url: `${baseUrl}/ae/services/${slug}/`,
+        lastModified: new Date(s.updatedAt || s.publishedAt),
+        priority: 0.9,
+        changeFrequency: "monthly" as const,
+      };
+    });
+  } catch {
+    // Strapi unavailable — skip AE service pages
+  }
+
+  let aeBlogPages: MetadataRoute.Sitemap = [];
+  try {
+    const posts = await getBlogPosts("ae");
+    aeBlogPages = posts.map((p) => {
+      const slug = p.slug.endsWith("-ae") ? p.slug.slice(0, -3) : p.slug;
+      return {
+        url: `${baseUrl}/ae/blog/${slug}/`,
+        lastModified: new Date(p.updatedAt || p.publishedAt),
+        priority: 0.6,
+        changeFrequency: "monthly" as const,
+      };
+    });
+  } catch {
+    // Strapi unavailable — skip AE blog posts
+  }
+
+  let aeCaseStudyPages: MetadataRoute.Sitemap = [];
+  try {
+    const studies = await getCaseStudies("ae");
+    aeCaseStudyPages = studies.map((s) => {
+      const slug = s.slug.endsWith("-ae") ? s.slug.slice(0, -3) : s.slug;
+      return {
+        url: `${baseUrl}/ae/case-studies/${slug}/`,
+        lastModified: new Date(s.updatedAt || s.publishedAt),
+        priority: 0.7,
+        changeFrequency: "monthly" as const,
+      };
+    });
+  } catch {
+    // Strapi unavailable — skip AE case studies
+  }
+
   return [
     ...staticPages,
     ...servicePages,
@@ -132,5 +192,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...multiCountryServices,
     ...blogPages,
     ...caBlogPages,
+    ...aeStatic,
+    ...aeServicePages,
+    ...aeBlogPages,
+    ...aeCaseStudyPages,
   ];
 }
