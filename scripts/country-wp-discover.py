@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Discover all blog + service WP URLs for one country by crawling the index pages.
+"""Discover all blog + service WP URLs for one country.
+
+Strategy: prefer the Yoast per-country sitemap (carelabz.com/{cc}/sitemap.xml)
+which authoritatively classifies URLs as pages (services) vs. posts (blogs).
+Fall back to crawling the blog/service index pages if sitemap is missing.
 
 Usage:
   python3 scripts/country-wp-discover.py {cc}
@@ -23,14 +27,67 @@ except ImportError:
 WP = "https://carelabz.com"
 UA = {"User-Agent": "Mozilla/5.0 (compatible; CarelabsMigration/1.0)"}
 
+EXCLUDE_SLUGS = {
+    "", "404-page", "about-us", "about", "blogs", "blog", "our-blogs",
+    "contact-us", "contact", "services", "service", "our-services",
+    "careers", "registration", "login",
+}
 
-def load_availability():
-    return json.loads(Path("data/wp-country-availability.json").read_text(encoding="utf-8"))["audits"]
+
+def fetch_xml(url: str) -> str | None:
+    try:
+        r = requests.get(url, headers=UA, timeout=20)
+        if r.status_code == 200:
+            return r.text
+    except Exception:
+        pass
+    return None
+
+
+def extract_locs(xml: str) -> list[str]:
+    return re.findall(r"<loc>([^<]+)</loc>", xml)
+
+
+def classify_via_sitemap(cc: str) -> tuple[list[str] | None, list[str] | None]:
+    """Return (services, blogs) lists if sitemap is parseable; else (None, None)."""
+    idx = fetch_xml(f"{WP}/{cc}/sitemap.xml")
+    if not idx:
+        return None, None
+    sub = extract_locs(idx)
+    page_xml = post_xml = None
+    for s in sub:
+        if s.endswith(f"/{cc}/page-sitemap.xml"):
+            page_xml = fetch_xml(s)
+        elif s.endswith(f"/{cc}/post-sitemap.xml"):
+            post_xml = fetch_xml(s)
+    if not page_xml and not post_xml:
+        return None, None
+
+    def is_country_url(u: str) -> bool:
+        return u.startswith(f"{WP}/{cc}/")
+
+    def slug(u: str) -> str:
+        rel = u.replace(f"{WP}/{cc}/", "")
+        return rel.rstrip("/").split("/")[-1]
+
+    def cleaned(urls: list[str]) -> list[str]:
+        out = []
+        for u in urls:
+            if not is_country_url(u):
+                continue
+            s = slug(u)
+            if s in EXCLUDE_SLUGS:
+                continue
+            out.append(u.rstrip("/") + "/")
+        return sorted(set(out))
+
+    services = cleaned(extract_locs(page_xml)) if page_xml else []
+    blogs = cleaned(extract_locs(post_xml)) if post_xml else []
+    return services, blogs
 
 
 def crawl_paginated(start_url: str, cc: str, max_pages: int = 30) -> list[str]:
-    """Crawl an index page, paginate, return every post-style URL under /{cc}/.
-    Filters out the index itself, /about/, /contact/, services index, etc."""
+    """Fallback crawler — used when the sitemap is unavailable."""
     found: set[str] = set()
     visited: set[str] = set()
     queue: list[str] = [start_url]
@@ -76,13 +133,10 @@ def crawl_paginated(start_url: str, cc: str, max_pages: int = 30) -> list[str]:
                 clean = href.split("#")[0].split("?")[0].rstrip("/") + "/"
                 if any(re.search(p, clean) for p in EXCLUDE_PATTERNS):
                     continue
-                # Pagination: /blogs/page/2/ etc.
                 if re.search(r"/page/\d+/?$", clean):
                     if clean not in visited:
                         queue.append(clean)
                     continue
-                # Depth check: direct children of /{cc}/, or one-level-deeper
-                # under known content prefixes (service/, services/, blog/, ...)
                 rel = clean[len(f"{WP}/{cc}/"):]
                 seg_count = rel.count("/")
                 if seg_count == 1 and len(rel) > 1:
@@ -104,33 +158,34 @@ def main():
         print("Usage: country-wp-discover.py {cc}")
         sys.exit(1)
     cc = sys.argv[1]
-    audits = load_availability()
-    info = audits.get(cc)
-    if not info:
-        print(f"No audit data for {cc}")
-        sys.exit(1)
-
-    s = info["summary"]
-    blog_path = s.get("blog")
-    service_path = s.get("services")
-    print(f"Country: {cc}")
-    print(f"  Blog:    /{cc}/{blog_path or '(none)'}")
-    print(f"  Service: /{cc}/{service_path or '(none)'}")
 
     out_dir = Path(f"data/{cc}")
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    if blog_path:
-        print("\nCrawling blog index...")
-        blogs = crawl_paginated(f"{WP}/{cc}/{blog_path}", cc)
-        Path(f"data/{cc}/wp-blog-urls.txt").write_text("\n".join(blogs), encoding="utf-8")
-        print(f"  Blog posts found: {len(blogs)}")
+    print(f"Country: {cc}")
+    services, blogs = classify_via_sitemap(cc)
 
-    if service_path:
-        print("\nCrawling services index...")
-        services = crawl_paginated(f"{WP}/{cc}/{service_path}", cc)
-        Path(f"data/{cc}/wp-service-urls.txt").write_text("\n".join(services), encoding="utf-8")
-        print(f"  Service pages found: {len(services)}")
+    if services is not None or blogs is not None:
+        services = services or []
+        blogs = blogs or []
+        print(f"  via sitemap: services={len(services)} blogs={len(blogs)}")
+    else:
+        # Fallback to legacy crawler
+        audits = json.loads(Path("data/wp-country-availability.json").read_text(encoding="utf-8"))["audits"]
+        info = audits.get(cc) or {}
+        s = info.get("summary", {})
+        blog_path = s.get("blog")
+        service_path = s.get("services")
+        print(f"  (no sitemap — falling back to crawl)")
+        print(f"  Blog index:    /{cc}/{blog_path or '(none)'}")
+        print(f"  Service index: /{cc}/{service_path or '(none)'}")
+        blogs = crawl_paginated(f"{WP}/{cc}/{blog_path}", cc) if blog_path else []
+        services = crawl_paginated(f"{WP}/{cc}/{service_path}", cc) if service_path else []
+
+    Path(f"data/{cc}/wp-blog-urls.txt").write_text("\n".join(blogs), encoding="utf-8")
+    Path(f"data/{cc}/wp-service-urls.txt").write_text("\n".join(services), encoding="utf-8")
+    print(f"  Blog posts:    {len(blogs)}")
+    print(f"  Service pages: {len(services)}")
 
 
 if __name__ == "__main__":
